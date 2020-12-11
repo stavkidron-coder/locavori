@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
+import { Button } from 'reactstrap';
 
 class MakerRegisterForm extends Component {
 
@@ -17,7 +18,7 @@ class MakerRegisterForm extends Component {
         <input></input>
         <input></input>
         <input></input>
-        <button onClick={this.submitBtn}>Submit Application</button>
+        <Button onClick={this.submitBtn}>Submit Application</Button>
       </div>
     );
   }
