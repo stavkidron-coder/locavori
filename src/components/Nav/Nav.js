@@ -45,7 +45,7 @@ const Nav = (props) => {
           Home
         </Link>
         
-        <Link className="nav-link" to="/register-options">
+        <Link className="nav-link" to="/maker-registration">
           Apply to be a Maker
         </Link>
       </div>

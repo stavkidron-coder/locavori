@@ -19,7 +19,8 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegisterPage/UserRegisterPage';
-import RegisterOptions from '../ResgisterOptions/RegisterOptions';
+import RegisterOptions from '../RegisterOptions/RegisterOptions';
+import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
 
 import './App.css';
 
@@ -57,6 +58,13 @@ class App extends Component {
               exact
               path="/register-options"
               component={RegisterOptions}
+            />
+            
+            <Route
+              // shows HomePage at all times (logged in or not)
+              exact
+              path="/maker-registration"
+              component={MakerRegisterPage}
             />
 
             {/* For protected routes, the view could show one of several things on the same route.
