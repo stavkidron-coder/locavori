@@ -18,7 +18,8 @@ import UserPage from '../UserPage/UserPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage';
+import UserRegisterPage from '../UserRegisterPage/UserRegisterPage';
+import RegisterOptions from '../ResgisterOptions/RegisterOptions';
 
 import './App.css';
 
@@ -49,6 +50,13 @@ class App extends Component {
               exact
               path="/about"
               component={AboutPage}
+            />
+            
+            <Route
+              // shows HomePage at all times (logged in or not)
+              exact
+              path="/register-options"
+              component={RegisterOptions}
             />
 
             {/* For protected routes, the view could show one of several things on the same route.
@@ -86,8 +94,8 @@ class App extends Component {
               // - if logged in, redirects to "/user"
               // - else shows RegisterPage at "/registration"
               exact
-              path="/registration"
-              component={RegisterPage}
+              path="/user-registration"
+              component={UserRegisterPage}
               authRedirect="/home"
             />
             {/* <ProtectedRoute

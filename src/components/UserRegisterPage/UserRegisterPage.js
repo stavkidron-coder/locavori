@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+import UserRegisterForm from '../UserRegisterForm/UserRegisterForm';
 
-class RegisterPage extends Component {
+class UserRegisterPage extends Component {
   state = {
     username: '',
     password: '',
@@ -14,7 +14,7 @@ class RegisterPage extends Component {
   render() {
     return (
       <div>
-        <RegisterForm />
+        <UserRegisterForm />
 
         <center>
           <button
@@ -32,4 +32,4 @@ class RegisterPage extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(RegisterPage);
+export default connect(mapStoreToProps)(UserRegisterPage);

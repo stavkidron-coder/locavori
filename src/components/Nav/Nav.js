@@ -40,9 +40,13 @@ const Nav = (props) => {
         <Link className="nav-link" to="/about">
           About
         </Link>
-        
+
         <Link className="nav-link" to="/home">
           Home
+        </Link>
+        
+        <Link className="nav-link" to="/register-options">
+          Apply to be a Maker
         </Link>
       </div>
     </div>
