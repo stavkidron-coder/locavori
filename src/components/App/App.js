@@ -38,10 +38,10 @@ class App extends Component {
 
             {/* Visiting localhost:3000/about will show the about page. */}
             <Route
-              // shows AboutPage at all times (logged in or not)
+              // shows HomePage at all times (logged in or not)
               exact
-              path="/about"
-              component={AboutPage}
+              path="/home"
+              component={LandingPage}
             />
 
             {/* For protected routes, the view could show one of several things on the same route.
@@ -72,7 +72,7 @@ class App extends Component {
               exact
               path="/login"
               component={LoginPage}
-              authRedirect="/user"
+              authRedirect="/home"
             />
             <ProtectedRoute
               // with authRedirect:
@@ -81,17 +81,17 @@ class App extends Component {
               exact
               path="/registration"
               component={RegisterPage}
-              authRedirect="/user"
+              authRedirect="/home"
             />
-            <ProtectedRoute
-              // with authRedirect:
-              // - if logged in, redirects to "/user"
-              // - else shows LandingPage at "/home"
+            {/* <ProtectedRoute
+              with authRedirect:
+              - if logged in, redirects to "/user"
+              - else shows LandingPage at "/home"
               exact
               path="/home"
               component={LandingPage}
               authRedirect="/user"
-            />
+            /> */}
 
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
