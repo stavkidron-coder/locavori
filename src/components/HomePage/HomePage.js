@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import SearchBar from '../SearchBar/SearchBar';
+// import SearchBar from '../SearchBar/SearchBar';
+import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
 
 import './HomePage.css';
 
@@ -19,7 +20,9 @@ class HomePage extends Component {
     return (
       <Container>
 
-        <SearchBar/>
+        {/* <SearchBar/> */}
+        <SearchBarCollapse/>
+
 
           <div>
           <select>
