@@ -20,7 +20,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="homePageBody">
         <Container>
 
           {/* <SearchBar/> */}
