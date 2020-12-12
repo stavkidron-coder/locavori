@@ -9,7 +9,7 @@ import './HomePage.css';
 // CUSTOM COMPONENTS
 // import RegisterForm from '../RegisterForm/RegisterForm';
 
-class LandingPage extends Component {
+class HomePage extends Component {
 
   onLogin = (event) => {
     this.props.history.push('/login');
@@ -38,4 +38,4 @@ class LandingPage extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(LandingPage);
+export default connect(mapStoreToProps)(HomePage);
