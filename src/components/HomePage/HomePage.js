@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
-import MapView from './MapView/MapView';
-import ListView from './ListView/ListView';
+import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 
 import './HomePage.css';
 
@@ -22,30 +21,27 @@ class HomePage extends Component {
     return (
       <div className="homePageBody">
         <Container>
+          <Row>
+              <SearchBarCollapse/>
+          </Row>
+          
+          <Row>
+                <div>
+                <select>
+                    <option>Filter</option>
+                    <option>Drink</option>
+                    <option>Fun Times</option>
+                    <option>Other Cool things</option>
+                    </select>
+                </div>
+          </Row>
 
-          {/* <SearchBar/> */}
-          <SearchBarCollapse/>
-
-
-            <div>
-            <select>
-                <option>Filter</option>
-                <option>Drink</option>
-                <option>Fun Times</option>
-                <option>Other Cool things</option>
-                </select>
-              <button>Map</button>
-              <button>List</button>
-            </div>
-
+          <Row>
+            <MapListToggleBtn/>
+          </Row>
+              
           </Container>
-
-          <MapView/>
-
-          <ListView/>
-
         </div>
-      
     );
   }
 }
