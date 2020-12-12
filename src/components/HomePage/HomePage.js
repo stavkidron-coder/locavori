@@ -18,12 +18,28 @@ class LandingPage extends Component {
       <div className="container">
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <h1>HOME PAGE</h1>
+            <label>Find</label>
+            <select>
+              <option>Food</option>
+              <option>Drink</option>
+              <option>Fun Times</option>
+              <option>Other Cool things</option>
+              </select>
+              <label>Near</label>
+              <input></input>
+          </div>           
+        </div>
+          <div>
+          <select>
+              <option>Filter</option>
+              <option>Drink</option>
+              <option>Fun Times</option>
+              <option>Other Cool things</option>
+              </select>
+            <button>Map</button>
+            <button>List</button>
           </div>
-          
 
-            
-          </div>
         </div>
       
     );
