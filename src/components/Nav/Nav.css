@@ -27,13 +27,6 @@
   /* border:none; */
   /* cursor: pointer; */
   /* outline:0; */
-  transition: 0.5s;
-}
-
-.nav-link:hover {
-  color: #000000;
-  margin-left: 10px;
-  transition: 0.5s;
 }
 
 .nav-right {
@@ -42,8 +35,4 @@
 
 .nav-item {
   padding: 10px;
-  transition: 0.5s;
-}
-.nav-item:hover {
-  transition: 0.5s;
 }
