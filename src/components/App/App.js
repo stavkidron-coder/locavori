@@ -23,6 +23,7 @@ import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
 import AdminMakersPage from '../Admin/AdminMakers/AdminMakers';
 import AdminPARPage from '../Admin/AdminPAR/AdminPAR';
+import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
 
 import './App.css';
 
@@ -35,7 +36,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
+          {/* <Nav /> */}
+          <NavbarCollapse/>
+
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
