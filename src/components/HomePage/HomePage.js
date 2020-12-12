@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Container } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import SearchBar from '../SearchBar/SearchBar';
 
 import './HomePage.css';
 
@@ -15,20 +17,10 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="grid">
-          <div className="grid-col grid-col_8">
-            <label>Find</label>
-            <select>
-              <option>Food</option>
-              <option>Drink</option>
-              <option>Fun Times</option>
-              <option>Other Cool things</option>
-              </select>
-              <label>Near</label>
-              <input></input>
-          </div>           
-        </div>
+      <Container>
+
+        <SearchBar/>
+
           <div>
           <select>
               <option>Filter</option>
@@ -40,7 +32,7 @@ class LandingPage extends Component {
             <button>List</button>
           </div>
 
-        </div>
+        </Container>
       
     );
   }
