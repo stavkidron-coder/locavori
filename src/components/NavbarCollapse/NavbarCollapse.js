@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import LogOutButton from '../LogOutButton/LogOutButton';
 
 const NavbarCollapse = (props) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
+
+  let loginLinkData = {
+    path: '/login',
+    text: 'Login / Register',
+  };
+
+  if (props.store.user.id != null) {
+    loginLinkData.path = '/home';
+    loginLinkData.text = <LogOutButton/>;
+  }
 
   return (
     <div>
@@ -17,12 +30,15 @@ const NavbarCollapse = (props) => {
             <NavItem className="nav-item">
               <Link className="nav-link" to='/home' onClick={toggleNavbar} >Home</Link>
             </NavItem>
+
             <NavItem>
               <Link className="nav-link" to='/profile' onClick={toggleNavbar}>Profile</Link>
             </NavItem>
+            
             <NavItem>
-              <Link className="nav-link" to='/login' onClick={toggleNavbar}>Log In/Log Out</Link>
+              <Link className="nav-link" to={loginLinkData.path} onClick={toggleNavbar}>{loginLinkData.text}</Link>
             </NavItem>
+            
             <NavItem>
               <Link className="nav-link" to='/maker-registration' onClick={toggleNavbar}>Apply to be a Maker</Link>
             </NavItem>
@@ -33,4 +49,4 @@ const NavbarCollapse = (props) => {
   );
 }
 
-export default NavbarCollapse;
+export default connect(mapStoreToProps)(NavbarCollapse);
