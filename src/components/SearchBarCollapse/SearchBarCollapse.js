@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchBarCollapse.css';
 import { Collapse, Button, CardBody, Card, Input, Label, Form, FormGroup } from 'reactstrap';
 
 const CollapseSearch = (props) => {
@@ -7,7 +8,7 @@ const CollapseSearch = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className="map-list-body">
       <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Search</Button>
       <Collapse isOpen={isOpen}>
         <Card>

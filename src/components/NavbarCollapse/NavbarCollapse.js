@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './NavbarCollapse.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 import LogOutButton from '../LogOutButton/LogOutButton';
