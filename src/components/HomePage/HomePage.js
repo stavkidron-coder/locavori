@@ -4,6 +4,7 @@ import { Container } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
+import MapView from './MapView/MapView';
 
 import './HomePage.css';
 
@@ -18,24 +19,29 @@ class HomePage extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
+        <Container>
 
-        {/* <SearchBar/> */}
-        <SearchBarCollapse/>
+          {/* <SearchBar/> */}
+          <SearchBarCollapse/>
 
 
-          <div>
-          <select>
-              <option>Filter</option>
-              <option>Drink</option>
-              <option>Fun Times</option>
-              <option>Other Cool things</option>
-              </select>
-            <button>Map</button>
-            <button>List</button>
-          </div>
+            <div>
+            <select>
+                <option>Filter</option>
+                <option>Drink</option>
+                <option>Fun Times</option>
+                <option>Other Cool things</option>
+                </select>
+              <button>Map</button>
+              <button>List</button>
+            </div>
 
-        </Container>
+          </Container>
+
+          <MapView/>
+
+        </div>
       
     );
   }
