@@ -5,6 +5,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
 import MapView from './MapView/MapView';
+import ListView from './ListView/ListView';
 
 import './HomePage.css';
 
@@ -40,6 +41,8 @@ class HomePage extends Component {
           </Container>
 
           <MapView/>
+
+          <ListView/>
 
         </div>
       
