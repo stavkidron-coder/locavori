@@ -1,0 +1,8 @@
+.list-body {
+    background-color: rgb(191, 191, 191);
+    min-height: 630px;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 100px;
+}

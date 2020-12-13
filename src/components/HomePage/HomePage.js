@@ -23,15 +23,21 @@ class HomePage extends Component {
       <div className="homePageBody">
         <Container>
           <Row>
+            <Col xs="7">
               <SearchBarCollapse/>
-          </Row>
-          
-          <Row>
-            <FilterDropdown/>
+            </Col>
+
+            <Col xs="5">
+              <FilterDropdown/>
+            </Col> 
+              
           </Row>
 
           <Row>
-            <MapListToggleBtn/>
+            <Col xs='12'>
+             <MapListToggleBtn/>
+            </Col>
+            
           </Row>
               
           </Container>
