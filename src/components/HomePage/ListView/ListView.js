@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './ListView.css';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import FilterDropdown from '../../FilterDropdown/FilterDropdown';
+import MakerCard from '../../MakerCard/MakerCard';
 
 class ListView extends Component {
 
@@ -13,7 +14,14 @@ class ListView extends Component {
           <FilterDropdown/>
         </div>
         
-        <h1 className="listContainer">LIST</h1>
+        {/* When there are actual makers in the DB, this is where we will map through them and create the cards */}
+        <MakerCard/>
+        <MakerCard/>
+        <MakerCard/>
+        <MakerCard/>
+        <MakerCard/>
+        <MakerCard/>
+
       </div>
     );
   }
