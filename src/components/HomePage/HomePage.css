@@ -80,7 +80,7 @@ Grid
 } */
 
 .homePageBody {
-  min-height: 780px;
+  max-height: 720px;
 }
 
 .filter {
@@ -97,5 +97,5 @@ Grid
   text-align: center;
   /* border: 1px solid black; */
   height: 52px;
-  padding: 100px;
+  /* padding: 100px; */
 }
