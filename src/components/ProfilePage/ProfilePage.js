@@ -17,7 +17,7 @@ class InfoPage extends React.Component {
       <>
       <div>
         <h1>Profile Page</h1>
-        <img src={`${process.env.PUBLIC_URL}/images/logo.png`} width = '200' />
+        <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Profile Pic" width = '200' />
         <br/>
 
         <p>User Name</p>
@@ -25,7 +25,7 @@ class InfoPage extends React.Component {
       <div>
         <h2>Favorites</h2>
         <div>
-          <img></img>
+          {/* <img></img> */}
           <button onClick={this.makerLink}>Makers Name</button>
           <p>Makers Description</p>
         </div>

@@ -80,7 +80,8 @@ Grid
 } */
 
 .homePageBody {
-  max-height: 720px;
+  min-height: 779px;
+  /* max-height: 720px; */
 }
 
 .filter {

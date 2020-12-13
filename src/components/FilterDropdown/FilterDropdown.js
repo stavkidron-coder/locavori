@@ -8,7 +8,7 @@ const CollapseSearch = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="map-list-body">
+    <div>
       <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Filter</Button>
       <Collapse isOpen={isOpen}>
         <Card>
@@ -25,13 +25,6 @@ const CollapseSearch = (props) => {
                     <Label check>
                         <Input type="checkbox" />{' '}
                           Delivery
-                    </Label>
-                </FormGroup>
-                
-                <FormGroup>
-                    <Label check>
-                        <Input type="checkbox" />{' '}
-                            Shipped to You
                     </Label>
                 </FormGroup>
                 
@@ -69,8 +62,13 @@ const CollapseSearch = (props) => {
                             P.O.C. Owned
                     </Label>
                 </FormGroup>
-
             </Form>
+            <Button
+              className="filterGoBtn"
+              color="primary"
+              onClick={toggle}>
+                Go
+            </Button>
           </CardBody>
         </Card>
       </Collapse>

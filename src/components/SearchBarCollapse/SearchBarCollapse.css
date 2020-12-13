@@ -1,3 +1,6 @@
 .map-list-body{
     margin-bottom: 1rem;
+    background-color: rgb(232, 232, 232);
+    padding: 10px;
+    border-radius: 5px;
 }

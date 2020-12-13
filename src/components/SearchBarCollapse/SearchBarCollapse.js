@@ -14,7 +14,6 @@ const CollapseSearch = (props) => {
         <Card>
           <CardBody>
             <Form>
-
                 <FormGroup>
                     <Label for="findInput">Find:</Label>
                     <Input type="select" name="select" id="findInput">
