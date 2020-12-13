@@ -5,7 +5,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
-import FilterDropdown from '../FilterDropdown/FilterDropdown';
 
 import './HomePage.css';
 
@@ -23,14 +22,9 @@ class HomePage extends Component {
       <div className="homePageBody">
         <Container>
           <Row>
-            <Col xs="7">
+            <Col>
               <SearchBarCollapse/>
             </Col>
-
-            <Col xs="5">
-              <FilterDropdown/>
-            </Col> 
-              
           </Row>
 
           <Row>
