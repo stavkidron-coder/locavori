@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './MapView.css';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 
 // Basic class component structure for React with default state
@@ -10,7 +11,7 @@ class MapView extends Component {
 
   render() {
     return (
-      <div>
+      <div className="map-body">
         <h1>MAP</h1>
       </div>
     );
