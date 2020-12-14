@@ -1,11 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } from 'reactstrap';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-class InfoPage extends React.Component {
+class ProfilePage extends React.Component {
 
 
 
@@ -14,25 +14,27 @@ class InfoPage extends React.Component {
   }
   render() {
     return (
-      <>
-      <div>
-        <h1>Profile Page</h1>
-        <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Profile Pic" width = '200' />
-        <br/>
+      <Container>
+        <Card>
+          <CardBody>
+            <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} width='200' />
 
-        <p>User Name</p>
-      </div>
-      <div>
-        <h2>Favorites</h2>
-        <div>
-          {/* <img></img> */}
-          <button onClick={this.makerLink}>Makers Name</button>
-          <p>Makers Description</p>
-        </div>
-      </div>
-      </>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">Profile Name</CardSubtitle>
+          </CardBody>
+
+          <CardBody>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">Favorites</CardSubtitle>
+            {/* Where we will loop to find favorites per User */}
+            <Button className="favoriteBtn">
+              Favorite
+            </Button>
+          </CardBody>
+        </Card>
+      </Container>
+
     )
   }
 }
 
-export default InfoPage;
+export default connect(mapStoreToProps)(ProfilePage);
+
