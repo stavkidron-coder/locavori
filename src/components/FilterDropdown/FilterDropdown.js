@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FilterDropdown.css';
 import { Collapse, Button, CardBody, Card, Input, Label, Form, FormGroup } from 'reactstrap';
 
 const CollapseSearch = (props) => {
@@ -7,41 +8,67 @@ const CollapseSearch = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="map-list-body">
+    <div>
       <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Filter</Button>
       <Collapse isOpen={isOpen}>
         <Card>
           <CardBody>
-            <Form>
+            <Form className="filterCardForm">
                 <FormGroup>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Option 1
+                            Pick-Up
                     </Label>
                 </FormGroup>
                 
                 <FormGroup>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Option 2
+                          Delivery
                     </Label>
                 </FormGroup>
                 
                 <FormGroup>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Option 3
+                            Nut-Free
                     </Label>
                 </FormGroup>
                 
                 <FormGroup>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Option 4
+                            Gluten-Free
                     </Label>
                 </FormGroup>
-
+                
+                <FormGroup>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            Vegan
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            Women Owned
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            P.O.C. Owned
+                    </Label>
+                </FormGroup>
             </Form>
+            <Button
+              className="filterGoBtn"
+              color="primary"
+              onClick={toggle}>
+                Go
+            </Button>
           </CardBody>
         </Card>
       </Collapse>

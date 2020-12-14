@@ -19,10 +19,6 @@ class ProfilePage extends React.Component {
           <CardBody>
             <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} width='200' />
 
-
-
-
-
             <CardSubtitle tag="h6" className="mb-2 text-muted">Profile Name</CardSubtitle>
           </CardBody>
 
@@ -35,9 +31,10 @@ class ProfilePage extends React.Component {
           </CardBody>
         </Card>
       </Container>
+
     )
   }
 }
 
 export default connect(mapStoreToProps)(ProfilePage);
-{/*  */ }
+
