@@ -23,16 +23,17 @@ const NavbarCollapse = (props) => {
 
   return (
     <div>
-      <Navbar color="faded" light>
+      <Navbar className="navBar" light>
         <NavbarBrand href="/" className="mr-auto">Locavori</NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+        <NavbarToggler onClick={toggleNavbar} className="mr-2 navToggle" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem className="nav-item">
-              <Link className="nav-link" to='/home' onClick={toggleNavbar} >Home</Link>
+              <Link className="nav-link" to='/home' onClick={toggleNavbar}>Home</Link>
             </NavItem>
 
             <NavItem>
+              {/* Will need to send over user ID to the profile page link which will determine whether or not they are a maker */}
               <Link className="nav-link" to='/profile' onClick={toggleNavbar}>Profile</Link>
             </NavItem>
             
