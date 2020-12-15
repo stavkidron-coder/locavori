@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { Card, CardBody, CardSubtitle, Container, Button } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import MakerProfile from '../MakerProfile/MakerProfile';
+import UserProfile from '../UserPage/UserPage';
 
 class ProfilePage extends React.Component {
 
@@ -14,23 +15,12 @@ class ProfilePage extends React.Component {
   }
   render() {
     return (
-      <Container>
-        <Card>
-          <CardBody>
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} width='200' alt="logo"/>
 
-            <CardSubtitle tag="h6" className="mb-2 text-muted">Profile Name</CardSubtitle>
-          </CardBody>
-
-          <CardBody>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">Favorites</CardSubtitle>
-            {/* Where we will loop to find favorites per User */}
-            <Button className="favoriteBtn">
-              Favorite
-            </Button>
-          </CardBody>
-        </Card>
-      </Container>
+      
+        <>
+        <MakerProfile/>
+        <UserProfile/>
+        </>
 
     )
   }

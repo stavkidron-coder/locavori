@@ -15,7 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import ProfilePage from '../ProfilePage/ProfilePage';
+import ProfilePage from '../UserProfile/UserProfile';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegisterPage/UserRegisterPage';
@@ -24,6 +24,7 @@ import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
 import AdminMakersPage from '../Admin/AdminMakers/AdminMakers';
 import AdminPARPage from '../Admin/AdminPAR/AdminPAR';
 import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
+import MakerPage from '../MakerProfile/MakerProfile';
 
 import './App.css';
 
@@ -127,15 +128,14 @@ class App extends Component {
               component={UserRegisterPage}
               authRedirect="/home"
             />
-            {/* <ProtectedRoute
-              with authRedirect:
-              - if logged in, redirects to "/user"
-              - else shows LandingPage at "/home"
+            <ProtectedRoute
+              // with authRedirect:
+              // - if logged in, redirects to "/user"
+              // - else shows LandingPage at "/home"
               exact
-              path="/home"
-              component={LandingPage}
-              authRedirect="/user"
-            /> */}
+              path="/maker"
+              component={MakerPage}
+            />
 
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
