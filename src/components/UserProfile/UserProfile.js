@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
@@ -17,7 +17,7 @@ class UserProfilePage extends React.Component {
       <Container>
         <Card>
           <CardBody>
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} width='200' />
+            <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} width='200' alt=""/>
             
             <CardSubtitle tag="h6" className="mb-2 text-muted">Profile Name</CardSubtitle>
           </CardBody>
