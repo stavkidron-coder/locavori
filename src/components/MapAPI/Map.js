@@ -1,7 +1,7 @@
 import React from 'react';
 import {GoogleMap,
 useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
-import { formatRelative } from "date-fns";
+// import { formatRelative } from "date-fns";
 
 // Styles Imports
 import './Map.css';
@@ -12,7 +12,7 @@ const libraries = ["places"];
 // Map Container
 const mapContainerStyle = {
   width: "100%",
-  height: "75vh"
+  height: "58vh"
 }
 
 // Location of Minneapolis MN,
@@ -69,6 +69,7 @@ function LocalMap() {
 
   return (
       <div className="mapAPI">
+        
       <Locate panTo={panTo} />
         <div className="map">
           <GoogleMap 

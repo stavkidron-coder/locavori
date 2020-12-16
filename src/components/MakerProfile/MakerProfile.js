@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
@@ -12,7 +12,7 @@ class MakerProfilePage extends React.Component {
       <Container>
         <Card>
           <CardBody>
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='150' />
+            <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='150' alt=""/>
             <Card body>
         <CardTitle tag="h5">Name</CardTitle>
         <CardText>City, State</CardText>
@@ -32,9 +32,9 @@ class MakerProfilePage extends React.Component {
         </Card>
         <Card className="Bread">
             <CardBody>
-        <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' />
-        <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' />
-        <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' />
+        <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' alt=""/>
+        <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' alt=""/>
+        <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' alt=""/>
             </CardBody>
             <Button>See My Products</Button>
         </Card>
