@@ -32,17 +32,49 @@ class MakerRegisterBusinessTab extends Component {
                 <Input type="text" placeholder="This will be displayed"></Input>
               </Col>
               <Col>
+                <Label>Owner's Last Name*</Label>
+                <Input type="text" placeholder="This will be displayed"></Input>
+              </Col>
+            
+            </Row>
+            <Row>
+              <Col>
                 <Label>Owner's Email Address*</Label>
                 <Input type="text" placeholder="This will not be public"></Input>
               </Col>
-            </Row>
-            <Row>
               <Col>
                 <Label>Owner's Contact Phone*</Label>
                 <Input type="text" placeholder="This will not be public"></Input>
               </Col>
               <Col>
                 <Label>Alternative Phone</Label>
+                <Input type="text" placeholder="This will not be public"></Input>
+              </Col>
+            </Row>
+          </FormGroup>
+
+        <br></br>
+          <FormGroup>
+            <Row>
+              <Col>
+                <Label>Business Address</Label>
+                <Input type="text" placeholder="This will not be public"></Input>
+              </Col>
+              <Col>
+                <Label>Suite #</Label>
+                <Input type="text" placeholder="This will not be public"></Input>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Label>City*</Label>
+                <Input type="text" placeholder="This will not be public"></Input>
+              </Col>
+              <Col>
+               <StateDropdown/>
+              </Col>
+              <Col>
+                <Label>Zipcode*</Label>
                 <Input type="text" placeholder="This will not be public"></Input>
               </Col>
             </Row>
@@ -81,11 +113,6 @@ class MakerRegisterBusinessTab extends Component {
           <FormGroup>
             <Row>
               <Col>
-                <Input type="checkbox"></Input><Label>Woman Owned</Label>
-                <br></br>
-                <Input type="checkbox"></Input><Label>P.O.C. Owned</Label>
-              </Col>
-              <Col>
                 <Label>Website</Label>
                 <Input type="text" placeholder="URl"></Input>
               </Col>
@@ -96,6 +123,10 @@ class MakerRegisterBusinessTab extends Component {
               <Col>
                 <Label>Instagram</Label>
                 <Input type="text" placeholder="URL"></Input>
+              </Col>
+              <Col>
+                <Label>Public Email Address</Label>
+                <Input type="text" placeholder=""></Input>
               </Col>
             </Row>
           </FormGroup>
