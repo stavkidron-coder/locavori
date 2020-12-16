@@ -19,8 +19,6 @@ class MakerRegisterForm extends Component {
       
         <Form>
           <MakerRegisterTabs/>
-          
-
           <Button onClick={this.submitBtn}>Submit Application</Button>
         </Form>
       </div>
