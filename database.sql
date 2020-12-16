@@ -102,7 +102,7 @@ CREATE TABLE "tbl_profile" (
 	"first_name" varchar(50),
 	"last_name" varchar(50),
 	"email" varchar(50) NOT NULL UNIQUE,
-	"password" varchar(50) NOT NULL,
+	"password" varchar(1000) NOT NULL,
 	"date_stamp" time DEFAULT NULL,
 	CONSTRAINT "tbl_profile_pk" PRIMARY KEY ("id")
 ) WITH (
