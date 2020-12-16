@@ -5,17 +5,17 @@ import { withRouter } from "react-router";
 import { FormGroup, Input } from 'reactstrap';
 
 
-class MakerRegisterStoryTab extends Component {
+class Maker extends Component {
 
     render() {
         return (
             <>
 
-                <h1>Pending Approval Request</h1>
+                <h1>Maker</h1>
             </>
         );
     }
 }
 
 
-export default withRouter(connect(mapStoreToProps)(MakerRegisterStoryTab));
+export default withRouter(connect(mapStoreToProps)(Maker));

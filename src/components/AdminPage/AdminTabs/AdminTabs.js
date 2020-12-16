@@ -21,7 +21,7 @@ const AdminTabs = (props) => {
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
           >
-            Business
+            Makers
           </NavLink>
         </NavItem>
         <NavItem>
@@ -29,7 +29,7 @@ const AdminTabs = (props) => {
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >
-            Products
+            Pending Approval Requests
           </NavLink>
         </NavItem>        
       </Nav>

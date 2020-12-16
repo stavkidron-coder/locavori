@@ -27,6 +27,7 @@ import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
 import MakerPage from '../MakerProfile/MakerProfile';
 
 import './App.css';
+import AdminPage from '../AdminPage/AdminPage';
 
 class App extends Component {
   componentDidMount() {
@@ -77,8 +78,8 @@ class App extends Component {
             <Route
               // shows HomePage at all times (logged in or not)
               exact
-              path="/admin-makers"
-              component={AdminMakersPage}
+              path="/adminPage"
+              component={AdminPage}
             />
             
             {/* NEEDS TO BE SECURED */}

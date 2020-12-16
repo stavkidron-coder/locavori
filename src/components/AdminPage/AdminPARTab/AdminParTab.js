@@ -10,9 +10,7 @@ class AdminPARTab extends Component {
   render() {
     return (
         <>
-
-                <h1>Makers</h1>
-                    
+                <h1>Approval Request Pending</h1>                    
         </>
     );
   }
