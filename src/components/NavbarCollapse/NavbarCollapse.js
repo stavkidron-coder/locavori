@@ -36,7 +36,7 @@ const NavbarCollapse = (props) => {
               {/* Will need to send over user ID to the profile page link which will determine whether or not they are a maker */}
               {props.store.user.id && (
                 <>
-                  <Link className="nav-link" to='/profile' onClick={toggleNavbar}>Profile</Link>
+                  <Link className="nav-link" to='/profile' onClick={toggleNavbar}>Account</Link>
                 </>
               )} 
             </NavItem>
