@@ -9,16 +9,56 @@ class ProductInfo extends Component {
     render(){
         return(
             <>
-            <h4>Product Information</h4>
+            <h4>Availability</h4>
                 <FormGroup>
-                    <h6>What products do you offer?</h6>
-                    <p>Select all that apply</p>
                     <Col>
-                        <Input type="radio"></Input><Label>Food</Label>
+                        <p>Is your product available year round or limited availability?*</p>
+                        <Input type="radio"></Input>
+                            <Label>Available All Year</Label>
                         <br></br>
-                        <Input type="radio"></Input><Label>Beverage</Label>
+                        <Input type="radio"></Input>
+                            <Label>Limited Availability</Label>
                         <br></br>
-                        <Input type="radio"></Input><Label>Other tdb by Katie/Group</Label>
+                    </Col>
+                </FormGroup>
+
+            <h4>Product Types</h4>
+                <FormGroup>
+                    <Col>
+                        <p>Do you have any prepared/packaged, shelf-stable, or refrigerated food product types that apply to your offerings?*</p>
+                        <Input type="radio"></Input>
+                            <Label>No</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Yes</Label>
+                            {/* lead to another component with list */}
+                        <br></br>
+                    </Col>
+                </FormGroup>
+
+                <FormGroup>
+                    <Col>
+                        <p>Do you have any fresh food product types that you grow/raise?*</p>
+                        <Input type="radio"></Input>
+                            <Label>No</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Yes</Label>
+                            {/* lead to another component with list */}
+                        <br></br>
+                    </Col>
+                </FormGroup>
+
+                <FormGroup>
+                    <Col>
+                        <p>Do you have any beverage product types that apply to your offerings?*</p>
+                        <Input type="radio"></Input>
+                            <Label>No</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Yes</Label>
+                            {/* lead to another component with list */}
+                        <br></br>
                     </Col>
                 </FormGroup>
 
@@ -27,13 +67,80 @@ class ProductInfo extends Component {
                     <h6>Which categories do your products fit into?</h6>
                     <p>Select all that apply</p>
                     <Col>
-                        <Input type="radio"></Input><Label>Tbd by Katie</Label>
+                        <Input type="radio"></Input>
+                            <Label>Snack</Label>
                         <br></br>
-                        <Input type="radio"></Input><Label>Tbd by Katie</Label>
+                        <Input type="radio"></Input>
+                            <Label>Sweet Treat</Label>
                         <br></br>
-                        <Input type="radio"></Input><Label>Tbd by Katie</Label>
+                        <Input type="radio"></Input>
+                            <Label>Salty/Savory Treat</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Healthy</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Gluten Free</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Vegan</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Dairy Free</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Organic</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Majority of your product is locally grown (grown within your state or neighboring state)</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Fair Trade Sourced</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Farmer/Grower made</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Small Batch</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Handmade</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Non GMO</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>No Trans Fats</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>No High Fructose Corn Syrup</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Nitrate Free</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Award Winning</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Keto/Low Carb</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Nut Free</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Kosher</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Low Sodium</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Gift</Label>
+                        <br></br>
+                        <Input type="radio"></Input>
+                            <Label>Other</Label>
                     </Col>
                 </FormGroup>
+
             </>
         )
     }

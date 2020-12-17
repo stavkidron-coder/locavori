@@ -4,6 +4,7 @@ import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
 import ProductDistro from './ProductDistro/ProductDistro';
+import ProductInfo from './ProductInfo/ProductInfo';
 
 
 class MakerRegisterProductsTab extends Component {
@@ -12,6 +13,7 @@ class MakerRegisterProductsTab extends Component {
     return (
         <>
         <ProductDistro/>
+        <ProductInfo/>
         
         
 
