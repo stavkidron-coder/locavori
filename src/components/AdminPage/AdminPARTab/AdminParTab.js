@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import {  FormGroup, Input } from 'reactstrap';
+import Navbar from './PARNavBar';
 
 
 class AdminPARTab extends Component {
@@ -10,7 +10,8 @@ class AdminPARTab extends Component {
   render() {
     return (
         <>
-                <h1>Approval Request Pending</h1>                    
+                <h1>Approval Request Pending</h1>  
+                <Navbar/>         
         </>
     );
   }
