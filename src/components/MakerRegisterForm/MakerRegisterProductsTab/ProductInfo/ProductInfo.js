@@ -140,6 +140,19 @@ class ProductInfo extends Component {
                             <Label>Other</Label>
                     </Col>
                 </FormGroup>
+                <FormGroup>
+                    <h6>What are a few of your specialties?</h6>
+                        <p>Flavors, best-sellers, etc.</p>
+                            <Input type="text" placeholder="This will be displayed"></Input>
+
+                    <h6>List any related awards you have won or been a finalist for:</h6>
+                        <p>Separate each item with a comma</p>
+                            <Input type="text" placeholder="For example: MN State Fair grand champion"></Input>
+
+                    <h6>What makes your products unique?</h6>
+                        <p>We love to hear this!</p>
+                            <Input type="text" placeholder="This will be displayed"></Input>
+                </FormGroup>
 
             </>
         )
