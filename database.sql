@@ -1,21 +1,4 @@
-
--- USER is a reserved keyword with Postgres
--- You must use double quotes in every query that user is in:
--- ex. SELECT * FROM "user";
--- Otherwise you will have errors!
-
--- DATABASE NAME: locavori
-
-
--- CREATE TABLE "user" (
---     "id" SERIAL PRIMARY KEY,
---     "username" VARCHAR (80) UNIQUE NOT NULL,
---     "password" VARCHAR (1000) NOT NULL
--- );
-
-
--- Base creates 5 table, 3 normal table, 2 junction tables
-
+--Maker/Artisan Table
 CREATE TABLE "tbl_artisans" (
 	"id" serial NOT NULL,
 	"profile_id" integer NOT NULL,
@@ -88,29 +71,30 @@ CREATE TABLE "tbl_artisans" (
 	"sales_sheet" varchar(200),
 	"logo" varchar(1200),
 	"status" varchar(30),
-	"dateStampUTC" time,
-	"modifiedUTC" time,
+	"dateStampUTC" timestamp default current_timestamp,
+	"modifiedUTC" time default current_timestamp,
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
 
 
-
+--Localvore table
 CREATE TABLE "tbl_profile" (
 	"id" serial NOT NULL,
 	"first_name" varchar(50),
 	"last_name" varchar(50),
+	"birth_date" varchar (50),
 	"email" varchar(50) NOT NULL UNIQUE,
 	"password" varchar(1000) NOT NULL,
-	"date_stamp" time DEFAULT NULL,
+	"date_stamp" timestamp default current_timestamp,
 	CONSTRAINT "tbl_profile_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
 
 
-
+-- Junction table to store a locavore's favorite artisans
 CREATE TABLE "tbl_favorites" (
 	"id" serial NOT NULL,
 	"profile_id" integer NOT NULL,
@@ -121,7 +105,7 @@ CREATE TABLE "tbl_favorites" (
 );
 
 
-
+-- Junction table to relate types to an artisans
 CREATE TABLE "artisans_type" (
 	"id" serial NOT NULL,
 	"artisans_id" integer NOT NULL,
@@ -132,7 +116,7 @@ CREATE TABLE "artisans_type" (
 );
 
 
-
+-- List of all types and filterable data points
 CREATE TABLE "tbl_type" (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL,
@@ -142,22 +126,14 @@ CREATE TABLE "tbl_type" (
 );
 
 
--- Alters Set up Unique reqirements and Foreign Keys
+-- Alters to bind tables with foreign keys
 ALTER TABLE "tbl_artisans" ADD CONSTRAINT "tbl_artisans_fk0" FOREIGN KEY ("profile_id") REFERENCES "tbl_profile"("id");
-
 ALTER TABLE "tbl_favorites" ADD CONSTRAINT "tbl_favorites_fk0" FOREIGN KEY ("profile_id") REFERENCES "tbl_profile"("id");
 ALTER TABLE "tbl_favorites" ADD CONSTRAINT "tbl_favorites_fk1" FOREIGN KEY ("maker_id") REFERENCES "tbl_artisans"("id");
-
 ALTER TABLE "artisans_type" ADD CONSTRAINT "artisans_type_fk0" FOREIGN KEY ("artisans_id") REFERENCES "tbl_artisans"("id");
 ALTER TABLE "artisans_type" ADD CONSTRAINT "artisans_type_fk1" FOREIGN KEY ("type_id") REFERENCES "tbl_type"("id");
 
--- Currently a Get all artisans and their types without filtering
-SELECT * FROM "tbl_artisans"
-JOIN "artisan_type" ON "tbl_artisans"."id" = "artisan_type"."artisan_id"
-JOIN "product_type" ON "product_type"."id" = "artisan_type"."type_id";
-
-
--- Inserts all types of categories, product types and filter materials
+-- All Types
 INSERT INTO "public"."tbl_type"("id","name")
 VALUES
 (1,E'Farmer-Grower'),
@@ -271,3 +247,27 @@ VALUES
 (109,E'Kosher'),
 (110,E'Low Sodium'),
 (111,E'Gift');
+
+-- CrybabyCraig's Hot Sauce Insert
+INSERT INTO "public"."tbl_profile"("id","first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(1,E'Craig',E'CryBaby',E'1994-09-12',E'CrybabyCraigs@gmail.com',E'ship',E'2020-12-17 10:49:42.28384');
+INSERT INTO "public"."tbl_artisans"("id","profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","status","dateStampUTC","modifiedUTC")
+VALUES
+(1,1,E'Craig',E'Crybaby Craigs',E'Craig',E'Kaiser',E'craig@crybabycraigs.gmail',E'502-202-2342',E'542-243-2938',E'1222 2nd Street Northeast',NULL,E'Mineeapolis',E'MN',E'55413',E'USA',E'1222 2nd Street NorthEast',NULL,E'Minneapolis',E'MN',E'55413',E'USA',E'45.00075',E'-93.26635',E'http://www.crybabycraigs.com/',E'https://www.facebook.com/CryBabyCraigs',E'NULL',E'craig@crybabycraigs.com',E'NULL',E'NULL',E'NULL',E'NULL',E'Condoments',E'NULL',E'NULL',E'NULL',E'NULL',NULL,NULL,NULL,E'HOT SAUCE FOR DAYS HOMES',E'YES',E'HOT SAUCE',E'NULL',E'YES',E'NULL',E'NO',E'NULL',E'NULL',E'NULL',E'NULL',E'NULL',E'HOT SAUCE',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461266074787-IL30S1SS6F3NWHZDUN1R/ke17ZwdGBToddI8pDm48kHDdJ77rKG8qIHjY7NDr201Zw-zPPgdn4jUwVcJE1ZvWgCjmTad1QpYCGph9EV4QZUJFbgE-7XRK3dMEBRBhUpw3WfV_5oenwKY2Z8m_4RdXj7gVi-UEKdRXfIwKAK-hxDObU5caQUqF4ocJnIKDCFg/cbc1.jpg?format=1000w',E'http://www.crybabycraigs.com/',E'HOT SAUCE',E'https://static1.squarespace.com/static/57110bf1b6aa608f4e1ed91c/5711349940261d0c19d2fa45/5dbc9a2c4c3d7f546463c763/1582148038370/?format=1500w',E'http://www.crybabycraigs.com/',E'HOT SAUCE',E'http://www.crybabycraigs.com/',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'Sure',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'NULL',E'https://i.ytimg.com/vi/HlE5BlUjgNQ/mqdefault.jpg',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'https://pbs.twimg.com/profile_images/496697943261331456/czKhsTPX_400x400.png',E'Nothanks!',E'Tons',E'https://stmedia.stimg.co/ctyp-022520-MN-Spice-Cry-Baby-Craigs-hotsauce.jpg?w=700',E'https://pbs.twimg.com/profile_images/496697943261331456/czKhsTPX_400x400.png',E'active',E'2020-12-17 11:02:35.6665',E'11:02:35.6665');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(1,1,14),
+(2,1,16),
+(3,1,19),
+(4,1,37),
+(5,1,11),
+(6,1,97),
+(7,1,102);
+
+-- GET QUERIES
+
+-- GETS ALL ARTISANS AND ALL OF THEIR CATEGORIES
+SELECT * FROM "tbl_artisans"
+JOIN "artisans_type" ON "tbl_artisans"."id" = "artisans_type"."artisans_id"
+JOIN "tbl_type" ON "tbl_type"."id" = "artisans_type"."type_id";
