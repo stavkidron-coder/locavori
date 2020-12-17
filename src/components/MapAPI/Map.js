@@ -1,6 +1,7 @@
 import React from 'react';
 import {GoogleMap,
 useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
+import FilterDropdown from '../FilterDropdown/FilterDropdown';
 // import { formatRelative } from "date-fns";
 
 // Styles Imports
@@ -113,6 +114,9 @@ function LocalMap() {
               </div>
             </InfoWindow>
           ) : null}
+          <div className="filter">
+            <FilterDropdown/>
+          </div>
           </GoogleMap>
         </div>
       </div>
