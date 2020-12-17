@@ -1,0 +1,6 @@
+.loginBody {
+    background-image: url('../../TestImages/hands.jpg');
+    background-size: cover;
+    min-height: 88vh;
+    padding: 100px;
+}

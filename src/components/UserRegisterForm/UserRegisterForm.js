@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import { Button, Form, FormGroup, Label, Input, FormText  } from 'reactstrap';
 
 class RegisterForm extends Component {
   state = {
@@ -34,7 +35,7 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <form className="formPanel" onSubmit={this.registerUser}>
+      <Form className="formPanel" onSubmit={this.registerUser}>
         <h2>Register as User</h2>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
@@ -104,7 +105,7 @@ class RegisterForm extends Component {
         <div>
           <input className="btn" type="submit" name="submit" value="Register" />
         </div>
-      </form>
+      </Form>
     );
   }
 }
