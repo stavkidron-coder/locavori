@@ -9,14 +9,9 @@ import MakerRegisterTabs from './MakerRegisterTabs/MakerRegisterTabs';
 class MakerRegisterForm extends Component {
 
 
- 
-
-
-
   render() {
     return (
       <div>
-      
         <Form>
           <MakerRegisterTabs/>
           <Button onClick={this.submitBtn}>Submit Application</Button>

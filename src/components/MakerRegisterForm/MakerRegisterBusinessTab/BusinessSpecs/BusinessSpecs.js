@@ -11,7 +11,7 @@ class BusinessSpecs extends Component {
     render(){
         return(
 
-            <>
+          <>
             <br></br>
             <h4>Web Presence</h4>
             
@@ -36,8 +36,8 @@ class BusinessSpecs extends Component {
                 </Row>
               </FormGroup>
     
-              <br></br>
-              <h4>Business License</h4>
+            <br></br>
+            <h4>Business License</h4>
               <FormGroup>
                 <p>Do you have a business food/liquor license that allows you to sell to the public?*</p>
                   <Row>
@@ -61,15 +61,15 @@ class BusinessSpecs extends Component {
                     </Col>
                   </Row>
                   <Row>
-                  <Col>
-                    <Label>What State/Province is your license issued from and what is your license # and type of license?</Label>
-                      <Input type="text" placeholder=""></Input>
-                  </Col>
+                    <Col>
+                      <Label>What State/Province is your license issued from and what is your license # and type of license?</Label>
+                        <Input type="text" placeholder=""></Input>
+                    </Col>
                   </Row>
               </FormGroup>
     
-              <br></br>
-              <h4>Type of Business</h4>
+            <br></br>
+            <h4>Type of Business</h4>
               <FormGroup>
                 <p>What type of business describes yours?*</p>
                 <p>select all that apply</p>
@@ -102,10 +102,16 @@ class BusinessSpecs extends Component {
                       <Label>Apiary (bees)</Label>
                       <br></br>
                     <Input type="radio"></Input>
+                      <Label>Women Owned</Label>
+                      <br></br>
+                    <Input type="radio"></Input>
+                      <Label>P.O.C. Owned</Label>
+                      <br></br>
+                    <Input type="radio"></Input>
                       <Label>Other</Label>
                   </Col>
               </FormGroup>
-              </>
+            </>
         )
     }
 }

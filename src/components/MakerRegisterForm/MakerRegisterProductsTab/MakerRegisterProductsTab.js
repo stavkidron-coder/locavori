@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import ProductDistro from './ProductDistro/ProductDistro';
 
 
 class MakerRegisterProductsTab extends Component {
@@ -10,32 +11,9 @@ class MakerRegisterProductsTab extends Component {
   render() {
     return (
         <>
-        {/* Products Tab */}
-        <h4>Product Information</h4>
-          <FormGroup>
-            <h6>What products do you offer?</h6>
-            <p>Select all that apply</p>
-              <Col>
-                <Input type="checkbox"></Input><Label>Food</Label>
-                <br></br>
-                <Input type="checkbox"></Input><Label>Beverage</Label>
-                <br></br>
-                <Input type="checkbox"></Input><Label>Other tdb by Katie/Group</Label>
-              </Col>
-          </FormGroup>
-
-        <br></br>
-          <FormGroup>
-            <h6>Which categories do your products fit into?</h6>
-            <p>Select all that apply</p>
-              <Col>
-                <Input type="checkbox"></Input><Label>Tbd by Katie</Label>
-                <br></br>
-                <Input type="checkbox"></Input><Label>Tbd by Katie</Label>
-                <br></br>
-                <Input type="checkbox"></Input><Label>Tbd by Katie</Label>
-              </Col>
-          </FormGroup>
+        <ProductDistro/>
+        
+        
 
         <br></br>
         <h4>Types of Products</h4>
