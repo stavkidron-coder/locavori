@@ -16,11 +16,6 @@ class ListView extends Component {
         
         {/* When there are actual makers in the DB, this is where we will map through them and create the cards */}
         <MakerCard/>
-        <MakerCard/>
-        <MakerCard/>
-        <MakerCard/>
-        <MakerCard/>
-        <MakerCard/>
 
       </div>
     );
