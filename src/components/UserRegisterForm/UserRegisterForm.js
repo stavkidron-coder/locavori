@@ -4,9 +4,11 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class RegisterForm extends Component {
   state = {
-    username: '',
+    firstName: '',
+    lastName: '',
+    birthDate: '',
+    email: '',
     password: '',
-    maker_status: false
   };
 
   registerUser = (event) => {
@@ -15,9 +17,11 @@ class RegisterForm extends Component {
     this.props.dispatch({
       type: 'REGISTER',
       payload: {
-        username: this.state.username,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        birthDate: this.state.birthDate,
+        email: this.state.email,
         password: this.state.password,
-        maker_status: this.state.maker_status
       },
     });
   }; // end registerUser
@@ -38,14 +42,50 @@ class RegisterForm extends Component {
           </h3>
         )}
         <div>
-          <label htmlFor="username">
-            Username:
+          <label htmlFor="firstName">
+            First Name:
             <input
               type="text"
-              name="username"
-              value={this.state.username}
+              name="firstName"
+              value={this.state.firstName}
               required
-              onChange={this.handleInputChangeFor('username')}
+              onChange={this.handleInputChangeFor('firstName')}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="lastName">
+            Last Name:
+            <input
+              type="text"
+              name="lastName"
+              value={this.state.lastName}
+              required
+              onChange={this.handleInputChangeFor('lastName')}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="birthDate">
+            Birth Date:
+            <input
+              type="date"
+              name="birthDate"
+              value={this.state.birthDate}
+              required
+              onChange={this.handleInputChangeFor('birthDate')}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="email">
+            Email:
+            <input
+              type="email"
+              name="email"
+              value={this.state.email}
+              required
+              onChange={this.handleInputChangeFor('email')}
             />
           </label>
         </div>
