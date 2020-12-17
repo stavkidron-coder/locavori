@@ -4,3 +4,9 @@
     min-height: 88vh;
     padding: 100px;
 }
+
+.loginForm {
+    background-color: rgba(27, 38, 43, 0.934) !important;
+    color: rgb(245, 243, 236);
+    border-radius: 10px !important;
+}

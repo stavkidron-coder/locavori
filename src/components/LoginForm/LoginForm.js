@@ -34,7 +34,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Form className="formPanel" onSubmit={this.login}>
+      <Form className="formPanel loginForm" onSubmit={this.login}>
         <h2>Login</h2>
         {this.props.store.errors.loginMessage && (
           <h3 className="alert" role="alert">
@@ -53,9 +53,6 @@ class LoginForm extends Component {
               onChange={this.handleInputChangeFor('email')}
             />
           </Label>
-        </FormGroup>
-
-        <FormGroup>
           <Label htmlFor="password">
             Password:
             <Input
@@ -66,13 +63,14 @@ class LoginForm extends Component {
               onChange={this.handleInputChangeFor('password')}
             />
           </Label>
-        </FormGroup>
+          </FormGroup>
 
           <Button
             onClick={this.login}
             color="primary">
             Log In
           </Button>
+
           
           <Button
             color="link"

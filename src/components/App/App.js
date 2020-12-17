@@ -18,7 +18,7 @@ import UserPage from '../UserPage/UserPage';
 import ProfilePage from '../UserProfile/UserProfile';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
-import UserRegisterPage from '../UserRegisterPage/UserRegisterPage';
+import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
 import AdminMakersPage from '../Admin/AdminMakers/AdminMakers';
