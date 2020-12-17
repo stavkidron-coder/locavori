@@ -39,7 +39,7 @@ class BusinessSpecs extends Component {
             <br></br>
             <h4>Business License</h4>
               <FormGroup>
-                <p>Do you have a business food/liquor license that allows you to sell to the public?*</p>
+                <Label>Do you have a business food/liquor license that allows you to sell to the public?*</Label>
                   <Row>
                     <Col>
                       <Input type="radio"></Input>
@@ -71,45 +71,49 @@ class BusinessSpecs extends Component {
             <br></br>
             <h4>Type of Business</h4>
               <FormGroup>
-                <p>What type of business describes yours?*</p>
+                <Label>What type of business describes yours?*</Label>
                 <p>select all that apply</p>
-                  <Col>
-                    <Input type="radio"></Input>
-                      <Label>Farmer-Grower</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Forager</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Maker</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Distiller</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Brewer</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Winemaker</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Cidery</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Roaster</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Apiary (bees)</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Women Owned</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>P.O.C. Owned</Label>
-                      <br></br>
-                    <Input type="radio"></Input>
-                      <Label>Other</Label>
-                  </Col>
+                  <Row>
+                    <Col>
+                      <Input type="radio"></Input>
+                        <Label>Farmer-Grower</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Forager</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Maker</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Distiller</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Brewer</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Winemaker</Label>
+                    </Col>
+                    <Col>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Cidery</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Roaster</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Apiary (bees)</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Women Owned</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>P.O.C. Owned</Label>
+                        <br></br>
+                      <Input type="radio"></Input>
+                        <Label>Other</Label>
+                    </Col>
+                  </Row>
               </FormGroup>
             </>
         )
