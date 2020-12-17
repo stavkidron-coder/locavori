@@ -13,7 +13,6 @@ class MakerRegisterBusinessTab extends Component {
     return (
 
       <>
-         {/* Business Tab */}
         <BusinessContact/>
         <BusinessSpecs/>
       </>

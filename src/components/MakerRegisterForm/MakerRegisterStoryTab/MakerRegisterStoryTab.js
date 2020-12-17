@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import {  FormGroup, Input } from 'reactstrap';
+import {  Col, Row, FormGroup, Label, Input } from 'reactstrap';
+
 
 
 class MakerRegisterStoryTab extends Component {
@@ -13,10 +14,22 @@ class MakerRegisterStoryTab extends Component {
             {/* my story tab */}
                 <h4>My Story</h4>
                     <FormGroup>
-                        <p>Story/Bio for your Maker Profile</p>
+                      <Col>
+                          <Label>Maker Profile Picture</Label>
+                          <Input type="text" placeholder="Profile Image URL"></Input>
+                      </Col>
+                      <Col>
+                        <Label>Story/Bio for your Maker Profile</Label>
                             <Input type="text" placeholder=""></Input>
-
-                                {/* UX presentation has spaces for other photos and captions here...where will they go if we keep them? */}
+                      </Col>
+                      <Col>
+                        <Label>Do you have a "give-back component to your business? (i.e. support a cause or nonprofit, etc)</Label>
+                          <Input type="text" placeholder=""></Input>
+                      </Col>
+                      <Col>
+                        <Label>Is there anything else you would like us to know?</Label>
+                          <Input type="text" placeholder=""></Input>
+                      </Col>
                     </FormGroup>
         </>
     );
