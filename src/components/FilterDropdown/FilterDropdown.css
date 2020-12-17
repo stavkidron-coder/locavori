@@ -5,3 +5,8 @@
 .filterGoBtn {
     width: 100%;
 }
+
+.filterBody {
+    height: 300px;
+    overflow: scroll;
+}

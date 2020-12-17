@@ -14,9 +14,6 @@ class MapView extends Component {
   render() {
     return (
       <div className="map-body">
-        <div className="filter">
-          <FilterDropdown/>
-        </div>
         <LocalMap />
         {/* <h1 className="mapContainer">MAP</h1> */}
       </div>
