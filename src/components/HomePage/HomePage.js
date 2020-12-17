@@ -17,6 +17,10 @@ class HomePage extends Component {
     this.props.history.push('/login');
   };
 
+  componentDidMount = () => {
+    this.props.dispatch({type: 'GET_MAKERS'});
+  }
+
   render() {
     return (
       <div className="homePageBody">
@@ -35,6 +39,7 @@ class HomePage extends Component {
           </Row>
               
           </Container>
+
         </div>
     );
   }
