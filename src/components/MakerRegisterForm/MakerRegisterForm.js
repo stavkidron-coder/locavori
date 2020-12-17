@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import { Button, Form } from 'reactstrap';
+import './MakerRegisterForm.css' 
 import MakerRegisterTabs from './MakerRegisterTabs/MakerRegisterTabs';
 
 
