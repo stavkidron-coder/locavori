@@ -154,15 +154,19 @@ function Locate({ panTo }) {
 function Search({panTo}) {
   const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} =usePlacesAutocomplete({
     requestOptions: {
+      // Suggest locations near this Lat and Lng point (Minneapolis MN)
       location: {lat: () => 44.977753, lng: () => -93.265015 },
+      // Suggests locations with defined radius below off of the defined point above
       radius: 100 * 1000,
     }
   })
 
   return <div className='search'>
     <Combobox onSelect={async (address) => {
+      // After a suggestion is chosen will clear out the suggestion box
       setValue(address, false);
       clearSuggestions();
+      // A try to that takes the address selected it, gets its info with getGeoCode, after thats complete, take the Lat and Lng with getLatLng to call the pantTo function passed in form props
       try{
         const results = await getGeocode({address});
         const {lat, lng} = await getLatLng(results[0]);
@@ -171,7 +175,6 @@ function Search({panTo}) {
       }catch(error) {
         console.log("ERROR!!!")
       }
-      console.log(address);
       }}>
       <ComboboxInput 
       value={value} 
