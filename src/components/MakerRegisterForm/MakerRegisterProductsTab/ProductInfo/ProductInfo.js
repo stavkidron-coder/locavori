@@ -5,6 +5,7 @@ import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
 import ProductTypePrepared from './ProductTypePrepared/ProductTypePrepared';
 import ProductTypeFresh from './ProductTypeFresh/ProductTypeFresh';
+import ProductTypeBeverage from './ProductTypeBeverage/ProductTypeBeverage';
 
 class ProductInfo extends Component {
 
@@ -55,9 +56,7 @@ class ProductInfo extends Component {
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
-                        <Input type="radio"></Input>
-                            <Label>Yes</Label>
-                            {/* lead to another component with list */}
+                       <ProductTypeBeverage/>
                         <br></br>
                     </Col>
                 </FormGroup>
