@@ -10,76 +10,99 @@ class BusinessContact extends Component {
 
     render() {
         return(
-
-            <div>
+          <div>
 
             <h4>Contact Information</h4>
+            <hr/>
+
             <FormGroup>
+
               <Row> 
                 <Col>
-                  <Label>Legal Business Name*</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Legal Business Name*
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                  <Label>Public Business Name*</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>Public Business Name*
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
               </Row>
+
               <Row>
                 <Col>
-                  <Label>Owner's First Name*</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>Owner's First Name*
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                  <Label>Owner's Last Name*</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>Owner's Last Name*
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
-              
               </Row>
+
               <Row>
                 <Col>
-                  <Label>Owner's Email Address*</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Owner's Email Address*
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                  <Label>Owner's Contact Phone*</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Owner's Contact Phone*
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                  <Label>Alternative Phone</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Alternative Phone
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
               </Row>
             </FormGroup>
   
-          <br></br>
+          <hr/>
+
             <FormGroup>
               <Row>
                 <Col>
-                  <Label>Business Address</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Business Address
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                  <Label>Suite #</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Suite #
+                  <Input  className="makerAppInput"type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
               </Row>
+
               <Row>
                 <Col>
-                  <Label>City*</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>City*
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                 <StateDropdown/>
+                  <StateDropdown/>
                 </Col>
+
                 <Col>
-                  <Label>Zipcode*</Label>
-                  <Input type="text" placeholder="This will not be public"></Input>
+                  <Label>Zipcode*
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  </Label>
                 </Col>
               </Row>
             </FormGroup>
   
-          <br></br>
+          <hr/>
           <h4>Public Address</h4>
             <FormGroup>
               <Row>
@@ -106,7 +129,7 @@ class BusinessContact extends Component {
                 </Col>
               </Row>
             </FormGroup>
-            </div>
+          </div>
             
 
         )

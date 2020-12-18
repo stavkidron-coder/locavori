@@ -9,10 +9,14 @@ class ProductFeatured extends Component{
 
     render(){
         return(
-            <Container>
-            
+            <>
+
                 <h4>Featured Products</h4>
+
+                <hr/>
+
                 <FormGroup>
+
                     <Row>
                         <Col>
                             <Label>Product 1
@@ -26,7 +30,6 @@ class ProductFeatured extends Component{
                             <Label>Product URL
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
-
                         </Col>
 
                         <Col>
@@ -41,7 +44,6 @@ class ProductFeatured extends Component{
                             <Label>Product URL
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
-
                         </Col>
 
                         <Col>
@@ -58,8 +60,10 @@ class ProductFeatured extends Component{
                             </Label>
                         </Col>
                     </Row>
+
                 </FormGroup>
-                </Container>
+
+            </>
         )
     }
 }

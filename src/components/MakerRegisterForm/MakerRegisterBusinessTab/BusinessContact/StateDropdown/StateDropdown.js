@@ -11,10 +11,10 @@ const StateDropdown = (props) => {
     <Label>State*</Label>
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
     <DropdownToggle caret>
-      State
+      Select
     </DropdownToggle>
     {/* <Input type="text" placeholder="This will be displayed"></Input> */}
-      <DropdownMenu>
+      <DropdownMenu className="dropdown-menu">
         <DropdownItem value="AL">Alabama</DropdownItem>
         <DropdownItem value="AK">Alaska</DropdownItem>
         <DropdownItem value="AZ">Arizona</DropdownItem>

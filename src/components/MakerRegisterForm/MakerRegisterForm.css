@@ -1,3 +1,9 @@
-body{
-    padding: 30px;
+.makerAppInput {
+    width: 300px;
+    margin-left: 0;
 }
+
+.dropdown-menu {
+    height: 300px;
+    overflow-y: scroll;
+  }
