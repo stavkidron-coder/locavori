@@ -11,6 +11,8 @@ const router = express.Router();
 // Handles Ajax request for user information if user is authenticated
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
+  console.log('req.user',req.user);
+  
   res.send(req.user);
 });
 
@@ -21,7 +23,7 @@ router.post('/register', (req, res, next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const birthDate = req.body.birthDate
-  const email = req.body.email;
+  const email = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
 
   const queryText = `INSERT INTO "tbl_profile" (first_name, last_name, birth_date, email, password)
@@ -40,7 +42,6 @@ router.post('/register', (req, res, next) => {
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
-  console.log('Hello There!');
   res.sendStatus(200);
 });
 

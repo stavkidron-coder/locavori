@@ -6,18 +6,18 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class LoginForm extends Component {
   state = {
-    email: '',
+    username: '',
     password: '',
   };
 
   login = (event) => {
     event.preventDefault();
 
-    if (this.state.email && this.state.password) {
+    if (this.state.username && this.state.password) {
       this.props.dispatch({
         type: 'LOGIN',
         payload: {
-          email: this.state.email,
+          username: this.state.username,
           password: this.state.password,
         },
       });
@@ -49,8 +49,8 @@ class LoginForm extends Component {
               type="text"
               name="email"
               required
-              value={this.state.email}
-              onChange={this.handleInputChangeFor('email')}
+              value={this.state.username}
+              onChange={this.handleInputChangeFor('username')}
             />
           </Label>
           <Label htmlFor="password">
