@@ -21,7 +21,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
-import AdminMakersPage from '../Admin/AdminMakers/AdminMakers';
 import AdminPARPage from '../Admin/AdminPAR/AdminPAR';
 import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
 import MakerPage from '../MakerProfile/MakerProfile';
