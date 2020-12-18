@@ -6,11 +6,14 @@ import '../UserRegistration.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class RegisterForm extends Component {
+
+  // EMAIL IS USERNAME!!!
+
   state = {
     firstName: '',
     lastName: '',
     birthDate: '',
-    email: '',
+    username: '',
     password: '',
   };
 
@@ -23,7 +26,7 @@ class RegisterForm extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         birthDate: this.state.birthDate,
-        email: this.state.email,
+        username: this.state.username,
         password: this.state.password,
       },
     });
@@ -85,9 +88,9 @@ class RegisterForm extends Component {
               className="userRegisterInput"
               type="email"
               name="email"
-              value={this.state.email}
+              value={this.state.username}
               required
-              onChange={this.handleInputChangeFor('email')}
+              onChange={this.handleInputChangeFor('username')}
             />
           </Label>
           <Label htmlFor="password">
