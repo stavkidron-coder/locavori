@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import {withRouter} from 'react-router-dom';
-import { Button, Form, FormGroup, Label, Input, FormText, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class LoginForm extends Component {
   state = {
