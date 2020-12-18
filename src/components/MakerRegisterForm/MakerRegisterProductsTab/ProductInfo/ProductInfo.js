@@ -4,6 +4,7 @@ import mapStoreToProps from '../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
 import ProductTypePrepared from './ProductTypePrepared/ProductTypePrepared';
+import ProductTypeFresh from './ProductTypeFresh/ProductTypeFresh';
 
 class ProductInfo extends Component {
 
@@ -33,9 +34,6 @@ class ProductInfo extends Component {
                             <Label>No</Label>
                         <br></br>
                         <ProductTypePrepared/>
-                        {/* <Input type="radio"></Input> */}
-                            {/* <Label>Yes</Label> */}
-                            {/* lead to another component with list */}
                         <br></br>
                     </Col>
                 </FormGroup>
@@ -46,10 +44,7 @@ class ProductInfo extends Component {
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
-                        <Input  type="radio"></Input>
-                            <Label>Yes</Label>
-                            
-                            {/* lead to another component with list */}
+                        <ProductTypeFresh/>
                         <br></br>
                     </Col>
                 </FormGroup>
