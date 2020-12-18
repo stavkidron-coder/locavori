@@ -22,16 +22,20 @@
 
   .search {
     position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    top: 57px;
+    left: 100px;
+    /* transform: translateX(-50%); */
+    /* width: 100%; */
     max-width: 400px;
-    z-index: 10;
+    z-index: 2;
+    border-radius: 10px;
   }
   
   .search input {
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    padding: 7px;
+    /* font-size: 1.5rem; */
     width: 100%;
+    margin: 0;
+    border-radius: 5px;
+    border: 1px solid rgb(191, 191, 191);
   }
