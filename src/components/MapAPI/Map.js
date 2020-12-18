@@ -1,12 +1,15 @@
 import React from 'react';
-import {GoogleMap,
-useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
+import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
+import { formatRelative } from "date-fns";
+import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
+import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import FilterDropdown from '../FilterDropdown/FilterDropdown';
 // import { formatRelative } from "date-fns";
 
 // Styles Imports
 import './Map.css';
 import mapStyles from "./mapStyles";
+import "@reach/combobox/styles.css";
 
 const libraries = ["places"];
 
@@ -28,7 +31,6 @@ const options = {
   zoomControl: true,
   disableDefaultUI: true,
 }
-
 
 function LocalMap() {
 
@@ -59,7 +61,7 @@ function LocalMap() {
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   }, []);
-
+  
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(15);
@@ -70,8 +72,10 @@ function LocalMap() {
 
   return (
       <div className="mapAPI">
-        
       <Locate panTo={panTo} />
+
+      <Search panTo={panTo} />
+
         <div className="map">
           <GoogleMap 
             mapContainerStyle={mapContainerStyle} 
@@ -114,7 +118,7 @@ function LocalMap() {
               </div>
             </InfoWindow>
           ) : null}
-          <div className="filter">
+           <div className="filter">
             <FilterDropdown/>
           </div>
           </GoogleMap>
@@ -145,6 +149,50 @@ function Locate({ panTo }) {
       <img src='https://cdn.osxdaily.com/wp-content/uploads/2014/05/compass-icon-ios-300x300.png' alt='location - compass' />
     </button>
   );
+}
+
+function Search({panTo}) {
+  const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} =usePlacesAutocomplete({
+    requestOptions: {
+      // Suggest locations near this Lat and Lng point (Minneapolis MN)
+      location: {lat: () => 44.977753, lng: () => -93.265015 },
+      // Suggests locations with defined radius below off of the defined point above
+      radius: 100 * 1000,
+    }
+  })
+
+  return <div className='search'>
+    <Combobox onSelect={async (address) => {
+      // After a suggestion is chosen will clear out the suggestion box
+      setValue(address, false);
+      clearSuggestions();
+      // A try to that takes the address selected it, gets its info with getGeoCode, after thats complete, take the Lat and Lng with getLatLng to call the pantTo function passed in form props
+      try{
+        const results = await getGeocode({address});
+        const {lat, lng} = await getLatLng(results[0]);
+        console.log(lat, lng);
+        panTo ({lat, lng});
+      }catch(error) {
+        console.log("ERROR!!!")
+      }
+      }}>
+      <ComboboxInput 
+      value={value} 
+      onChange={(e) => {
+        setValue(e.target.value);
+      }} 
+      disabled={!ready}
+      placeholder="Enter Address"
+      />
+      <ComboboxPopover>
+        <ComboboxList>
+          {status === "OK" && data.map(({id, description}) => 
+          <ComboboxOption key={id} value={description}/> 
+          )}
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  </div>
 }
 
 export default LocalMap;

@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import {withRouter} from 'react-router-dom';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class LoginForm extends Component {
   state = {
-    email: '',
+    username: '',
     password: '',
   };
 
   login = (event) => {
     event.preventDefault();
 
-    if (this.state.email && this.state.password) {
+    if (this.state.username && this.state.password) {
       this.props.dispatch({
         type: 'LOGIN',
         payload: {
-          email: this.state.email,
+          username: this.state.username,
           password: this.state.password,
         },
       });
@@ -32,43 +34,53 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form className="formPanel" onSubmit={this.login}>
+      <Form className="formPanel loginForm" onSubmit={this.login}>
         <h2>Login</h2>
         {this.props.store.errors.loginMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.loginMessage}
           </h3>
         )}
-        <div>
-          <label htmlFor="email">
+        
+        <FormGroup>
+          <Label htmlFor="email">
             Email:
-            <input
+            <Input
               type="text"
               name="email"
               required
-              value={this.state.email}
-              onChange={this.handleInputChangeFor('email')}
+              value={this.state.username}
+              onChange={this.handleInputChangeFor('username')}
             />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
+          </Label>
+          <Label htmlFor="password">
             Password:
-            <input
+            <Input
               type="password"
               name="password"
               required
               value={this.state.password}
               onChange={this.handleInputChangeFor('password')}
             />
-          </label>
-        </div>
-        <div>
-          <input className="btn" type="submit" name="submit" value="Log In" />
-        </div>
-      </form>
+          </Label>
+          </FormGroup>
+
+          <Button
+            onClick={this.login}
+            color="primary">
+            Log In
+          </Button>
+
+          
+          <Button
+            color="link"
+            onClick={() => {this.props.history.push('/register-options')}}
+          >
+            Register
+          </Button>
+      </Form>
     );
   }
 }
 
-export default connect(mapStoreToProps)(LoginForm);
+export default withRouter(connect(mapStoreToProps)(LoginForm));

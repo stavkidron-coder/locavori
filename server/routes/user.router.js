@@ -11,6 +11,8 @@ const router = express.Router();
 // Handles Ajax request for user information if user is authenticated
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
+  console.log('req.user',req.user);
+  
   res.send(req.user);
 });
 
@@ -21,8 +23,10 @@ router.post('/register', (req, res, next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const birthDate = req.body.birthDate
-  const email = req.body.email;
+  const email = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
+  console.log('email in server', email);
+  
 
   const queryText = `INSERT INTO "tbl_profile" (first_name, last_name, birth_date, email, password)
     VALUES ($1, $2, $3, $4, $5) RETURNING id`;

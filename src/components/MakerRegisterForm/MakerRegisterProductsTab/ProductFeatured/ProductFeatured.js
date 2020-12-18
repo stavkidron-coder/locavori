@@ -10,48 +10,60 @@ class ProductFeatured extends Component{
     render(){
         return(
             <>
-            <br></br>
+
                 <h4>Featured Products</h4>
+
+                <hr/>
+
                 <FormGroup>
+
                     <Row>
                         <Col>
-                            <p>Product 1</p>
-                            <Input type="text" placeholder="Product Image URL"></Input>
+                            <Label>Product 1
+                                <Input type="text" placeholder="Product Image URL"></Input>
+                            </Label>
+
+                            <Label>Product Type
+                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
+                            </Label>
+
+                            <Label>Product URL
+                                <Input type="text" placeholder="Product URL"></Input>
+                            </Label>
                         </Col>
+
                         <Col>
-                            <p>Product 2</p>
+                            <Label>Product 2
                             <Input type="text" placeholder="Product Image URL"></Input>
+                            </Label>
+
+                            <Label>Product Type
+                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
+                            </Label>
+
+                            <Label>Product URL
+                                <Input type="text" placeholder="Product URL"></Input>
+                            </Label>
                         </Col>
+
                         <Col>
-                            <p>Product 3</p>
+                            <Label>Product 3
                             <Input type="text" placeholder="Product Image URL"></Input>
+                            </Label>
+
+                            <Label>Product Type
+                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
+                            </Label>
+
+                            <Label>Product URL
+                                <Input type="text" placeholder="Product URL"></Input>
+                            </Label>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col>
-                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
-                        </Col>
-                        <Col>
-                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
-                        </Col>
-                        <Col>
-                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Input type="text" placeholder="Product URL"></Input>
-                        </Col>
-                        <Col>
-                            <Input type="text" placeholder="Product URL"></Input>
-                        </Col>
-                        <Col>
-                            <Input type="text" placeholder="Product URL"></Input>
-                        </Col>
-                    </Row>
+
                 </FormGroup>
-                <br></br>
-        </>
+
+            </>
         )
     }
 }

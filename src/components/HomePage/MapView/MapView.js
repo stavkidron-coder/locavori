@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './MapView.css';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
-import FilterDropdown from '../../FilterDropdown/FilterDropdown';
 import LocalMap from '../../MapAPI/Map.js';
 
 // Basic class component structure for React with default state
@@ -15,7 +14,6 @@ class MapView extends Component {
     return (
       <div className="map-body">
         <LocalMap />
-        {/* <h1 className="mapContainer">MAP</h1> */}
       </div>
     );
   }
