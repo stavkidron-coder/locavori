@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import ProductTypePrepared from './ProductTypePrepared/ProductTypePrepared';
 
 class ProductInfo extends Component {
+
+    
 
     render(){
         return(
@@ -29,8 +32,9 @@ class ProductInfo extends Component {
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
-                        <Input type="radio"></Input>
-                            <Label>Yes</Label>
+                        <ProductTypePrepared/>
+                        {/* <Input type="radio"></Input> */}
+                            {/* <Label>Yes</Label> */}
                             {/* lead to another component with list */}
                         <br></br>
                     </Col>
@@ -42,8 +46,9 @@ class ProductInfo extends Component {
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
-                        <Input type="radio"></Input>
+                        <Input  type="radio"></Input>
                             <Label>Yes</Label>
+                            
                             {/* lead to another component with list */}
                         <br></br>
                     </Col>
