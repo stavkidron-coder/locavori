@@ -9,7 +9,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
   pool
-    .query('SELECT * FROM "user" WHERE id = $1', [id])
+    .query('SELECT * FROM "tbl_profile" WHERE id = $1', [id])
     .then((result) => {
       // Handle Errors
       const user = result && result.rows && result.rows[0];
@@ -37,9 +37,9 @@ passport.deserializeUser((id, done) => {
 // Does actual work of logging in
 passport.use(
   'local',
-  new LocalStrategy((email, password, done) => {
+  new LocalStrategy((username, password, done) => {
     pool
-      .query('SELECT * FROM "tbl_profile" WHERE email = $1', [email])
+      .query('SELECT * FROM "tbl_profile" WHERE email = $1', [username])
       .then((result) => {
         const user = result && result.rows && result.rows[0];
         if (user && encryptLib.comparePassword(password, user.password)) {
@@ -47,7 +47,7 @@ passport.use(
           // done takes an error (null in this case) and a user
           done(null, user);
         } else {
-          // Not good! email and password do not match.
+          // Not good! Username and password do not match.
           // done takes an error (null in this case) and a user (also null in this case)
           // this will result in the server returning a 401 status code
           done(null, null);
