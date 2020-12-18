@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import {withRouter} from 'react-router-dom';
+import mapStoreToProps from '../../../redux/mapStoreToProps';
+import '../UserRegistration.css';
+import { Button, Form, FormGroup, Label, Input, FormText  } from 'reactstrap';
 
 class RegisterForm extends Component {
   state = {
@@ -34,79 +37,90 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <form className="formPanel" onSubmit={this.registerUser}>
+      <Form className="formPanel userRegisterForm">
         <h2>Register as User</h2>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.registrationMessage}
           </h3>
         )}
-        <div>
-          <label htmlFor="firstName">
+
+        <FormGroup>
+          <Label htmlFor="firstName">
             First Name:
-            <input
+            <Input
+              className="userRegisterInput"
               type="text"
               name="firstName"
               value={this.state.firstName}
               required
               onChange={this.handleInputChangeFor('firstName')}
             />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="lastName">
+          </Label>
+          <Label htmlFor="lastName">
             Last Name:
-            <input
+            <Input
+              className="userRegisterInput"
               type="text"
               name="lastName"
               value={this.state.lastName}
               required
               onChange={this.handleInputChangeFor('lastName')}
             />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="birthDate">
+          </Label>
+          <Label htmlFor="birthDate">
             Birth Date:
-            <input
+            <Input
+              className="userRegisterInput"
               type="date"
               name="birthDate"
               value={this.state.birthDate}
               required
               onChange={this.handleInputChangeFor('birthDate')}
             />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="email">
+          </Label>
+          <Label htmlFor="email">
             Email:
-            <input
+            <Input
+              className="userRegisterInput"
               type="email"
               name="email"
               value={this.state.email}
               required
               onChange={this.handleInputChangeFor('email')}
             />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
+          </Label>
+          <Label htmlFor="password">
             Password:
-            <input
+            <Input
+              className="userRegisterInput"
               type="password"
               name="password"
               value={this.state.password}
               required
               onChange={this.handleInputChangeFor('password')}
             />
-          </label>
-        </div>
-        <div>
-          <input className="btn" type="submit" name="submit" value="Register" />
-        </div>
-      </form>
+          </Label>
+        </FormGroup>
+
+          <Button
+            onClick={this.registerUser}
+            color="success">
+              Register
+          </Button>
+
+          <Button
+          color="link"
+            onClick={() => {
+              this.props.history.push('/login');
+            }}
+          >
+            Login
+          </Button>
+
+      </Form>
     );
   }
 }
 
-export default connect(mapStoreToProps)(RegisterForm);
+export default withRouter(connect(mapStoreToProps)(RegisterForm));

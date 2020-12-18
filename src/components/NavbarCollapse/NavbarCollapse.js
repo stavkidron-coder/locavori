@@ -22,7 +22,6 @@ const NavbarCollapse = (props) => {
   }
 
   return (
-    <div>
       <Navbar className="navBar" light>
         <NavbarBrand href="/" className="mr-auto">Locavori</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2 navToggle" />
@@ -51,7 +50,6 @@ const NavbarCollapse = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
   );
 }
 
