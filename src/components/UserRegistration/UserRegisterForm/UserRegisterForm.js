@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import '../UserRegistration.css';
-import { Button, Form, FormGroup, Label, Input, FormText  } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class RegisterForm extends Component {
   state = {

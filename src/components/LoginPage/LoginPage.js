@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import LoginForm from '../LoginForm/LoginForm';
 import './LoginPage.css';
-import { Button } from 'reactstrap';
 
 class LoginPage extends Component {
   render() {

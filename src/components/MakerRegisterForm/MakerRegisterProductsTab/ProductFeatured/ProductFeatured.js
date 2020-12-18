@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import { Col, Row, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
 
 
 class ProductFeatured extends Component{
