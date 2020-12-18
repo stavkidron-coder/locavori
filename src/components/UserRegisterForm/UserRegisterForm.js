@@ -35,7 +35,7 @@ class RegisterForm extends Component {
   render() {
     return (
       <form className="formPanel" onSubmit={this.registerUser}>
-        <h2>Register as User</h2>
+        <h2>Register as a Locavore</h2>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.registrationMessage}
@@ -81,7 +81,7 @@ class RegisterForm extends Component {
           <label htmlFor="email">
             Email:
             <input
-              type="email"
+              type="text"
               name="email"
               value={this.state.email}
               required

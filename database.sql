@@ -265,6 +265,68 @@ VALUES
 (6,1,97),
 (7,1,102);
 
+
+--Grandmas Gormet's Dummy Data Insert
+
+INSERT INTO "public"."tbl_profile"("id","first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(2,E'Grandmama',E'Gran',E'2020-12-16',E'grandmasDeal@thatthing.com',E'$2a$10$8BathSJ7mViwtBS3/xLqI.0xGfQokO9DV7yhbl.4my/UGF/pRyRc6',E'2020-12-17 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("id","profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","status","dateStampUTC","modifiedUTC")
+VALUES
+(2,2,E'Kimberly',E'Grandma\'s Gourmets',E'Kimberly',E'Olson',E'grandmasss@gmail.com',E'324-203-1234',E'423-234-2049',E'2610 YH Hanson Ave.',NULL,E'Albert Lea',E'MN',E'56007',E'USA',E'2610 YH Hanson Ave.',NULL,E'Albert Lee',E'MN',E'56007',E'USA',E'43.68273',E'-93.34812',E'https://www.grandmasgourmets.com/',E'https://www.facebook.com/grandmaskim',NULL,E'grandmas.gourmets@gmail.com',NULL,NULL,NULL,NULL,E'Baked Good',NULL,NULL,NULL,NULL,NULL,NULL,NULL,E'Nothing beats Grans cookies, and bars',E'YES',E'Baked Goods',NULL,E'YES',NULL,E'NO',NULL,NULL,NULL,NULL,NULL,E'Cookie',E'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg',E'https://www.grandmasgourmets.com/',E'Bars',E'https://chocolatecoveredkatie.com/wp-content/uploads/2018/06/Easy-Chocolate-Fudge-Recipe-2-Ingredients-500x375.jpg',E'https://www.grandmasgourmets.com/',E'Cake',E'https://www.pamperedchef.com/iceberg/com/recipe/1125065-lg.jpg',E'https://www.grandmasgourmets.com/',E'Yeah',E'https://frontiersinblog.files.wordpress.com/2020/04/frontiers-psychology-free-from-dance-alternative-interaction-grandchildren-grandparents.jpg?w=1024',NULL,E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'https://frontiersinblog.files.wordpress.com/2020/04/frontiers-psychology-free-from-dance-alternative-interaction-grandchildren-grandparents.jpg?w=1024',E'https://media.urbanistnetwork.com/saigoneer/article-images/2018/08/Aug13/GrandmasRecipe_SGRb.jpg',E'Pretty Cool Yeah',E'Ive got like so many awards homes',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'active',E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(9,2,17),
+(10,2,35),
+(11,2,19),
+(12,2,39),
+(13,2,23),
+(14,2,42),
+(15,2,21),
+(16,2,41);
+
+-- Katie Sterns You Betcha Box Dummy Data Insert
+
+INSERT INTO "public"."tbl_profile"("id","first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(3,E'Katie',E'Sterns',E'2020-10-17',E'katie.sterns@gmail.com',E'locavore',E'2020-12-18 07:39:45.721249');
+INSERT INTO "public"."tbl_artisans"("id","profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","status","dateStampUTC","modifiedUTC")
+VALUES
+(3,3,E'Katie',E'Share Local Love LCC',E'Katie',E'Sterns',E'katie.sterns@gmail.com',E'651-295-1777',E'651-295-1777',E'1493 Scheffer Ave',NULL,E'St. Paul',E'MN',E'55116',E'USA',NULL,NULL,E'Saint Paul',E'MN',E'55116',E'USA',E'44.92189',E'-93.16356',E'https://youbetchabox.com/',E'https://www.facebook.com/GourmetGiftBoxes',E'https://www.facebook.com/GourmetGiftBoxes',E'info@sharelocallove.com',NULL,NULL,NULL,NULL,E'GIFT',NULL,E'ST. PAUL',E'Mid-West Wide',NULL,E'Yes',E'Yes',NULL,E'Creatively curated Minnesota Artisan Food Gift Boxes and Bags. Customization available to meet all needs and budgets. Select from over 200 small batch, high quality foods and related. We also partner with local breweries and distilleries too. Capture MN Spirit in a gift all will love! You Betcha!',E'YES',E'Gift',NULL,E'YES',NULL,E'YES',NULL,NULL,NULL,E'Gift',NULL,E'Gift Deal!',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsfiilvkNeHKxZ9HqxP8ZaVN02NYgJd6_Iw&usqp=CAU',E'https://youbetchabox.com/',E'HOT SAUCES',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjqqWjsIqRoOPl5yhnHx9HHGKFRfmvclScA&usqp=CAU',E'https://youbetchabox.com/',E'THE BOX',E'https://cdn.minnesotamonthly.com/wp-content/uploads/sites/85/2019/08/DSC5365-e1566313049493.jpg',E'https://youbetchabox.com/',E'You Know it Bud',E'https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/131405386_1552908348226584_5131309671268186515_o.jpg?_nc_cat=100&ccb=2&_nc_sid=2c4854&_nc_ohc=T0MNG5Mg8hQAX83CGs6&_nc_ht=scontent.ffcm1-1.fna&oh=e0aee95b7f8f6080c058572bfdd6778c&oe=6001F258',NULL,E'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/130715891_1549009791949773_862914931259104278_o.jpg?_nc_cat=102&ccb=2&_nc_sid=2c4854&_nc_ohc=uo3MEBaZUNYAX8FPu2d&_nc_ht=scontent.ffcm1-2.fna&oh=52912b95ddc0e9a99255a0277478a969&oe=60030677',E'https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/130045156_1546785478838871_4517929316616469920_o.jpg?_nc_cat=105&ccb=2&_nc_sid=2c4854&_nc_ohc=Yfok-79Sg2sAX9WuqON&_nc_ht=scontent.ffcm1-1.fna&oh=6828a4c5bbfe1ae23cbb3409ff7ad59e&oe=6000F81B',E'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/129721374_1545118509005568_8552604803700404172_o.jpg?_nc_cat=104&ccb=2&_nc_sid=2c4854&_nc_ohc=Px29hfJSx00AX8dGDaY&_nc_ht=scontent.ffcm1-2.fna&oh=fdd659ab265fdd8d6d5ac44b6ea74925&oe=6000923A',E'YOU BETCHA!',E'The Locavore\'s Choice Award 32 Years Running',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg6',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIZ88WPzYBUqBsr7Si5jYuWU8kyQL5UO-P_w&usqp=CAU',E'active',E'2020-12-18 08:20:45.650381',E'08:20:45.650381');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(17,3,10),
+(18,3,14),
+(19,3,15),
+(20,3,21),
+(21,3,23),
+(22,3,24),
+(23,3,27),
+(24,3,37),
+(25,3,75),
+(26,3,58),
+(27,3,80),
+(28,3,111);
+
+-- Thomas's Hair Care
+
+INSERT INTO "public"."tbl_profile"("id","first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(9,E'Thomas',E'Brookshaw',E'1994-11-17',E'tbrookshaw133@hotmail.com',E'bald',E'2020-12-18 08:58:26.594336');
+INSERT INTO "public"."tbl_artisans"("id","profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","status","dateStampUTC","modifiedUTC")
+VALUES
+(4,4,E'Thomas',E'Deluxe Hair Co',E'Thomas ',E'Brookshaw',E'tbrookshaw13@gmail.com',E'715-410-7538',NULL,E'2832 Emerson S Ave',NULL,E'Mineapolis',E'MN',E'55408',E'USA',E'2832 Emerson S Ave',NULL,E'Minneapolis',E'MN',E'55408',E'USA',E'44.943450',E'-93.2885553',E'https://thomasb-shaw.github.io/Personal-Website/',E'https://thomasb-shaw.github.io/Personal-Website/',E'https://thomasb-shaw.github.io/Personal-Website/',E'tbrookshaw13@gmail.com',NULL,NULL,NULL,E'100% of Profits go to Sphinx Cat Hospitals',E'Cosmetics',NULL,E'Minneapolis',E'World Wide',E'YES',E'YES',E'YES',NULL,E'Just a simple man trying ot make his way through the universe',E'YES',E'Shampoo',NULL,E'YES',E'YES',E'YES',E'YES',NULL,NULL,E'Shampoo',NULL,E'World Famous Shampoo',E'https://pics.drugstore.com/prodimg/185753/900.jpg',NULL,E'Hair Conditioner',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpTr0Iexd8IC4QJ6FAngqtKXAn7OFJygNSg&usqp=CAU',NULL,NULL,NULL,NULL,E'Ye',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpTr0Iexd8IC4QJ6FAngqtKXAn7OFJygNSg&usqp=CAU',NULL,E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpTr0Iexd8IC4QJ6FAngqtKXAn7OFJygNSg&usqp=CAU',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpTr0Iexd8IC4QJ6FAngqtKXAn7OFJygNSg&usqp=CAU',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGpTr0Iexd8IC4QJ6FAngqtKXAn7OFJygNSg&usqp=CAU',E'Not actually shampoo, its nair',E'Best Head of Hair  for a 68 year old 2020',NULL,NULL,NULL,E'2020-12-18 08:55:35.935952',E'08:55:35.935952');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(29,4,3),
+(30,4,4),
+(31,4,10),
+(32,4,13),
+(33,4,54),
+(34,4,93),
+(35,4,111);
+
+
 -- GET QUERIES
 
 -- GETS ALL ARTISANS AND ALL OF THEIR CATEGORIES

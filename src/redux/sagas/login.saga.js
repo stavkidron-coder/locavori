@@ -11,12 +11,13 @@ function* loginUser(action) {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     };
-
+    console.log('Yooo', action.payload);
+    console.log('Yooo', config);
     // send the action.payload as the body
     // the config includes credentials which
     // allow the server session to recognize the user
     yield axios.post('/api/user/login', action.payload, config);
-
+    console.log('YOOO',action.payload);
     // after the user has logged in
     // get the user information from the server
     yield put({ type: 'FETCH_USER' });
