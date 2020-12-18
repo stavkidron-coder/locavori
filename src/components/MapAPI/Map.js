@@ -61,7 +61,7 @@ function LocalMap() {
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   }, []);
-
+  
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(15);
