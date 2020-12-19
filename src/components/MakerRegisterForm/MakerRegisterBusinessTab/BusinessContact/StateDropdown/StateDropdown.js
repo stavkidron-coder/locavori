@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Label, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../../../../redux/mapStoreToProps';
+import { withRouter } from "react-router";
 
 const StateDropdown = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -74,4 +77,4 @@ const StateDropdown = (props) => {
 }
 
 
-  export default StateDropdown;
+  export default withRouter(connect(mapStoreToProps)(StateDropdown));

@@ -12,7 +12,6 @@ class ProductFeatured extends Component{
             <>
 
                 <h4>Featured Products</h4>
-
                 <hr/>
 
                 <FormGroup>
@@ -22,39 +21,55 @@ class ProductFeatured extends Component{
                             <Label>Product 1
                                 <Input type="text" placeholder="Product Image URL"></Input>
                             </Label>
+                        </Col>
 
-                            <Label>Product Type
-                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
+                        <Col>
+                            <Label>Product Type (from Product Type list above)
+                                <Input type="text" placeholder="Product Type "></Input>
                             </Label>
+                        </Col>
 
+                        <Col>
                             <Label>Product URL
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
                         </Col>
+                    </Row>
 
+                    <Row>
                         <Col>
                             <Label>Product 2
-                            <Input type="text" placeholder="Product Image URL"></Input>
-                            </Label>
-
-                            <Label>Product Type
-                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
-                            </Label>
-
-                            <Label>Product URL
-                                <Input type="text" placeholder="Product URL"></Input>
+                                <Input type="text" placeholder="Product Image URL"></Input>
                             </Label>
                         </Col>
 
                         <Col>
+                            <Label>Product Type (from Product Type list above)
+                                <Input type="text" placeholder="Product Type "></Input>
+                            </Label>
+                        </Col>
+
+                        <Col>
+                            <Label>Product URL
+                                <Input type="text" placeholder="Product URL"></Input>
+                            </Label>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
                             <Label>Product 3
-                            <Input type="text" placeholder="Product Image URL"></Input>
+                                <Input type="text" placeholder="Product Image URL"></Input>
                             </Label>
+                        </Col>
 
-                            <Label>Product Type
-                            <Input type="text" placeholder="Product Type (from Product Type list above)"></Input>
+                        <Col>
+                            <Label>Product Type (from Product Type list above)
+                                <Input type="text" placeholder="Product Type "></Input>
                             </Label>
+                        </Col>
 
+                        <Col>
                             <Label>Product URL
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
