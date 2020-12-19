@@ -15,56 +15,59 @@ const ProductTypeBeverage = (props) => {
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
+
                     <CardBody>
+                        <p>select all that apply</p>
                         <Input type="radio"></Input>
                             <Label>Schrubs or Switchel</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Soda Pop (rootbeer, sassparilla, etc)</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Coffee</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Hot Cocoa or Hot Drink Mix</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Tea</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Health or Energy Shot</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Sweet Treat</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Cocktail or bar mixer</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Spirits</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Beer</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Hard Cider</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Wine</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Fresh Fruit</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Non-Alcoholic Beverage</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Dairy</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Other</Label>
-                        <br></br>
+                        <br/>
                     </CardBody>
+                    
                 </Card>
             </Collapse>
     </div>
