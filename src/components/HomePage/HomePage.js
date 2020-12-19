@@ -31,12 +31,20 @@ class HomePage extends Component {
 
   filterGet = () => {
     this.props.dispatch({type: 'FILTER_MAKERS', payload: this.state.filters});
+  };
+
+  displayGet = () => {
+    let flatArray = this.props.store.maker.flat();
+    for (let i = 0; i < flatArray.length; i++) {
+      console.log(flatArray[i]);
+    }
   }
 
   render() {
     return (
       <div className="homePageBody">
-        <button onClick={this.filterGet}>TEST</button>
+        <button onClick={this.filterGet}>TEST GET</button>
+        <button onClick={this.displayGet}>TEST DISPLAY</button>
         <Container>
           <Row>
             <Col>
