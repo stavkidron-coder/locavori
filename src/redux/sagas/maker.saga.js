@@ -13,7 +13,7 @@ function* getMakers() {
 function* filterMakers(action) {
     try {
         const makers = yield axios.get(`/api/maker/filter/?business=${action.payload.business_type}&delivery=${action.payload.delivery}&product=${action.payload.product_type}`);
-        yield put({type: 'SET_MAKER', payload: makers.data});
+        yield put({type: 'SET_FILTER', payload: makers.data});
     } catch (error) {
         console.log('maker filer GET failed', error);
     }
