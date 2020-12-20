@@ -15,108 +15,110 @@ const ProductTypePrepared = (props) => {
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
+
                     <CardBody>
+                        <p>select all that apply</p>
                         <Input type="radio"></Input>
                             <Label>Jams, Jellies, Spreadables</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Pickles, Relish</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Vinegars</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Cookies</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Crackers</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Chips</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Syrups</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Honey</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Pancake Mix</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Baking Mix</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Cooking Sauce</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Hot Sauces</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Salsa</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Hard Candy/Sweets</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Popcorn</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Chocolate</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Soft or Chewy Candy/Sweets</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Nuts</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Other Snacks</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Dried Food</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Granola</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Soups (fresh or mix)</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Catsup</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Mustard</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Sweet Treat</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Rub</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Marinade</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Dried Vegetable</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Other Sauce</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Dried Meat or Jerky</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Preserved, shelf-stable meat</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Bakery: fresh bread/pastries</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Other</Label>
-                        <br></br>
-                      
+                        <br/>
                     </CardBody>
+                    
                 </Card>
             </Collapse>
     </div>

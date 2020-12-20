@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
-import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
+// import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 
 import './HomePage.css';
@@ -46,11 +46,11 @@ class HomePage extends Component {
         <button onClick={this.filterGet}>TEST GET</button>
         <button onClick={this.displayGet}>TEST DISPLAY</button>
         <Container>
-          <Row>
+          {/* <Row>
             <Col>
               <SearchBarCollapse/>
             </Col>
-          </Row>
+          </Row> */}
 
           <Row>
             <Col xs='12'>
