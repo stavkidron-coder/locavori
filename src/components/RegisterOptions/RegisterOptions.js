@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import { Button } from 'reactstrap';
+import './RegisterOptions.css';
+import MakerToolTip from './MakerToolTip';
+import UserToolTip from './UserToolTip';
 
 class RegisterOptions extends Component {
 
@@ -19,12 +21,19 @@ class RegisterOptions extends Component {
   render() {
     return (
       <div className="registerOptionsBody">
+
         <div className="registerOptionsCard">
+
           <h1>Register Options</h1>
-          <Button onClick={() => this.registerRoute('maker')}>Register as Maker</Button>
-          <Button onClick={() => this.registerRoute('user')}>Register as User</Button>
-        </div>
+          <hr className="registerOptionsHr"/>
+
+          <div className="buttonsContainer">
+            <MakerToolTip/>
+            <UserToolTip/>
+          </div>
           
+        </div> 
+
       </div>
     );
   }
