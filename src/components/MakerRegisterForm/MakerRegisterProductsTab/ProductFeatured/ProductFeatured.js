@@ -18,7 +18,7 @@ class ProductFeatured extends Component{
 
                     <Row>
                         <Col>
-                            <Label>Product 1
+                            <Label>Product 1 (link to an image of your product)
                                 <Input type="text" placeholder="Product Image URL"></Input>
                             </Label>
                         </Col>
@@ -30,7 +30,7 @@ class ProductFeatured extends Component{
                         </Col>
 
                         <Col>
-                            <Label>Product URL
+                            <Label>Product URL (link to your product on your website)
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
                         </Col>
@@ -38,7 +38,7 @@ class ProductFeatured extends Component{
 
                     <Row>
                         <Col>
-                            <Label>Product 2
+                            <Label>Product 2 (link to an image of your product)
                                 <Input type="text" placeholder="Product Image URL"></Input>
                             </Label>
                         </Col>
@@ -50,7 +50,7 @@ class ProductFeatured extends Component{
                         </Col>
 
                         <Col>
-                            <Label>Product URL
+                            <Label>Product URL (link to your product on your website)
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
                         </Col>
@@ -58,7 +58,7 @@ class ProductFeatured extends Component{
 
                     <Row>
                         <Col>
-                            <Label>Product 3
+                            <Label>Product 3 (link to an image of your product)
                                 <Input type="text" placeholder="Product Image URL"></Input>
                             </Label>
                         </Col>
@@ -70,7 +70,7 @@ class ProductFeatured extends Component{
                         </Col>
 
                         <Col>
-                            <Label>Product URL
+                            <Label>Product URL (link to your product on your website)
                                 <Input type="text" placeholder="Product URL"></Input>
                             </Label>
                         </Col>
