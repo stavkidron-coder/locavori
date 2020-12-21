@@ -1,5 +1,5 @@
 .registerOptionsCard {
-    background-color: rgba(0, 0, 0, 0.79);
+    background-color: rgba(0, 0, 0, 0.858);
     color: white;
     text-align: center;
     padding: 50px;
@@ -12,6 +12,8 @@
 .registerOptionsBody {
     padding: 100px;
     min-height: 87.7vh;
+    background-image: url('../../TestImages/strawberries.jpg');
+    background-size: cover;
 }
 
 .registerOptionsButton {
