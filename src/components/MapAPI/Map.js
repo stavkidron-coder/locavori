@@ -63,9 +63,14 @@ function LocalMap() {
     mapRef.current = map;
   }, []);
   
-  const panTo = React.useCallback(({ lat, lng }) => {
+  const panToLocate = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(15);
+  }, []);
+
+  const panToSearch = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(12);
   }, []);
 
   if (loadError) return "Error loading maps";
@@ -73,9 +78,9 @@ function LocalMap() {
 
   return (
       <div className="mapAPI">
-      <Locate panTo={panTo} />
+      <Locate panToLocate={panToLocate} />
 
-      <Search panTo={panTo} />
+      <Search panToSearch={panToSearch} />
 
         <div className="map">
           <GoogleMap 
@@ -130,7 +135,7 @@ function LocalMap() {
 
 // Button on DOM, upon click will take the user to their current location based on their GeoLocation
 // Uses browser to get geolocation via Latitude and Longitude
-function Locate({ panTo }) {
+function Locate({ panToLocate }) {
   return (
     <button
       className="locate"
@@ -138,7 +143,7 @@ function Locate({ panTo }) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             console.log(position)
-            panTo({
+            panToLocate({
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             });
@@ -152,7 +157,7 @@ function Locate({ panTo }) {
   );
 }
 
-function Search({panTo}) {
+function Search({panToSearch}) {
   const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} =usePlacesAutocomplete({
     requestOptions: {
       // Suggest locations near this Lat and Lng point (Minneapolis MN)
@@ -174,7 +179,7 @@ function Search({panTo}) {
         const results = await getGeocode({address});
         const {lat, lng} = await getLatLng(results[0]);
         console.log(lat, lng);
-        panTo ({lat, lng});
+        panToSearch ({lat, lng});
       }catch(error) {
         console.log("ERROR!!!")
       }
