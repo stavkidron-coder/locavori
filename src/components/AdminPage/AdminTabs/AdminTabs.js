@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
 import AdminMakerTab from '../AdminMakerTab/AdminMakerTab';
-import AdminPARTab from '../AdminPARTab/AdminParTab';
+import AdminPARTab from '../AdminRequestsTab/AdminParTab';
 
 
 

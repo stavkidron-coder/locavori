@@ -21,7 +21,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
-import AdminPARPage from '../Admin/AdminPAR/AdminPAR';
 import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
 import MakerPage from '../MakerProfile/MakerProfile';
 
@@ -82,12 +81,12 @@ class App extends Component {
             />
             
             {/* NEEDS TO BE SECURED */}
-            <Route
+            {/* <Route
               // shows HomePage at all times (logged in or not)
               exact
               path="/admin-PAR"
-              component={AdminPARPage}
-            />
+              component={AdminPARage}
+            /> */}
 
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
