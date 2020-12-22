@@ -6,7 +6,7 @@ import { Col, FormGroup, Label, Input } from 'reactstrap';
 import ProductTypePrepared from './ProductTypePrepared/ProductTypePrepared';
 import ProductTypeFresh from './ProductTypeFresh/ProductTypeFresh';
 import ProductTypeBeverage from './ProductTypeBeverage/ProductTypeBeverage';
-import ProductCategories from './ProductCategories/ProductCategories';
+import ProductCategories from '../../../../MakerRegisterForm/MakerRegisterProductsTab/ProductInfo/ProductCategories/ProductCategories';
 
 class ProductInfo extends Component {
 
