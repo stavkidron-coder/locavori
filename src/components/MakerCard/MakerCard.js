@@ -11,11 +11,9 @@ class MakerCard extends Component {
 
     // var maker = this.props.maker;
     return (
-    <>
-        {this.props.store.maker.map(maker => {
-            return <Container>
-                        <Card>
-                            <CardBody>
+    <Container>
+        <Card>
+            <CardBody>
 
                 <CardTitle tag="h5">
                     <Link to="/maker-profile" className="cardTitle">
