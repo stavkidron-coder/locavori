@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { Tooltip, Button } from 'reactstrap';
 
 const MakerToolTip = (props) => {
+
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   const toggle = () => setTooltipOpen(!tooltipOpen);
@@ -15,7 +16,7 @@ const MakerToolTip = (props) => {
         id="makerBtn"
         className="registerOptionsButton"
         color="success"
-        onClick={() => props.history.push('/maker-registration')}>
+        onClick={() => props.history.push('/maker-registration1')}>
           Register as Maker
         </Button>
 

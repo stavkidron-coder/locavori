@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { Tooltip, Button } from 'reactstrap';
 
 const UserToolTip = (props) => {
