@@ -41,7 +41,10 @@ class RegisterForm extends Component {
   render() {
     return (
       <Form className="formPanel userRegisterForm">
-        <h2>Register as User</h2>
+        <h2>REGISTER AS A LOCAVOR</h2>
+        <hr className="registerOptionsHr"/>
+        <h4>Let's get some basic info first</h4>
+        <br/>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.registrationMessage}
