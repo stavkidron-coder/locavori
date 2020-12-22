@@ -9,8 +9,8 @@ const CollapseSearch = (props) => {
 
   return (
     <div>
-      <Col xs="6">
-        <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Filter</Button>
+      <Col>
+        <Button color="primary" onClick={toggle} style={{ marginBottom: '5px' }}>Filter</Button>
         <Collapse isOpen={isOpen}>
           <div className="filterBody">
           <Card>

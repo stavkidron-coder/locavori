@@ -20,9 +20,10 @@ import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
-import MakerRegisterPage from '../MakerRegisterPage/MakerRegisterPage';
+import MakerRegisterPage from '../MakerRegistration/MakerRegisterPage/MakerRegisterPage';
 import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
 import MakerPage from '../MakerProfile/MakerProfile';
+import MakerRegistrationPgOne from '../MakerRegistration/MakerRegistrationFirstPage/MakerRegistrationUserInfoPage';
 
 import './App.css';
 import AdminPage from '../AdminPage/AdminPage';
@@ -72,21 +73,22 @@ class App extends Component {
               component={MakerRegisterPage}
             />
             
-            {/* NEEDS TO BE SECURED */}
             <Route
               // shows HomePage at all times (logged in or not)
               exact
-              path="/adminPage"
-              component={AdminPage}
+              path="/maker-registration1"
+              component={MakerRegistrationPgOne}
             />
             
             {/* NEEDS TO BE SECURED */}
             {/* <Route
               // shows HomePage at all times (logged in or not)
               exact
-              path="/admin-PAR"
-              component={AdminPARage}
-            /> */}
+
+              path="/adminPage"
+              component={AdminPage}
+            />
+
 
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.

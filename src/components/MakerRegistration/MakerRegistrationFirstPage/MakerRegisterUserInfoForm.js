@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
-import '../UserRegistration.css';
+import './MakerRegisterFirstPage.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-class RegisterForm extends Component {
+class MakerRegisterUserForm extends Component {
 
   // EMAIL IS USERNAME!!!
 
@@ -30,6 +30,8 @@ class RegisterForm extends Component {
         password: this.state.password,
       },
     });
+
+    this.props.history.push('/maker-registration')
   }; // end registerUser
 
   handleInputChangeFor = (propertyName) => (event) => {
@@ -41,7 +43,7 @@ class RegisterForm extends Component {
   render() {
     return (
       <Form className="formPanel userRegisterForm">
-        <h2>REGISTER AS A LOCAVOR</h2>
+        <h2>CREATE A MAKER ACCOUNT</h2>
         <hr className="registerOptionsHr"/>
         <h4>Let's get some basic info first</h4>
         <br/>
@@ -112,16 +114,7 @@ class RegisterForm extends Component {
           <Button
             onClick={this.registerUser}
             color="success">
-              Register
-          </Button>
-
-          <Button
-          color="link"
-            onClick={() => {
-              this.props.history.push('/login');
-            }}
-          >
-            Login
+              Continue
           </Button>
 
       </Form>
@@ -129,4 +122,4 @@ class RegisterForm extends Component {
   }
 }
 
-export default withRouter(connect(mapStoreToProps)(RegisterForm));
+export default withRouter(connect(mapStoreToProps)(MakerRegisterUserForm));

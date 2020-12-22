@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
-import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
+// import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 
 import './HomePage.css';
@@ -13,23 +13,36 @@ import './HomePage.css';
 
 class HomePage extends Component {
 
+  state = {
+    filters: {
+      business_type: ['Cosmetics', 'Baked Good'],
+      delivery: [],
+      product_type: [],
+    }
+  }
+
   onLogin = (event) => {
     this.props.history.push('/login');
   };
 
   componentDidMount = () => {
     this.props.dispatch({type: 'GET_MAKERS'});
-  }
+  };
+
+  filterGet = () => {
+    this.props.dispatch({type: 'FILTER_MAKERS', payload: this.state.filters});
+  };
 
   render() {
     return (
       <div className="homePageBody">
+        <button onClick={this.filterGet}>TEST GET</button>
         <Container>
-          <Row>
+          {/* <Row>
             <Col>
               <SearchBarCollapse/>
             </Col>
-          </Row>
+          </Row> */}
 
           <Row>
             <Col xs='12'>

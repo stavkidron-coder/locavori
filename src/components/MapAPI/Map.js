@@ -1,9 +1,10 @@
 import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
-import { formatRelative } from "date-fns";
+// import { formatRelative } from "date-fns";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import FilterDropdown from '../FilterDropdown/FilterDropdown';
+import {Container} from 'reactstrap';
 // import { formatRelative } from "date-fns";
 
 // Styles Imports
@@ -62,9 +63,14 @@ function LocalMap() {
     mapRef.current = map;
   }, []);
   
-  const panTo = React.useCallback(({ lat, lng }) => {
+  const panToLocate = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(15);
+  }, []);
+
+  const panToSearch = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(12);
   }, []);
 
   if (loadError) return "Error loading maps";
@@ -72,9 +78,9 @@ function LocalMap() {
 
   return (
       <div className="mapAPI">
-      <Locate panTo={panTo} />
+      <Locate panToLocate={panToLocate} />
 
-      <Search panTo={panTo} />
+      <Search panToSearch={panToSearch} />
 
         <div className="map">
           <GoogleMap 
@@ -129,7 +135,7 @@ function LocalMap() {
 
 // Button on DOM, upon click will take the user to their current location based on their GeoLocation
 // Uses browser to get geolocation via Latitude and Longitude
-function Locate({ panTo }) {
+function Locate({ panToLocate }) {
   return (
     <button
       className="locate"
@@ -137,7 +143,7 @@ function Locate({ panTo }) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             console.log(position)
-            panTo({
+            panToLocate({
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             });
@@ -151,7 +157,7 @@ function Locate({ panTo }) {
   );
 }
 
-function Search({panTo}) {
+function Search({panToSearch}) {
   const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} =usePlacesAutocomplete({
     requestOptions: {
       // Suggest locations near this Lat and Lng point (Minneapolis MN)
@@ -161,7 +167,9 @@ function Search({panTo}) {
     }
   })
 
-  return <div className='search'>
+  return(
+
+   <Container className='search'>
     <Combobox onSelect={async (address) => {
       // After a suggestion is chosen will clear out the suggestion box
       setValue(address, false);
@@ -171,19 +179,21 @@ function Search({panTo}) {
         const results = await getGeocode({address});
         const {lat, lng} = await getLatLng(results[0]);
         console.log(lat, lng);
-        panTo ({lat, lng});
+        panToSearch ({lat, lng});
       }catch(error) {
         console.log("ERROR!!!")
       }
       }}>
-      <ComboboxInput 
-      value={value} 
-      onChange={(e) => {
-        setValue(e.target.value);
-      }} 
-      disabled={!ready}
-      placeholder="Enter Address"
+      <ComboboxInput
+        className="searchInput"
+        value={value} 
+        onChange={(e) => {
+            setValue(e.target.value);
+          }} 
+        disabled={!ready}
+        placeholder="Enter Address"
       />
+
       <ComboboxPopover>
         <ComboboxList>
           {status === "OK" && data.map(({id, description}) => 
@@ -192,7 +202,9 @@ function Search({panTo}) {
         </ComboboxList>
       </ComboboxPopover>
     </Combobox>
-  </div>
+  </Container>
+  )
 }
+
 
 export default LocalMap;
