@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Collapse, CardBody, Card, Input, Label } from 'reactstrap';
 import { connect } from 'react-redux';
-import mapStoreToProps from '../../../../../redux/mapStoreToProps';
+import mapStoreToProps from '../../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 
-const ProductTypeBeverage = (props) => {
+const ProductTypeFresh = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -19,49 +19,52 @@ const ProductTypeBeverage = (props) => {
                     <CardBody>
                         <p>select all that apply</p>
                         <Input type="radio"></Input>
-                            <Label>Schrubs or Switchel</Label>
+                            <Label>Beef</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Soda Pop (rootbeer, sassparilla, etc)</Label>
+                            <Label>Chicken</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Coffee</Label>
+                            <Label>Lamb</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Hot Cocoa or Hot Drink Mix</Label>
+                            <Label>Bison</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Tea</Label>
+                            <Label>Pork</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Health or Energy Shot</Label>
+                            <Label>Eggs</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Sweet Treat</Label>
+                            <Label>Cheese</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Cocktail or bar mixer</Label>
+                            <Label>Herbs</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Spirits</Label>
+                            <Label>Apples</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Beer</Label>
+                            <Label>Blueberries</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Hard Cider</Label>
+                            <Label>Strawberries</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Wine</Label>
+                            <Label>Fresh Vegetables</Label>
                         <br/>
                         <Input type="radio"></Input>
                             <Label>Fresh Fruit</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Non-Alcoholic Beverage</Label>
+                            <Label>Milk</Label>
                         <br/>
                         <Input type="radio"></Input>
-                            <Label>Dairy</Label>
+                            <Label>Cream</Label>
+                        <br/>
+                        <Input type="radio"></Input>
+                            <Label>Flowers</Label>
                         <br/>
                         <Input type="radio"></Input>
                             <Label>Other</Label>
@@ -74,4 +77,4 @@ const ProductTypeBeverage = (props) => {
   );
 }
 
-export default withRouter(connect(mapStoreToProps)(ProductTypeBeverage));
+export default withRouter(connect(mapStoreToProps)(ProductTypeFresh));

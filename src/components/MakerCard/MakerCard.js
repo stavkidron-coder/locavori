@@ -8,6 +8,8 @@ import './MakerCard.css';
 class MakerCard extends Component {
 
   render() {
+
+    // var maker = this.props.maker;
     return (
     <>
         {this.props.store.maker.map(maker => {
@@ -15,27 +17,24 @@ class MakerCard extends Component {
                         <Card>
                             <CardBody>
 
-                                <CardTitle tag="h5">
-                                    <Link to="/maker-profile" className="cardTitle">
-                                        {maker.business_name}
-                                    </Link>
-                                    <Button className="favoriteBtn">
-                                        Favorite
-                                    </Button>
-                                </CardTitle>
+                <CardTitle tag="h5">
+                    <Link to="/maker-profile" className="cardTitle">
+                         {this.props.maker.business_name}
+                    </Link>
+                    <Button className="favoriteBtn">
+                        Favorite
+                    </Button>
+                </CardTitle>
 
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
-                            </CardBody>
-                            <div className="cardImg"/>
-                            <CardBody>
-                                <CardText>{maker.story}</CardText>
-                                <Link to="maker-profile">See more...</Link>
-                            </CardBody>
-                        </Card>
-                    </Container>
-        })}
-        
-    </>
+                <CardSubtitle tag="h6" className="mb-2 text-muted">{this.props.maker.product_type_one}, {this.props.maker.product_type_two}, {this.props.maker.product_type_three}</CardSubtitle>
+            </CardBody>
+            <div className="cardImg" />
+            <CardBody>
+                <CardText>{this.props.maker.story}</CardText>
+                <Link to="maker-profile">See more...</Link>
+            </CardBody>
+        </Card>
+    </Container>
     );
   }
 }

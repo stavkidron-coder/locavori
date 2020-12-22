@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mapStoreToProps from '../../../../redux/mapStoreToProps';
+import mapStoreToProps from '../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import { Col, FormGroup, Label, Input } from 'reactstrap';
 import ProductTypePrepared from './ProductTypePrepared/ProductTypePrepared';
 import ProductTypeFresh from './ProductTypeFresh/ProductTypeFresh';
 import ProductTypeBeverage from './ProductTypeBeverage/ProductTypeBeverage';
-import ProductCategories from './ProductCategories/ProductCategories';
+import ProductCategories from '../../../../MakerRegisterForm/MakerRegisterProductsTab/ProductInfo/ProductCategories/ProductCategories';
 
 class ProductInfo extends Component {
 
