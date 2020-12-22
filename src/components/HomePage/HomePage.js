@@ -13,17 +13,30 @@ import './HomePage.css';
 
 class HomePage extends Component {
 
+  state = {
+    filters: {
+      business_type: ['Cosmetics', 'Baked Good'],
+      delivery: [],
+      product_type: [],
+    }
+  }
+
   onLogin = (event) => {
     this.props.history.push('/login');
   };
 
   componentDidMount = () => {
     this.props.dispatch({type: 'GET_MAKERS'});
-  }
+  };
+
+  filterGet = () => {
+    this.props.dispatch({type: 'FILTER_MAKERS', payload: this.state.filters});
+  };
 
   render() {
     return (
       <div className="homePageBody">
+        <button onClick={this.filterGet}>TEST GET</button>
         <Container>
           {/* <Row>
             <Col>
