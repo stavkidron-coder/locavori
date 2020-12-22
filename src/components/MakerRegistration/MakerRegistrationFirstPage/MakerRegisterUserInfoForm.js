@@ -43,9 +43,10 @@ class MakerRegisterUserForm extends Component {
   render() {
     return (
       <Form className="formPanel userRegisterForm">
-        <h2>Create an Account</h2>
+        <h2>CREATE A MAKER ACCOUNT</h2>
         <hr className="registerOptionsHr"/>
-        <h4>Let's get some basic info</h4>
+        <h4>Let's get some basic info first</h4>
+        <br/>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.registrationMessage}

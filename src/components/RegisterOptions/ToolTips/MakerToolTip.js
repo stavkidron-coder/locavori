@@ -17,7 +17,7 @@ const MakerToolTip = (props) => {
         className="registerOptionsButton"
         color="success"
         onClick={() => props.history.push('/maker-registration1')}>
-          Register as Maker
+          Register as a Maker
         </Button>
 
       <Tooltip placement="bottom" isOpen={tooltipOpen} target="makerBtn" toggle={toggle}>
