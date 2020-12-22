@@ -6,35 +6,39 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } 
 
 
 
+
 class Maker extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.getMaker();
     }
 
     getMaker = () => {
-        this.props.dispatch({type: 'GET_MAKERS'})
+        this.props.dispatch({ type: 'GET_MAKERS' })
     }
-    ViewProfile = () =>{
+    ViewProfile = () => {
         this.props.history.push("/maker")
     }
+    // DeleteProfile = () => {
+
+    // }
     render() {
         return (
-        <Container>       
-            <h1>Makers</h1>
-            <Card>
-                {this.props.store.maker.map((maker) => {
-                    return <><Card key = {maker.id}>
-                        <CardTitle>{maker.business_name}</CardTitle>
-                        <CardBody>{maker.story}</CardBody>
-                    </Card>
-                        <Button onClick={this.ViewProfile}>View Profile</Button>
-                        <Button>Delete Profile</Button>
-                    </>
-
-                })}
-
-            </Card>
-        </Container> 
+            <Container>
+                <h1>Makers</h1>
+                <Card>
+                    {this.props.store.maker.map((maker) => {
+                        return <><Card key={maker.id}>
+                            <img src={maker.owner_img} width='100px' />
+                            <CardTitle>{maker.business_name}
+                                <CardBody>{maker.story}</CardBody>
+                                <Button onClick={this.ViewProfile}>View Profile</Button>
+                                <Button onClick={this.DeleteProfile}>Delete Profile</Button>
+                            </CardTitle>
+                        </Card>
+                        </>
+                    })}
+                </Card>
+            </Container>
         );
     }
 }
