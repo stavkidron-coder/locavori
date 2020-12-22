@@ -1,0 +1,11 @@
+.requestBtn{
+    display: block;
+    
+}
+.btn{
+    width: "50px";
+    margin: "5px";
+}
+.masterCard{
+    display: inline-block;
+}

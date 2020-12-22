@@ -25,7 +25,7 @@ router.post('/register', (req, res, next) => {
   const birthDate = req.body.birthDate
   const email = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
-  console.log('email in server', email);
+  
   
 
   const queryText = `INSERT INTO "tbl_profile" (first_name, last_name, birth_date, email, password)
