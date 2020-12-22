@@ -8,6 +8,8 @@ import './MakerCard.css';
 class MakerCard extends Component {
 
   render() {
+
+    // var maker = this.props.maker;
     return (
     <Container>
         <Card>
@@ -15,18 +17,18 @@ class MakerCard extends Component {
 
                 <CardTitle tag="h5">
                     <Link to="/maker-profile" className="cardTitle">
-                        Maker Name
+                         {this.props.maker.business_name}
                     </Link>
                     <Button className="favoriteBtn">
                         Favorite
                     </Button>
                 </CardTitle>
 
-                <CardSubtitle tag="h6" className="mb-2 text-muted">Maker featured products description</CardSubtitle>
+                <CardSubtitle tag="h6" className="mb-2 text-muted">{this.props.maker.product_type_one}, {this.props.maker.product_type_two}, {this.props.maker.product_type_three}</CardSubtitle>
             </CardBody>
-            <div className="cardImg"/>
+            <div className="cardImg" />
             <CardBody>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                <CardText>{this.props.maker.story}</CardText>
                 <Link to="maker-profile">See more...</Link>
             </CardBody>
         </Card>
