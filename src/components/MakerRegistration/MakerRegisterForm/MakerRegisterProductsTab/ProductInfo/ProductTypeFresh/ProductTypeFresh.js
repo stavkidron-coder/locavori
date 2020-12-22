@@ -15,59 +15,62 @@ const ProductTypeFresh = (props) => {
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
+
                     <CardBody>
+                        <p>select all that apply</p>
                         <Input type="radio"></Input>
                             <Label>Beef</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Chicken</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Lamb</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Bison</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Pork</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Eggs</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Cheese</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Herbs</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Apples</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Blueberries</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Strawberries</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Fresh Vegetables</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Fresh Fruit</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Milk</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Cream</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Flowers</Label>
-                        <br></br>
+                        <br/>
                         <Input type="radio"></Input>
                             <Label>Other</Label>
-                        <br></br>
+                        <br/>
                     </CardBody>
+                    
                 </Card>
             </Collapse>
     </div>

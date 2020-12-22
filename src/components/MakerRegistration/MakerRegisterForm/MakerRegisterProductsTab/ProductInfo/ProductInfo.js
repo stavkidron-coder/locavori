@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import { Col, FormGroup, Label, Input } from 'reactstrap';
 import ProductTypePrepared from './ProductTypePrepared/ProductTypePrepared';
 import ProductTypeFresh from './ProductTypeFresh/ProductTypeFresh';
 import ProductTypeBeverage from './ProductTypeBeverage/ProductTypeBeverage';
+import ProductCategories from './ProductCategories/ProductCategories';
 
 class ProductInfo extends Component {
 
@@ -15,6 +16,7 @@ class ProductInfo extends Component {
         return(
             <>
             <h4>Availability</h4>
+            <hr/>
                 <FormGroup>
                     <Col>
                         <p>Is your product available year round or limited availability?*</p>
@@ -27,13 +29,16 @@ class ProductInfo extends Component {
                     </Col>
                 </FormGroup>
 
+            
             <h4>Product Types</h4>
+            <hr/>
                 <FormGroup>
                     <Col>
                         <p>Do you have any prepared/packaged, shelf-stable, or refrigerated food product types that apply to your offerings?*</p>
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
+                        {/* selecting yes opens dropdown card */}
                         <ProductTypePrepared/>
                         <br></br>
                     </Col>
@@ -45,6 +50,7 @@ class ProductInfo extends Component {
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
+                        {/* selecting yes opens dropdown card */}
                         <ProductTypeFresh/>
                         <br></br>
                     </Col>
@@ -56,93 +62,16 @@ class ProductInfo extends Component {
                         <Input type="radio"></Input>
                             <Label>No</Label>
                         <br></br>
+                        {/* selecting yes opens dropdown card */}
                        <ProductTypeBeverage/>
                         <br></br>
                     </Col>
                 </FormGroup>
 
                 <br></br>
-                <FormGroup>
-                    <h6>Which categories do your products fit into?</h6>
-                    <p>Select all that apply</p>
-                    <Row>
-                        <Col>
-                            <Input type="radio"></Input>
-                                <Label>Snack</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Sweet Treat</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Salty/Savory Treat</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Healthy</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Gluten Free</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Vegan</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Dairy Free</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Organic</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Majority of your product is locally grown (grown within your state or neighboring state)</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Fair Trade Sourced</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Farmer/Grower made</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Small Batch</Label>
-                        </Col>
-                        <Col>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Handmade</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Non GMO</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>No Trans Fats</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>No High Fructose Corn Syrup</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Nitrate Free</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Award Winning</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Keto/Low Carb</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Nut Free</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Kosher</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Low Sodium</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Gift</Label>
-                            <br></br>
-                            <Input type="radio"></Input>
-                                <Label>Other</Label>
-                        </Col>
-                    </Row>
-                </FormGroup>
+                {/* checklist in ProductCategories.js */}
+                <ProductCategories/>
+                <br></br>
                 <FormGroup>
                     <h6>What are a few of your specialties?</h6>
                         <p>Flavors, best-sellers, etc.</p>

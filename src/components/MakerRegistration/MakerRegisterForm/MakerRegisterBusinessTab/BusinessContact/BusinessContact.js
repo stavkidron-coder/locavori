@@ -71,7 +71,7 @@ class BusinessContact extends Component {
             <FormGroup>
               <Row>
                 <Col>
-                  <Label>Business Address
+                  <Label>Business Address*
                   <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
                   </Label>
                 </Col>
@@ -91,6 +91,7 @@ class BusinessContact extends Component {
                 </Col>
 
                 <Col>
+                  {/* state dropdown component */}
                   <StateDropdown/>
                 </Col>
 
@@ -102,33 +103,46 @@ class BusinessContact extends Component {
               </Row>
             </FormGroup>
   
-          <hr/>
+          
           <h4>Public Address</h4>
+          <hr/>
+
             <FormGroup>
+
               <Row>
                 <Col>
-                  <Label>Address</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>Address
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
-                  <Label>Suite #</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>Suite #
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
               </Row>
+
               <Row>
                 <Col>
-                  <Label>City*</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>City
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
+
                 <Col>
+                  {/* state dropdown component */}
                  <StateDropdown/>
                 </Col>
+
                 <Col>
-                  <Label>Zipcode*</Label>
-                  <Input type="text" placeholder="This will be displayed"></Input>
+                  <Label>Zipcode
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  </Label>
                 </Col>
               </Row>
             </FormGroup>
+            
           </div>
             
 
