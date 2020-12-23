@@ -18,56 +18,90 @@ const ProductTypeFresh = (props) => {
 
                     <CardBody>
                         <p>select all that apply</p>
-                        <Input type="radio"></Input>
-                            <Label>Beef</Label>
+                        <Label check>
+                            <Input type="checkbox" value="beef"/>
+                            Beef
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Chicken</Label>
+                        <Label check>
+                            <Input type="checkbox" value="chicken"/>
+                            Chicken
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Lamb</Label>
+                        <Label check>
+                            <Input type="checkbox" value="lamb"/>
+                            Lamb
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Bison</Label>
+                        <Label check>
+                            <Input type="checkbox" value="bison"/>
+                            Bison
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Pork</Label>
+                        <Label check>
+                            <Input type="checkbox" value="pork"/>
+                            Pork
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Eggs</Label>
+                        <Label check>
+                            <Input type="checkbox" value="eggs"/>
+                            Eggs
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Cheese</Label>
+                        <Label check>
+                            <Input type="checkbox" value="cheese"/>
+                            Cheese
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Herbs</Label>
+                        <Label check>
+                            <Input type="checkbox" value="herbs"/>
+                            Herbs
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Apples</Label>
+                        <Label check>
+                            <Input type="checkbox" value="apples"/>
+                            Apples
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Blueberries</Label>
+                        <Label check>
+                            <Input type="checkbox" value="blueberries"/>
+                            Blueberries
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Strawberries</Label>
+                        <Label check>
+                            <Input type="checkbox" value="strawberries"/>
+                            Strawberries
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Fresh Vegetables</Label>
+                        <Label check>
+                            <Input type="checkbox" value="fresh_vegetables"/>
+                            Fresh Vegetables
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Fresh Fruit</Label>
+                        <Label check>
+                            <Input type="checkbox" value="fresh_fruit"/>
+                            Fresh Fruit
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Milk</Label>
+                        <Label check>
+                            <Input type="checkbox" value="milk"/>
+                            Milk
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Cream</Label>
+                        <Label check>
+                            <Input type="checkbox" value="cream"/>
+                            Cream
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Flowers</Label>
+                        <Label check>
+                            <Input type="checkbox" value="flowers"/>
+                            Flowers
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Other</Label>
+                        <Label check>
+                            <Input type="checkbox" value="other"/>
+                            Other
+                        </Label>
                         <br/>
                     </CardBody>
                     

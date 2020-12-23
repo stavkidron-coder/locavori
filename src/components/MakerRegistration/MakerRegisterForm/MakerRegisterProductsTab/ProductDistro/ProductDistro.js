@@ -19,77 +19,115 @@ class ProductDistro extends Component {
 
                     <Row>
                         <Col>
-                            <Input type="radio"></Input>
-                                <Label>Local Grocery Stores</Label>
+                            <Label check>
+                                <Input type="checkbox" value="grocery"/>
+                                Local Grocery Stores
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Co-ops</Label>
+                            <Label check>
+                                <Input type="checkbox" value="co_ops"/>
+                                Co-ops
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Farmers Market or other Public Markets</Label>
+                            <Label check>
+                                <Input type="checkbox" value="farmers_market"/>
+                                Farmers Market or other Public Market
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Online on Amazon</Label>
+                            <Label check>
+                                <Input type="checkbox" value="amazon"/>
+                                Online on Amazon
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Online at Company Websites</Label>
+                            <Label check>
+                                <Input type="checkbox" value="company_website"/>
+                                Other Company Website
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Gift or Subscription Box Companies</Label>
+                            <Label check>
+                                <Input type="checkbox" value="gift"/>
+                                Gift or Subscription Box Companies
+                            </Label>
                         </Col>
                    
                         <Col>
-                            <Input type="radio"></Input>
-                                <Label>Retail Store, non-grocery</Label>
+                            <Label check>
+                                <Input type="checkbox" value="retail"/>
+                                Retail Store, non-grocery
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Your place of business, farm or home</Label>
+                            <Label check>
+                                <Input type="checkbox" value="your_home"/>
+                                Your place of business, farm or home
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Roadside Stand</Label>
+                            <Label check>
+                                <Input type="checkbox" value="roadside"/>
+                                Roadside Stand
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Local Delivery</Label>
+                            <Label check>
+                                <Input type="checkbox" value="delivery"/>
+                                Local Delivery
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Curbside Pickup</Label>
+                            <Label check>
+                                <Input type="checkbox" value="curbside"/>
+                                Curbside Pickup
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Shipping</Label>
+                            <Label check>
+                                <Input type="checkbox" value="shipping"/>
+                                Shipping
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Other</Label>
+                            <Label check>
+                                <Input type="checkbox" value="other"/>
+                                Other
+                            </Label>
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
                             <p>May customers pick up products?*</p>
-                            <Input type="radio"></Input>
-                                <Label>Yes</Label>
+                            <Label check>
+                                <Input type="checkbox" value="yes"/>
+                                Yes
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>No</Label>
+                            <Label check>
+                                <Input type="checkbox" value="no"/>
+                                No
+                            </Label>
                             <br/>
                         </Col>
 
                         <Col>
                             <p>Do you deliver?*</p>
-                            <Input type="radio"></Input>
-                                <Label>Yes</Label>
+                            <Label check>
+                                <Input type="checkbox" value="yes"/>
+                                Yes
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>No</Label>
+                            <Label check>
+                                <Input type="checkbox" value="no"/>
+                                No
+                            </Label>
                             <br/>
                         </Col>
 
                         <Col>
                             <p>Do you ship your products?*</p>
-                            <Input type="radio"></Input>
-                                <Label>Yes</Label>
+                            <Label check>
+                                <Input type="checkbox" value="yes"/>
+                                Yes
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>No</Label>
+                            <Label check>
+                                <Input type="checkbox" value="no"/>
+                                No
+                            </Label>
                             <br/>
                         </Col>
                     </Row>
