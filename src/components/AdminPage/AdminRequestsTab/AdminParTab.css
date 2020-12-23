@@ -1,11 +1,31 @@
-.requestBtn{
+/* .requestBtn{
     display: block;
     
-}
-.btn{
+} */
+/* .btn{
     width: "50px";
     margin: "5px";
+} */
+
+.PARCard {
+    width: 30%;
+    margin: 15px;
 }
-.masterCard{
-    display: inline-block;
+
+.PendingRequestsBody {
+    display: inline-flex;
+}
+
+.acceptDeclineBtns {
+    margin: 5px;
+}
+
+.viewProfileLink {
+    text-decoration: none;
+    color: rgb(247, 247, 247);
+}
+
+.viewProfileLink:hover {
+    text-decoration: none;
+    color: white;
 }
