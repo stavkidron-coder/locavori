@@ -56,25 +56,33 @@ class BusinessSpecs extends Component {
                 <Label>Do you have a business food/liquor license that allows you to sell to the public?*</Label>
                   <Row>
                     <Col>
-                      <Input type="radio"></Input>
-                        <Label>Commercial Food License (I can sell through resellers)</Label>
+                      <Label check>
+                        <Input type="checkbox" value="commercial"/>
+                          Commercial Food License (I can sell through resellers)
+                      </Label>
                     </Col>
 
                     <Col>
-                      <Input type="radio"></Input>
-                        <Label>Commercial Alcohol License</Label>
+                      <Label check>
+                        <Input type="checkbox" value="alcohol"/>
+                          Commercial Alcohol License
+                        </Label>
                     </Col>
                   </Row>
 
                   <Row>
                     <Col>
-                      <Input type="radio"></Input>
-                        <Label>Cottage/Pickle Law License (I have a limited license)</Label>
+                      <Label check>
+                        <Input type="checkbox" value="cottage"/>
+                        Cottage/Pickle Law License (I have a limited license)
+                      </Label>
                     </Col>
 
                     <Col>
-                      <Input type="radio"></Input>
-                        <Label>Other Type of License</Label>
+                      <Label check>
+                        <Input type="checkbox" value="other"/>
+                        Other Type of License 
+                      </Label>
                     </Col>
                   </Row>
 
@@ -99,44 +107,68 @@ class BusinessSpecs extends Component {
                   <Row>
 
                     <Col>
-                      <Input type="radio"></Input>
-                        <Label>Farmer-Grower</Label>
+                      <Label check>
+                        <Input type="checkbox" value="farmer"/>
+                        Farmer-Grower
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Forager</Label>
+                      <Label check>
+                        <Input type="checkbox" value="forager"/>
+                        Forager 
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Maker</Label>
+                      <Label check>
+                        <Input type="checkbox" value="maker"/>
+                        Maker
+                        </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Distiller</Label>
+                      <Label check>
+                        <Input type="checkbox" value="distiller"/>
+                        Distiller 
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Brewer</Label>
+                      <Label check>
+                        <Input type="checkbox" value="brewer"/>
+                        Brewer
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Winemaker</Label>
+                      <Label check>
+                        <Input type="checkbox" value="winemaker"/>
+                        Winemaker
+                      </Label>
                     </Col>
 
                     <Col>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Cidery</Label>
+                      <Label check>
+                        <Input type="checkbox" value="cidery"/>
+                        Cidery
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Roaster</Label>
+                      <Label check>
+                        <Input type="checkbox" value="roaster"/>
+                        Roaster
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Apiary (bees)</Label>
+                      <Label check>
+                        <Input type="checkbox" value="apiary"/>
+                        Apiary (bees)
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Women Owned</Label>
+                      <Label check>
+                        <Input type="checkbox" value="woman_owned"/>
+                        Women Owned
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>P.O.C. Owned</Label>
+                      <Label check>
+                        <Input type="checkbox" value="poc_owned"/>
+                        P.O.C. Owned
+                      </Label>
                         <br/>
-                      <Input type="radio"></Input>
-                        <Label>Other</Label>
+                      <Label check>
+                        <Input type="checkbox" value="other"/>
+                        Other
+                      </Label>
                     </Col>
                   </Row>
               </FormGroup>

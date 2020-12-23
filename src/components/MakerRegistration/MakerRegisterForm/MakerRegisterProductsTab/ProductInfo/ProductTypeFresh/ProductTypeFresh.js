@@ -11,7 +11,7 @@ const ProductTypeFresh = (props) => {
 
   return (
     <div>
-      <Input type="radio" onClick={toggle} >Toggle</Input>
+      <Input type="checkbox" onClick={toggle} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
