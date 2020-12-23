@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import { Card, CardBody, CardTitle, Container, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, Button, CardSubtitle, CardText, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 
 
@@ -18,27 +19,44 @@ class Maker extends Component {
     ViewProfile = () => {
         this.props.history.push("/maker")
     }
-    // DeleteProfile = () => {
+    //deleteMaker = () => {
 
     // }
     render() {
         return (
-            <Container>
-                <h1>Makers</h1>
-                <Card>
-                    {this.props.store.maker.map((maker) => {
-                        return <><Card key={maker.id}>
-                            <img src={maker.owner_img} width='100px' alt={maker.business_name}/>
-                            <CardTitle>{maker.business_name}
-                                <CardBody>{maker.story}</CardBody>
-                                <Button onClick={this.ViewProfile}>View Profile</Button>
-                                <Button onClick={this.DeleteProfile}>Delete Profile</Button>
-                            </CardTitle>
-                        </Card>
-                        </>
-                    })}
+            <div className="PendingRequestsBody">
+          {this.props.store.maker.map((maker) => {
+            return(
+              <>
+                <Card className="PARCard">
+                  <CardBody>
+                    <CardTitle tag="h5">{maker.business_name}</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
+                  </CardBody>
+                  <img width="100%" src={maker.owner_img} alt={maker.business_name} />
+                  <CardBody>
+                    <CardText>STORY:</CardText>
+                    <CardText>{maker.story}</CardText>
+                    <Row>
+                      <Col xs="8">
+                        <Button color="primary" onClick= {this.ViewProfile}>
+                          <Link to="#" className="viewProfileLink">View Profile</Link>
+                        </Button>
+                        <Button color="primary" onClick={this.deleteMaker}>
+                          Delete
+                        </Button>
+                      </Col>
+
+
+                    </Row>
+                  </CardBody>
                 </Card>
-            </Container>
+                </>
+            )
+
+          })} 
+          
+          </div>
         );
     }
 }

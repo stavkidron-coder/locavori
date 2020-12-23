@@ -1,4 +1,4 @@
-const makerReducer = (state=[], action) => {
+const makerCardReducer = (state=[], action) => {
     switch (action.type) {
         case 'SET_MAKER':
             return action.payload;
@@ -8,6 +8,4 @@ const makerReducer = (state=[], action) => {
             return state;
     }
 }
-
-
-export default makerReducer;
+export default makerCardReducer;
