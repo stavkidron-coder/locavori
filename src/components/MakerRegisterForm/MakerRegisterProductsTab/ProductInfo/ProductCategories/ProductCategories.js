@@ -5,10 +5,10 @@ import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
 
 class ProductCategories extends Component {
-
+    
 
     handleChange = (event) => {
-        console.log(event.target.value);
+        this.props.dispatch({type: 'SET_PRODUCT_CATEGORY', payload: event.target.value});
     }
 
     render(){
