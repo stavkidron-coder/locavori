@@ -70,7 +70,7 @@ CREATE TABLE "tbl_artisans" (
 	"awards" varchar(200),
 	"sales_sheet" varchar(200),
 	"logo" varchar(1200),
-	"status" varchar(30),
+	"status" boolean default FALSE,
 	"dateStampUTC" timestamp default current_timestamp,
 	"modifiedUTC" time default current_timestamp,
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
@@ -87,6 +87,7 @@ CREATE TABLE "tbl_profile" (
 	"birth_date" varchar (50),
 	"email" varchar(50) NOT NULL UNIQUE,
 	"password" varchar(1000) NOT NULL,
+	"admin" boolean default FALSE,
 	"date_stamp" timestamp default current_timestamp,
 	CONSTRAINT "tbl_profile_pk" PRIMARY KEY ("id")
 ) WITH (
