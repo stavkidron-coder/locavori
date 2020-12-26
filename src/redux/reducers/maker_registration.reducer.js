@@ -39,6 +39,9 @@ const registrationReducer = (state={}, action) => {
         case 'ADD_BUSINESS_SPECS':
             return {...state, business_specs: {...state.business_specs, [action.payload.key]: action.payload.value}};
 
+        case 'ADD_FEATURED_PRODUCTS':
+            return {...state, featured_products: {...state.featured_products, [action.payload.key]: action.payload.value}};
+
         default:
             return state;
     }
