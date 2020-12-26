@@ -1,6 +1,7 @@
 let product_category_array = [];
 let business_type_array = [];
-let business_license_array = []
+let business_license_array = [];
+let product_distribution_array = [];
 
 const registrationReducer = (state={}, action) => {
     switch (action.type) {
@@ -27,6 +28,13 @@ const registrationReducer = (state={}, action) => {
         case 'REMOVE_BUSINESS_LICENSE':
             business_license_array = business_license_array.filter(item => item !== action.payload);
             return {...state, business_license: business_license_array};
+        
+        case 'ADD_PRODUCT_DISTRIBUTION':
+            product_distribution_array.push(action.payload);
+            return {...state, product_distribution: product_distribution_array};
+        case 'REMOVE_PRODUCT_DISTRIBUTION':
+            product_distribution_array = product_distribution_array.filter(item => item !== action.payload);
+            return {...state, product_distribution: product_distribution_array};
 
         case 'ADD_BUSINESS_SPECS':
             return {...state, business_specs: {...state.business_specs, [action.payload.key]: action.payload.value}};
