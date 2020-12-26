@@ -2,6 +2,7 @@ let product_category_array = [];
 let business_type_array = [];
 let business_license_array = [];
 let product_distribution_array = [];
+let beverage_type_array = [];
 
 const registrationReducer = (state={}, action) => {
     switch (action.type) {
@@ -41,6 +42,16 @@ const registrationReducer = (state={}, action) => {
 
         case 'ADD_FEATURED_PRODUCTS':
             return {...state, featured_products: {...state.featured_products, [action.payload.key]: action.payload.value}};
+
+        case 'ADD_BEVERAGE_TYPE':
+            beverage_type_array.push(action.payload);
+            return {...state, beverage_type: beverage_type_array};
+        case 'REMOVE_BEVERAGE_TYPE':
+            beverage_type_array = beverage_type_array.filter(item => item !== action.payload);
+            return {...state, beverage_type: beverage_type_array};
+        case 'CLEAR_BEVERAGE_TYPE':
+            beverage_type_array = []
+            return {beverage_type: beverage_type_array};
 
         default:
             return state;
