@@ -38,20 +38,14 @@ class HomePage extends Component {
       <div className="homePageBody">
         <button onClick={this.filterGet}>TEST GET</button>
         <Container>
-          {/* <Row>
-            <Col>
-              <SearchBarCollapse/>
-            </Col>
-          </Row> */}
 
           <Row>
             <Col xs='12'>
              <MapListToggleBtn/>
             </Col>
-            
           </Row>
               
-          </Container>
+        </Container>
 
         </div>
     );
