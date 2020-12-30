@@ -36,7 +36,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="homePageBody">
-        <button onClick={this.filterGet}>TEST GET</button>
+        {/* <button onClick={this.filterGet}>TEST GET</button> */}
         <Container>
 
           <Row>

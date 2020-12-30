@@ -1,3 +1,55 @@
 .navBar {
-    background-color: rgb(242, 242, 242) !important;
+    background-color: rgba(16, 16, 16, 0.714) !important;
 }
+
+.navLogo {
+    width: 200px;
+}
+
+.topNav {
+    background-color: rgb(160,170,98);
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.nav-link {
+    color: rgb(235, 235, 235) !important;
+    text-decoration: none;
+    width: 100%;
+  }
+
+.nav-link:hover {
+    color: #cecece !important;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .loginOut {
+      color: black !important;
+  }
+  .loginOut:hover {
+      color: rgb(34, 34, 34) !important;
+  }
+
+  .navContents {
+      margin-left: 40px;
+      margin-right: 40px;
+  }
+
+  .navContainer {
+      background-image: url('../../TestImages/bread.jpg');
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 50px;
+      margin-bottom: 20px;
+  }
+
+  .title {
+    background-color: rgba(0, 0, 0, 0.454);
+    border-radius: 10px;
+    padding: 30px;
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    color: white;
+  }
