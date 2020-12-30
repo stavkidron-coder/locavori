@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 html,
 body,
 #react-root {
-  height: 100%;
+  min-height: 100%;
   padding: 0px;
   margin: 0;
 }

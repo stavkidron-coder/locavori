@@ -1,0 +1,69 @@
+
+
+
+.navBar {
+    background-color: rgba(0, 0, 0, 0.886) !important;
+}
+
+.navLogo {
+    width: 200px;
+}
+
+.topNav {
+    background-color: rgb(160,170,98);
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.nav-link {
+    color: rgb(235, 235, 235) !important;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 20px;
+  }
+
+.nav-link:hover {
+    color: #000000 !important;
+    text-decoration: none;
+  }
+
+  .loginOut {
+      color: rgb(0, 0, 0) !important;
+      
+  }
+  .loginOut:hover {
+      color: rgb(255, 255, 255) !important;
+      background-color: rgba(0, 0, 0, 0.886);
+  }
+
+  .navContents {
+    width: 200px;
+    text-align: center;
+    border: 1px solid white;
+    transition: 0.3s;
+  }
+  
+  .navContents:hover {
+    width: 200px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #faf5e8;
+    border-radius: 25px;
+  }
+
+  .navContainer {
+      background-image: url('../../TestImages/bread.jpg');
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 30px;
+  }
+
+  .title {
+    background-color: rgba(0, 0, 0, 0.454);
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    color: white;
+    text-align: center !important;
+    font-family: 'Fredericka the Great', cursive;
+  }

@@ -11,10 +11,12 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem
+  NavItem,
+  Row,
+  Col
 } from 'reactstrap';
 
-const NavbarCollapse2 = (props) => {
+const DesktopNav = (props) => {
 
     let loginLinkData = {
         path: '/login',
@@ -31,7 +33,7 @@ const NavbarCollapse2 = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="navContainer">
+    <div>
         <Navbar className="topNav" light expand="md">
             <Nav className="ml-auto navContents" navbar>
                 <NavItem className="nav-item">
@@ -67,11 +69,9 @@ const NavbarCollapse2 = (props) => {
 
         </Collapse>
       </Navbar>
-
-        <h1 className="title">Connecting local makers to hungry neighbors</h1>
-        
+            
     </div>
   );
 }
 
-export default connect(mapStoreToProps)(NavbarCollapse2);
+export default connect(mapStoreToProps)(DesktopNav);

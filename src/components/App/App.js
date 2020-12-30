@@ -16,8 +16,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegistration/MakerRegisterPage/MakerRegisterPage';
-import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
-import NavbarCollapse2 from '../NavbarCollapse/NavbarCollapse2';
+// import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
+// import NavbarCollapse2 from '../NavbarCollapse/NavbarCollapse2';
 import MakerPage from '../MakerProfile/MakerProfile';
 import MakerRegistrationPgOne from '../MakerRegistration/MakerRegistrationFirstPage/MakerRegistrationUserInfoPage';
 
@@ -35,7 +35,7 @@ class App extends Component {
         <div>
           {/* <Nav /> */}
           {/* <NavbarCollapse/> */}
-          <NavbarCollapse2/>
+          {/* <NavbarCollapse2/> */}
 
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
