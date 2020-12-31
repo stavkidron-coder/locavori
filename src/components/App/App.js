@@ -129,7 +129,7 @@ class App extends Component {
               // - if logged in, redirects to "/user"
               // - else shows LandingPage at "/home"
               exact
-              path="/maker"
+              path="/makerCard/:id"
               component={MakerPage}
             />
 

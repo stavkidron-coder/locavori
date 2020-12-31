@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import './AdminParTab.css';
 import AcceptBtn from './AdminPARToolTips/ApproveToolTip';
 import DeclineBtn from './AdminPARToolTips/DeclineToolTip';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col} from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
 
 // ViewApp = () => {
 
@@ -28,9 +28,9 @@ class AdminPARTab extends Component {
 
         <div className="PendingRequestsBody">
           {this.props.store.maker.map((maker) => {
-            return(
+            return (
               <>
-                <Card className="PARCard">
+                <Card key={maker.id} className="PARCard">
                   <CardBody>
                     <CardTitle tag="h5">{maker.business_name}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
@@ -44,20 +44,20 @@ class AdminPARTab extends Component {
                         <Button color="primary">
                           <Link to="#" className="viewProfileLink">View Profile</Link>
                         </Button>
-                        
+
                       </Col>
-                        <AcceptBtn className="acceptDeclineBtns"/>
-                        <DeclineBtn className="acceptDeclineBtns"/>
+                      <AcceptBtn className="acceptDeclineBtns" />
+                      <DeclineBtn className="acceptDeclineBtns" />
 
                     </Row>
                   </CardBody>
                 </Card>
-                </>
+              </>
             )
 
-          })} 
-          
-          </div>
+          })}
+
+        </div>
 
 
       </Container>
