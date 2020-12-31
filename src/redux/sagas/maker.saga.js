@@ -9,9 +9,9 @@ function* getMakers() {
         console.log('GET all makers failed', error);
     }
 }
-function* getMakerCard() {
+function* getMakerCard(action) {
     try {
-        const makerCard = yield axios.get('/api/makerCard');
+        const makerCard = yield axios.get(`/api/makerCard/${action.payload.id}`);
         yield put({type: 'SET_MAKER_CARD', payload: makerCard.data});
     } catch (error) {
         console.log('GET MakerCard failed', error);

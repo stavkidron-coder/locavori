@@ -16,8 +16,10 @@ class Maker extends Component {
     getMaker = () => {
         this.props.dispatch({ type: 'GET_MAKERS' })
     }
-    ViewProfile = () => {
-        this.props.history.push("/maker")
+    ViewProfile = (makerId) => {
+        this.props.history.push(`/makerCard/${makerId}`)
+        console.log("11111111111111111111",makerId);
+        
     }
     //deleteMaker = () => {
 
@@ -28,7 +30,7 @@ class Maker extends Component {
           {this.props.store.maker.map((maker) => {
             return(
               <>
-                <Card className="PARCard">
+                <Card key={maker.id} className="PARCard">
                   <CardBody>
                     <CardTitle tag="h5">{maker.business_name}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
@@ -39,15 +41,13 @@ class Maker extends Component {
                     <CardText>{maker.story}</CardText>
                     <Row>
                       <Col xs="8">
-                        <Button color="primary" onClick= {this.ViewProfile}>
+                        <Button color="primary" onClick= {() => this.ViewProfile(maker.profile_id)}>
                           <Link to="#" className="viewProfileLink">View Profile</Link>
                         </Button>
                         <Button color="primary" onClick={this.deleteMaker}>
                           Delete
                         </Button>
                       </Col>
-
-
                     </Row>
                   </CardBody>
                 </Card>

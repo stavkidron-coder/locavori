@@ -6,6 +6,21 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import './MakerCard.css';
 
 class MakerCard extends Component {
+    state = {
+        taco: 3
+
+    }
+
+    componentDidMount() {
+        this.getMaker();
+        console.log('component working');
+        
+    }
+    getMaker = () => {
+        this.props.dispatch({ type: 'GET_MAKER_CARD',id:this.state.taco })
+        console.log("222222222222222222222",this.state.taco);
+        
+    }
 
   render() {
 

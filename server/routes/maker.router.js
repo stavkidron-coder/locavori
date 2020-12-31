@@ -20,9 +20,12 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const queryText = `
   SELECT * FROM "tbl_artisans"
-  WHERE "id" = ${req.params.id} 
-  AND "profile_id" = ${req.user.id}
+  WHERE "profile_id" = ${req.params.id}
   `;
+  console.log(req.params.id);
+  
+// AND WHERE "id" = ${req.params.id} 
+
 
   pool.query(queryText).then((result) => {
     res.send(result.rows);

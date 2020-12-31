@@ -1,9 +1,7 @@
 const makerCardReducer = (state=[], action) => {
     switch (action.type) {
-        case 'SET_MAKER':
+        case 'SET_MAKER_CARD':
             return action.payload;
-        case 'SET_FILTERED_MAKER':
-            return action.payload.flat();
         default:
             return state;
     }
