@@ -5,6 +5,11 @@ import { withRouter } from "react-router";
 import { Col, Row, FormGroup, Label, Input } from 'reactstrap';
 
 class ProductCategories extends Component {
+    
+
+    handleChange = (event) => {
+        this.props.dispatch({type: 'SET_PRODUCT_CATEGORY', payload: event.target.value});
+    }
 
     render(){
         return(
@@ -15,80 +20,128 @@ class ProductCategories extends Component {
 
                     <Row>
                         <Col>
-                            <Input type="radio"></Input>
-                                <Label>Snack</Label>
+                            
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="snack" type="checkbox"/>
+                                Snack
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Sweet Treat</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="sweet_treat" type="checkbox"/>
+                                Sweet Treat
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Salty/Savory Treat</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="savory_treat" type="checkbox"/>
+                                Savory Treat
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Healthy</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="healthy" type="checkbox"/>
+                                Healthy
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Gluten Free</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="gluten_free" type="checkbox"/>
+                                Gluten Free
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Vegan</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="vegan" type="checkbox"/>
+                                Vegan
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Dairy Free</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="dairy_free" type="checkbox"/>
+                                Dairy Free
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Organic</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="organic" type="checkbox"/>
+                                Organic
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Majority of your product is locally grown (grown within your state or neighboring state)</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="local" type="checkbox"/>
+                                Majority of your product is locally grown (grown within your state or neighboring state)
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Fair Trade Sourced</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="fair_trade" type="checkbox"/>
+                                Fair Trade Sourced
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Farmer/Grower made</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="farmer_made" type="checkbox"/>
+                                Farmer/Grower made
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Small Batch</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="small_batch" type="checkbox"/>
+                                Small Batch
+                            </Label>
                         </Col>
 
                         <Col>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="handmade" type="checkbox"/>
+                                Handmade
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Handmade</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="non_gmo" type="checkbox"/>
+                                Non GMO
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Non GMO</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="no_trans_fats" type="checkbox"/>
+                                No Trans Fats
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>No Trans Fats</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="no_corn_syrup" type="checkbox"/>
+                                No High Fructose Corn Syrup
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>No High Fructose Corn Syrup</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="nitrate_free" type="checkbox"/>
+                                Nitrate Free
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Nitrate Free</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="award_winning" type="checkbox"/>
+                                Award Winning
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Award Winning</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="keto" type="checkbox"/>
+                                Keto/Low Carb
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Keto/Low Carb</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="nut_free" type="checkbox"/>
+                                Nut Free
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Nut Free</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="kosher" type="checkbox"/>
+                                Kosher
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Kosher</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="low_sodium" type="checkbox"/>
+                                Low Sodium
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Low Sodium</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="gift" type="checkbox"/>
+                                Gift
+                            </Label>
                             <br/>
-                            <Input type="radio"></Input>
-                                <Label>Gift</Label>
-                            <br/>
-                            <Input type="radio"></Input>
-                                <Label>Other</Label>
+                            <Label>
+                                <Input onClick={(event) => this.handleChange(event)} value="other" type="checkbox"/>
+                                Other
+                            </Label>
                         </Col>
                     </Row>
                 </FormGroup>

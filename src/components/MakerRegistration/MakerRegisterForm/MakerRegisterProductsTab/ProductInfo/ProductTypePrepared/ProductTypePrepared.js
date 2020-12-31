@@ -11,111 +11,177 @@ const ProductTypePrepared = (props) => {
 
   return (
     <div>
-      <Input type="radio" onClick={toggle} >Toggle</Input>
+      <Input type="checkbox" onClick={toggle} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
 
                     <CardBody>
                         <p>select all that apply</p>
-                        <Input type="radio"></Input>
-                            <Label>Jams, Jellies, Spreadables</Label>
+                        <Label check>
+                            <Input type="checkbox" value="jams"/>
+                            Jams, Jellies, Spreadables
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Pickles, Relish</Label>
+                        <Label check>
+                            <Input type="checkbox" value="pickles"/>
+                            Pickles, Relish
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Vinegars</Label>
+                        <Label check>
+                            <Input type="checkbox" value="vinegars"/>
+                            Vinegars
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Cookies</Label>
+                        <Label check>
+                            <Input type="checkbox" value="cookies"/>
+                            Cookies
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Crackers</Label>
+                        <Label check>
+                            <Input type="checkbox" value="crackers"/>
+                            Crackers
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Chips</Label>
+                        <Label check>
+                            <Input type="checkbox" value="chips"/>
+                            Chips
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Syrups</Label>
+                        <Label check>
+                            <Input type="checkbox" value="syrups"/>
+                            Syrups
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Honey</Label>
+                        <Label check>
+                            <Input type="checkbox" value="honey"/>
+                            Honey
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Pancake Mix</Label>
+                        <Label check>
+                            <Input type="checkbox" value="pancake_mix"/>
+                            Pancake Mix
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Baking Mix</Label>
+                        <Label check>
+                            <Input type="checkbox" value="baking_mix"/>
+                            Baking Mix
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Cooking Sauce</Label>
+                        <Label check>
+                            <Input type="checkbox" value="cooking_sauce"/>
+                            Cooking Sauce
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Hot Sauces</Label>
+                        <Label check>
+                            <Input type="checkbox" value="hot_sauce"/>
+                            Hot Sauces
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Salsa</Label>
+                        <Label check>
+                            <Input type="checkbox" value="salsa"/>
+                            Salsa
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Hard Candy/Sweets</Label>
+                        <Label check>
+                            <Input type="checkbox" value="hard_candy"/>
+                            Hard Candy/Sweets
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Popcorn</Label>
+                        <Label check>
+                            <Input type="checkbox" value="popcorn"/>
+                            Popcorn
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Chocolate</Label>
+                        <Label check>
+                            <Input type="checkbox" value="chocolate"/>
+                            Chocolate
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Soft or Chewy Candy/Sweets</Label>
+                        <Label check>
+                            <Input type="checkbox" value="soft_candy"/>
+                            Soft or Chewy Candy/Sweets
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Nuts</Label>
+                        <Label check>
+                            <Input type="checkbox" value="nuts"/>
+                            Nuts
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Other Snacks</Label>
+                        <Label check>
+                            <Input type="checkbox" value="other_snacks"/>
+                            Other Snacks
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Dried Food</Label>
+                        <Label check>
+                            <Input type="checkbox" value="dried_food"/>
+                            Dried Food
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Granola</Label>
+                        <Label check>
+                            <Input type="checkbox" value="granola"/>
+                            Granola
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Soups (fresh or mix)</Label>
+                        <Label check>
+                            <Input type="checkbox" value="soups"/>
+                            Soups (fresh or mix)
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Catsup</Label>
+                        <Label check>
+                            <Input type="checkbox" value="catsup"/>
+                            Catsup
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Mustard</Label>
+                        <Label check>
+                            <Input type="checkbox" value="mustard"/>
+                            Mustard
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Sweet Treat</Label>
+                        <Label check>
+                            <Input type="checkbox" value="sweet_treat"/>
+                            Sweet Treat
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Rub</Label>
+                        <Label check>
+                            <Input type="checkbox" value="rub"/>
+                            Rub
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Marinade</Label>
+                        <Label check>
+                            <Input type="checkbox" value="marinade"/>
+                            Marinade
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Dried Vegetable</Label>
+                        <Label check>
+                            <Input type="checkbox" value="dried_vegetable"/>
+                            Dried Vegetable
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Other Sauce</Label>
+                        <Label check>
+                            <Input type="checkbox" value="other_sauce"/>
+                            Other Sauce
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Dried Meat or Jerky</Label>
+                        <Label check>
+                            <Input type="checkbox" value="dried_meat"/>
+                            Dried Meat or Jerky
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Preserved, shelf-stable meat</Label>
+                        <Label check>
+                            <Input type="checkbox" value="preserved_meat"/>
+                            Preserved, shelf-stable meat
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Bakery: fresh bread/pastries</Label>
+                        <Label check>
+                            <Input type="checkbox" value="bakery"/>
+                            Bakery: fresh bread/pastries
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Other</Label>
+                        <Label check>
+                            <Input type="checkbox" value="other"/>
+                            Other
+                        </Label>
                         <br/>
                     </CardBody>
                     

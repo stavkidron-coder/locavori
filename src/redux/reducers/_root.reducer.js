@@ -3,6 +3,8 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import maker from './maker.reducer'
 import makerCard from './makerCard.reducer';
+import maker_registration from './maker_registration.reducer';
+
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -14,7 +16,9 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
   maker,
-  makerCard, 
+  makerCard,
+  maker_registration ,
+
 });
 
 export default rootReducer;

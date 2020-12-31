@@ -1,10 +1,10 @@
 import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
-// import { formatRelative } from "date-fns";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Container} from 'reactstrap';
+import {useSelector} from 'react-redux';
 // import { formatRelative } from "date-fns";
 
 // Styles Imports
@@ -41,22 +41,23 @@ function LocalMap() {
     libraries,
   });
 
-  const [markers, setMarkers] = React.useState([]);
+  // const [markers, setMarkers] = React.useState([]);
+  const makerStore = useSelector(maker => maker);
   const [selected, setSelected] = React.useState(null);
 
   // Upon Click on map will add an object to the marker array
   // This records the Lat and Lng of the position clicked as well as the time it was clicked
   // This will appear as a robot on the map
-  const onMapClick = React.useCallback((e) => {
-    setMarkers((current) => [
-      ...current,
-      {
-        lat: e.latLng.lat(),
-        lng: e.latLng.lng(),
-        time: new Date(),
-      },
-    ]);
-  }, []);
+  // const onMapClick = React.useCallback((e) => {
+  //   setMarkers((current) => [
+  //     ...current,
+  //     {
+  //       lat: e.latLng.lat(),
+  //       lng: e.latLng.lng(),
+  //       tim1e: new Date(),
+  //     },
+  //   ]);
+  // }, []);
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
@@ -78,6 +79,7 @@ function LocalMap() {
 
   return (
       <div className="mapAPI">
+        {/* <p>{JSON.stringify(makerStore.maker[0].latitude)}</p> */}
       <Locate panToLocate={panToLocate} />
 
       <Search panToSearch={panToSearch} />
@@ -88,13 +90,13 @@ function LocalMap() {
             zoom={8} 
             center={center} 
             options={options}
-            onClick={onMapClick}
+            // onClick={onMapClick}
             onLoad={onMapLoad}
           >
-          {markers.map((marker) => (
+          {makerStore.maker.map((marker) => (
             <Marker
-              key={`${marker.lat}-${marker.lng}`}
-              position={{ lat: marker.lat, lng: marker.lng }}
+              key={`${marker.latitude}-${marker.longitude}`}
+              position={{ lat: marker.latitude, lng: marker.longitude }}
               onClick={() => {
                 setSelected(marker);
               }}

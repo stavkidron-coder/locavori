@@ -11,60 +11,92 @@ const ProductTypeBeverage = (props) => {
 
   return (
     <div>
-      <Input type="radio" onClick={toggle} >Toggle</Input>
+      <Input type="checkbox" onClick={toggle} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
 
                     <CardBody>
                         <p>select all that apply</p>
-                        <Input type="radio"></Input>
-                            <Label>Schrubs or Switchel</Label>
+                        <Label check>
+                            <Input type="checkbox" value="schrubs_switchel"/>
+                            Schrubs or Switchel
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Soda Pop (rootbeer, sassparilla, etc)</Label>
+                        <Label check>
+                            <Input type="checkbox" value="soda"/>
+                            Soda Pop (rootbeer, sassparilla, etc)
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Coffee</Label>
+                        <Label check>
+                            <Input type="checkbox" value="coffee"/>
+                            Coffee
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Hot Cocoa or Hot Drink Mix</Label>
+                        <Label check>
+                            <Input type="checkbox" value="hot_drink"/>
+                            Hot Cocoa or Hot Drink Mix
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Tea</Label>
+                        <Label check>
+                            <Input type="checkbox" value="tea"/>
+                            Tea
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Health or Energy Shot</Label>
+                        <Label check>
+                            <Input type="checkbox" value="health_shot"/>
+                            Health or Energy Shot
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Sweet Treat</Label>
+                        <Label check>
+                            <Input type="checkbox" value="sweet_treat"/>
+                            Sweet Treat
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Cocktail or bar mixer</Label>
+                        <Label check>
+                            <Input type="checkbox" value="cocktail_mixer"/>
+                            Cocktail or bar mixer
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Spirits</Label>
+                        <Label check>
+                            <Input type="checkbox" value="spirits"/>
+                            Spirits
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Beer</Label>
+                        <Label check>
+                            <Input type="checkbox" value="beer"/>
+                            Beer
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Hard Cider</Label>
+                        <Label check>
+                            <Input type="checkbox" value="cider"/>
+                            Hard Cider
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Wine</Label>
+                        <Label check>
+                            <Input type="checkbox" value="wine"/>
+                            Wine
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Fresh Fruit</Label>
+                        <Label check>
+                            <Input type="checkbox" value="fresh_fruit"/>
+                            Fresh Fruit
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Non-Alcoholic Beverage</Label>
+                        <Label check>
+                            <Input type="checkbox" value="nonalcoholic"/>
+                            Non-Alcoholic Beverage 
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Dairy</Label>
+                        <Label check>
+                            <Input type="checkbox" value="dairy"/>
+                            Dairy
+                        </Label>
                         <br/>
-                        <Input type="radio"></Input>
-                            <Label>Other</Label>
+                        <Label check>
+                            <Input type="checkbox" value="other"/>
+                            Other
+                        </Label>
                         <br/>
                     </CardBody>
                     
