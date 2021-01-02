@@ -10,14 +10,13 @@
 .PARCard {
     width: 30%;
     margin: 15px;
+    height: 700px;
+    justify-content: space-evenly;
 }
 
 .PendingRequestsBody {
     display: inline-flex;
-}
-
-.acceptDeclineBtns {
-    margin: 5px;
+    align-items: baseline;
 }
 
 .viewProfileLink {

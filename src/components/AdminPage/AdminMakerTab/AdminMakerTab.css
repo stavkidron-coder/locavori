@@ -1,0 +1,12 @@
+.MakerCard {
+    width: 20%;
+    margin: 20px;
+    height: 700px;
+    /* justify-content: space-evenly; */
+}
+
+.MakerTabBody {
+    display: inline-flex;
+    align-items: baseline;
+}
+

@@ -35,21 +35,28 @@ class AdminPARTab extends Component {
                     <CardTitle tag="h5">{maker.business_name}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
                   </CardBody>
+
                   <img width="100%" src={maker.owner_img} alt={maker.business_name} />
+
                   <CardBody>
-                    <CardText>STORY:</CardText>
-                    <CardText>{maker.story}</CardText>
-                    <Row>
-                      <Col xs="8">
-                        <Button color="primary">
-                          <Link to="#" className="viewProfileLink">View Profile</Link>
-                        </Button>
+                    <CardText>Products:</CardText>
+                    {/* <CardText>{maker.story}</CardText> */}
+                    <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
+                      <Row>
+                        <Col xs="6">
+                          <Button color="primary">
+                            <Link to="#" className="viewProfileLink">View Profile</Link>
+                          </Button>
+                        </Col>
 
-                      </Col>
-                      <AcceptBtn className="acceptDeclineBtns" />
-                      <DeclineBtn className="acceptDeclineBtns" />
+                        <Col xs="2">
+                          <AcceptBtn className="acceptDeclineBtns" />
+                        </Col>
 
-                    </Row>
+                        <Col xs="2">
+                          <DeclineBtn className="acceptDeclineBtns" />
+                        </Col>
+                      </Row>
                   </CardBody>
                 </Card>
               </>
