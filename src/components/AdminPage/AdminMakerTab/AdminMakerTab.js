@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
+import './AdminMakerTab.css';
 import { Card, CardBody, CardTitle, Button, CardSubtitle, CardText, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom'
 
@@ -26,28 +27,35 @@ class Maker extends Component {
     // }
     render() {
         return (
-            <div className="PendingRequestsBody">
+            <div className="MakerTabBody">
           {this.props.store.maker.map((maker) => {
             return(
               <>
-                <Card key={maker.id} className="PARCard">
+                <Card key={maker.id} className="MakerCard">
                   <CardBody>
                     <CardTitle tag="h5">{maker.business_name}</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
+                      <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
                   </CardBody>
-                  <img width="100%" src={maker.owner_img} alt={maker.business_name} />
+
+                  <img className="MakerCardImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
+
                   <CardBody>
-                    <CardText>STORY:</CardText>
-                    <CardText>{maker.story}</CardText>
+                    <CardText>Products:</CardText>
+                    <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
                     <Row>
+
                       <Col xs="8">
                         <Button color="primary" onClick= {() => this.ViewProfile(maker.profile_id)}>
                           <Link to="#" className="viewProfileLink">View Profile</Link>
                         </Button>
-                        <Button color="primary" onClick={this.deleteMaker}>
+                      </Col>
+
+                      <Col xs="4">
+                        <Button color="danger" onClick={this.deleteMaker}>
                           Delete
                         </Button>
                       </Col>
+                      
                     </Row>
                   </CardBody>
                 </Card>
