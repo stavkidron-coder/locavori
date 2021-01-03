@@ -96,7 +96,7 @@ function LocalMap() {
           {makerStore.maker.map((marker) => (
             <Marker
               key={`${marker.latitude}-${marker.longitude}`}
-              position={{ lat: marker.latitude, lng: marker.longitude }}
+              position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
               onClick={() => {
                 setSelected(marker);
               }}
