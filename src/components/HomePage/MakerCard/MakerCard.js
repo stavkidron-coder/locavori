@@ -55,7 +55,9 @@ class MakerCard extends Component {
                             </Col>
                             <Col xs="9">
                                 <CardText>{this.props.maker.story}</CardText>
-                                <Link to="maker-profile">See more...</Link>
+                                <Button  color="link" onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
+                                        See more...
+                                </Button>
                             </Col>
 
                         </CardBody>
