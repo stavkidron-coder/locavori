@@ -49,15 +49,3 @@ class MakerProfilePage extends React.Component {
   }
 }
 export default connect(mapStoreToProps)(MakerProfilePage);
-//   this.props.store.makerCard.map((maker) => {
-//     return
-
-//   })}
-{/* <Card className="Bread">
-          <CardBody>
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' alt="" />
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' alt="" />
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/Bread-and-Wine.jpg`} width='75' alt="" />
-          </CardBody>
-          <Button>See My Products</Button>
-        </Card> */}
