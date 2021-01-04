@@ -1,12 +1,3 @@
-/* .requestBtn{
-    display: block;
-    
-} */
-/* .btn{
-    width: "50px";
-    margin: "5px";
-} */
-
 .PARCard {
     width: 30%;
     margin: 15px;
@@ -17,6 +8,11 @@
 .PendingRequestsBody {
     display: inline-flex;
     align-items: baseline;
+}
+
+.PendingMakerImg{
+    width: 100%;
+    height: auto;
 }
 
 .viewProfileLink {

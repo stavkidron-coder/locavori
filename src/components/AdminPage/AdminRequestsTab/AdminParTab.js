@@ -36,7 +36,7 @@ class AdminPARTab extends Component {
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
                   </CardBody>
 
-                  <img width="100%" src={maker.owner_img} alt={maker.business_name} />
+                  <img className="PendingMakerImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
 
                   <CardBody>
                     <CardText>Products:</CardText>

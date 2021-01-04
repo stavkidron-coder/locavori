@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
 
 
 
@@ -26,17 +27,44 @@ class MakerProfilePage extends React.Component {
         {this.props.store.makerCard.map((maker) => {
            return (
         <>
-          <Card key= {maker.id}>
-            <CardBody>
-              <img className="logo" src={maker.business_img} width='150' alt="" />
+          <Card className="MakerProfileCard" key={maker.id}>
+            <CardBody >
+              <Row>
+                <Col>
+                  <img className="logo" src={maker.business_img} width='350' alt="" />
+                </Col>
+                <Col>
+                  <CardHeader tag="h2">{maker.business_name}</CardHeader>
+                  <CardText>{maker.business_city},{maker.business_state}</CardText>
+                  <CardText>{maker.phone_one}</CardText>
+                  <CardText>{maker.email_contact}</CardText>
+                  <Button>{maker.website}</Button>
+                  {/* facebook, instagram, and "like" icons go here */}
+                </Col>
+              </Row>
 
-              <CardTitle tag="h5">{maker.business_name}</CardTitle>
-              <CardText>{maker.business_city},{maker.business_state}</CardText>
-              <CardText>{maker.phone_one}</CardText>
-              <CardText>{maker.email_contact}</CardText>
-              <Button>{maker.website}</Button>
-              
-              <CardSubtitle tag="h6" >Meet "{maker.business_name}"</CardSubtitle>
+              <Row className="MeetTheMaker">
+                <Col>
+                  <CardSubtitle tag="h4" >Meet {maker.first_name} from {maker.business_name}</CardSubtitle>
+                  <CardText>{maker.story}</CardText>
+                </Col>
+                
+                <Col>
+                <img className="logo" src={maker.owner_img} width='350' alt="" />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <img className="featuredProduct1" src={maker.product_img_one} width='250' alt="" />
+                </Col>
+                <Col>
+                  <img className="featuredProduct2" src={maker.product_img_two} width='250' alt="" />
+                </Col>
+                <Col>
+                  <img className="featuredProduct3" src={maker.product_img_three} width='250' alt="" />
+                </Col>
+              </Row>
             </CardBody>
           </Card>
         </>
