@@ -40,9 +40,9 @@ function LocalMap() {
     googleMapsApiKey: "AIzaSyDOqfm-oP_UKSq5ayaR72V_R-p8W1JJvrY", 
     libraries,
   });
-
-  // const [markers, setMarkers] = React.useState([]);
-  const makerStore = useSelector(maker => maker);
+  const store = useSelector(store => store);
+  const [markers, setMarkers] = React.useState(store.maker);
+  
   const [selected, setSelected] = React.useState(null);
 
   // Upon Click on map will add an object to the marker array
@@ -78,60 +78,58 @@ function LocalMap() {
   if (!isLoaded) return "Loading Maps...";
 
   return (
-      <div className="mapAPI">
-        {/* <p>{JSON.stringify(makerStore.maker[0].latitude)}</p> */}
+    <div className="mapAPI">
+      {/* {JSON.stringify(store.maker)} */}
       <Locate panToLocate={panToLocate} />
-
       <Search panToSearch={panToSearch} />
-
-        <div className="map">
-          <GoogleMap 
-            mapContainerStyle={mapContainerStyle} 
-            zoom={8} 
-            center={center} 
-            options={options}
-            // onClick={onMapClick}
-            onLoad={onMapLoad}
+      <div className="map">
+        <GoogleMap 
+          mapContainerStyle={mapContainerStyle} 
+          zoom={8} 
+          center={center} 
+          options={options}
+          // onClick={onMapClick}
+          onLoad={onMapLoad}
+        >
+        {store.maker.map((marker) => (
+          <Marker
+            key={`${marker.latitude}-${marker.longitude}`}
+            position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+            onClick={() => {
+              setSelected(marker);
+            }}
+          //   icon={{
+          //     url: `/icons8-robot-2-64.png`,
+          //     origin: new window.google.maps.Point(0, 0),
+          //     anchor: new window.google.maps.Point(15, 15),
+          //     scaledSize: new window.google.maps.Size(30, 30),
+          //   }}
+          />
+        ))}
+        {selected ? (
+          <InfoWindow
+            position={{ lat: selected.longitude, lng: selected.latitude }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
           >
-          {makerStore.maker.map((marker) => (
-            <Marker
-              key={`${marker.latitude}-${marker.longitude}`}
-              position={{ lat: marker.latitude, lng: marker.longitude }}
-              onClick={() => {
-                setSelected(marker);
-              }}
-            //   icon={{
-            //     url: `/icons8-robot-2-64.png`,
-            //     origin: new window.google.maps.Point(0, 0),
-            //     anchor: new window.google.maps.Point(15, 15),
-            //     scaledSize: new window.google.maps.Size(30, 30),
-            //   }}
-            />
-          ))}
-          {selected ? (
-            <InfoWindow
-              position={{ lat: selected.lat, lng: selected.lng }}
-              onCloseClick={() => {
-                setSelected(null);
-              }}
-            >
-              <div className='infoWindow'>
-                <h2>
-                  <span role="img" aria-label="ROBOT">
-                    🐣
-                  </span>{" "}
-                  Emma's Eggs
-                </h2>
-                <p>Supplies Limited: 2 Egg Max Per Customer Per Month</p>
-              </div>
-            </InfoWindow>
-          ) : null}
-           <div className="filter">
-            <FilterDropdown/>
-          </div>
-          </GoogleMap>
+            <div className='infoWindow'>
+              <h2>
+                <span role="img" aria-label="ROBOT">
+                  🐣
+                </span>{" "}
+                Emma's Eggs
+              </h2>
+              <p>Supplies Limited: 2 Egg Max Per Customer Per Month</p>
+            </div>
+          </InfoWindow>
+        ) : null}
+        <div className="filter">
+          <FilterDropdown/>
         </div>
+        </GoogleMap>
       </div>
+    </div>
   );
 }
 
