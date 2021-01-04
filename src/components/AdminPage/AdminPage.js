@@ -5,11 +5,22 @@ import AdminTabs from './AdminTabs/AdminTabs';
 
 class AdminPage extends Component {
 
+
+
   render() {
     return (
       <div>
-          <h1>Register as Maker</h1>
+          
+          {this.props.store.user.admin ?
+         <>
+         <h1>View All Makers</h1>
           <AdminTabs/>
+          </>
+          :
+          <p>Sorry you are not admin you need access to view this page.</p>
+        
+        }
+          
       </div>
     );
   }
