@@ -71,7 +71,6 @@ class LoginForm extends Component {
             Log In
           </Button>
 
-          
           <Button
             className="registerBtn"
             onClick={() => {this.props.history.push('/register-options')}}

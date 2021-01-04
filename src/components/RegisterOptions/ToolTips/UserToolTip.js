@@ -16,11 +16,11 @@ const UserToolTip = (props) => {
         className="registerOptionsButton"
         color="success"
         onClick={() => props.history.push('/user-registration')}>
-          Register as a Locavor
+          Register as a Locavore
         </Button>
 
       <Tooltip placement="bottom" isOpen={tooltipOpen} target="userBtn" toggle={toggle}>
-        As a locavor, you can search for local makers and learn about the products they make.
+        As a locavore, you can search for local makers and learn about the products they make.
       </Tooltip>
     </div>
   );
