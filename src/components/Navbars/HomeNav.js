@@ -3,16 +3,15 @@ import { Link } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import './NavbarCollapse.css';
-import logo from '../../TestImages/Locavori-Logo-horizontal.png';
+import logo from '../../TestImages/Locavori-Horizontal-Logo.png';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Row, Col } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Row, Col, NavbarText } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faUser, faHamburger, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faUser, faHamburger } from '@fortawesome/free-solid-svg-icons'
 
 const home = <FontAwesomeIcon icon={faHome}/>
 const account = <FontAwesomeIcon icon={faUser}/>
 const burger = <FontAwesomeIcon icon={faHamburger}/>
-const logout = <FontAwesomeIcon icon={faSignOutAlt}/>
 
 const HomeNav = (props) => {
 
@@ -32,6 +31,7 @@ const HomeNav = (props) => {
 
   return (
     <div className="navContainer">
+      
         <Navbar className="topNav" light expand="md">
             <Nav className="ml-auto" navbar>
                 <NavItem className="nav-item">
@@ -40,9 +40,19 @@ const HomeNav = (props) => {
             </Nav>
         </Navbar>
 
-      <Navbar className="navBar" dark expand="md">
-        <NavbarBrand href="/"><img src={logo} alt="logo" className="navLogo"/></NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+      <Navbar className="navBar" light expand="md">
+        
+          <NavbarBrand
+            className="brand"
+            href="/">
+              <img 
+                src={logo}
+                alt="logo"
+                className="navLogo"
+              />
+          </NavbarBrand>
+
+        <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
 
           <Nav className="ml-auto" navbar>
@@ -50,8 +60,6 @@ const HomeNav = (props) => {
             <NavItem className="nav-item">
                 <Link className="nav-link navContents" to='/home' onClick={toggle}>{home} HOME</Link>
             </NavItem>
-
-            <br/>
               
             <NavItem>
                 {/* Will need to send over user ID to the profile page link which will determine whether or not they are a maker */}
@@ -63,23 +71,23 @@ const HomeNav = (props) => {
             <NavItem>
                 <Link className="nav-link navContents" to='/maker-registration' onClick={toggle}>{burger} BECOME A MAKER</Link>
             </NavItem>
-
           </Nav>
             
 
         </Collapse>
       </Navbar>
       
-      <Navbar>
-        <Row className="title">
+      
+
+      <div className="navImg">
+        <Navbar>
+          <Row className="title">
             <Col>
-                  <h1>Connecting local makers to hungry neighbors</h1>
+              <h1>Connecting local makers to hungry neighbors</h1>
             </Col>
-        </Row>  
-      </Navbar>
-                  
-        
-            
+          </Row>  
+        </Navbar>
+      </div>
     </div>
   );
 }

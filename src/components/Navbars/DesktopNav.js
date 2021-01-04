@@ -7,12 +7,10 @@ import logo from '../../TestImages/Locavori-Logo-horizontal.png';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faUser, faHamburger, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faHamburger } from '@fortawesome/free-solid-svg-icons'
 
 const home = <FontAwesomeIcon icon={faHome}/>
-const account = <FontAwesomeIcon icon={faUser}/>
 const burger = <FontAwesomeIcon icon={faHamburger}/>
-const logout = <FontAwesomeIcon icon={faSignOutAlt}/>
 
 const DesktopNav = (props) => {
 
