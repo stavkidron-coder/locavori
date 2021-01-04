@@ -1,0 +1,81 @@
+
+.navBar {
+    background-color: #f4f4eb !important;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navLogo {
+    width: 200px;
+}
+
+.topNav {
+    background-color: rgb(5,103,54);
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.nav-link {
+    color: rgb(235, 235, 235) !important;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 20px;
+  }
+
+.nav-link:hover {
+    color: #000000 !important;
+    text-decoration: none;
+  }
+
+  .loginOut {
+      color: #faf5e8 !important;
+  }
+
+  .navContents {
+    color: rgb(5,103,54) !important;
+    width: 200px;
+    text-align: center;
+    background-color: #faf8f2;
+    border: 1px solid rgb(5,103,54);
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .navContents:hover {
+    color: #faf8f2 !important;
+    width: 200px;
+    background-color: rgb(5,103,54);
+    border-radius: 25px;
+  }
+
+  .navContainer {
+        /* padding-bottom: 150px; */
+        margin-bottom: 10px;
+  }
+
+  .title {
+    background-color: rgba(5, 103, 54, 0.899);
+    /* border-radius: 10px; */
+    padding: 20px;
+    margin: auto;
+    /* margin-top: 80px; */
+    color: #faf8f2;
+    text-align: center !important;
+    /* font-family: 'Fredericka the Great', cursive; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Vidaloka', serif;
+  }
+
+  .brand {
+      padding: 10px;
+      padding-left: 20px;
+      /* background-color: #faf5e8; */
+  }
+
+  .navImg {
+    background-image: url('../../TestImages/tomatoes.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+  }

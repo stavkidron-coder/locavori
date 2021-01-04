@@ -5,6 +5,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import './RegisterOptions.css';
 import MakerToolTip from './ToolTips/MakerToolTip';
 import UserToolTip from './ToolTips/UserToolTip';
+import DesktopNav from '../Navbars/DesktopNav';
 
 class RegisterOptions extends Component {
 
@@ -20,8 +21,10 @@ class RegisterOptions extends Component {
 
   render() {
     return (
+      <>
+      <DesktopNav/>
       <div className="registerOptionsBody">
-
+        
         <div className="registerOptionsCard">
           <h1>Register Options</h1>
           <hr className="registerOptionsHr"/>
@@ -33,6 +36,7 @@ class RegisterOptions extends Component {
         </div> 
 
       </div>
+      </>
     );
   }
 }

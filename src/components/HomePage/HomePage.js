@@ -5,6 +5,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 // import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
+import HomeNav from '../Navbars/HomeNav';
 
 import './HomePage.css';
 
@@ -36,7 +37,10 @@ class HomePage extends Component {
   render() {
     return (
       <div className="homePageBody">
-        <button onClick={this.filterGet}>TEST GET</button>
+        {/* <button onClick={this.filterGet}>TEST GET</button> */}
+
+        <HomeNav/>
+
         <Container>
 
           <Row>
