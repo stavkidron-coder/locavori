@@ -1,6 +1,4 @@
 
-
-
 .navBar {
     background-color: rgba(0, 0, 0, 0.886) !important;
 }
@@ -32,8 +30,8 @@
       
   }
   .loginOut:hover {
-      color: rgb(255, 255, 255) !important;
-      background-color: rgba(0, 0, 0, 0.886);
+      color: #faf5e8 !important;
+      /* background-color: rgba(0, 0, 0, 0.886); */
   }
 
   .navContents {

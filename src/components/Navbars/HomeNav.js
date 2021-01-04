@@ -7,11 +7,12 @@ import logo from '../../TestImages/Locavori-Logo-horizontal.png';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Row, Col } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faUser, faHamburger } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faUser, faHamburger, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 const home = <FontAwesomeIcon icon={faHome}/>
 const account = <FontAwesomeIcon icon={faUser}/>
 const burger = <FontAwesomeIcon icon={faHamburger}/>
+const logout = <FontAwesomeIcon icon={faSignOutAlt}/>
 
 const HomeNav = (props) => {
 
@@ -49,6 +50,8 @@ const HomeNav = (props) => {
             <NavItem className="nav-item">
                 <Link className="nav-link navContents" to='/home' onClick={toggle}>{home} HOME</Link>
             </NavItem>
+
+            <br/>
               
             <NavItem>
                 {/* Will need to send over user ID to the profile page link which will determine whether or not they are a maker */}
