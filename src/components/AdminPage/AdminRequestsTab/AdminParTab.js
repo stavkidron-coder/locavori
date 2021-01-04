@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import './AdminParTab.css';
 import AcceptBtn from './AdminPARToolTips/ApproveToolTip';
 import DeclineBtn from './AdminPARToolTips/DeclineToolTip';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col} from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
 
 // ViewApp = () => {
 
@@ -28,36 +28,43 @@ class AdminPARTab extends Component {
 
         <div className="PendingRequestsBody">
           {this.props.store.maker.map((maker) => {
-            return(
+            return (
               <>
-                <Card className="PARCard">
+                <Card key={maker.id} className="PARCard">
                   <CardBody>
                     <CardTitle tag="h5">{maker.business_name}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
                   </CardBody>
-                  <img width="100%" src={maker.owner_img} alt={maker.business_name} />
-                  <CardBody>
-                    <CardText>STORY:</CardText>
-                    <CardText>{maker.story}</CardText>
-                    <Row>
-                      <Col xs="8">
-                        <Button color="primary">
-                          <Link to="#" className="viewProfileLink">View Profile</Link>
-                        </Button>
-                        
-                      </Col>
-                        <AcceptBtn className="acceptDeclineBtns"/>
-                        <DeclineBtn className="acceptDeclineBtns"/>
 
-                    </Row>
+                  <img className="PendingMakerImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
+
+                  <CardBody>
+                    <CardText>Products:</CardText>
+                    {/* <CardText>{maker.story}</CardText> */}
+                    <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
+                      <Row>
+                        <Col xs="6">
+                          <Button color="primary">
+                            <Link to="#" className="viewProfileLink">View Profile</Link>
+                          </Button>
+                        </Col>
+
+                        <Col xs="2">
+                          <AcceptBtn className="acceptDeclineBtns" />
+                        </Col>
+
+                        <Col xs="2">
+                          <DeclineBtn className="acceptDeclineBtns" />
+                        </Col>
+                      </Row>
                   </CardBody>
                 </Card>
-                </>
+              </>
             )
 
-          })} 
-          
-          </div>
+          })}
+
+        </div>
 
 
       </Container>

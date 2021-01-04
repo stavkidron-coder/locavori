@@ -1,12 +1,36 @@
 .loginBody {
     background-image: url('../../TestImages/hands.jpg');
     background-size: cover;
-    min-height: 88vh;
+    min-height: 80.5vh;
     padding: 100px;
 }
 
 .loginForm {
-    background-color: rgba(27, 38, 43, 0.934) !important;
+    background-color: rgba(5, 103, 54, 0.81) !important;
     color: rgb(245, 243, 236);
     border-radius: 10px !important;
+}
+
+.loginBtns {
+    background-color: rgb(122,172,85);
+    color: rgb(245, 243, 236);
+    border: none !important;
+}
+
+.loginBtns:hover {
+    background-color: rgb(3, 62, 32);
+    color: rgb(245, 243, 236);
+}
+
+.registerBtn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(245, 243, 236);
+}
+
+.registerBtn:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(245, 243, 236);
+    text-decoration: underline;
 }

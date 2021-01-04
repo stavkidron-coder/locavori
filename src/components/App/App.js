@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-  HashRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
@@ -21,7 +16,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegistration/MakerRegisterPage/MakerRegisterPage';
-import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
+// import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
+// import NavbarCollapse2 from '../NavbarCollapse/NavbarCollapse2';
 import MakerPage from '../MakerProfile/MakerProfile';
 import MakerRegistrationPgOne from '../MakerRegistration/MakerRegistrationFirstPage/MakerRegistrationUserInfoPage';
 
@@ -38,7 +34,8 @@ class App extends Component {
       <Router>
         <div>
           {/* <Nav /> */}
-          <NavbarCollapse/>
+          {/* <NavbarCollapse/> */}
+          {/* <NavbarCollapse2/> */}
 
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -134,7 +131,7 @@ class App extends Component {
               // - if logged in, redirects to "/user"
               // - else shows LandingPage at "/home"
               exact
-              path="/maker"
+              path="/makerCard/:id"
               component={MakerPage}
             />
 

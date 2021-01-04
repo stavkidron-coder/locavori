@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import DesktopNav from '../Navbars/DesktopNav';
 
 
 class UserProfilePage extends React.Component {
@@ -14,6 +15,8 @@ class UserProfilePage extends React.Component {
   }
   render() {
     return (
+      <>
+      <DesktopNav/>
       <Container>
         <Card>
           <CardBody>
@@ -38,7 +41,7 @@ class UserProfilePage extends React.Component {
           </CardBody>
         </Card>
       </Container>
-
+    </>
     )
   }
 }

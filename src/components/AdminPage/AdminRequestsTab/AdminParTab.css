@@ -1,23 +1,18 @@
-/* .requestBtn{
-    display: block;
-    
-} */
-/* .btn{
-    width: "50px";
-    margin: "5px";
-} */
-
 .PARCard {
     width: 30%;
     margin: 15px;
+    height: 700px;
+    justify-content: space-evenly;
 }
 
 .PendingRequestsBody {
     display: inline-flex;
+    align-items: baseline;
 }
 
-.acceptDeclineBtns {
-    margin: 5px;
+.PendingMakerImg{
+    width: 100%;
+    height: auto;
 }
 
 .viewProfileLink {
