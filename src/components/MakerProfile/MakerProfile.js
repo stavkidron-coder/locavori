@@ -34,14 +34,14 @@ class MakerProfilePage extends React.Component {
             <CardBody >
               <Row>
                 <Col>
-                  <img className="logo" src={maker.business_img} width='350' alt="" />
+                  <img className="logo" src={maker.logo} width='350' alt="" />
                 </Col>
                 <Col>
                   <CardHeader tag="h2">{maker.business_name}</CardHeader>
                   <CardText>{maker.business_city},{maker.business_state}</CardText>
                   <CardText>{maker.phone_one}</CardText>
                   <CardText>{maker.email_contact}</CardText>
-                  <Button>{maker.website}</Button>
+                  <Button href={maker.website}>visit website</Button>
                   {/* facebook, instagram, and "like" icons go here */}
                 </Col>
               </Row>
@@ -53,19 +53,25 @@ class MakerProfilePage extends React.Component {
                 </Col>
                 
                 <Col>
-                <img className="logo" src={maker.owner_img} width='350' alt="" />
+                <img className="logo" src={maker.business_img} width='250' alt="" />
                 </Col>
               </Row>
 
               <Row>
                 <Col>
+                  <Button href={maker.product_url_one}>
                   <img className="featuredProduct1" src={maker.product_img_one} width='250' alt="" />
+                  </Button>
                 </Col>
                 <Col>
+                  <Button href={maker.product_url_two}>
                   <img className="featuredProduct2" src={maker.product_img_two} width='250' alt="" />
+                  </Button>
                 </Col>
                 <Col>
-                  <img className="featuredProduct3" src={maker.product_img_three} width='250' alt="" />
+                  <Button href={maker.product_url_three}>
+                    <img className="featuredProduct3" src={maker.product_img_three} width='250' alt="" />
+                  </Button>
                 </Col>
               </Row>
             </CardBody>
