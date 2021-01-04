@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import './NavbarCollapse.css';
-import logo from '../../TestImages/Locavori-Logo-horizontal.png';
+import logo from '../../TestImages/Locavori-Horizontal-Logo.png';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faHamburger } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faUser, faHamburger } from '@fortawesome/free-solid-svg-icons'
 
 const home = <FontAwesomeIcon icon={faHome}/>
 const burger = <FontAwesomeIcon icon={faHamburger}/>
+const account = <FontAwesomeIcon icon={faUser}/>
 
 const DesktopNav = (props) => {
 
@@ -39,20 +40,28 @@ const DesktopNav = (props) => {
         </Navbar>
 
       <Navbar className="navBar" dark expand="md">
-        <NavbarBrand href="/"><img src={logo} alt="logo" className="navLogo"/></NavbarBrand>
+      <NavbarBrand
+            className="brand"
+            href="/">
+              <img 
+                src={logo}
+                alt="logo"
+                className="navLogo"
+              />
+          </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
 
           <Nav className="ml-auto" navbar>
 
-            <NavItem className="navContents">
-                <Link className="nav-link" to='/home' onClick={toggle}>{home} HOME</Link>
+            <NavItem>
+                <Link className="nav-link navContents" to='/home' onClick={toggle}>{home} HOME</Link>
             </NavItem>
               
-            <NavItem className="nav-link">
+            <NavItem>
                 {/* Will need to send over user ID to the profile page link which will determine whether or not they are a maker */}
                 {props.store.user.id && (
-                    <Link className="nav-link navContents" to='/profile' onClick={toggle}>ACCOUNT</Link>
+                    <Link className="nav-link navContents" to='/profile' onClick={toggle}>{account} ACCOUNT</Link>
                 )} 
             </NavItem>
 
