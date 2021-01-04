@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { Card, CardBody, CardHeader, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import DesktopNav from '../Navbars/DesktopNav';
 
 
 
@@ -23,6 +24,8 @@ class MakerProfilePage extends React.Component {
 
   render() {
     return (
+      <>
+      <DesktopNav/>
       <Container>
         {this.props.store.makerCard.map((maker) => {
            return (
@@ -73,6 +76,7 @@ class MakerProfilePage extends React.Component {
 
       </Container>
 
+        </>
     )
   }
 }
