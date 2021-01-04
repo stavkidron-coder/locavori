@@ -67,13 +67,13 @@ class LoginForm extends Component {
 
           <Button
             onClick={this.login}
-            color="primary">
+            className="loginBtns">
             Log In
           </Button>
 
           
           <Button
-            color="link"
+            className="registerBtn"
             onClick={() => {this.props.history.push('/register-options')}}
           >
             Register
