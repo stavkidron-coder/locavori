@@ -61,6 +61,16 @@ function LocalMap() {
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log(position)
+        panToLocate({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      () => null
+    );
     mapRef.current = map;
   }, []);
   
