@@ -35,14 +35,17 @@ const options = {
 
 function LocalMap() {
 
+  React.useEffect (() => {
+    setMarkers(store.maker);
+  });
+
   // Upon DOM load will query below
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: "AIzaSyDOqfm-oP_UKSq5ayaR72V_R-p8W1JJvrY", 
     libraries,
   });
   const store = useSelector(store => store);
-  const [markers, setMarkers] = React.useState(store.maker);
-  
+  const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
   // Upon Click on map will add an object to the marker array
@@ -61,6 +64,7 @@ function LocalMap() {
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
+    setMarkers(store.maker);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log(position)
@@ -76,7 +80,7 @@ function LocalMap() {
   
   const panToLocate = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(15);
+    mapRef.current.setZoom(14);
   }, []);
 
   const panToSearch = React.useCallback(({ lat, lng }) => {
@@ -89,7 +93,6 @@ function LocalMap() {
 
   return (
     <div className="mapAPI">
-      {/* {JSON.stringify(store.maker)} */}
       <Locate panToLocate={panToLocate} />
       <Search panToSearch={panToSearch} />
       <div className="map">
@@ -101,36 +104,35 @@ function LocalMap() {
           // onClick={onMapClick}
           onLoad={onMapLoad}
         >
-        {store.maker.map((marker) => (
-          <Marker
-            key={`${marker.latitude}-${marker.longitude}`}
-            position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-            onClick={() => {
-              setSelected(marker);
-            }}
-          //   icon={{
-          //     url: `/icons8-robot-2-64.png`,
-          //     origin: new window.google.maps.Point(0, 0),
-          //     anchor: new window.google.maps.Point(15, 15),
-          //     scaledSize: new window.google.maps.Size(30, 30),
-          //   }}
-          >{selected ? (
-            <InfoWindow
-              position={{ lat: selected.longitude, lng: selected.latitude }}
-              onCloseClick={() => {
-                setSelected(null);
-              }}
-            >
-              <div className='infoWindow'>
-              <img class='infoWindowImg' src={marker.product_img_one} alt={marker.product_type_one} />
-                <h2>{marker.business_name}</h2>
-                <p>{marker.story}</p>
+        {markers.map((marker) => (
+           <Marker
+           key={`${marker.latitude}-${marker.longitude}`}
+           position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+           onClick={() => {
+             setSelected(marker);
+           }}
+          //  icon={{
+          //    origin: new window.google.maps.Point(0, 0),
+          //    anchor: new window.google.maps.Point(15, 15),
+          //    scaledSize: new window.google.maps.Size(30, 30),
+          //  }}
+         />
+       ))}
+       {selected ? (
+         <InfoWindow
+           position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
+           onCloseClick={() => {
+             setSelected(null);
+           }}
+         >
+           <div className='infoWindow'>
+              <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
+                <h2>{selected.business_name}</h2>
+                <p>{selected.story}</p>
               </div>
             </InfoWindow>
           ) : null}
-          </Marker>
-        ))}
-        
+
         <div className="filter">
           <FilterDropdown/>
         </div>
@@ -188,7 +190,7 @@ function Search({panToSearch}) {
         console.log(lat, lng);
         panToSearch ({lat, lng});
       }catch(error) {
-        console.log("ERROR!!!")
+        console.log("ERROR!!!");
       }
       }}>
       <ComboboxInput
