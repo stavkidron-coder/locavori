@@ -35,7 +35,7 @@ class UserProfilePage extends React.Component {
           {/* Loop through favorites table  here*/}
           {this.props.store.favorites.map((favorites) => {
             return(
-              <MakerCard maker={favorites}/>
+              <MakerCard maker={favorites} key={favorites.id}/>
             )
           })}
         </div>
