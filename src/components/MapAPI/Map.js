@@ -44,11 +44,8 @@ function LocalMap() {
     googleMapsApiKey: "AIzaSyDOqfm-oP_UKSq5ayaR72V_R-p8W1JJvrY", 
     libraries,
   });
-<<<<<<< HEAD
-=======
   const store = useSelector(store => store);
   // const [markers, setMarkers] = React.useState(store.maker);
->>>>>>> master
   
   // Connects Entire store to Hook Component
   const store = useSelector(store => store);
