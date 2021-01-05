@@ -15,7 +15,7 @@ class ProductDistro extends Component {
     }
 
     handleRadio = (event) => {
-        console.log(event.target);
+        this.props.dispatch({type: 'DELIVERY', payload: {boolean: event.target.id, name: event.target.name}});
     }
 
 
@@ -103,15 +103,14 @@ class ProductDistro extends Component {
 
                     <Row>
                         <Col>
-                            {/* KEEP AS RADIO? OR MORE CHECKBOXES? */}
                             <p>May customers pick up products?*</p>
                             <Label check>
-                                <Input type="radio" name="pick_up" id="yes" onClick={(event) => this.handleRadio(event)}/>
+                                <Input type="radio" name="pick_up" id="yes" onChange={(event) => this.handleRadio(event)}/>
                                 Yes
                             </Label>
                             <br/>
                             <Label check>
-                                <Input type="radio" name="pick_up" id="no" onClick={(event) => this.handleRadio(event)}/>
+                                <Input type="radio" name="pick_up" id="no" onChange={(event) => this.handleRadio(event)}/>
                                 No
                             </Label>
                             <br/>
@@ -120,12 +119,12 @@ class ProductDistro extends Component {
                         <Col>
                             <p>Do you deliver?*</p>
                             <Label check>
-                                <Input type="radio" name="delivery" id="yes" onClick={(event) => this.handleRadio(event)}/>
+                                <Input type="radio" name="delivery" id="yes" onChange={(event) => this.handleRadio(event)}/>
                                 Yes
                             </Label>
                             <br/>
                             <Label check>
-                                <Input type="radio" name="delivery" id="no" onClick={(event) => this.handleRadio(event)}/>
+                                <Input type="radio" name="delivery" id="no" onChange={(event) => this.handleRadio(event)}/>
                                 No
                             </Label>
                             <br/>
@@ -134,12 +133,12 @@ class ProductDistro extends Component {
                         <Col>
                             <p>Do you ship your products?*</p>
                             <Label check>
-                                <Input type="radio" name="shipping" id="yes" onClick={(event) => this.handleRadio(event)}/>
+                                <Input type="radio" name="shipping" id="yes" onChange={(event) => this.handleRadio(event)}/>
                                 Yes
                             </Label>
                             <br/>
                             <Label check>
-                                <Input type="radio" name="shipping" id="no" onClick={(event) => this.handleRadio(event)}/>
+                                <Input type="radio" name="shipping" id="no" onChange={(event) => this.handleRadio(event)}/>
                                 No
                             </Label>
                             <br/>

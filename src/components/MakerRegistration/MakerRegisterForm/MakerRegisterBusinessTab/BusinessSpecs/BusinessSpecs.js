@@ -112,7 +112,7 @@ class BusinessSpecs extends Component {
                   <Row>
                     <Col>
                       <Label>What State/Province is your license issued from and what is your license # and type of license?</Label>
-                        <Input type="text" placeholder="" onChange={(event) => this.handleChange(event, 'license_state')}></Input>
+                        <Input type="text" placeholder="" onChange={(event) => this.handleChange(event, 'license_id_state')}></Input>
                     </Col>
                   </Row>
               </FormGroup>

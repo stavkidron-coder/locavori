@@ -23,7 +23,7 @@ const ProductTypeBeverage = (props) => {
 
   return (
     <div>
-      <Input type="radio" name="beverage" onClick={toggle} >Toggle</Input>
+      <Input type="radio" name="beverage" onChange={toggle} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>

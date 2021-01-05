@@ -39,6 +39,15 @@ const registrationReducer = (state={}, action) => {
             product_distribution_array = product_distribution_array.filter(item => item !== action.payload);
             return {...state, product_distribution: product_distribution_array};
 
+        case 'AVAILABILITY':
+            return {...state, availability: action.payload};
+        
+        case 'DELIVERY':
+            return {...state, delivery_type: {...state.delivery_type, [action.payload.name]: action.payload.boolean}};
+
+        case 'PRODUCT_INFO':
+            return {...state, product_info: {...state.product_info, [action.payload.key]: action.payload.value}};
+
         case 'ADD_BUSINESS_SPECS':
             return {...state, business_specs: {...state.business_specs, [action.payload.key]: action.payload.value}};
 
@@ -74,6 +83,10 @@ const registrationReducer = (state={}, action) => {
         case 'CLEAR_FRESH_TYPE':
             fresh_type_array = []
             return {fresh_type: fresh_type_array};
+
+        case 'STORY':
+            return {...state, story_info: {...state.story_info, [action.payload.key]: action.payload.value}};
+    
 
         default:
             return state;
