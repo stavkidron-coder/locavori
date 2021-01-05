@@ -8,6 +8,8 @@ import AcceptBtn from './AdminPARToolTips/ApproveToolTip';
 import DeclineBtn from './AdminPARToolTips/DeclineToolTip';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
 
+
+
 // ViewApp = () => {
 
 // }
@@ -19,62 +21,67 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, R
 // }
 
 class AdminPARTab extends Component {
+  componentDidMount() {
+    this.getMaker();
+  }
+
+  getMaker = () => {
+    this.props.dispatch({ type: 'GET_MAKERS' })
+  }
+  ViewProfile = (makerId) => {
+    this.props.history.push(`/makerCard/${makerId}`)
+    console.log("11111111111111111111", makerId);
+
+  }
 
   render() {
     return (
       <Container>
+        <>
+          <h1>Pending Requests</h1>
+          <div className="PendingRequestsBody">
+            {this.props.store.maker.map((maker) => {
+              return (
+                <>
+                  {maker.pending_maker ?
+                    <Card key={maker.id} className="PARCard">
+                      <CardBody>
+                        <CardTitle tag="h5">{maker.business_name}</CardTitle>
+                        <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
+                      </CardBody>
+                      <img className="PendingMakerImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
+                      <CardBody>
+                        <CardText>Products:</CardText>
+                        {/* <CardText>{maker.story}</CardText> */}
+                        <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
+                        <Row>
+                          <Col xs="6">
+                            <Button color="primary">
+                              <Link to="#" className="viewProfileLink">View Profile</Link>
+                            </Button>
+                          </Col>
 
-        <h1>Pending Requests</h1>
+                          <Col xs="2">
+                            <AcceptBtn className="acceptDeclineBtns" />
+                          </Col>
 
-        <div className="PendingRequestsBody">
-          {this.props.store.maker.map((maker) => {
-            return (
-              <>
-                <Card key={maker.id} className="PARCard">
-                  <CardBody>
-                    <CardTitle tag="h5">{maker.business_name}</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
-                  </CardBody>
-
-                  <img className="PendingMakerImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
-
-                  <CardBody>
-                    <CardText>Products:</CardText>
-                    {/* <CardText>{maker.story}</CardText> */}
-                    <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
-                      <Row>
-                        <Col xs="6">
-                          <Button color="primary">
-                            <Link to="#" className="viewProfileLink">View Profile</Link>
-                          </Button>
-                        </Col>
-
-                        <Col xs="2">
-                          <AcceptBtn className="acceptDeclineBtns" />
-                        </Col>
-
-                        <Col xs="2">
-                          <DeclineBtn className="acceptDeclineBtns" />
-                        </Col>
-                      </Row>
-                  </CardBody>
-                </Card>
-              </>
-            )
-
-          })}
-
-        </div>
-
-
+                          <Col xs="2">
+                            <DeclineBtn className="acceptDeclineBtns" />
+                          </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                    :
+                    <h1></h1>
+                  }
+                </>
+              )
+            })}
+          </div>
+        </>
       </Container>
     );
   }
 }
-
-//owner_img
-//business_name
-//story
-
 
 export default withRouter(connect(mapStoreToProps)(AdminPARTab));
