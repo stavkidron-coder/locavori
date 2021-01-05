@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './NavbarCollapse.css';
 import logo from '../../TestImages/Locavori-Horizontal-Logo.png';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Row, Col, NavbarText } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Row, Col } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUser, faHamburger } from '@fortawesome/free-solid-svg-icons'
 

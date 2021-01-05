@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardHeader, Container, Row, Col, Button } from 'reactstrap';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import './MakerCard.css';
@@ -12,9 +11,9 @@ class MakerCard extends Component {
 
     ViewProfile = (makerId) => {
         this.props.history.push(`/makerCard/${makerId}`)
-        console.log("11111111111111111111",makerId);
-        
     }
+
+    
     render() {
         return (
             <Container>
