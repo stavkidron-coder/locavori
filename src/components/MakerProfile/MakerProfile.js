@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import { Card, CardBody, CardHeader, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DesktopNav from '../Navbars/DesktopNav';
 

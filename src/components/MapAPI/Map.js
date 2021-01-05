@@ -41,7 +41,7 @@ function LocalMap() {
     libraries,
   });
   const store = useSelector(store => store);
-  const [markers, setMarkers] = React.useState(store.maker);
+  // const [markers, setMarkers] = React.useState(store.maker);
   
   const [selected, setSelected] = React.useState(null);
 
