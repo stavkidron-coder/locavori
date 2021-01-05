@@ -17,7 +17,7 @@ class AdminPage extends Component {
           <AdminTabs/>
           </>
           :
-          <p>Sorry you are not admin you need access to view this page.</p>
+          <h1>Sorry you are not admin you need access to view this page.</h1>
         
         }
           
