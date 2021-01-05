@@ -62,7 +62,7 @@ const registrationReducer = (state={}, action) => {
             return {...state, beverage_type: beverage_type_array};
         case 'CLEAR_BEVERAGE_TYPE':
             beverage_type_array = []
-            return {beverage_type: beverage_type_array};
+            return {...state, beverage_type: beverage_type_array};
 
         case 'ADD_PREPARED_TYPE':
             prepared_type_array.push(action.payload);
@@ -72,7 +72,7 @@ const registrationReducer = (state={}, action) => {
             return {...state, prepared_type: prepared_type_array};
         case 'CLEAR_PREPARED_TYPE':
             prepared_type_array = []
-            return {prepared_type: prepared_type_array};
+            return {...state, prepared_type: prepared_type_array};
         
         case 'ADD_FRESH_TYPE':
             fresh_type_array.push(action.payload);
@@ -82,7 +82,7 @@ const registrationReducer = (state={}, action) => {
             return {...state, fresh_type: fresh_type_array};
         case 'CLEAR_FRESH_TYPE':
             fresh_type_array = []
-            return {fresh_type: fresh_type_array};
+            return {...state, fresh_type: fresh_type_array};
 
         case 'STORY':
             return {...state, story_info: {...state.story_info, [action.payload.key]: action.payload.value}};

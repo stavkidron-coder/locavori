@@ -7,11 +7,15 @@ import { withRouter } from "react-router";
 const ProductTypePrepared = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
-      setIsOpen(!isOpen)
-      document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false );
-      props.dispatch({type: 'CLEAR_PREPARED_TYPE'})
-    };
+    const toggle = (event) => {
+        if (event.target.id == 'yes'){
+          setIsOpen(!isOpen)
+        } else if (event.target.id == 'no' && isOpen) {
+          setIsOpen(!isOpen)
+          document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false );
+          props.dispatch({type: 'CLEAR_PREPARED_TYPE'})
+        }
+      };
 
     const handleChange = (event) => {
         if (document.getElementById(event.target.id).checked) {
@@ -23,7 +27,7 @@ const ProductTypePrepared = (props) => {
 
   return (
     <div>
-      <Input type="radio" name="prepared" onChange={toggle} >Toggle</Input>
+      <Input type="radio" name="prepared" id="yes" onChange={(event) => toggle(event)} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
@@ -200,7 +204,7 @@ const ProductTypePrepared = (props) => {
                 </Card>
             </Collapse>
             <br/>
-        <Input type="radio" name="prepared" onChange={toggle} >Toggle</Input>
+        <Input type="radio" name="prepared" id="no" onChange={(event) => toggle(event)} >Toggle</Input>
             <Label>No</Label>    
     </div>
   );

@@ -162,7 +162,7 @@ class BusinessSpecs extends Component {
                     <Col>
                         <br/>
                       <Label check>
-                        <Input type="checkbox" id="cidery" onChange={(event) => this.handleChangeCheck(event)}/>
+                        <Input type="checkbox" id="cidery" onChange={(event) => this.handleChangeType(event)}/>
                         Cidery
                       </Label>
                         <br/>

@@ -7,10 +7,14 @@ import { withRouter } from "react-router";
 const ProductTypeBeverage = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
-      setIsOpen(!isOpen);
+  const toggle = (event) => {
+    if (event.target.id == 'yes'){
+      setIsOpen(!isOpen)
+    } else if (event.target.id == 'no' && isOpen) {
+      setIsOpen(!isOpen)
       document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false );
-      props.dispatch({type: 'CLEAR_BEVERAGE_TYPE'})
+      props.dispatch({type: 'CLEAR_PREPARED_TYPE'})
+    }
   };
 
   const handleChange = (event) => {
@@ -23,7 +27,7 @@ const ProductTypeBeverage = (props) => {
 
   return (
     <div>
-      <Input type="radio" name="beverage" onChange={toggle} >Toggle</Input>
+      <Input type="radio" name="beverage" id="yes" onChange={(event) => toggle(event)} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
@@ -115,7 +119,7 @@ const ProductTypeBeverage = (props) => {
                 </Card>
             </Collapse>
             <br/>
-        <Input type="radio" name="beverage" onChange={toggle} >Toggle</Input>
+        <Input type="radio" name="beverage" id="no" onChange={(event) => toggle(event)} >Toggle</Input>
             <Label>No</Label>
     </div>
   );
