@@ -116,7 +116,7 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>Address
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_adderss')}></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_address')}></Input>
                   </Label>
                 </Col>
 
