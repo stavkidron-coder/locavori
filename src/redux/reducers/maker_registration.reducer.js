@@ -4,6 +4,7 @@ let business_license_array = [];
 let product_distribution_array = [];
 let beverage_type_array = [];
 let prepared_type_array = [];
+let fresh_type_array = [];
 
 const registrationReducer = (state={}, action) => {
     switch (action.type) {
@@ -63,6 +64,16 @@ const registrationReducer = (state={}, action) => {
         case 'CLEAR_PREPARED_TYPE':
             prepared_type_array = []
             return {prepared_type: prepared_type_array};
+        
+        case 'ADD_FRESH_TYPE':
+            fresh_type_array.push(action.payload);
+            return {...state, fresh_type: fresh_type_array};
+        case 'REMOVE_FRESH_TYPE':
+            fresh_type_array = fresh_type_array.filter(item => item !== action.payload);
+            return {...state, fresh_type: fresh_type_array};
+        case 'CLEAR_FRESH_TYPE':
+            fresh_type_array = []
+            return {fresh_type: fresh_type_array};
 
         default:
             return state;

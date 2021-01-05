@@ -39,11 +39,6 @@ class ProductInfo extends Component {
                 <FormGroup>
                     <Col>
                         <p>Do you have any prepared/packaged, shelf-stable, or refrigerated food product types that apply to your offerings?*</p>
-                        <Label check>
-                            <Input type="checkbox" value="no"/>
-                            No
-                        </Label>
-                        <br></br>
                         {/* selecting yes opens dropdown card */}
                         <ProductTypePrepared/>
                         <br></br>
@@ -53,11 +48,6 @@ class ProductInfo extends Component {
                 <FormGroup>
                     <Col>
                         <p>Do you have any fresh food product types that you grow/raise?*</p>
-                        <Label check>
-                            <Input type="checkbox" value="no"/>
-                            No
-                        </Label>
-                        <br></br>
                         {/* selecting yes opens dropdown card */}
                         <ProductTypeFresh/>
                         <br></br>
@@ -67,11 +57,6 @@ class ProductInfo extends Component {
                 <FormGroup>
                     <Col>
                         <p>Do you have any beverage product types that apply to your offerings?*</p>
-                        <Label check>
-                            <Input type="checkbox" value="no"/>
-                            No
-                        </Label>
-                        <br></br>
                         {/* selecting yes opens dropdown card */}
                        <ProductTypeBeverage/>
                         <br></br>
