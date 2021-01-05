@@ -19,4 +19,22 @@ router.post('/:id', (req, res) => {
     });
 });
 
+
+router.get('/', (req, res) => {
+    const userId = req.user.id;
+
+    const queryText = `SELECT * FROM "tbl_favorites"
+    JOIN "tbl_artisans" ON "tbl_favorites"."maker_id" = "tbl_artisans"."id"
+    WHERE "tbl_favorites"."profile_id" = $1;`;
+    pool.query(queryText, [userId])
+        .then((result) => {
+            console.log('Result from favorite get', result.rows);
+            
+            res.send(result.rows);
+        }).catch((error) => {
+            console.log('ERROR in get favorites', error);
+            res.sendStatus(500);
+        });
+});
+
 module.exports = router;

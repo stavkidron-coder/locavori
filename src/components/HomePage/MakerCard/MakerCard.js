@@ -17,6 +17,7 @@ class MakerCard extends Component {
     render() {
         return (
             <Container>
+        
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
                     <CardHeader>

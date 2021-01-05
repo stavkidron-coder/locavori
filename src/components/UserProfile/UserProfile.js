@@ -1,20 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import { Container, Jumbotron } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DesktopNav from '../Navbars/DesktopNav';
 import './UserProfile.css';
+import MakerCard from '../HomePage/MakerCard/MakerCard';
+import { Container, Jumbotron } from 'reactstrap';
 
 
 class UserProfilePage extends React.Component {
 
+  componentDidMount = () => {
+    this.props.dispatch({type: 'GET_FAVORITES'});
+  }
   render() {
     return (
       <>
       <DesktopNav/>
       <div className="profileBody">
-        {/* {JSON.stringify(this.props.store.user)} */}
         
         <Jumbotron>
           <Container>
@@ -30,6 +33,11 @@ class UserProfilePage extends React.Component {
         
         <div className="favoritesContainer">
           {/* Loop through favorites table  here*/}
+          {this.props.store.favorites.map((favorites) => {
+            return(
+              <MakerCard maker={favorites}/>
+            )
+          })}
         </div>
 
       </Container>
