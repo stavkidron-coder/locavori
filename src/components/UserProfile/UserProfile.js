@@ -1,46 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button } from 'reactstrap';
+import { Container, Jumbotron } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DesktopNav from '../Navbars/DesktopNav';
+import './UserProfile.css';
 
 
 class UserProfilePage extends React.Component {
 
-
-
-  makerLink = () => {
-     this.props.history.push('/Maker')
-  }
   render() {
     return (
       <>
       <DesktopNav/>
-      <Container>
-        <Card>
-          <CardBody>
-            <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} width='200' alt=""/>
-            
-            <CardSubtitle tag="h6" className="mb-2 text-muted">Profile Name</CardSubtitle>
-          </CardBody>
+      <div className="profileBody">
+        {/* {JSON.stringify(this.props.store.user)} */}
+        
+        <Jumbotron>
+          <Container>
+            <h1>Hello, {this.props.store.user.first_name}</h1>
+            <h6>({this.props.store.user.email})</h6>
+          </Container>
+        </Jumbotron>
 
-          <CardBody>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">Favorites</CardSubtitle>
-            {/* Where we will loop to find favorites per User */}
-            <Button className="favoriteBtn">
-              Favorite
-            </Button>
-            <CardBody>
-              <CardTitle>
-                Maker
-              </CardTitle>
-              <CardText>Maker Profile</CardText>
-              <Button onClick={this.makerLink} >Maker</Button>
-            </CardBody>
-          </CardBody>
-        </Card>
+        <Container>
+
+        <h2>My Favorites</h2>
+        <hr/>
+        
+        <div className="favoritesContainer">
+          {/* Loop through favorites table  here*/}
+        </div>
+
       </Container>
+    </div>
     </>
     )
   }

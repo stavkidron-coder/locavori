@@ -8,6 +8,10 @@ import StateDropdown from './StateDropdown/StateDropdown';
 
 class BusinessContact extends Component {
 
+  handleChange = (event, eventType) => {
+    this.props.dispatch({type: 'ADD_CONTACT', payload: {key: eventType, value: event.target.value}});
+  } 
+
     render() {
         return(
           <div>
@@ -20,13 +24,13 @@ class BusinessContact extends Component {
               <Row> 
                 <Col>
                   <Label>Legal Business Name*
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'legal_business_name')}></Input>
                   </Label>
                 </Col>
 
                 <Col>
                   <Label>Public Business Name*
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_business_name')}></Input>
                   </Label>
                 </Col>
               </Row>
@@ -34,13 +38,13 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>Owner's First Name*
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'first_name')}></Input>
                   </Label>
                 </Col>
 
                 <Col>
                   <Label>Owner's Last Name*
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'last_name')}></Input>
                   </Label>
                 </Col>
               </Row>
@@ -48,19 +52,19 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>Owner's Email Address*
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'email')}></Input>
                   </Label>
                 </Col>
 
                 <Col>
                   <Label>Owner's Contact Phone*
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'phone')}></Input>
                   </Label>
                 </Col>
 
                 <Col>
                   <Label>Alternative Phone
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'alt_phone')}></Input>
                   </Label>
                 </Col>
               </Row>
@@ -72,13 +76,13 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>Business Address*
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'business_address')}></Input>
                   </Label>
                 </Col>
 
                 <Col>
                   <Label>Suite #
-                  <Input  className="makerAppInput"type="text" placeholder="This will not be public"></Input>
+                  <Input  className="makerAppInput"type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'business_suite_num')}></Input>
                   </Label>
                 </Col>
               </Row>
@@ -86,7 +90,7 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>City*
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'business_city')}></Input>
                   </Label>
                 </Col>
 
@@ -97,7 +101,7 @@ class BusinessContact extends Component {
 
                 <Col>
                   <Label>Zipcode*
-                  <Input className="makerAppInput" type="text" placeholder="This will not be public"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will not be public" onChange={(event) => this.handleChange(event, 'business_zip_code')}></Input>
                   </Label>
                 </Col>
               </Row>
@@ -112,13 +116,13 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>Address
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_adderss')}></Input>
                   </Label>
                 </Col>
 
                 <Col>
                   <Label>Suite #
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_suite_num')}></Input>
                   </Label>
                 </Col>
               </Row>
@@ -126,7 +130,7 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>City
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_city')}></Input>
                   </Label>
                 </Col>
 
@@ -137,7 +141,7 @@ class BusinessContact extends Component {
 
                 <Col>
                   <Label>Zipcode
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed"></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_zip_code')}></Input>
                   </Label>
                 </Col>
               </Row>
