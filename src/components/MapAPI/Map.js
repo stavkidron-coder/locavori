@@ -61,6 +61,16 @@ function LocalMap() {
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log(position)
+        panToLocate({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      () => null
+    );
     mapRef.current = map;
   }, []);
   
@@ -104,26 +114,23 @@ function LocalMap() {
           //     anchor: new window.google.maps.Point(15, 15),
           //     scaledSize: new window.google.maps.Size(30, 30),
           //   }}
-          />
+          >{selected ? (
+            <InfoWindow
+              position={{ lat: selected.longitude, lng: selected.latitude }}
+              onCloseClick={() => {
+                setSelected(null);
+              }}
+            >
+              <div className='infoWindow'>
+              <img class='infoWindowImg' src={marker.product_img_one} alt={marker.product_type_one} />
+                <h2>{marker.business_name}</h2>
+                <p>{marker.story}</p>
+              </div>
+            </InfoWindow>
+          ) : null}
+          </Marker>
         ))}
-        {selected ? (
-          <InfoWindow
-            position={{ lat: selected.longitude, lng: selected.latitude }}
-            onCloseClick={() => {
-              setSelected(null);
-            }}
-          >
-            <div className='infoWindow'>
-              <h2>
-                <span role="img" aria-label="ROBOT">
-                  🐣
-                </span>{" "}
-                Emma's Eggs
-              </h2>
-              <p>Supplies Limited: 2 Egg Max Per Customer Per Month</p>
-            </div>
-          </InfoWindow>
-        ) : null}
+        
         <div className="filter">
           <FilterDropdown/>
         </div>
