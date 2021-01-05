@@ -39,6 +39,36 @@ router.post('/register', (req, res, next) => {
     });
 });
 
+router.post('/registerMaker', async (req, res, next) => {
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const birthDate = req.body.birthDate
+  const email = req.body.username;
+  const password = encryptLib.encryptPassword(req.body.password);
+  
+  
+  const connection = await pool.connect();
+  try {
+    await connection.query('BEGIN');
+    const profileQueryText = `INSERT INTO "tbl_profile" (first_name, last_name, birth_date, email, password)
+                              VALUES ($1, $2, $3, $4, $5) RETURNING id`;
+    
+    const result = await connection.query(profileQueryText, [firstName, lastName, birthDate, email, password])
+    const userId = result.rows[0].id
+    const makerQueryText = `INSERT INTO "tbl_artisans" (profile_id, first_name, last_name)
+                            VALUES ($1, $2, $3);`;
+    await connection.query(makerQueryText, [userId, firstName, lastName]);
+    await connection.query('COMMIT');
+    res.sendStatus(200);
+  } catch (error) {
+    await connection.query('ROLLBACK');
+    console.log('Register as maker error - rolling back new maker', error);
+    res.sendStatus(500);
+  } finally {
+    connection.release();
+  }
+});
+
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
