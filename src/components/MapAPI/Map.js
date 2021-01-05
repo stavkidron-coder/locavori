@@ -5,7 +5,6 @@ import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption 
 import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Container} from 'reactstrap';
 import {useSelector} from 'react-redux';
-// import { formatRelative } from "date-fns";
 
 // Styles Imports
 import './Map.css';
@@ -35,6 +34,7 @@ const options = {
 
 function LocalMap() {
 
+  // Uses store to set markers which are in turn rendered to the map
   React.useEffect (() => {
     setMarkers(store.maker);
   });
@@ -44,23 +44,11 @@ function LocalMap() {
     googleMapsApiKey: "AIzaSyDOqfm-oP_UKSq5ayaR72V_R-p8W1JJvrY", 
     libraries,
   });
+  
+  // Connects Entire store to Hook Component
   const store = useSelector(store => store);
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
-
-  // Upon Click on map will add an object to the marker array
-  // This records the Lat and Lng of the position clicked as well as the time it was clicked
-  // This will appear as a robot on the map
-  // const onMapClick = React.useCallback((e) => {
-  //   setMarkers((current) => [
-  //     ...current,
-  //     {
-  //       lat: e.latLng.lat(),
-  //       lng: e.latLng.lng(),
-  //       tim1e: new Date(),
-  //     },
-  //   ]);
-  // }, []);
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
@@ -118,13 +106,13 @@ function LocalMap() {
           //  }}
          />
        ))}
+
        {selected ? (
          <InfoWindow
            position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
            onCloseClick={() => {
              setSelected(null);
-           }}
-         >
+           }}>
            <div className='infoWindow'>
               <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
                 <h2>{selected.business_name}</h2>
@@ -193,6 +181,7 @@ function Search({panToSearch}) {
         console.log("ERROR!!!");
       }
       }}>
+
       <ComboboxInput
         className="searchInput"
         value={value} 
@@ -210,6 +199,7 @@ function Search({panToSearch}) {
           )}
         </ComboboxList>
       </ComboboxPopover>
+
     </Combobox>
   </Container>
   )
