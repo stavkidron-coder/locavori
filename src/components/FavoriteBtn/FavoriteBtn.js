@@ -11,7 +11,7 @@ class FavoriteBtn extends Component{
 
     favoriteMaker = (makerId) => {
         console.log('ID for favorite Btn:', makerId);
-        // this.props.dispatch({type: 'SET_FAVORITE', payload: makerId});
+        this.props.dispatch({type: 'POST_FAVORITE', payload: makerId});
     }
 
     render(){
