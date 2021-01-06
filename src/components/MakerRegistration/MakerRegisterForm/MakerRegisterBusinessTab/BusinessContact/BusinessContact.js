@@ -4,6 +4,7 @@ import mapStoreToProps from '../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import {  Col, Row, FormGroup, Label, Input } from 'reactstrap';
 import StateDropdown from './StateDropdown/StateDropdown';
+import StateDropdownPublic from './StateDropdown/StateDropdownPublic';
 
 
 class BusinessContact extends Component {
@@ -136,7 +137,7 @@ class BusinessContact extends Component {
 
                 <Col>
                   {/* state dropdown component */}
-                 <StateDropdown/>
+                 <StateDropdownPublic/>
                 </Col>
 
                 <Col>
