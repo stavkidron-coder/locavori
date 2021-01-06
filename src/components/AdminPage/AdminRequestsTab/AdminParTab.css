@@ -1,7 +1,6 @@
 .PARCard {
-    width: 30%;
+    width: 300px;
     margin: 15px;
-    height: 700px;
     justify-content: space-evenly;
 }
 

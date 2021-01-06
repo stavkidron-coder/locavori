@@ -1,7 +1,7 @@
 .MakerCard {
     width: 20%;
     margin: 20px;
-    height: 700px;
+    /* height: 700px; */
     /* justify-content: space-evenly; */
 }
 
@@ -11,6 +11,5 @@
 }
 .MakerCardImg{
     width: 100%;
-    height: 275px;
 } 
 
