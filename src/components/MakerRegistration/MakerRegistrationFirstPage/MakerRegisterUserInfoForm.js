@@ -21,7 +21,7 @@ class MakerRegisterUserForm extends Component {
     event.preventDefault();
     
     this.props.dispatch({
-      type: 'REGISTER',
+      type: 'REGISTER_AS_MAKER',
       payload: {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
