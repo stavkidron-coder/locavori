@@ -131,10 +131,12 @@ router.put('/', (req, res) => {
     req.body.contact.business_suite_num,
     req.body.contact.business_city,
     req.body.contact.business_zip_code,
+    req.body.business_state,
     req.body.contact.public_address,
     req.body.contact.public_suite_num,
     req.body.contact.public_city,
     req.body.contact.public_zip_code,
+    req.body.public_state,
   
     // BUSINESS SPECIFICATIONS
     req.body.business_specs.website,
@@ -142,7 +144,7 @@ router.put('/', (req, res) => {
     req.body.business_specs.instagram,
     req.body.business_specs.public_email,
     req.body.business_specs.license_id_state,
-    req.body.business_license,
+    // req.body.business_license,
     //  req.body.business_type,
   
     // PRODUCT DISTRIBUTION
@@ -178,7 +180,58 @@ router.put('/', (req, res) => {
     req.body.story_info.give_back,
     req.body.story_info.anything_else,
    ]
-  const queryText = `UPDATE tbl_artisans SET legal_name = $1, business_name = $2, fist_name = $3, last_name = $4, email_contact = $5`
+  // *** SALES SHEET IS SPECIALTIES IN THE MEAN TIME ***
+  const queryText = `UPDATE tbl_artisans SET 
+    legal_name = $1, 
+    business_name = $2, 
+    fist_name = $3, 
+    last_name = $4, 
+    email_contact = $5, 
+    phone_one = $6, 
+    phone_two = $7, 
+    business_address = $8, 
+    business_address_two = $9, 
+    business_city = $10, 
+    business_postalcode = $11, 
+    business_state = $12, 
+    public_address_one = $13, 
+    public_address_two = $14, 
+    public_city = $15, 
+    public_zip = $16, 
+    public_state = $17
+    website = $18,
+    facebook = $19,
+    instagram = $20,
+    public_email = $21,
+    st_license = $22,
+    pickup = $23,
+    delivery = $24,
+    shipping = $25,
+    product_avail = $26,
+    product_unique = $27,
+    awards = $28,
+    sales_sheet = $29
+    product_type_one = $30,
+    product_img_one = $31,
+    product_url_one = $32,
+    product_type_two = $33,
+    product_img_two = $34,
+    product_url_two = $35,
+    product_type_three = $36,
+    product_img_three = $37,
+    product_url_three = $38,
+    owner_img = $39,
+    story = $40,
+    give_back = $41,
+    anything_else = $42;`;
+    pool.query(queryText, makerInfo)
+        .then(() => {
+            res.sendStatus(200);
+        }).catch(error => {
+            res.sendStatus(500);
+            console.log('error in PUT maker info', error);
+        });
+    
 });
 
 
