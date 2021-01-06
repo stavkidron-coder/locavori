@@ -20,21 +20,15 @@ class MakerCard extends Component {
             <Container>
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
-                    <CardHeader>
+                    <CardHeader className="ListViewHeader">
                         <Row>
                             <Col xs="10">
                                 <CardTitle tag="h5">
-                                    <Button size="lg" color="link" onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
+                                    <Button className="ListViewButton" size="lg"  onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
                                         {this.props.maker.business_name}
                                     </Button>
-                                   
-
-
                                 </CardTitle>
 
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">
-                                    {this.props.maker.product_type_one}, {this.props.maker.product_type_two}, {this.props.maker.product_type_three}
-                                </CardSubtitle>
                             </Col>
 
                             <Col xs="2">
@@ -44,24 +38,32 @@ class MakerCard extends Component {
                     </CardHeader>
 
                     {/* Image, story, see more link */}
-                    <Row>
+
                         <CardBody>
+                            <Row>
                             <Col xs="3">
                                 <img
-                                    src={this.props.maker.owner_img}
+                                    src={this.props.maker.product_img_one}
                                     alt={this.props.maker.story}
                                     className="cardImg"
                                 />
                             </Col>
-                            <Col xs="9">
-                                <CardText>{this.props.maker.story}</CardText>
-                                <Button  color="link" onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
+
+                            <Col xs="6">
+                                <CardText tag="h6" className="ListViewSubtitle">
+                                        {this.props.maker.product_type_one}
+                                    <br/>
+                                        {this.props.maker.product_type_two}
+                                    <br/>
+                                        {this.props.maker.product_type_three}
+                                </CardText>
+
+                                <Button className="SeeMoreButton" onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
                                         See more...
                                 </Button>
                             </Col>
-
+                            </Row>
                         </CardBody>
-                    </Row>
 
                 </Card>
             </Container>
