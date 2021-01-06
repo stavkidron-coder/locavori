@@ -5,21 +5,25 @@ import mapStoreToProps from '../../../../redux/mapStoreToProps';
 import { Tooltip, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+
 const thumbsUp = <FontAwesomeIcon icon={faThumbsUp}/>
 
 const AcceptToolTip = (props) => {
 
-   
-
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   const toggle = () => setTooltipOpen(!tooltipOpen);
+
+  const approveMaker = (makerId) => {
+    props.dispatch({ type: "APPROVE_MAKER", payload: makerId })
+  }
 
   return (
       <div>
         <Button
           id="acceptBtn"
           color="outline-success"
+          onClick={()=> approveMaker(props.makerId)}
         >
            {thumbsUp}
         </Button>

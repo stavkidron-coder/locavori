@@ -10,23 +10,22 @@ import { Link } from 'react-router-dom'
 
 
 class Maker extends Component {
+  
   componentDidMount() {
     this.getMaker();
   }
 
   getMaker = () => {
     this.props.dispatch({ type: 'GET_MAKERS' })
-    console.log('232323232323232', this.props.store.maker);
 
   }
   ViewProfile = (makerId) => {
     this.props.history.push(`/makerCard/${makerId}`)
-    console.log("11111111111111111111", makerId);
 
   }
-  //deleteMaker = () => {
-
-  // }
+  deleteMaker = (makerId) => {
+    this.props.dispatch({ type: "DELETE_MAKER", payload: makerId })
+  }
   render() {
     return (
       <div>
@@ -56,7 +55,7 @@ class Maker extends Component {
                         </Col>
 
                         <Col xs="4">
-                          <Button color="danger" onClick={this.deleteMaker}>
+                          <Button color="danger" onClick={() => this.deleteMaker(maker.profile_id)}>
                             Delete
                         </Button>
                         </Col>
@@ -70,10 +69,7 @@ class Maker extends Component {
                 }
               </>
             )
-
           })}</div>
-
-
       </div>
     );
   }

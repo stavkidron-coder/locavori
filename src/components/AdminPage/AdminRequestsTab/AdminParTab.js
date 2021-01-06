@@ -10,17 +10,8 @@ import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, R
 
 
 
-// ViewApp = () => {
-
-// }
-// ApproveApp = () => {
-
-// }
-// DenyApp = () => {
-
-// }
-
 class AdminPARTab extends Component {
+  
   componentDidMount() {
     this.getMaker();
   }
@@ -32,6 +23,12 @@ class AdminPARTab extends Component {
     this.props.history.push(`/makerCard/${makerId}`)
     console.log("11111111111111111111", makerId);
 
+  }
+  approveMaker = (makerId) => {
+    this.props.dispatch({ type: "APPROVE_MAKER", payload: makerId })
+  }
+  denyMaker = (makerId) => {
+    this.props.dispatch({ type: "DENY_MAKER", payload: makerId })
   }
 
   render() {
@@ -56,17 +53,16 @@ class AdminPARTab extends Component {
                         <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
                         <Row>
                           <Col xs="6">
-                            <Button color="primary">
-                              <Link to="#" className="viewProfileLink">View Profile</Link>
+                            <Button color="primary" onClick={() => this.ViewProfile(maker.profile_id)}> 
+                            View Profile
                             </Button>
                           </Col>
-
-                          <Col xs="2">
-                            <AcceptBtn className="acceptDeclineBtns" />
+                          <Col xs="3">
+                            <AcceptBtn className="acceptDeclineBtns" makerId= {maker.profile_id} />
                           </Col>
-
-                          <Col xs="2">
-                            <DeclineBtn className="acceptDeclineBtns" />
+                          <Col xs="3">
+                            
+                            <DeclineBtn className="acceptDeclineBtns" makerId= {maker.profile_id}/>
                           </Col>
                         </Row>
                       </CardBody>
