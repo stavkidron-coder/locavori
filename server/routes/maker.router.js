@@ -118,5 +118,18 @@ router.put('/', (req, res) => {
   const give_back = req.body.story_info.give_back;
   const anything_else = req.body.story_info.anything_else;
 });
+  router.put('/:id', (req, res) => {
+    const queryText = `
+    UPDATE "tbl_artisans"
+    SET "approved_maker" = false
+    where "id" = $1;`;
+    pool.query(queryText, [ req.params.id])
+      .then((result) => {
+        res.sendStatus(200)
+      }).catch((error) => {
+        console.log('error in put', error);
+        res.sendStatus(500);
+      })
+  })
 
 module.exports = router;

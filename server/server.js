@@ -11,6 +11,8 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const makerRouter = require('./routes/maker.router');
+const adminDeny = require('./routes/adminDeny.router');
+const adminApprove = require('./routes/adminApprove.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,6 +29,8 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/maker', makerRouter);
 app.use('/api/makerCard',makerRouter)
+app.use('/api/adminDeny',adminDeny)
+app.use('/api/adminApprove',adminApprove)
 
 // Serve static files
 app.use(express.static('build'));

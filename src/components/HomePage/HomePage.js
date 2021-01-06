@@ -7,6 +7,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 import HomeNav from '../Navbars/HomeNav';
 
+
 import './HomePage.css';
 
 // CUSTOM COMPONENTS
