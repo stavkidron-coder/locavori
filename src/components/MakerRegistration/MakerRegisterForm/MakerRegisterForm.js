@@ -31,19 +31,19 @@ state = {
 
   componentDidMount = () => {
     this.props.dispatch({type: 'INITIALIAZE_MAKER_STORE', payload: this.state.initial_maker});
-    window.addEventListener('beforeunload', this.beforeunload.bind(this));
+    window.addEventListener('beforeunload', this.beforeunload);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.beforeunload.bind(this));
+    window.removeEventListener('beforeunload', this.beforeunload);
   }
 
-  beforeunload(e) {
+  beforeunload = (e) => {
     if (this.props.store.maker_registration) {
       e.preventDefault();
       e.returnValue = true;
-    }
   }
+}
 
   save = () => {
     this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
