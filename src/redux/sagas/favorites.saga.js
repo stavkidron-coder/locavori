@@ -20,9 +20,21 @@ function* getFavorites() {
     }
 }
 
+function* testFavorites(action) {
+    try {
+        console.log('testFavorites action.payload:', action.payload);
+        
+        const favorites = yield axios.get(`/api/favorites/testFavorites/${action.payload}`);
+        yield put({type: 'SET_TEST_FAVORITES', payload: favorites.data});
+    } catch (error) {
+        console.log('Update test favorite failed', error);
+    }
+}
+
 function* favoritesSaga() {
     yield takeEvery('POST_FAVORITE', addFavorite);
     yield takeEvery('GET_FAVORITES', getFavorites);
+    yield takeEvery('TEST_FAVORITES', testFavorites);
 }
 
 export default favoritesSaga;
