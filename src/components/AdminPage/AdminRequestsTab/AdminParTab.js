@@ -58,7 +58,7 @@ class AdminPARTab extends Component {
                             </Button>
                           </Col>
                           <Col xs="3">
-                            <AcceptBtn className="acceptDeclineBtns" onClick={()=> this.approveMaker(maker.profile_id)} />
+                            <AcceptBtn className="acceptDeclineBtns" makerId= {maker.profile_id} />
                           </Col>
                           <Col xs="3">
                             

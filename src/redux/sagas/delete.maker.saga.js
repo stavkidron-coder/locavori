@@ -15,7 +15,7 @@ function* deleteMaker(action) {
 function* approveMaker(action) {
     //recieves info of which item to "delete" from db and updates
      try {
-         let response = yield axios.put(`/api/maker/${action.payload}`);
+         let response = yield axios.put(`/api/adminApprove/${action.payload}`);
          console.log('in approveMaker looking for ID :',action.payload);
          
          yield put({ type: 'GET_MAKERS', payload: response.data })
