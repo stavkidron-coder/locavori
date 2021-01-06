@@ -9,8 +9,6 @@ const thumbsUp = <FontAwesomeIcon icon={faThumbsUp}/>
 
 const AcceptToolTip = (props) => {
 
-   
-
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   const toggle = () => setTooltipOpen(!tooltipOpen);
