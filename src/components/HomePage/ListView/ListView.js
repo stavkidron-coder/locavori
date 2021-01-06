@@ -20,7 +20,13 @@ class ListView extends Component {
          {/* {JSON.stringify(this.props.store.maker)} */}
          {this.props.store.maker.map((maker) => {
            return(
+            <>
+             {maker.approved_maker ?
               <MakerCard maker={maker} key={maker.id}/>
+             :
+             <h1></h1>  
+            }
+            </>
            )
          })}
 
