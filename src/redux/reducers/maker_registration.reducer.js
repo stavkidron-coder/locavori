@@ -8,6 +8,9 @@ let fresh_type_array = [];
 
 const registrationReducer = (state={}, action) => {
     switch (action.type) {
+        case 'INITIALIAZE_MAKER_STORE':
+            return action.payload
+
         case 'ADD_PRODUCT_CATEGORY':
             product_category_array.push(action.payload);
             return {...state, product_category: product_category_array};
@@ -17,6 +20,12 @@ const registrationReducer = (state={}, action) => {
 
         case 'ADD_CONTACT':
             return {...state, contact: {...state.contact, [action.payload.key]: action.payload.value}};
+
+        case 'ADD_BUSINESS_STATE':
+            return {...state, business_state: action.payload}
+        
+        case 'ADD_PUBLIC_STATE':
+            return {...state, public_state: action.payload}
 
         case 'ADD_BUSINESS_TYPE':
             business_type_array.push(action.payload);

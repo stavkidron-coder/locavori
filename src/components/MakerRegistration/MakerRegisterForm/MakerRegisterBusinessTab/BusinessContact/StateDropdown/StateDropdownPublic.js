@@ -4,22 +4,22 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 
-const StateDropdown = (props) => {
+const StateDropdownPublic = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
   const handleChange = (event) => {
-    props.dispatch({type: 'ADD_BUSINESS_STATE', payload: event.target.value});
+    props.dispatch({type: 'ADD_PUBLIC_STATE', payload: event.target.value});
   }
 
   return(
     <>
     <Label>State*</Label>
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-    {props.store.maker_registration.business_state ?
+    {props.store.maker_registration.public_state ?
     <DropdownToggle caret>
-      {props.store.maker_registration.business_state}
+      {props.store.maker_registration.public_state}
     </DropdownToggle>:
     <DropdownToggle caret>
       Select
@@ -86,4 +86,4 @@ const StateDropdown = (props) => {
 }
 
 
-  export default withRouter(connect(mapStoreToProps)(StateDropdown));
+  export default withRouter(connect(mapStoreToProps)(StateDropdownPublic));

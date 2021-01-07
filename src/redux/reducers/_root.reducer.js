@@ -4,6 +4,8 @@ import user from './user.reducer';
 import maker from './maker.reducer'
 import makerCard from './makerCard.reducer';
 import maker_registration from './maker_registration.reducer';
+import favorites from './favorites.reducer';
+import testFavorites from './testFavorites.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -17,8 +19,9 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   maker,
   makerCard,
-  maker_registration ,
-
+  maker_registration,
+  favorites,
+  testFavorites
 });
 
 export default rootReducer;

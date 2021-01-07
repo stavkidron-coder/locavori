@@ -8,9 +8,26 @@ import { Button } from 'reactstrap';
 const heart = <FontAwesomeIcon icon={faHeart} />
 
 class FavoriteBtn extends Component{
+
+    favoriteMaker = (makerId) => {
+        console.log('ID for favorite Btn:', makerId);
+
+        if(this.props.store.user.id != null){
+            for(let favorite of this.props.store.favorites){
+                if(makerId !== favorite.id){
+                    this.props.dispatch({type: 'POST_FAVORITE', payload: makerId});
+                }
+            }
+            
+        }
+        else {
+            alert('Login or create an account to favorite a maker');
+        }
+    }
+
     render(){
         return(
-            <Button className="favoriteBtn">
+            <Button className="favoriteBtn" onClick={() => this.favoriteMaker(this.props.makerId)}>
                 {heart}
             </Button>
         )

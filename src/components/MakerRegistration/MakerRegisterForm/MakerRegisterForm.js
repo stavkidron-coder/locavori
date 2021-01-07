@@ -8,6 +8,34 @@ import MakerRegisterTabs from './MakerRegisterTabs/MakerRegisterTabs';
 
 
 class MakerRegisterForm extends Component {
+state = {
+  initial_maker: {
+      availability: "",
+      beverage_type: [],
+      business_license: [],
+      business_specs: {website: "", facebook: "", instagram: "", public_email: "", license_id_state: ""},
+      business_state: "",
+      business_type: [],
+      contact: {alt_phone: "", business_address: "", business_city: "", business_suite_num: "", business_zip_code: "", email: "", first_name: "", last_name: "", legal_business_name: "", phone: "", public_address: "", public_business_name: "", public_city: "", public_suite_num: "", public_zip_code: ""},
+      delivery_type: {pick_up: "", delivery: "", shipping: ""},
+      featured_products: {product_one_image: "", product_one_type: "", product_one_url: "", product_two_image: "", product_two_type: "", product_two_url: "", product_three_image: "", product_three_type: "", product_three_url: ""},
+      fresh_type: [],
+      prepared_type: [],
+      product_category: [],
+      product_distribution: [],
+      product_info: {specialties: "", awards: "", unique: ""},
+      public_state: "",
+      story_info: {profile_image: "", story: "", give_back: "", anything_else: ""}
+    }
+}
+
+componentDidMount = () => {
+  this.props.dispatch({type: 'INITIALIAZE_MAKER_STORE', payload: this.state.initial_maker});
+}
+
+  save = () => {
+    this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
+  }
 
 
   render() {
@@ -16,6 +44,7 @@ class MakerRegisterForm extends Component {
         <Form>
           <MakerRegisterTabs/>
           <Button onClick={this.submitBtn}>Submit Application</Button>
+          <Button onClick={this.save}>Save Progress</Button>
         </Form>
       </div>
     );
