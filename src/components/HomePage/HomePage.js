@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 // import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
+// import Filters from '../FilterOptions/Filters';
+
+// FILTERS
+import MakerOptions from '../FilterOptions/MakerOptions';
+import DeliveryOptions from '../FilterOptions/DeliveryOptions';
+import LocationOptions from '../FilterOptions/LocationOptions';
+import ProductOptions from '../FilterOptions/ProductOptions';
+import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
+
+// MAP & LIST
+import Map from './MapView/MapView';
+import List from './ListView/ListView';
+
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 import HomeNav from '../Navbars/HomeNav';
 
@@ -42,17 +55,33 @@ class HomePage extends Component {
 
         <HomeNav/>
 
-        <Container>
-
+        <div className="filterMapBody">
           <Row>
-            <Col xs='12'>
-             <MapListToggleBtn/>
+            <Col xs="3">
+              <h2>Filters</h2>
+              <hr/>
+              {/* <Filters/> */}
+              <AvailabilityOptions/>
+              <DeliveryOptions/>
+              <MakerOptions/>
+              <LocationOptions/>
+              <ProductOptions/>
             </Col>
-          </Row>
-              
-        </Container>
 
+            <Col xs='9'>
+              <h2>Find Local Makers</h2>
+              <hr/>
+             {/* <MapListToggleBtn/> */}
+              <Map/>
+              <br/>
+              <h2>Local Makers Near You</h2>
+              <hr/>
+              <List/>
+            </Col>
+
+          </Row>
         </div>
+      </div>
     );
   }
 }

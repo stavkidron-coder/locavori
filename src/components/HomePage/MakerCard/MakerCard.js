@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardHeader, Container, Row, Col, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardHeader, Container, Row, Col, Button } from 'reactstrap';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import './MakerCard.css';
 import FavoriteBtn from '../../FavoriteBtn/FavoriteBtn';
@@ -19,18 +19,17 @@ class MakerCard extends Component {
     
     render() {
         return (
-            <Container>
-        
-                {/* {JSON.stringify(this.props.store.testFavorites)} */}
-
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
                     <CardHeader className="ListViewHeader">
                         <Row>
                             <Col xs="10">
                                 <CardTitle tag="h5">
-                                    <Button className="ListViewButton" size="lg"  onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
-                                        {this.props.maker.business_name}
+                                    <Button
+                                        className="ListViewButton"
+                                        size="lg"
+                                        onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
+                                            {this.props.maker.business_name}
                                     </Button>
                                 </CardTitle>
 
@@ -75,7 +74,6 @@ class MakerCard extends Component {
                         </CardBody>
 
                 </Card>
-            </Container>
         );
     }
 }

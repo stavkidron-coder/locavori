@@ -27,8 +27,7 @@ class FavoriteBtn extends Component{
 
     render(){
         return(
-            
-            <Button color="outline-danger" onClick={() => this.favoriteMaker(this.props.makerId)}>
+            <Button className="favoriteBtn" onClick={() => this.favoriteMaker(this.props.makerId)}>
                 {heart}
             </Button>
         )

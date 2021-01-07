@@ -1,6 +1,6 @@
 .makerCard {
-    width: 75%;
-    margin: auto;
+    /* width: 100%; */
+    /* margin: auto; */
     margin-bottom: 20px;
     height: 350px;
 }
@@ -24,20 +24,35 @@
 }
 
 .favoriteBtn {
-   margin: 100px !important;
+   float: right;
+   background-color: rgba(128, 128, 128, 0);
+   border-color: white;
+   transition: 0.3s;
+}
+
+.favoriteBtn:hover {
+   float: right;
+   background-color: white;
+   border-color: white;
+   color: rgb(5,103,54);
 }
 
 .cardImg{
-    height: 160px;
+    height: 210px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .SeeMoreButton{
-    background-color: rgb(5,103,54);
+    background-color: rgb(122,172,85);
     color: white;
+    border-color: rgb(122,172,85);
+    float: bottom;
 }
 
 .SeeMoreButton:hover{
-    background-color: rgb(250, 250, 245);
-    color: rgb(5,103,54);
+    background-color: rgb(5,103,54);
+    color: rgb(250, 250, 245);
     border: solid 1px rgb(5,103,54);
 }
