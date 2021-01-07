@@ -57,7 +57,7 @@ function LocalMap() {
 // Add check for each pin on if they have anything populated in DB or not
 
   function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
-    if (arrayCheck3.length === 0) {
+    if (arrayCheck.length) {
       return drinkPin
     } else {
       return 
