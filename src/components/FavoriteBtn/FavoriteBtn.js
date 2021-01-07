@@ -13,7 +13,12 @@ class FavoriteBtn extends Component{
         console.log('ID for favorite Btn:', makerId);
 
         if(this.props.store.user.id != null){
-            this.props.dispatch({type: 'POST_FAVORITE', payload: makerId});
+            for(let favorite of this.props.store.favorites){
+                if(makerId !== favorite.id){
+                    this.props.dispatch({type: 'POST_FAVORITE', payload: makerId});
+                }
+            }
+            
         }
         else {
             alert('Login or create an account to favorite a maker');
@@ -22,6 +27,7 @@ class FavoriteBtn extends Component{
 
     render(){
         return(
+            
             <Button color="outline-danger" onClick={() => this.favoriteMaker(this.props.makerId)}>
                 {heart}
             </Button>

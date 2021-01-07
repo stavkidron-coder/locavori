@@ -6,18 +6,23 @@ import './MakerCard.css';
 import FavoriteBtn from '../../FavoriteBtn/FavoriteBtn';
 import { withRouter } from "react-router";
 
-
 class MakerCard extends Component {
 
     ViewProfile = (makerId) => {
         this.props.history.push(`/makerCard/${makerId}`)
     }
 
+    componentDidMount = () => {
+        this.props.dispatch({type: 'TEST_FAVORITES', payload: this.props.maker.id});
+      }
+
     
     render() {
         return (
             <Container>
         
+                {/* {JSON.stringify(this.props.store.testFavorites)} */}
+
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
                     <CardHeader className="ListViewHeader">
@@ -32,7 +37,11 @@ class MakerCard extends Component {
                             </Col>
 
                             <Col xs="2">
-                                <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
+                                {!this.props.store.testFavorites ?
+                                    <Button>REMOVE FAVORITE</Button>
+                                    :
+                                    <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
+                                }
                             </Col>
                         </Row>
                     </CardHeader>
