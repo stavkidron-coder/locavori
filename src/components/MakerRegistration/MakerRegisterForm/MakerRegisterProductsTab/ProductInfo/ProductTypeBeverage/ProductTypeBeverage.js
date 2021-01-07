@@ -7,11 +7,27 @@ import { withRouter } from "react-router";
 const ProductTypeBeverage = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = (event) => {
+    if (event.target.id == 'yes'){
+      setIsOpen(!isOpen)
+    } else if (event.target.id == 'no' && isOpen) {
+      setIsOpen(!isOpen)
+      document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false );
+      props.dispatch({type: 'CLEAR_PREPARED_TYPE'})
+    }
+  };
+
+  const handleChange = (event) => {
+    if (document.getElementById(event.target.id).checked) {
+        props.dispatch({type: 'ADD_BEVERAGE_TYPE', payload: event.target.id});
+    } else {
+        props.dispatch({type: 'REMOVE_BEVERAGE_TYPE', payload: event.target.id});
+    }
+  }
 
   return (
     <div>
-      <Input type="checkbox" onClick={toggle} >Toggle</Input>
+      <Input type="radio" name="beverage" id="yes" onChange={(event) => toggle(event)} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
@@ -19,82 +35,82 @@ const ProductTypeBeverage = (props) => {
                     <CardBody>
                         <p>select all that apply</p>
                         <Label check>
-                            <Input type="checkbox" value="schrubs_switchel"/>
+                            <Input type="checkbox" id="schrubs_switchel" onClick={(event) => handleChange(event)}/>
                             Schrubs or Switchel
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="soda"/>
+                            <Input type="checkbox" id="soda" onClick={(event) => handleChange(event)}/>
                             Soda Pop (rootbeer, sassparilla, etc)
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="coffee"/>
+                            <Input type="checkbox" id="coffee" onClick={(event) => handleChange(event)}/>
                             Coffee
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="hot_drink"/>
+                            <Input type="checkbox" id="hot_drink" onClick={(event) => handleChange(event)}/>
                             Hot Cocoa or Hot Drink Mix
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="tea"/>
+                            <Input type="checkbox" id="tea" onClick={(event) => handleChange(event)}/>
                             Tea
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="health_shot"/>
+                            <Input type="checkbox" id="health_shot" onClick={(event) => handleChange(event)}/>
                             Health or Energy Shot
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="sweet_treat"/>
+                            <Input type="checkbox" id="sweet_treat" onClick={(event) => handleChange(event)}/>
                             Sweet Treat
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="cocktail_mixer"/>
+                            <Input type="checkbox" id="cocktail_mixer" onClick={(event) => handleChange(event)}/>
                             Cocktail or bar mixer
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="spirits"/>
+                            <Input type="checkbox" id="spirits" onClick={(event) => handleChange(event)}/>
                             Spirits
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="beer"/>
+                            <Input type="checkbox" id="beer" onClick={(event) => handleChange(event)}/>
                             Beer
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="cider"/>
+                            <Input type="checkbox" id="cider" onClick={(event) => handleChange(event)}/>
                             Hard Cider
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="wine"/>
+                            <Input type="checkbox" id="wine" onClick={(event) => handleChange(event)}/>
                             Wine
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="fresh_fruit"/>
+                            <Input type="checkbox" id="fresh_fruit" onClick={(event) => handleChange(event)}/>
                             Fresh Fruit
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="nonalcoholic"/>
+                            <Input type="checkbox" id="nonalcoholic" onClick={(event) => handleChange(event)}/>
                             Non-Alcoholic Beverage 
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="dairy"/>
+                            <Input type="checkbox" id="dairy" onClick={(event) => handleChange(event)}/>
                             Dairy
                         </Label>
                         <br/>
                         <Label check>
-                            <Input type="checkbox" value="other"/>
+                            <Input type="checkbox" id="other" onClick={(event) => handleChange(event)}/>
                             Other
                         </Label>
                         <br/>
@@ -102,6 +118,9 @@ const ProductTypeBeverage = (props) => {
                     
                 </Card>
             </Collapse>
+            <br/>
+        <Input type="radio" name="beverage" id="no" onChange={(event) => toggle(event)} >Toggle</Input>
+            <Label>No</Label>
     </div>
   );
 }
