@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardHeader, Container, Row, Col, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardHeader, Container, Row, Col, Button } from 'reactstrap';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import './MakerCard.css';
 import FavoriteBtn from '../../FavoriteBtn/FavoriteBtn';

@@ -2,7 +2,7 @@ import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
-import FilterDropdown from '../FilterDropdown/FilterDropdown';
+// import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Container} from 'reactstrap';
 import {useSelector} from 'react-redux';
 
@@ -122,7 +122,7 @@ function LocalMap() {
           ) : null}
 
         <div className="filter">
-          <FilterDropdown/>
+          {/* <FilterDropdown/> */}
         </div>
         </GoogleMap>
       </div>

@@ -8,9 +8,9 @@ const ProductTypeFresh = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = (event) => {
-      if (event.target.id == 'yes'){
+      if (event.target.id === 'yes'){
         setIsOpen(!isOpen)
-      } else if (event.target.id == 'no' && isOpen) {
+      } else if (event.target.id === 'no' && isOpen) {
         setIsOpen(!isOpen)
         document.querySelectorAll('input[type=checkbox]').forEach( el => el.checked = false );
         props.dispatch({type: 'CLEAR_FRESH_TYPE'})

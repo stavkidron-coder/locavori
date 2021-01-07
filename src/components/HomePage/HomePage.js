@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import SearchBar from '../SearchBar/SearchBar';
 // import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
+// import Filters from '../FilterOptions/Filters';
+
+// FILTERS
+import MakerOptions from '../FilterOptions/MakerOptions';
+import DeliveryOptions from '../FilterOptions/DeliveryOptions';
+import LocationOptions from '../FilterOptions/LocationOptions';
+import ProductOptions from '../FilterOptions/ProductOptions';
+import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
+
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 import HomeNav from '../Navbars/HomeNav';
 
@@ -42,17 +51,25 @@ class HomePage extends Component {
 
         <HomeNav/>
 
-        <Container>
-
+        <div className="filterMapBody">
           <Row>
-            <Col xs='12'>
+            <Col xs="3">
+              <h2>Filters</h2>
+              <hr/>
+              {/* <Filters/> */}
+              <AvailabilityOptions/>
+              <DeliveryOptions/>
+              <MakerOptions/>
+              <LocationOptions/>
+              <ProductOptions/>
+            </Col>
+
+            <Col xs='9'>
              <MapListToggleBtn/>
             </Col>
           </Row>
-              
-        </Container>
-
         </div>
+      </div>
     );
   }
 }

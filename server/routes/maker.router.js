@@ -36,14 +36,14 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/filter', async (req, res) => {
-  let bussinessArray = req.query.business.split(',');
+  let businessArray = req.query.business.split(',');
   let deliveryArray = req.query.delivery.split(',');
   let productArray = req.query.product.split(',');
   let resultArray = [];
     const queryText = 'SELECT * FROM "tbl_artisans" where "business_type" = $1;';
-    for (let i = 0; i < bussinessArray.length; i++){
+    for (let i = 0; i < businessArray.length; i++){
       try {
-         var result = await pool.query(queryText, [bussinessArray[i]])
+         var result = await pool.query(queryText, [businessArray[i]])
          resultArray.push(result.rows)
       } catch (error) {
         res.sendStatus(500);
