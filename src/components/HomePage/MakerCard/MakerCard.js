@@ -17,6 +17,7 @@ class MakerCard extends Component {
     render() {
         return (
             <Container>
+        
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
                     <CardHeader className="ListViewHeader">
@@ -31,7 +32,7 @@ class MakerCard extends Component {
                             </Col>
 
                             <Col xs="2">
-                                <FavoriteBtn className="favoriteBtn" />
+                                <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
                             </Col>
                         </Row>
                     </CardHeader>
