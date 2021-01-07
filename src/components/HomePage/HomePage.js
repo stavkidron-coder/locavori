@@ -13,6 +13,10 @@ import LocationOptions from '../FilterOptions/LocationOptions';
 import ProductOptions from '../FilterOptions/ProductOptions';
 import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
 
+// MAP & LIST
+import Map from './MapView/MapView';
+import List from './ListView/ListView';
+
 import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
 import HomeNav from '../Navbars/HomeNav';
 
@@ -65,8 +69,16 @@ class HomePage extends Component {
             </Col>
 
             <Col xs='9'>
-             <MapListToggleBtn/>
+              <h2>Find Local Makers</h2>
+              <hr/>
+             {/* <MapListToggleBtn/> */}
+              <Map/>
+              <br/>
+              <h2>Local Makers Near You</h2>
+              <hr/>
+              <List/>
             </Col>
+
           </Row>
         </div>
       </div>

@@ -10,7 +10,7 @@ const heart = <FontAwesomeIcon icon={faHeart} />
 class FavoriteBtn extends Component{
     render(){
         return(
-            <Button color="outline-danger">
+            <Button className="favoriteBtn">
                 {heart}
             </Button>
         )

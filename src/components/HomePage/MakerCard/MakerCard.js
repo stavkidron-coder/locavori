@@ -13,25 +13,33 @@ class MakerCard extends Component {
         this.props.history.push(`/makerCard/${makerId}`)
     }
 
+    favorite = (makerId) => {
+        this.props.dispatch({type: 'ADD_FAVORITE', payload: makerId})
+    }
+
     
     render() {
         return (
-            <Container>
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
                     <CardHeader className="ListViewHeader">
                         <Row>
                             <Col xs="10">
                                 <CardTitle tag="h5">
-                                    <Button className="ListViewButton" size="lg"  onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
-                                        {this.props.maker.business_name}
+                                    <Button
+                                        className="ListViewButton"
+                                        size="lg"
+                                        onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
+                                            {this.props.maker.business_name}
                                     </Button>
                                 </CardTitle>
 
                             </Col>
 
                             <Col xs="2">
-                                <FavoriteBtn className="favoriteBtn" />
+                                <FavoriteBtn
+                                    className="favoriteBtn"
+                                    onClick={() => this.favorite(this.props.maker.id)}/>
                             </Col>
                         </Row>
                     </CardHeader>
@@ -65,7 +73,6 @@ class MakerCard extends Component {
                         </CardBody>
 
                 </Card>
-            </Container>
         );
     }
 }
