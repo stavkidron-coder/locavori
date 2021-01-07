@@ -58,7 +58,7 @@ router.get('/filter', async (req, res) => {
  */
 router.put('/', (req, res) => {
 
-   const makerInfo =[
+  const makerInfo =[
 
     //  CONTACT INFO
     req.body.contact.legal_business_name,
@@ -85,21 +85,21 @@ router.put('/', (req, res) => {
     req.body.business_specs.instagram,
     req.body.business_specs.public_email,
     req.body.business_specs.license_id_state,
-    // req.body.business_license,
-    //  req.body.business_type,
+    req.body.business_license,
+    req.body.business_type,
   
     // PRODUCT DISTRIBUTION
-    //  req.body.product_distribution,
+     req.body.product_distribution,
     req.body.delivery_type.pick_up,
     req.body.delivery_type.delivery,
     req.body.delivery_type.shipping,
     req.body.availability,
   
     // PRODUCT TYPES **DIFFERS FROM DB**
-    //  req.body.prepared_type,
-    //  req.body.fresh_type,
-    //  req.body.beverge_type,
-    //  req.body.product_category,
+    req.body.prepared_type,
+    req.body.fresh_type,
+    req.body.beverge_type,
+    req.body.product_category,
     req.body.product_info.unique,
     req.body.product_info.awards,
     req.body.product_info.specialties,
@@ -148,27 +148,34 @@ router.put('/', (req, res) => {
     instagram = $20,
     public_email = $21,
     st_license = $22,
-    pickup = $23,
-    delivery = $24,
-    shipping = $25,
-    product_avail = $26,
-    product_unique = $27,
-    awards = $28,
-    sales_sheet = $29,
-    product_type_one = $30,
-    product_img_one = $31,
-    product_url_one = $32,
-    product_type_two = $33,
-    product_img_two = $34,
-    product_url_two = $35,
-    product_type_three = $36,
-    product_img_three = $37,
-    product_url_three = $38,
-    owner_img = $39,
-    story = $40,
-    give_back = $41,
-    anything_else = $42
-    WHERE profile_id = $43;`;
+    license = $23,
+    business_type = $24,
+    where_sold = $25,
+    pickup = $26,
+    delivery = $27,
+    shipping = $28,
+    product_avail = $29,
+    product_type_food = $30,
+    product_type_fresh = $31,
+    product_type_bev = $32,
+    product_type_cat = $33,
+    product_unique = $34,
+    awards = $35,
+    sales_sheet = $36,
+    product_type_one = $37,
+    product_img_one = $38,
+    product_url_one = $39,
+    product_type_two = $40,
+    product_img_two = $41,
+    product_url_two = $42,
+    product_type_three = $43,
+    product_img_three = $44,
+    product_url_three = $45,
+    owner_img = $46,
+    story = $47,
+    give_back = $48,
+    anything_else = $49
+    WHERE profile_id = $50;`;
     pool.query(queryText, makerInfo)
         .then(() => {
             res.sendStatus(200);
