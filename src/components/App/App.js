@@ -126,7 +126,7 @@ class App extends Component {
               component={UserRegisterPage}
               authRedirect="/home"
             />
-            <ProtectedRoute
+            <Route
               // with authRedirect:
               // - if logged in, redirects to "/user"
               // - else shows LandingPage at "/home"

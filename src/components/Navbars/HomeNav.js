@@ -84,6 +84,7 @@ const HomeNav = (props) => {
           <Row className="title">
             <Col>
               <h1>Connecting local makers to hungry neighbors</h1>
+              <hr className="whiteHr"/>
             </Col>
           </Row>  
         </Navbar>

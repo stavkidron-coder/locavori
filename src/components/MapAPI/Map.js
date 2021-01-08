@@ -2,7 +2,7 @@ import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
-import FilterDropdown from '../FilterDropdown/FilterDropdown';
+// import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Container} from 'reactstrap';
 import {useSelector} from 'react-redux';
 
@@ -57,23 +57,9 @@ function LocalMap() {
 
 
 
-//Checks DB for different product types to display specific pins on map
-  function iconSelect (marker) {
-    if (marker.product_type_food !== null) {
-      console.log('packaged pin')
-      return packagedPin
-    }
-    else if (marker.product_type_fresh !== null) {
-      console.log('fresh pin')
-      return freshPin
-    }
-    else if (marker.product_type_bev !== null){
-      console.log('drink pin')
-      return drinkPin
-    }
-    else
-      return 'no category to display';
-  }
+  function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
+    if (arrayCheck.length) {
+
 
  
 
@@ -162,7 +148,7 @@ function LocalMap() {
           ) : null}
 
         <div className="filter">
-          <FilterDropdown/>
+          {/* <FilterDropdown/> */}
         </div>
         </GoogleMap>
       </div>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardHeader, Container, Row, Col, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardHeader, Row, Col, Button } from 'reactstrap';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import './MakerCard.css';
 import FavoriteBtn from '../../FavoriteBtn/FavoriteBtn';
 import { withRouter } from "react-router";
-
 
 class MakerCard extends Component {
 
@@ -13,26 +12,35 @@ class MakerCard extends Component {
         this.props.history.push(`/makerCard/${makerId}`)
     }
 
+    componentDidMount = () => {
+        this.props.dispatch({type: 'TEST_FAVORITES', payload: this.props.maker.id});
+      }
+
     
     render() {
         return (
-            <Container>
-        
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
                     <CardHeader className="ListViewHeader">
                         <Row>
                             <Col xs="10">
                                 <CardTitle tag="h5">
-                                    <Button className="ListViewButton" size="lg"  onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
-                                        {this.props.maker.business_name}
+                                    <Button
+                                        className="ListViewButton"
+                                        size="lg"
+                                        onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
+                                            {this.props.maker.business_name}
                                     </Button>
                                 </CardTitle>
 
                             </Col>
 
                             <Col xs="2">
-                                <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
+                                {!this.props.store.testFavorites ?
+                                    <Button>REMOVE FAVORITE</Button>
+                                    :
+                                    <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
+                                }
                             </Col>
                         </Row>
                     </CardHeader>
@@ -66,7 +74,6 @@ class MakerCard extends Component {
                         </CardBody>
 
                 </Card>
-            </Container>
         );
     }
 }
