@@ -4,6 +4,10 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class UserPage extends Component {
+
+  componentDidMount = () => {
+    this.props.dispatch({type: 'GET_FAVORITES'});
+  }
   // this component doesn't do much to start, just renders some user info to the DOM
   render() {
     return (
@@ -12,6 +16,8 @@ class UserPage extends Component {
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
       </div>
+
+      
     );
   }
 }

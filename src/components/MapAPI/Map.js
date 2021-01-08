@@ -10,6 +10,7 @@ import {useSelector} from 'react-redux';
 import './Map.css';
 import mapStyles from "./mapStyles";
 import "@reach/combobox/styles.css";
+import drinkPin from '../../TestImages/drink.png';
 
 const libraries = ["places"];
 
@@ -50,9 +51,28 @@ function LocalMap() {
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
+
+
+// EMMMA HERE
+// Add check for each pin on if they have anything populated in DB or not
+
+  function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
+    if (arrayCheck.length) {
+      return drinkPin
+    } else {
+      return 
+    }
+  }
+
+
+
+
+
+
+
+
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
-    setMarkers(store.maker);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log(position)
@@ -89,22 +109,32 @@ function LocalMap() {
           zoom={8} 
           center={center} 
           options={options}
-          // onClick={onMapClick}
           onLoad={onMapLoad}
         >
         {markers.map((marker) => (
-           <Marker
+          <Marker
            key={`${marker.latitude}-${marker.longitude}`}
            position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
            onClick={() => {
              setSelected(marker);
            }}
-          //  icon={{
-          //    origin: new window.google.maps.Point(0, 0),
-          //    anchor: new window.google.maps.Point(15, 15),
-          //    scaledSize: new window.google.maps.Size(30, 30),
-          //  }}
+
+
+
+           // Add the three main type arrays, fresh, Beverage, Packaged
+           icon={{
+             url: iconSelect(marker.product_type_one),
+             fillColor: '#0000ff',
+             strokeColor: '#0000ff',
+             fillOpacity: 1,
+             origin: new window.google.maps.Point(0, 0),
+             anchor: new window.google.maps.Point(15, 15),
+             scaledSize: new window.google.maps.Size(30, 30),
+           }}
          />
+
+
+         
        ))}
 
        {selected ? (

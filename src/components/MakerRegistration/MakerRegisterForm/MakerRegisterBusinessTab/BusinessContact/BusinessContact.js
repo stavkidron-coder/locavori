@@ -4,6 +4,7 @@ import mapStoreToProps from '../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import {  Col, Row, FormGroup, Label, Input } from 'reactstrap';
 import StateDropdown from './StateDropdown/StateDropdown';
+import StateDropdownPublic from './StateDropdown/StateDropdownPublic';
 
 
 class BusinessContact extends Component {
@@ -116,7 +117,7 @@ class BusinessContact extends Component {
               <Row>
                 <Col>
                   <Label>Address
-                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_adderss')}></Input>
+                  <Input className="makerAppInput" type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'public_address')}></Input>
                   </Label>
                 </Col>
 
@@ -136,7 +137,7 @@ class BusinessContact extends Component {
 
                 <Col>
                   {/* state dropdown component */}
-                 <StateDropdown/>
+                 <StateDropdownPublic/>
                 </Col>
 
                 <Col>

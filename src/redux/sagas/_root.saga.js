@@ -3,6 +3,7 @@ import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import makerSaga from './maker.saga';
+import favoritesSaga from './favorites.saga';
 import deleteMaker from './delete.maker.saga';
 
 // rootSaga is the primary saga.
@@ -18,6 +19,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     makerSaga(),
+    favoritesSaga(),
     deleteMaker(),
   ]);
 }
