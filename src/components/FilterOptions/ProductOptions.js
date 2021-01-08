@@ -28,42 +28,35 @@ const ProductOptions = (props) => {
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Meat
+                            Meats
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Cheese
+                            Dairy & Eggs
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Eggs
+                            Alcoholic Beverages
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Beverages
+                            Non-Alcoholic Beverages
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Snacks
-                    </Label>
-                </FormGroup>
-                
-                <FormGroup check>
-                    <Label check>
-                        <Input type="checkbox" />{' '}
-                            Sweets
+                            Snacks & Sweets
                     </Label>
                 </FormGroup>
                 
@@ -77,7 +70,21 @@ const ProductOptions = (props) => {
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Plant/Flowers
+                            Fruits & Vegetables
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            Plants & Flowers
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            Other
                     </Label>
                 </FormGroup>
 

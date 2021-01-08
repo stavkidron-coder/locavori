@@ -43,13 +43,6 @@ const DeliveryOptions = (props) => {
                 <FormGroup check>
                     <Label check>
                         <Input type="checkbox" />{' '}
-                            Curb-Side Pickup
-                    </Label>
-                </FormGroup>
-                
-                <FormGroup check>
-                    <Label check>
-                        <Input type="checkbox" />{' '}
                             Shipping
                     </Label>
                 </FormGroup>

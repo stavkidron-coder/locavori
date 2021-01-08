@@ -86,6 +86,27 @@ const MakerOptions = (props) => {
                             Apiary (Bees)
                     </Label>
                 </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            Woman Owned
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            P.O.C. Owned
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                            Other
+                    </Label>
+                </FormGroup>
             </Form>
         </Collapse>
     </div>

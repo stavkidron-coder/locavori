@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import PageOneForm from '../MakerRegistrationFirstPage/MakerRegisterUserInfoForm';
+import DesktopNav from '../../Navbars/DesktopNav';
 
 class MakerRegisterPageOne extends Component {
   state = {
@@ -11,9 +12,12 @@ class MakerRegisterPageOne extends Component {
 
   render() {
     return (
-      <div className="userRegisterBody">
-        <PageOneForm />
-      </div>
+      <>
+        <DesktopNav/>
+        <div className="userRegisterBody">
+          <PageOneForm />
+        </div>
+      </>
     );
   }
 }

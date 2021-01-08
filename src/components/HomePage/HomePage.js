@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Col, Row } from 'reactstrap';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-// import SearchBar from '../SearchBar/SearchBar';
-// import SearchBarCollapse from '../SearchBarCollapse/SearchBarCollapse';
-// import Filters from '../FilterOptions/Filters';
 
 // FILTERS
 import MakerOptions from '../FilterOptions/MakerOptions';
@@ -12,19 +8,17 @@ import DeliveryOptions from '../FilterOptions/DeliveryOptions';
 import LocationOptions from '../FilterOptions/LocationOptions';
 import ProductOptions from '../FilterOptions/ProductOptions';
 import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
-
+import DietaryRestrictions from '../FilterOptions/DietaryRestrictions';
 // MAP & LIST
 import Map from './MapView/MapView';
 import List from './ListView/ListView';
-
-import MapListToggleBtn from './ToggleMapListBtn/ToggleMapListBtn'
+// NAVBAR
 import HomeNav from '../Navbars/HomeNav';
-
-
+// CSS
 import './HomePage.css';
+// BOOTSTRAP
+import { Col, Row } from 'reactstrap';
 
-// CUSTOM COMPONENTS
-// import RegisterForm from '../RegisterForm/RegisterForm';
 
 class HomePage extends Component {
 
@@ -36,9 +30,9 @@ class HomePage extends Component {
     }
   }
 
-  onLogin = (event) => {
-    this.props.history.push('/login');
-  };
+  // onLogin = (event) => {
+  //   this.props.history.push('/login');
+  // };
 
   componentDidMount = () => {
     this.props.dispatch({type: 'GET_MAKERS'});
@@ -51,7 +45,6 @@ class HomePage extends Component {
   render() {
     return (
       <div className="homePageBody">
-        {/* <button onClick={this.filterGet}>TEST GET</button> */}
 
         <HomeNav/>
 
@@ -66,12 +59,12 @@ class HomePage extends Component {
               <MakerOptions/>
               <LocationOptions/>
               <ProductOptions/>
+              <DietaryRestrictions/>
             </Col>
 
             <Col xs='9'>
               <h2>Find Local Makers</h2>
               <hr/>
-             {/* <MapListToggleBtn/> */}
               <Map/>
               <br/>
               <h2>Local Makers Near You</h2>

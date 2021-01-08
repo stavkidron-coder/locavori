@@ -86,6 +86,13 @@ const LocationOptions = (props) => {
                         Roadside Stand
                     </Label>
                 </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" />{' '}
+                        Other
+                    </Label>
+                </FormGroup>
 
             </Form>
         </Collapse>

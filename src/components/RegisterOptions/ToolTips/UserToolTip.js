@@ -14,7 +14,6 @@ const UserToolTip = (props) => {
       <Button
         id="userBtn"
         className="registerOptionsButton"
-        color="success"
         onClick={() => props.history.push('/user-registration')}>
           Register as a Locavore
         </Button>
