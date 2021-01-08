@@ -5,7 +5,7 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+router.get('/getall', (req, res) => {
   const queryText = 'SELECT * FROM "tbl_artisans";';
   pool.query(queryText)
     .then(result => {
@@ -35,22 +35,38 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.get('/filter', async (req, res) => {
-  let businessArray = req.query.business.split(',');
-  let deliveryArray = req.query.delivery.split(',');
-  let productArray = req.query.product.split(',');
-  let resultArray = [];
-    const queryText = 'SELECT * FROM "tbl_artisans" where "business_type" = $1;';
-    for (let i = 0; i < businessArray.length; i++){
-      try {
-         var result = await pool.query(queryText, [businessArray[i]])
-         resultArray.push(result.rows)
-      } catch (error) {
-        res.sendStatus(500);
-        return
-      }
-    }
-    return res.send(resultArray);
+router.get('/', (req, res) => {
+  console.log(req.query);
+  // let availabilityArray = req.query.availability.split(',');
+  // let deliveryArray = req.query.delivery.split(','); // NEEDS TO BE BROKEN UP *****
+  // let makerArray = req.query.makers.split(',');
+  // let locationArray = req.query.location.split(',');
+  // let freshArray = req.query.fresh.split(',');
+  // let preparedArray = req.query.prepared.split(',');
+  // let beveragesArray = req.query.beverages.split(',');
+  // let dietArray = req.query.diet.split(',');
+  // let resultArray = [];
+  //   const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
+  //   for (let i = 0; i < availabilityArray.length; i++){
+  //     try {
+  //        var result = await pool.query(queryAvail, [availabilityArray[i]])
+  //        resultArray.push(result.rows)
+  //     } catch (error) {
+  //       res.sendStatus(500);
+  //       return
+  //     }
+  //   }
+  //   const queryMaker = 'SELECT * FROM tbl_artisans WHERE business_type = $1'
+  //   for (let i = 0; i < makerArray.length; i++){
+  //     try {
+  //        var result = await pool.query(queryMaker, [makerArray[i]])
+  //        resultArray.push(result.rows)
+  //     } catch (error) {
+  //       res.sendStatus(500);
+  //       return
+  //     }
+  //   }
+  //   return res.send(resultArray);
   });
 
 /**
@@ -89,7 +105,7 @@ router.put('/', (req, res) => {
     req.body.business_type,
   
     // PRODUCT DISTRIBUTION
-     req.body.product_distribution,
+    req.body.product_distribution,
     req.body.delivery_type.pick_up,
     req.body.delivery_type.delivery,
     req.body.delivery_type.shipping,
@@ -98,7 +114,7 @@ router.put('/', (req, res) => {
     // PRODUCT TYPES **DIFFERS FROM DB**
     req.body.prepared_type,
     req.body.fresh_type,
-    req.body.beverge_type,
+    req.body.beverage_type,
     req.body.product_category,
     req.body.product_info.unique,
     req.body.product_info.awards,

@@ -13,6 +13,14 @@ const LocationOptions = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const handleChange = (event) => {
+    if (document.getElementById(event.target.id).checked) {
+        props.dispatch({type: 'ADD_LOCATION', payload: event.target.id});
+    } else {
+        props.dispatch({type: 'REMOVE_LOCATION', payload: event.target.id});
+    }
+  }
+
   return (
     <div>
         <Button
@@ -26,64 +34,71 @@ const LocationOptions = (props) => {
             <Form>
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="grocery" onClick={(event) => handleChange(event)} />{' '}
                             Local Grocery Stores
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="co_ops" onClick={(event) => handleChange(event)} />{' '}
                             Co-ops
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="farmers_market" onClick={(event) => handleChange(event)} />{' '}
                             Farmers Markets/Other Local Markets
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="amazon" onClick={(event) => handleChange(event)} />{' '}
                         Online on Amazon
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="company_website" onClick={(event) => handleChange(event)} />{' '}
                         Online on Company Website
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="gift" onClick={(event) => handleChange(event)} />{' '}
                         Gift/Subscription Box
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="retail" onClick={(event) => handleChange(event)} />{' '}
                         Retail Store (Non-Grocery)
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="your_home" onClick={(event) => handleChange(event)} />{' '}
                         Private Place of Business, Farm, or Home
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="roadside" onClick={(event) => handleChange(event)} />{' '}
                         Roadside Stand
+                    </Label>
+                </FormGroup>
+                
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" id="other" onClick={(event) => handleChange(event)} />{' '}
+                        Other
                     </Label>
                 </FormGroup>
 
