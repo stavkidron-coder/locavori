@@ -62,15 +62,15 @@ function LocalMap(props) {
 
   //Checks DB for different product types to display specific pins on map
  function iconSelect (marker) {
-  if (marker.product_type_food !== null) {
+  if (marker.product_type_food !== null && marker.product_type_food !== '{}') {
     console.log('packaged pin')
     return packagedPin
   }
-  else if (marker.product_type_fresh !== null) {
+  else if (marker.product_type_fresh !== null && marker.product_type_fresh !== '{}') {
     console.log('fresh pin')
     return freshPin
   }
-  else if (marker.product_type_bev !== null){
+  else if (marker.product_type_bev !== null && marker.product_type_bev !== '{}'){
     console.log('drink pin')
     return drinkPin
   }
