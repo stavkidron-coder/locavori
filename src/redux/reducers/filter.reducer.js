@@ -43,6 +43,21 @@ const filterReducer = (state={}, action) => {
         case 'REMOVE_MAKER_OPTIONS':
             maker_options_array = maker_options_array.filter(item => item !== action.payload);
             return {...state, maker_options: maker_options_array};
+        
+        case 'ADD_FRESH_OPTIONS':
+            return {...state, fresh: action.payload};
+        case 'REMOVE_FRESH_OPTIONS':
+            return {...state, fresh: []};
+        
+        case 'ADD_PREPARED_OPTIONS':
+            return {...state, prepared: action.payload};
+        case 'REMOVE_PREPARED_OPTIONS':
+            return {...state, prepared: []};
+        
+        case 'ADD_BEVERAGE_OPTIONS':
+            return {...state, beverage: action.payload};
+        case 'REMOVE_BEVERAGE_OPTIONS':
+            return {...state, beverage: []};
 
         default:
             return state;
