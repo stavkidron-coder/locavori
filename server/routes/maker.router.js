@@ -35,38 +35,40 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.get('/', (req, res) => {
-  console.log(req.query);
-  // let availabilityArray = req.query.availability.split(',');
-  // let deliveryArray = req.query.delivery.split(','); // NEEDS TO BE BROKEN UP *****
-  // let makerArray = req.query.makers.split(',');
-  // let locationArray = req.query.location.split(',');
-  // let freshArray = req.query.fresh.split(',');
-  // let preparedArray = req.query.prepared.split(',');
-  // let beveragesArray = req.query.beverages.split(',');
-  // let dietArray = req.query.diet.split(',');
-  // let resultArray = [];
-  //   const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
-  //   for (let i = 0; i < availabilityArray.length; i++){
-  //     try {
-  //        var result = await pool.query(queryAvail, [availabilityArray[i]])
-  //        resultArray.push(result.rows)
-  //     } catch (error) {
-  //       res.sendStatus(500);
-  //       return
-  //     }
-  //   }
-  //   const queryMaker = 'SELECT * FROM tbl_artisans WHERE business_type = $1'
-  //   for (let i = 0; i < makerArray.length; i++){
-  //     try {
-  //        var result = await pool.query(queryMaker, [makerArray[i]])
-  //        resultArray.push(result.rows)
-  //     } catch (error) {
-  //       res.sendStatus(500);
-  //       return
-  //     }
-  //   }
-  //   return res.send(resultArray);
+router.get('/', async (req, res) => {
+  let availabilityArray = req.query.availability.split(',');
+  let deliveryArray = req.query.delivery.split(','); // NEEDS TO BE BROKEN UP *****
+  let makerArray = req.query.makers.split(',');
+  let locationArray = req.query.location.split(',');
+  let freshArray = req.query.fresh.split(',');
+  let preparedArray = req.query.prepared.split(',');
+  let beveragesArray = req.query.beverages.split(',');
+  let dietArray = req.query.diet.split(',');
+  let resultArray = [];
+    // const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
+    // for (let i = 0; i < availabilityArray.length; i++){
+    //   try {
+    //      var result = await pool.query(queryAvail, [availabilityArray[i]])
+    //      resultArray.push(result.rows)
+    //   } catch (error) {
+    //     res.sendStatus(500);
+    //     return
+    //   }
+    // }
+    const queryMaker = 'SELECT * FROM tbl_artisans WHERE business_type LIKE $1'
+    for (let i = 0; i < makerArray.length; i++){
+      try {
+         console.log(makerArray[i]);
+         var result = await pool.query(queryMaker, [makerArray[i]])
+         console.log(result.rows);
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    console.log(resultArray);
+    return res.send(resultArray);
   });
 
 /**
