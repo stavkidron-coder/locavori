@@ -10,7 +10,10 @@ import {useSelector} from 'react-redux';
 import './Map.css';
 import mapStyles from "./mapStyles";
 import "@reach/combobox/styles.css";
+import packagedPin from '../../TestImages/packaged-prepared.png';
+import freshPin from '../../TestImages/fresh.png';
 import drinkPin from '../../TestImages/drink.png';
+
 
 const libraries = ["places"];
 
@@ -53,18 +56,28 @@ function LocalMap() {
 
 
 
-// EMMMA HERE
-// Add check for each pin on if they have anything populated in DB or not
 
-  function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
-    if (arrayCheck3.length === 0) {
-      return drinkPin
-    } else {
-      return 
+//Checks DB for different product types to display specific pins on map
+  function iconSelect (marker) {
+    if (marker.product_type_food !== null) {
+      console.log('packaged pin')
+      return packagedPin
     }
+    else if (marker.product_type_fresh !== null) {
+      console.log('fresh pin')
+      return freshPin
+    }
+    else if (marker.product_type_bev !== null){
+      console.log('drink pin')
+      return drinkPin
+    }
+    else
+      return 'no category to display';
   }
 
+ 
 
+  
 
 
 
@@ -121,12 +134,9 @@ function LocalMap() {
 
 
 
-           // Add the three main type arrays, fresh, Beverage, Packaged
-           icon={{
-             url: iconSelect(marker.product_type_one),
-             fillColor: '#0000ff',
-             strokeColor: '#0000ff',
-             fillOpacity: 1,
+           // icon for map
+           icon={{ 
+             url: iconSelect(marker),
              origin: new window.google.maps.Point(0, 0),
              anchor: new window.google.maps.Point(15, 15),
              scaledSize: new window.google.maps.Size(30, 30),
