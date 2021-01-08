@@ -19,7 +19,7 @@ class AdminPARTab extends Component {
     this.props.dispatch({ type: 'GET_MAKERS' })
   }
   ViewProfile = (makerId) => {
-    this.props.history.push(`/makerCard/${makerId}`)
+    this.props.history.push(`/makerCard/${makerId}`);
     // console.log("11111111111111111111", makerId);
   }
   approveMaker = (makerId) => {
@@ -67,7 +67,7 @@ class AdminPARTab extends Component {
                     </Card>
                     :
                     <div>
-                      <h1>No Maker Applications Pending Approval</h1>
+                      <h1></h1>
                     </div>
                     
                   }
