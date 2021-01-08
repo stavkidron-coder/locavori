@@ -48,7 +48,7 @@ const LocationOptions = (props) => {
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" id="pick_up" onClick={(event) => handleChange(event)} />{' '}
+                        <Input type="checkbox" id="farmers_market" onClick={(event) => handleChange(event)} />{' '}
                             Farmers Markets/Other Local Markets
                     </Label>
                 </FormGroup>
