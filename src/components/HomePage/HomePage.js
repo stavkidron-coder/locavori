@@ -39,7 +39,7 @@ class HomePage extends Component {
   };
 
   filterGet = () => {
-    this.props.dispatch({type: 'FILTER_MAKERS', payload: this.state.filters});
+    this.props.dispatch({type: 'FILTER_MAKERS', payload: this.props.store.filters});
   };
 
   render() {
@@ -60,7 +60,7 @@ class HomePage extends Component {
               <LocationOptions/>
               <ProductOptions/>
               <DietaryRestrictions/>
-              <Button>Filter</Button>
+              <Button onClick={this.filterGet}>Filter</Button>
             </Col>
 
             <Col xs='9'>

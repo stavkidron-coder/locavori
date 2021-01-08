@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* getMakers() {
     try {
-        const makers = yield axios.get('/api/maker');
+        const makers = yield axios.get('/api/maker/getall');
         yield put({type: 'SET_MAKER', payload: makers.data});
     } catch (error) {
         console.log('GET all makers failed', error);
@@ -20,7 +20,7 @@ function* getMakerCard(action) {
 
 function* filterMakers(action) {
     try {
-        const makers = yield axios.get(`/api/maker/filter/?availability=${action.payload}&delivery=${action.payload}&makers=${action.paylod}&location=${action.payload}&products=${action.payload}&diet=${action.payload}`);
+        const makers = yield axios.get(`/api/maker/?availability=${action.payload.availability}&delivery=${action.payload.delivery}&makers=${action.payload.maker_options}&location=${action.payload.location}&fresh=${action.payload.fresh}&prepared=${action.payload.prepared}&beverages=${action.payload.beverages}&diet=${action.payload.diet}`);
         yield put({type: 'SET_FILTERED_MAKER', payload: makers.data});
     } catch (error) {
         console.log('maker filter GET failed', error);
