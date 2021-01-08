@@ -13,6 +13,14 @@ const ProductOptions = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const handleChange = (event) => {
+    if (document.getElementById(event.target.id).checked) {
+        props.dispatch({type: 'ADD_PRODUCT_OPTIONS', payload: event.target.id});
+    } else {
+        props.dispatch({type: 'REMOVE_PRODUCT_OPTIONS', payload: event.target.id});
+    }
+  }
+
   return (
     <div>
         <Button
@@ -27,63 +35,63 @@ const ProductOptions = (props) => {
 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Meats
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Dairy & Eggs
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Alcoholic Beverages
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Non-Alcoholic Beverages
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Snacks & Sweets
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Condiments, Herbs, & Spreadables
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Fruits & Vegetables
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Plants & Flowers
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" onClick={(event) => handleChange(event)}/>{' '}
                             Other
                     </Label>
                 </FormGroup>

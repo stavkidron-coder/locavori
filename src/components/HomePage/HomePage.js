@@ -17,7 +17,7 @@ import HomeNav from '../Navbars/HomeNav';
 // CSS
 import './HomePage.css';
 // BOOTSTRAP
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Button } from 'reactstrap';
 
 
 class HomePage extends Component {
@@ -60,6 +60,7 @@ class HomePage extends Component {
               <LocationOptions/>
               <ProductOptions/>
               <DietaryRestrictions/>
+              <Button>Filter</Button>
             </Col>
 
             <Col xs='9'>

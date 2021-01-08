@@ -13,6 +13,14 @@ const AvailabilityOptions = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const handleChange = (event) => {
+    if (document.getElementById(event.target.id).checked) {
+        props.dispatch({type: 'ADD_FILTER', payload: event.target.id});
+    } else {
+        props.dispatch({type: 'REMOVE_FILTER', payload: event.target.id});
+    }
+  }
+
   return (
     <div>
         <Button
@@ -26,14 +34,14 @@ const AvailabilityOptions = (props) => {
 
             <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="limited" onClick={(event) => handleChange(event)}/>{' '}
                             Limited Availability
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="always" />{' '}
                             Available All Year
                     </Label>
                 </FormGroup>
