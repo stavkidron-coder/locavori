@@ -13,6 +13,14 @@ const DeliveryOptions = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const handleChange = (event) => {
+    if (document.getElementById(event.target.id).checked) {
+        props.dispatch({type: 'ADD_DELIVERY', payload: event.target.id});
+    } else {
+        props.dispatch({type: 'REMOVE_DELIVERY', payload: event.target.id});
+    }
+  }
+
   return (
     <div>
         <Button
@@ -28,28 +36,21 @@ const DeliveryOptions = (props) => {
 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="pick_up" onClick={(event) => handleChange(event)} />{' '}
                             Pickup
                     </Label>
                 </FormGroup>
 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="delivery" onClick={(event) => handleChange(event)}/>{' '}
                             Delivery
                     </Label>
                 </FormGroup>
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" />{' '}
-                            Curb-Side Pickup
-                    </Label>
-                </FormGroup>
-                
-                <FormGroup check>
-                    <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" id="shipping" onClick={(event) => handleChange(event)} />{' '}
                             Shipping
                     </Label>
                 </FormGroup>

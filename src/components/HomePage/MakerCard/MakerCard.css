@@ -25,8 +25,8 @@
 
 .favoriteBtn {
    float: right;
-   background-color: rgba(128, 128, 128, 0);
-   border-color: white;
+   background-color: rgb(122,172,85);
+   border-color: rgb(122,172,85);
    transition: 0.3s;
 }
 
@@ -34,7 +34,7 @@
    float: right;
    background-color: white;
    border-color: white;
-   color: rgb(5,103,54);
+   color: rgb(122,172,85);
 }
 
 .cardImg{
