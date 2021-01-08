@@ -17,10 +17,10 @@ class ListView extends Component {
          {this.props.store.maker.map((maker) => {
            return(
             <>
-             {!maker.approved_maker ?
+             {maker.approved_maker ?
               <MakerCard maker={maker} key={maker.id}/>
              :
-             <h1></h1>  
+             <h1></h1>
             }
             </>
            )
