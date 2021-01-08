@@ -6,10 +6,10 @@ const filterReducer = (state={}, action) => {
             return [...state, action.payload];
 
         case 'ADD_AVAILABILITY':
-            product_category_array.push(action.payload);
+            availability_array.push(action.payload);
             return {...state, availability: availability_array};
         case 'REMOVE_AVAILABILITY':
-            product_category_array = product_category_array.filter(item => item !== action.payload);
+            availability_array = availability_array.filter(item => item !== action.payload);
             return {...state, availability: availability_array};
 
         default:

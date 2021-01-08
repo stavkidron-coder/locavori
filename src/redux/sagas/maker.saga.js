@@ -20,7 +20,7 @@ function* getMakerCard(action) {
 
 function* filterMakers(action) {
     try {
-        const makers = yield axios.get(`/api/maker/filter/?business=${action.payload.business_type}&delivery=${action.payload.delivery}&product=${action.payload.product_type}`);
+        const makers = yield axios.get(`/api/maker/filter/?availability=${action.payload}&delivery=${action.payload}&makers=${action.paylod}&location=${action.payload}&products=${action.payload}&diet=${action.payload}`);
         yield put({type: 'SET_FILTERED_MAKER', payload: makers.data});
     } catch (error) {
         console.log('maker filter GET failed', error);

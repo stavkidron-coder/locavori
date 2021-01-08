@@ -15,9 +15,9 @@ const AvailabilityOptions = (props) => {
 
   const handleChange = (event) => {
     if (document.getElementById(event.target.id).checked) {
-        props.dispatch({type: 'ADD_FILTER', payload: event.target.id});
+        props.dispatch({type: 'ADD_AVAILABILITY', payload: event.target.id});
     } else {
-        props.dispatch({type: 'REMOVE_FILTER', payload: event.target.id});
+        props.dispatch({type: 'REMOVE_AVAILABILITY', payload: event.target.id});
     }
   }
 
@@ -41,7 +41,7 @@ const AvailabilityOptions = (props) => {
                 
                 <FormGroup check>
                     <Label check>
-                        <Input type="checkbox" id="always" />{' '}
+                        <Input type="checkbox" id="always" onClick={(event) => handleChange(event)} />{' '}
                             Available All Year
                     </Label>
                 </FormGroup>
