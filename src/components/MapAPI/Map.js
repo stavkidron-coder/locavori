@@ -10,7 +10,10 @@ import {useSelector} from 'react-redux';
 import './Map.css';
 import mapStyles from "./mapStyles";
 import "@reach/combobox/styles.css";
+import packagedPin from '../../TestImages/packaged-prepared.png';
+import freshPin from '../../TestImages/fresh.png';
 import drinkPin from '../../TestImages/drink.png';
+
 
 const libraries = ["places"];
 
@@ -53,18 +56,14 @@ function LocalMap() {
 
 
 
-// EMMMA HERE
-// Add check for each pin on if they have anything populated in DB or not
 
   function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
     if (arrayCheck.length) {
-      return drinkPin
-    } else {
-      return 
-    }
-  }
 
 
+ 
+
+  
 
 
 
@@ -121,12 +120,9 @@ function LocalMap() {
 
 
 
-           // Add the three main type arrays, fresh, Beverage, Packaged
-           icon={{
-             url: iconSelect(marker.product_type_one),
-             fillColor: '#0000ff',
-             strokeColor: '#0000ff',
-             fillOpacity: 1,
+           // icon for map
+           icon={{ 
+             url: iconSelect(marker),
              origin: new window.google.maps.Point(0, 0),
              anchor: new window.google.maps.Point(15, 15),
              scaledSize: new window.google.maps.Size(30, 30),
