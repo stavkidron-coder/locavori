@@ -24,7 +24,7 @@ class ListView extends Component {
              {maker.approved_maker ?
               <MakerCard fav={fav} maker={maker} key={maker.id}/>
              :
-             <h1></h1>
+             <></>
             }
             </>
            )

@@ -68,7 +68,7 @@
 
 /* FAVORITE BUTTON MODAL */
 
-.favModalHeader {
+.modalHeader {
     /* background-color: rgb(122,172,85) !important; */
     background-color: rgb(5,103,54) !important;
     color: white;
@@ -92,6 +92,6 @@
     border-color: rgb(5,103,54);
 }
 
-.favModalFooter {
+.modalFooter {
     border-top: none;
 }
