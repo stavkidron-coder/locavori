@@ -8,6 +8,7 @@ import {withRouter} from 'react-router-dom';
 // import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Button, Col, Container, Row, Spinner} from 'reactstrap';
 import {useSelector} from 'react-redux';
+import MakerCard from '../HomePage/MakerCard/MakerCard'
 
 // Styles Imports
 import './Map.css';
@@ -57,7 +58,7 @@ function LocalMap(props) {
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
   const [origin, setOrigin] = React.useState([]);
-  const [distanceSlides, setDistanceSlides] = React.useState([]);
+  // const [distanceSlides, setDistanceSlides] = React.useState([]);
   const [renderCount, setRenderCount] = React.useState(0)
 
   //Checks DB for different product types to display specific pins on map
@@ -76,19 +77,6 @@ function LocalMap(props) {
     }
     else
       return 'no category to display';
-  }
-
-  function distanceMatrixCall(response, status) {
-    console.log(response.rows[0].elements);
-    console.log(status);
-    setRenderCount(1);
-    if(renderCount === 0){
-      setDistanceSlides(response.rows[0].elements);
-      console.log('Distance Slides',distanceSlides);
-    } else {
-      console.log('She is over there boss');
-      console.log("already render dis", distanceSlides)
-    }
   }
 
   const mapRef = React.useRef();
@@ -149,6 +137,7 @@ function LocalMap(props) {
                 store.maker[index].distanceText = element.distance.text;
                 store.maker[index].distanceValue = element.distance.value;
               });
+              setRenderCount(1);
             }}
           />
 
@@ -158,6 +147,7 @@ function LocalMap(props) {
            position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
            onClick={() => {
              setSelected(marker);
+             console.log('ITS A SECERT TO EVERYONE',store.maker);
            }}
 
            // icon for map
@@ -195,38 +185,27 @@ function LocalMap(props) {
          </InfoWindow>) : null}
          </GoogleMap>
          <div className='distanceMatrixSlides'>
-            {distanceSlides.map((slide) => {
-              return <div className='matrixSlide'>
-                <p>{slide.distance.text}</p>
-              </div>
-            })}
+          
+            {renderCount === 0 ?
+              null
+              :
+              store.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
+                return  (
+                  <>
+                <div className='matrixSlide'>
+                {maker.approved_maker ?
+                    <MakerCard maker={maker} key={maker.id} />
+                :
+                null
+                }
+                </div>
+                </>
+              )})
+            }
          </div>
        </div>
      </div>
    );
-}
-
-function DistanceMatrix({ setDistanceSlides }) {
-  const store = useSelector(store => store);
-  console.log(store);
-  return(
-    <div className="DistanceMatrix">
-      <DistanceMatrixService
-        options={{
-        destinations: store.maker.map((destinations) => {
-          const lat = Number(destinations.latitude);
-          const lng = Number(destinations.longitude);
-          console.log(lat, lng);
-          return {lat , lng};
-        }),
-        origins: [{lng:-93.29471079999999, lat:44.9508563}],
-        travelMode: "DRIVING",
-        // unitSystem: "IMPERIAL",
-        }}
-        callback = {(response, status) => {console.log(response, status) ; setDistanceSlides({response})}}
-      />
-    </div>
-  )
 }
 
 // Button on DOM, upon click will take the user to their current location based on their GeoLocation
