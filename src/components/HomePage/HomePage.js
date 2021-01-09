@@ -36,7 +36,10 @@ class HomePage extends Component {
   // };
 
   componentDidMount = () => {
-    this.props.dispatch({type: 'GET_MAKERS'});
+    this.props.dispatch({type: 'GET_MAKERS'}); 
+    this.props.dispatch({ type: 'GET_SPECIFIC_FAVORITES' }); 
+    console.log(this.props.store.SF);
+         
   };
 
   filterGet = () => {
@@ -49,7 +52,9 @@ class HomePage extends Component {
 
         <HomeNav/>
 
+
         <div className="filterMapBody">
+
           <Row>
             <Col xs="12" lg="4" xl="3" className="filterContainer">
               <h2>Filters</h2>
@@ -73,7 +78,6 @@ class HomePage extends Component {
               <hr/>
               <List/>
             </Col>
-
           </Row>
         </div>
       </div>

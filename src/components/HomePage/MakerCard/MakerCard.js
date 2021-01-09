@@ -5,6 +5,7 @@ import mapStoreToProps from '../../../redux/mapStoreToProps';
 import './MakerCard.css';
 import FavoriteBtn from '../../FavoriteBtn/FavoriteBtn';
 import { withRouter } from "react-router";
+// import FavoriteBtnRemoval from '../../FavoriteBtn/FavoriteBtnRemoval';
 
 class MakerCard extends Component {
 
@@ -13,11 +14,13 @@ class MakerCard extends Component {
     }
 
     componentDidMount = () => {
-        this.props.dispatch({type: 'TEST_FAVORITES', payload: this.props.maker.id});
+        this.props.dispatch({type: 'GET_FAVORITES', payload: this.props.maker.id});
       }
 
     
     render() {
+    console.log('in MakerCard VIEW',this.props.fav);
+
         return (
                 <Card className="makerCard">
                     {/* Title, product types, favorite Btn */}
@@ -36,7 +39,7 @@ class MakerCard extends Component {
                             </Col>
 
                             <Col xs="2">
-                                <FavoriteBtn className="favoriteBtn" maker={this.props.maker}/>
+                                <FavoriteBtn className="favoriteBtn" maker={this.props.maker} fav={this.props.fav}/>
                             </Col>
                         </Row>
                     </CardHeader>
