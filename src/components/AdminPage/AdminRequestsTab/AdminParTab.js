@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import { Link } from 'react-router-dom'
 import './AdminParTab.css';
 import AcceptBtn from './AdminPARToolTips/ApproveToolTip';
 import DeclineBtn from './AdminPARToolTips/DeclineToolTip';
@@ -20,9 +19,8 @@ class AdminPARTab extends Component {
     this.props.dispatch({ type: 'GET_MAKERS' })
   }
   ViewProfile = (makerId) => {
-    this.props.history.push(`/makerCard/${makerId}`)
-    console.log("11111111111111111111", makerId);
-
+    this.props.history.push(`/makerCard/${makerId}`);
+    // console.log("11111111111111111111", makerId);
   }
   approveMaker = (makerId) => {
     this.props.dispatch({ type: "APPROVE_MAKER", payload: makerId })
@@ -68,7 +66,8 @@ class AdminPARTab extends Component {
                       </CardBody>
                     </Card>
                     :
-                    <h1></h1>
+                    <p/>
+                    
                   }
                 </>
               )

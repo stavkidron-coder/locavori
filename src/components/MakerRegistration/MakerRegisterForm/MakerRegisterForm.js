@@ -29,24 +29,18 @@ state = {
     }
 }
 
-  componentDidMount = () => {
-    this.props.dispatch({type: 'INITIALIAZE_MAKER_STORE', payload: this.state.initial_maker});
-    window.addEventListener('beforeunload', this.beforeunload.bind(this));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.beforeunload.bind(this));
-  }
-
-  beforeunload(e) {
-    if (this.props.store.maker_registration) {
-      e.preventDefault();
-      e.returnValue = true;
-    }
-  }
+componentDidMount = () => {
+  this.props.dispatch({type: 'INITIALIAZE_MAKER_STORE', payload: this.state.initial_maker});
+}
 
   save = () => {
     this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
+    alert("Your application has been successfully saved");
+  }
+
+  submitBtn = () => {
+    alert("Your application has been submitted and is pending approval.");
+    this.props.history.push('/home');
   }
 
 

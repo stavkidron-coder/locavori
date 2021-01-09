@@ -30,10 +30,22 @@ function* getSpecificFavorite(){
 }
 
 
+function* deleteFavorite(action) {
+    try {
+        console.log('deleteFavorite action.payload:', action.payload);
+        
+        const favorites = yield axios.delete(`/api/favorites/${action.payload}`);
+        yield put({type: 'GET_FAVORITES', payload: favorites.data});
+    } catch (error) {
+        console.log('Remove favorite failed', error);
+    }
+}
+
 function* favoritesSaga() {
     yield takeEvery('POST_FAVORITE', addFavorite);
     yield takeEvery('GET_FAVORITES', getFavorites);
-    yield takeEvery('GET_SPECIFIC_FAVORITES',getSpecificFavorite)
+    yield takeEvery('GET_SPECIFIC_FAVORITES',getSpecificFavorite);
+    yield takeEvery('DELETE_FAVORITE', deleteFavorite);
 }
 
 export default favoritesSaga;

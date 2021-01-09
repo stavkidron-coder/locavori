@@ -2,15 +2,20 @@ import React from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
-import FilterDropdown from '../FilterDropdown/FilterDropdown';
-import {Container} from 'reactstrap';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import {Button, Col, Container, Row} from 'reactstrap';
 import {useSelector} from 'react-redux';
 
 // Styles Imports
 import './Map.css';
 import mapStyles from "./mapStyles";
 import "@reach/combobox/styles.css";
+import packagedPin from '../../TestImages/packaged-prepared.png';
+import freshPin from '../../TestImages/fresh.png';
 import drinkPin from '../../TestImages/drink.png';
+
 
 const libraries = ["places"];
 
@@ -33,7 +38,7 @@ const options = {
   disableDefaultUI: true,
 }
 
-function LocalMap() {
+function LocalMap(props) {
 
   // Uses store to set markers which are in turn rendered to the map
   React.useEffect (() => {
@@ -53,18 +58,30 @@ function LocalMap() {
 
 
 
-// EMMMA HERE
-// Add check for each pin on if they have anything populated in DB or not
 
-  function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
-    if (arrayCheck.length) {
-      return drinkPin
-    } else {
-      return 
-    }
+  //Checks DB for different product types to display specific pins on map
+ function iconSelect (marker) {
+  if (marker.product_type_food !== '{}') {
+    console.log('packaged pin')
+    return packagedPin
   }
+  else if (marker.product_type_fresh !== '{}') {
+    console.log('fresh pin')
+    return freshPin
+  }
+  else if (marker.product_type_bev !== '{}'){
+    console.log('drink pin')
+    return drinkPin
+  }
+  else
+    return 'no category to display';
+}
 
 
+
+ 
+
+  
 
 
 
@@ -121,12 +138,9 @@ function LocalMap() {
 
 
 
-           // Add the three main type arrays, fresh, Beverage, Packaged
-           icon={{
-             url: iconSelect(marker.product_type_one),
-             fillColor: '#0000ff',
-             strokeColor: '#0000ff',
-             fillOpacity: 1,
+           // icon for map
+           icon={{ 
+             url: iconSelect(marker),
              origin: new window.google.maps.Point(0, 0),
              anchor: new window.google.maps.Point(15, 15),
              scaledSize: new window.google.maps.Size(30, 30),
@@ -137,23 +151,32 @@ function LocalMap() {
          
        ))}
 
+{/* INFO WINDOW */}
        {selected ? (
-         <InfoWindow
+         
+        <InfoWindow
            position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
            onCloseClick={() => {
              setSelected(null);
            }}>
-           <div className='infoWindow'>
-              <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
-                <h2>{selected.business_name}</h2>
-                <p>{selected.story}</p>
-              </div>
-            </InfoWindow>
-          ) : null}
+            <div className='infoWindow'>
+              <Row>
+                <Col xs="3">
+                  <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
+                </Col>
 
-        <div className="filter">
-          <FilterDropdown/>
-        </div>
+                <Col xs="9">
+                  <h2>{selected.business_name}</h2>
+                  <p>{selected.story}</p>
+                  {/* {JSON.stringify(selected)} */}
+                  {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
+                  <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
+                </Col>
+              </Row> 
+            </div>
+        </InfoWindow>
+
+          ) : null}
         </GoogleMap>
       </div>
     </div>
@@ -236,4 +259,4 @@ function Search({panToSearch}) {
 }
 
 
-export default LocalMap;
+export default withRouter(connect(mapStoreToProps)(LocalMap));

@@ -65,7 +65,7 @@ class Maker extends Component {
                   </Card>
 
                   :
-                  <h2></h2>
+                  <p/>
                 }
               </>
             )

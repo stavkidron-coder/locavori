@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
     WHERE "tbl_favorites"."profile_id" = $1;`;
     pool.query(queryText, [userId])
         .then((result) => {
-            console.log('Result from favorite get', result.rows);
+            // console.log('Result from favorite get', result.rows);
             
             res.send(result.rows);
         }).catch((error) => {
@@ -36,5 +36,16 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
         });
 });
+
+
+router.delete('/:id', (req, res) => {
+        // DELETE route code here
+        const queryText = `DELETE FROM "tbl_favorites" WHERE "maker_id" = $1;`
+        pool.query(queryText, [req.params.id])
+          .then((results) => res.sendStatus(200))
+          .catch(() => res.sendStatus(500));
+      });
+      
+
 
 module.exports = router;
