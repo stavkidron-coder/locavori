@@ -11,9 +11,9 @@ const downArrow = <FontAwesomeIcon icon={faChevronDown}/>
 const ProductOptions = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [fresh_food_array, setFreshFoodArray] = useState(['beef','chicken','lamb','bison','pork','eggs','cheese','herbs','apples','blueberries','strawberries','fresh_vegetables','fresh_fruit','milk','cream','flowers']);
-  const [prepared_food_array, setPreparedFoodArray] = useState(['jams','pickles','vinegars','cookies','crackers','chips','syrups','honey','pancake_mix','baking_mix','cooking_sauce','hot_sauce','salsa','hard_candy','popcorn','chocolate','soft_candy','nuts','other_snacks','dried_food','granola','soups','catsup','mustard','sweet_treat','rub','dried_vegetable','marinade','other_sauce','dried_meat','preserved_meat','bakery']);
-  const [beverages_array, setBeveragesArray] = useState(['schrubs_switchel', 'soda', 'coffee', 'hot_drink', 'tea', 'health_shot', 'cocktail_mixer', 'spirits', 'beer', 'cider', 'wine', 'nonalcoholic', 'dairy']);
+  const [fresh_food_array] = useState(['beef','chicken','lamb','bison','pork','eggs','cheese','herbs','apples','blueberries','strawberries','fresh_vegetables','fresh_fruit','milk','cream','flowers']);
+  const [prepared_food_array] = useState(['jams','pickles','vinegars','cookies','crackers','chips','syrups','honey','pancake_mix','baking_mix','cooking_sauce','hot_sauce','salsa','hard_candy','popcorn','chocolate','soft_candy','nuts','other_snacks','dried_food','granola','soups','catsup','mustard','sweet_treat','rub','dried_vegetable','marinade','other_sauce','dried_meat','preserved_meat','bakery']);
+  const [beverages_array] = useState(['schrubs_switchel', 'soda', 'coffee', 'hot_drink', 'tea', 'health_shot', 'cocktail_mixer', 'spirits', 'beer', 'cider', 'wine', 'nonalcoholic', 'dairy']);
 
   const toggle = () => setIsOpen(!isOpen);
 

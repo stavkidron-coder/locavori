@@ -50,11 +50,11 @@ const FavoriteBtn = (props) => {
     <div>
       <Button color="danger" className="favoriteBtn" onClick={toggle}>{heart}</Button>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle} className="favModalHeader">Want to add "{props.maker.business_name}" to your favorites?</ModalHeader>
+        <ModalHeader toggle={toggle} className="modalHeader">Want to add "{props.maker.business_name}" to your favorites?</ModalHeader>
         <ModalBody>
             Login or create an account to save your favorite makers!
         </ModalBody>
-        <ModalFooter className="favModalFooter">
+        <ModalFooter className="modalFooter">
           <Button className="modalBtns" onClick={() => login()}>Login</Button>{' '}
           <Button className="modalBtns" onClick={() => register()}>Register</Button>{' '}
         </ModalFooter>
