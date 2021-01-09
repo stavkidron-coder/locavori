@@ -16,6 +16,7 @@ import List from './ListView/ListView';
 import HomeNav from '../Navbars/HomeNav';
 // CSS
 import './HomePage.css';
+import '../FilterOptions/Filters.css';
 // BOOTSTRAP
 import { Col, Row, Button } from 'reactstrap';
 
@@ -60,7 +61,7 @@ class HomePage extends Component {
               <LocationOptions/>
               <ProductOptions/>
               <DietaryRestrictions/>
-              <Button onClick={this.filterGet}>Filter</Button>
+              <Button className="filterGoBtn" onClick={this.filterGet}>Search</Button>
             </Col>
 
             <Col xs="12" lg="8" xl="9">
