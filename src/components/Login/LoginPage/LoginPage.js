@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import mapStoreToProps from '../../redux/mapStoreToProps';
+import mapStoreToProps from '../../../redux/mapStoreToProps';
 import LoginForm from '../LoginForm/LoginForm';
 import './LoginPage.css';
-import DesktopNav from '../Navbars/DesktopNav';
+import DesktopNav from '../../Navbars/DesktopNav';
 import { Col, Container, Row } from 'reactstrap';
 
 class LoginPage extends Component {

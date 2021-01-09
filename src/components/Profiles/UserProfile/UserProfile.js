@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import mapStoreToProps from '../../redux/mapStoreToProps';
-import DesktopNav from '../Navbars/DesktopNav';
+import mapStoreToProps from '../../../redux/mapStoreToProps';
+import DesktopNav from '../../Navbars/DesktopNav';
 import './UserProfile.css';
 import MakerCard from '../HomePage/MakerCard/MakerCard';
 import { Container, Jumbotron } from 'reactstrap';

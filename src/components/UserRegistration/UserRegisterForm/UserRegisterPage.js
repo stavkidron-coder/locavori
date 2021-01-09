@@ -5,7 +5,7 @@ import '../UserRegistration.css';
 import DesktopNav from '../../Navbars/DesktopNav';
 
 // CUSTOM COMPONENTS
-import UserRegisterForm from '../UserRegisterForm/UserRegisterForm';
+import UserRegisterForm from './UserRegisterForm';
 
 class UserRegisterPage extends Component {
   state = {
