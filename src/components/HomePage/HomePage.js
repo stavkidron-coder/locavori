@@ -50,7 +50,7 @@ class HomePage extends Component {
 
         <div className="filterMapBody">
           <Row>
-            <Col xs="3">
+            <Col xs="12" lg="4" xl="3" className="filterContainer">
               <h2>Filters</h2>
               <hr/>
               {/* <Filters/> */}
@@ -63,7 +63,7 @@ class HomePage extends Component {
               <Button onClick={this.filterGet}>Filter</Button>
             </Col>
 
-            <Col xs='9'>
+            <Col xs="12" lg="8" xl="9">
               <h2>Find Local Makers</h2>
               <hr/>
               <Map/>

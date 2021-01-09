@@ -1,8 +1,6 @@
 .makerCard {
-    /* width: 100%; */
-    /* margin: auto; */
     margin-bottom: 20px;
-    height: 350px;
+    border-color: rgb(5,103,54);
 }
 
 .ListViewHeader{
@@ -16,11 +14,13 @@
     color: white;
     border: none;
     font-size: 30px;
+    transition: 0.3s;
 }
 
 .ListViewButton:hover{
-    background-color: rgb(250, 250, 245);
-    color: rgb(5,103,54);
+    background-color: rgb(5,103,54);
+    /* color: rgb(5,103,54); */
+    text-decoration: underline;
 }
 
 .favoriteBtn {
@@ -41,18 +41,26 @@
     height: 210px;
     width: 200px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .SeeMoreButton{
     background-color: rgb(122,172,85);
     color: white;
     border-color: rgb(122,172,85);
-    float: bottom;
+    /* float: right; */
+    position: absolute;
+    bottom: 0;
+    right: 10px;
 }
 
 .SeeMoreButton:hover{
     background-color: rgb(5,103,54);
     color: rgb(250, 250, 245);
     border: solid 1px rgb(5,103,54);
+}
+
+.aboutContainer {
+    margin-bottom: 50px;
 }
