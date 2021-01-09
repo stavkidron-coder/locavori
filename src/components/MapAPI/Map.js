@@ -1,12 +1,12 @@
 import React from 'react';
-import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
+import {GoogleMap, useLoadScript, Marker, InfoWindow, DistanceMatrixService} from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 // import FilterDropdown from '../FilterDropdown/FilterDropdown';
-import {Button, Col, Container, Row} from 'reactstrap';
+import {Button, Col, Container, Row, Spinner} from 'reactstrap';
 import {useSelector} from 'react-redux';
 
 // Styles Imports
@@ -56,44 +56,46 @@ function LocalMap(props) {
   const store = useSelector(store => store);
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
-
-
-
+  const [origin, setOrigin] = React.useState([]);
+  const [distanceSlides, setDistanceSlides] = React.useState([]);
+  const [renderCount, setRenderCount] = React.useState(0)
 
   //Checks DB for different product types to display specific pins on map
- function iconSelect (marker) {
-  if (marker.product_type_food !== '{}') {
-    console.log('packaged pin')
-    return packagedPin
+  function iconSelect (marker) {
+    if (marker.product_type_food !== '{}') {
+      console.log('packaged pin')
+      return packagedPin
+    }
+    else if (marker.product_type_fresh !== '{}') {
+      console.log('fresh pin')
+      return freshPin
+    }
+    else if (marker.product_type_bev !== '{}'){
+      console.log('drink pin')
+      return drinkPin
+    }
+    else
+      return 'no category to display';
   }
-  else if (marker.product_type_fresh !== '{}') {
-    console.log('fresh pin')
-    return freshPin
+
+  function distanceMatrixCall(response, status) {
+    console.log(response.rows[0].elements);
+    console.log(status);
+    setRenderCount(1);
+    if(renderCount === 0){
+      setDistanceSlides(response.rows[0].elements);
+      console.log('Distance Slides',distanceSlides);
+    } else {
+      console.log('She is over there boss');
+      console.log("already render dis", distanceSlides)
+    }
   }
-  else if (marker.product_type_bev !== '{}'){
-    console.log('drink pin')
-    return drinkPin
-  }
-  else
-    return 'no category to display';
-}
-
-
-
- 
-
-  
-
-
-
-
-
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position)
+        console.log(position);
         panToLocate({
           lat: position.coords.latitude,
           lng: position.coords.longitude,
@@ -105,6 +107,7 @@ function LocalMap(props) {
   }, []);
   
   const panToLocate = React.useCallback(({ lat, lng }) => {
+    console.log("coords",lat, lng)
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(14);
   }, []);
@@ -115,12 +118,13 @@ function LocalMap(props) {
   }, []);
 
   if (loadError) return "Error loading maps";
-  if (!isLoaded) return "Loading Maps...";
+  if (!isLoaded) return <Spinner color="primary"/>;
 
   return (
     <div className="mapAPI">
       <Locate panToLocate={panToLocate} />
       <Search panToSearch={panToSearch} />
+      
       <div className="map">
         <GoogleMap 
           mapContainerStyle={mapContainerStyle} 
@@ -129,6 +133,20 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
+          <DistanceMatrixService
+            options={{
+            destinations: store.maker.map((destinations) => {
+              const lat = Number(destinations.latitude);
+              const lng = Number(destinations.longitude);
+              return {lat , lng};
+            }),
+            origins: [{lng:-93.29471079999999, lat:44.9508563}],
+            travelMode: "DRIVING",
+            // unitSystem: "IMPERIAL",
+            }}
+            callback = {(response, status) => {distanceMatrixCall(response, status)}}
+          />
+
         {markers.map((marker) => (
           <Marker
            key={`${marker.latitude}-${marker.longitude}`}
@@ -137,51 +155,73 @@ function LocalMap(props) {
              setSelected(marker);
            }}
 
-
-
            // icon for map
-           icon={{ 
+           icon={{
              url: iconSelect(marker),
              origin: new window.google.maps.Point(0, 0),
              anchor: new window.google.maps.Point(15, 15),
              scaledSize: new window.google.maps.Size(30, 30),
            }}
          />
-
-
-         
        ))}
 
-{/* INFO WINDOW */}
-       {selected ? (
-         
-        <InfoWindow
-           position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
-           onCloseClick={() => {
-             setSelected(null);
-           }}>
-            <div className='infoWindow'>
-              <Row>
-                <Col xs="3">
-                  <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
-                </Col>
+        {/* INFO WINDOW */}
+        {selected ? (
+         <InfoWindow
+            position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}>
+             <div className='infoWindow'>
+               <Row>
+                 <Col xs="3">
+                   <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
+                 </Col>
+ 
+                 <Col xs="9">
+                   <h2>{selected.business_name}</h2>
+                   <p>{selected.story}</p>
+                   {/* {JSON.stringify(selected)} */}
+                   {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
+                   <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
+                 </Col>
+               </Row> 
+             </div>
+         </InfoWindow>) : null}
+         </GoogleMap>
+         <div className='distanceMatrixSlides'>
+            {distanceSlides.map((slide) => {
+              return <div className='matrixSlide'>
+                <p>{slide.distance.text}</p>
+              </div>
+            })}
+         </div>
+       </div>
+     </div>
+   );
+}
 
-                <Col xs="9">
-                  <h2>{selected.business_name}</h2>
-                  <p>{selected.story}</p>
-                  {/* {JSON.stringify(selected)} */}
-                  {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
-                  <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
-                </Col>
-              </Row> 
-            </div>
-        </InfoWindow>
-
-          ) : null}
-        </GoogleMap>
-      </div>
+function DistanceMatrix({ setDistanceSlides }) {
+  const store = useSelector(store => store);
+  console.log(store);
+  return(
+    <div className="DistanceMatrix">
+      <DistanceMatrixService
+        options={{
+        destinations: store.maker.map((destinations) => {
+          const lat = Number(destinations.latitude);
+          const lng = Number(destinations.longitude);
+          console.log(lat, lng);
+          return {lat , lng};
+        }),
+        origins: [{lng:-93.29471079999999, lat:44.9508563}],
+        travelMode: "DRIVING",
+        // unitSystem: "IMPERIAL",
+        }}
+        callback = {(response, status) => {console.log(response, status) ; setDistanceSlides({response})}}
+      />
     </div>
-  );
+  )
 }
 
 // Button on DOM, upon click will take the user to their current location based on their GeoLocation
@@ -230,6 +270,7 @@ function Search({panToSearch}) {
         const results = await getGeocode({address});
         const {lat, lng} = await getLatLng(results[0]);
         console.log(lat, lng);
+        // setOrigin(lat, lng);
         panToSearch ({lat, lng});
       }catch(error) {
         console.log("ERROR!!!");
