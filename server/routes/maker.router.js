@@ -55,7 +55,7 @@ router.get('/', async (req, res) => {
     //     return
     //   }
     // }
-    const queryMaker = 'SELECT * FROM tbl_artisans WHERE business_type LIKE $1'
+    const queryMaker = `SELECT * FROM tbl_artisans WHERE maker_type_tokens @@ to_tsquery($1);`
     for (let i = 0; i < makerArray.length; i++){
       try {
          console.log(makerArray[i]);
@@ -67,7 +67,6 @@ router.get('/', async (req, res) => {
         return
       }
     }
-    console.log(resultArray);
     return res.send(resultArray);
   });
 
