@@ -75,7 +75,7 @@ class MakerCard extends Component {
                                 
                             </Col>
                             
-                            <Col xs="12" sm="12" md="12" xl="8">
+                            <Col xs="12" md="12" xl="8">
                                 <div className="aboutContainer">
                                 <CardText tag="h6" className="ListViewSubtitle">
                                         <h4>About</h4>
