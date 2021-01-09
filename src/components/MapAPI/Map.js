@@ -5,7 +5,6 @@ import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption 
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-// import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Button, Col, Container, Row} from 'reactstrap';
 import {useSelector} from 'react-redux';
 
