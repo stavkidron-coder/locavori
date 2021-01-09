@@ -10,20 +10,15 @@ const heart = <FontAwesomeIcon icon={faHeart} />
 class FavoriteBtn extends Component{
 
     favoriteMaker = (makerId) => {
-        console.log('ID for favorite Btn:', makerId);
 
-        if(this.props.store.user.id != null){
-            for(let favorite of this.props.store.favorites){
-                if(makerId !== favorite.id){
-                    this.props.dispatch({type: 'POST_FAVORITE', payload: makerId});
-                }
-            }
-            
-        }
-        else {
-            alert('Login or create an account to favorite a maker');
-        }
-    }
+        if (this.props.store.user.id != null) {
+            this.props.dispatch({ type: 'POST_FAVORITE', payload: makerId });
+            alert("Maker successfully added to favorites!");
+           }
+       else {
+           alert('Login or create an account to favorite a maker');
+       }
+   }
 
     render(){
         return(
