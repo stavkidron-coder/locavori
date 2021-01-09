@@ -5,7 +5,8 @@ function* addFavorite(action) {
     console.log('updateFavorite action.payload:', action.payload);
     
     try {
-        yield axios.post(`/api/favorites/${action.payload}`);
+        const favorites = yield axios.post(`/api/favorites/${action.payload}`);
+        yield put({type: 'GET_SPECIFIC_FAVORITES', payload: favorites.data})
     } catch (error) {
         console.log('Update favorite failed', error);
     }
@@ -19,10 +20,20 @@ function* getFavorites() {
         console.log('Update favorite failed', error);
     }
 }
+function* getSpecificFavorite(){
+    try {
+        const specificFavorites = yield axios.get(`/api/specificFavorites`);
+        yield put({type: 'SET_SPECIFIC_FAVORITES', payload: specificFavorites.data});
+    } catch (error) {
+        console.log('Update favorite failed', error);
+    }
+}
+
 
 function* favoritesSaga() {
     yield takeEvery('POST_FAVORITE', addFavorite);
     yield takeEvery('GET_FAVORITES', getFavorites);
+    yield takeEvery('GET_SPECIFIC_FAVORITES',getSpecificFavorite)
 }
 
 export default favoritesSaga;

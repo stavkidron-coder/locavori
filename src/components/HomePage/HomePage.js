@@ -28,7 +28,10 @@ class HomePage extends Component {
   };
 
   componentDidMount = () => {
-    this.props.dispatch({type: 'GET_MAKERS'});
+    this.props.dispatch({type: 'GET_MAKERS'}); 
+    this.props.dispatch({ type: 'GET_SPECIFIC_FAVORITES' }); 
+    console.log(this.props.store.SF);
+         
   };
 
   filterGet = () => {
@@ -43,13 +46,11 @@ class HomePage extends Component {
         <HomeNav/>
 
         <Container>
-
           <Row>
             <Col xs='12'>
              <MapListToggleBtn/>
             </Col>
-          </Row>
-              
+          </Row>       
         </Container>
 
         </div>

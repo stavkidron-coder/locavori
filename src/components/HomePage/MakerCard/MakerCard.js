@@ -15,6 +15,8 @@ class MakerCard extends Component {
 
     
     render() {
+    console.log('in MakerCard VIEW',this.props.fav);
+
         return (
             <Container>
         
@@ -32,7 +34,7 @@ class MakerCard extends Component {
                             </Col>
 
                             <Col xs="2">
-                                <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
+                                <FavoriteBtn className="favoriteBtn" fav={this.props.fav} makerId={this.props.maker.id}/>
                             </Col>
                         </Row>
                     </CardHeader>

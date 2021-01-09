@@ -5,7 +5,7 @@ import maker from './maker.reducer'
 import makerCard from './makerCard.reducer';
 import maker_registration from './maker_registration.reducer';
 import favorites from './favorites.reducer';
-
+import SF from './specific.favorite.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -20,6 +20,7 @@ const rootReducer = combineReducers({
   makerCard,
   maker_registration,
   favorites,
+  SF,
 });
 
 export default rootReducer;
