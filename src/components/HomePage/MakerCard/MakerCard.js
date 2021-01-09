@@ -49,23 +49,37 @@ class MakerCard extends Component {
 
                         <CardBody>
                             <Row>
-                            <Col xs="3">
+                            <Col xs="2">
                                 <img
                                     src={this.props.maker.product_img_one}
                                     alt={this.props.maker.story}
                                     className="cardImg"
                                 />
                             </Col>
-
-                            <Col xs="6">
+                                
+                            <Col xs="2">
                                 <CardText tag="h6" className="ListViewSubtitle">
-                                        {this.props.maker.product_type_one}
+                                    <h4>Products</h4>
+                                    <hr className="lightGreenHr"/>
+                                    {this.props.maker.product_type_one}
                                     <br/>
-                                        {this.props.maker.product_type_two}
                                     <br/>
-                                        {this.props.maker.product_type_three}
+                                    {this.props.maker.product_type_two}
+                                    <br/>
+                                    <br/>
+                                    {this.props.maker.product_type_three}
                                 </CardText>
 
+                                
+                            </Col>
+                            
+                            <Col xs="8">
+                                <CardText tag="h6" className="ListViewSubtitle">
+                                        <h4>About</h4>
+                                        <hr className="lightGreenHr"/>
+                                        {this.props.maker.story}
+                                </CardText>
+                                
                                 <Button className="SeeMoreButton" onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
                                         See more...
                                 </Button>
