@@ -14,8 +14,8 @@ class LoginPage extends Component {
       <div className="loginBody">
 
         <Row>
-          <Col xs="9">
-            <div className="loginImg">
+          <Col sm="6" lg="8" xl="9" className="loginImg">
+            <div>
               <Container>
               <div className="loginTitle">
                 <h1>Connecting local makers to hungry neighbors</h1>
@@ -26,7 +26,7 @@ class LoginPage extends Component {
             </div>
           </Col>
         
-          <Col xs="3" className="loginFormContainer">
+          <Col sm="6" lg="4" xl="3" className="loginFormContainer">
             <LoginForm />
           </Col>
         

@@ -120,7 +120,7 @@ class MakerProfilePage extends React.Component {
             </CardBody>
           </Card>
           :
-          <h1></h1>
+          <></>
           }
         </>
         )

@@ -38,25 +38,14 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/testFavorites/:id', (req, res) => {
-    const userId = Number(req.user.id);
-    const makerId = Number(req.params.id);
+router.delete('/:id', (req, res) => {
+        // DELETE route code here
+        const queryText = `DELETE FROM "tbl_favorites" WHERE "maker_id" = $1;`
+        pool.query(queryText, [req.params.id])
+          .then((results) => res.sendStatus(200))
+          .catch(() => res.sendStatus(500));
+      });
+      
 
-    // console.log('test favorite userId:', userId);
-    // console.log('test favorite makerId:', makerId);
-    
-
-    const queryText = `SELECT * FROM "tbl_favorites"
-    JOIN "tbl_artisans" ON "tbl_favorites"."maker_id" = "tbl_artisans"."id"
-    WHERE "tbl_favorites"."profile_id" = $1 AND "tbl_favorites"."maker_id" = $2;`;
-    pool.query(queryText, [userId, makerId])
-        .then((result) => {
-            // console.log('Result from test favorite get', result.rows);
-            res.send(result.rows);
-        }).catch((error) => {
-            console.log('ERROR in get test favorites', error);
-            res.sendStatus(500);
-        });
-});
 
 module.exports = router;

@@ -11,3 +11,33 @@
 .tab-content {
     margin-left: 40px;
 }
+
+/* MODALS */
+
+    .modalHeader {
+        /* background-color: rgb(122,172,85) !important; */
+        background-color: rgb(5,103,54) !important;
+        color: white;
+    }
+
+    .modal-header .close {
+        color: rgb(255, 255, 255);
+    }
+
+    .modal {
+        margin-top: 200px;
+    }
+
+    .modalBtns {
+        background-color: rgb(122,172,85);
+        border-color: rgb(122,172,85);
+    }
+
+    .modalBtns:hover {
+        background-color: rgb(5,103,54);
+        border-color: rgb(5,103,54);
+    }
+
+    .modalFooter {
+        border-top: none;
+    }

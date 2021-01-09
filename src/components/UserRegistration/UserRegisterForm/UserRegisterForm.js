@@ -41,7 +41,7 @@ class RegisterForm extends Component {
   render() {
     return (
       <Form className="formPanel userRegisterForm">
-        <h2>REGISTER AS A LOCAVOR</h2>
+        <h2>REGISTER AS A LOCAVORE</h2>
         <hr className="registerOptionsHr"/>
         <h4>Let's get some basic info first</h4>
         <br/>

@@ -16,6 +16,7 @@ import List from './ListView/ListView';
 import HomeNav from '../Navbars/HomeNav';
 // CSS
 import './HomePage.css';
+import '../FilterOptions/Filters.css';
 // BOOTSTRAP
 import { Col, Row, Button } from 'reactstrap';
 
@@ -35,7 +36,10 @@ class HomePage extends Component {
   // };
 
   componentDidMount = () => {
-    this.props.dispatch({type: 'GET_MAKERS'});
+    this.props.dispatch({type: 'GET_MAKERS'}); 
+    this.props.dispatch({ type: 'GET_SPECIFIC_FAVORITES' }); 
+    console.log(this.props.store.SF);
+         
   };
 
   filterGet = () => {
@@ -48,9 +52,11 @@ class HomePage extends Component {
 
         <HomeNav/>
 
+
         <div className="filterMapBody">
+
           <Row>
-            <Col xs="3">
+            <Col xs="12" lg="4" xl="3" className="filterContainer">
               <h2>Filters</h2>
               <hr/>
               {/* <Filters/> */}
@@ -60,10 +66,10 @@ class HomePage extends Component {
               <LocationOptions/>
               <ProductOptions/>
               <DietaryRestrictions/>
-              <Button onClick={this.filterGet}>Filter</Button>
+              <Button className="filterGoBtn" onClick={this.filterGet}>Search</Button>
             </Col>
 
-            <Col xs='9'>
+            <Col xs="12" lg="8" xl="9">
               <h2>Find Local Makers</h2>
               <hr/>
               <Map/>
@@ -72,7 +78,6 @@ class HomePage extends Component {
               <hr/>
               <List/>
             </Col>
-
           </Row>
         </div>
       </div>
