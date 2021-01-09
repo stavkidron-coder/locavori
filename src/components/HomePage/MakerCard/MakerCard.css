@@ -64,3 +64,34 @@
 .aboutContainer {
     margin-bottom: 50px;
 }
+
+
+/* FAVORITE BUTTON MODAL */
+
+.favModalHeader {
+    /* background-color: rgb(122,172,85) !important; */
+    background-color: rgb(5,103,54) !important;
+    color: white;
+}
+
+.modal-header .close {
+    color: rgb(255, 255, 255);
+}
+
+.modal {
+    margin-top: 200px;
+}
+
+.modalBtns {
+    background-color: rgb(122,172,85);
+    border-color: rgb(122,172,85);
+}
+
+.modalBtns:hover {
+    background-color: rgb(5,103,54);
+    border-color: rgb(5,103,54);
+}
+
+.favModalFooter {
+    border-top: none;
+}
