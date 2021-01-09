@@ -49,7 +49,7 @@ class MakerCard extends Component {
 
                         <CardBody>
                             <Row>
-                            <Col xs="2">
+                            <Col xs="6" sm="6" md="4" xl="2">
                                 <img
                                     src={this.props.maker.product_img_one}
                                     alt={this.props.maker.story}
@@ -57,7 +57,7 @@ class MakerCard extends Component {
                                 />
                             </Col>
                                 
-                            <Col xs="2">
+                            <Col xs="6" sm="6" md="8" xl="2">
                                 <CardText tag="h6" className="ListViewSubtitle">
                                     <h4>Products</h4>
                                     <hr className="lightGreenHr"/>
@@ -68,18 +68,21 @@ class MakerCard extends Component {
                                     <br/>
                                     <br/>
                                     {this.props.maker.product_type_three}
+                                    <br/>
+                                    <br/>
                                 </CardText>
 
                                 
                             </Col>
                             
-                            <Col xs="8">
+                            <Col xs="12" sm="12" md="12" xl="8">
+                                <div className="aboutContainer">
                                 <CardText tag="h6" className="ListViewSubtitle">
                                         <h4>About</h4>
                                         <hr className="lightGreenHr"/>
                                         {this.props.maker.story}
                                 </CardText>
-                                
+                                </div>
                                 <Button className="SeeMoreButton" onClick= {() => this.ViewProfile(this.props.maker.profile_id)}>
                                         See more...
                                 </Button>
