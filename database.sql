@@ -74,6 +74,8 @@ CREATE TABLE "tbl_artisans" (
 	"approved_maker" boolean default FALSE,
 	"dateStampUTC" timestamp default current_timestamp,
 	"modifiedUTC" time default current_timestamp,
+	"distanceText" varchar(150),
+	"distanceValue" varchar(150),
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE

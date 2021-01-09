@@ -144,7 +144,12 @@ function LocalMap(props) {
             travelMode: "DRIVING",
             // unitSystem: "IMPERIAL",
             }}
-            callback = {(response, status) => {distanceMatrixCall(response, status)}}
+            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
+              console.log(store.maker);
+                store.maker[index].distanceText = element.distance.text;
+                store.maker[index].distanceValue = element.distance.value;
+              });
+            }}
           />
 
         {markers.map((marker) => (
