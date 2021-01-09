@@ -185,7 +185,6 @@ function LocalMap(props) {
          </InfoWindow>) : null}
          </GoogleMap>
          <div className='distanceMatrixSlides'>
-          
             {renderCount === 0 ?
               null
               :
