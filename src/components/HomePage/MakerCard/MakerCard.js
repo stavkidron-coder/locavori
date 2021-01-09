@@ -36,11 +36,7 @@ class MakerCard extends Component {
                             </Col>
 
                             <Col xs="2">
-                                {!this.props.store.testFavorites ?
-                                    <Button>REMOVE FAVORITE</Button>
-                                    :
-                                    <FavoriteBtn className="favoriteBtn" makerId={this.props.maker.id}/>
-                                }
+                                <FavoriteBtn className="favoriteBtn" maker={this.props.maker}/>
                             </Col>
                         </Row>
                     </CardHeader>
