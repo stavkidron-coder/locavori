@@ -6,7 +6,7 @@
 
 .loginImg {
     height: 80.5vh;
-    background-image: url('../../TestImages/hands.jpg');
+    background-image: url('../../../TestImages/hands.jpg');
     background-position: bottom;
     background-size: cover;
     padding: 100px;

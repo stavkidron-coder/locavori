@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 // FILTERS
-import MakerOptions from '../FilterOptions/MakerOptions';
-import DeliveryOptions from '../FilterOptions/DeliveryOptions';
-import LocationOptions from '../FilterOptions/LocationOptions';
-import ProductOptions from '../FilterOptions/ProductOptions';
-import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
-import DietaryRestrictions from '../FilterOptions/DietaryRestrictions';
+import MakerOptions from '../Filter/FilterOptions/MakerOptions';
+import DeliveryOptions from '../Filter/FilterOptions/DeliveryOptions';
+import LocationOptions from '../Filter/FilterOptions/LocationOptions';
+import ProductOptions from '../Filter/FilterOptions/ProductOptions';
+import AvailabilityOptions from '../Filter/FilterOptions/AvailabilityOptions';
+import DietaryRestrictions from '../Filter/FilterOptions/DietaryRestrictions';
 // MAP & LIST
 import Map from './MapView/MapView';
 import List from './ListView/ListView';
@@ -16,7 +16,7 @@ import List from './ListView/ListView';
 import HomeNav from '../Navbars/HomeNav';
 // CSS
 import './HomePage.css';
-import '../FilterOptions/Filters.css';
+import '../Filter/Filters.css';
 // BOOTSTRAP
 import { Col, Row, Button } from 'reactstrap';
 

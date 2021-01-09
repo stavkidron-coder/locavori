@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { Card, CardBody, CardHeader, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
-import mapStoreToProps from '../../redux/mapStoreToProps';
-import DesktopNav from '../Navbars/DesktopNav';
+import mapStoreToProps from '../../../redux/mapStoreToProps';
+import DesktopNav from '../../Navbars/DesktopNav';
 import './MakerProfile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
@@ -120,7 +120,7 @@ class MakerProfilePage extends React.Component {
             </CardBody>
           </Card>
           :
-          <h1></h1>
+          <p/>
           }
         </>
         )

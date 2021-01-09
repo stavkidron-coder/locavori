@@ -66,9 +66,7 @@ class AdminPARTab extends Component {
                       </CardBody>
                     </Card>
                     :
-                    <div>
-                      <h1></h1>
-                    </div>
+                    <p/>
                     
                   }
                 </>

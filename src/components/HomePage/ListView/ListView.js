@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './ListView.css';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
-import MakerCard from '../MakerCard/MakerCard';
+import MakerCard from '../../MakerCard/MakerCard';
 
 class ListView extends Component {
 
@@ -20,7 +20,7 @@ class ListView extends Component {
              {maker.approved_maker ?
               <MakerCard maker={maker} key={maker.id}/>
              :
-             <h1></h1>
+             <p/>
             }
             </>
            )

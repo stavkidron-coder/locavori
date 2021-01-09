@@ -9,16 +9,15 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import ProfilePage from '../UserProfile/UserProfile';
+import ProfilePage from '../Profiles/UserProfile/UserProfile';
 import HomePage from '../HomePage/HomePage';
-import LoginPage from '../LoginPage/LoginPage';
-import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
+import LoginPage from '../Login/LoginPage/LoginPage';
+import UserRegisterPage from '../UserRegistration/UserRegisterForm/UserRegisterPage';
 import RegisterOptions from '../RegisterOptions/RegisterOptions';
 import MakerRegisterPage from '../MakerRegistration/MakerRegisterPage/MakerRegisterPage';
 // import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
 // import NavbarCollapse2 from '../NavbarCollapse/NavbarCollapse2';
-import MakerPage from '../MakerProfile/MakerProfile';
+import MakerPage from '../Profiles/MakerProfile/MakerProfile';
 import MakerRegistrationPgOne from '../MakerRegistration/MakerRegistrationFirstPage/MakerRegistrationUserInfoPage';
 
 import './App.css';
@@ -91,12 +90,6 @@ class App extends Component {
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
             Even though it seems like they are different pages, the user is always on localhost:3000/user*/}
-            <ProtectedRoute
-              // logged in shows UserPage else shows LoginPage
-              exact
-              path="/user"
-              component={UserPage}
-            />
 
             <ProtectedRoute
               // logged in shows InfoPage else shows LoginPage
