@@ -73,7 +73,8 @@ router.get('/', async (req, res) => {
 /**
  * PUT route template
  */
-router.put('/', (req, res) => {
+router.put('/', async (req, res) => {
+  console.log(req.body.business_type.toString());
 
   const makerInfo =[
 
@@ -142,7 +143,7 @@ router.put('/', (req, res) => {
     req.user.id
    ]
   // *** SALES SHEET IS SPECIALTIES IN THE MEAN TIME ***
-  const queryText = `UPDATE tbl_artisans SET 
+  const makerQueryText = `UPDATE tbl_artisans SET 
     legal_name = $1, 
     business_name = $2, 
     first_name = $3, 
@@ -191,9 +192,13 @@ router.put('/', (req, res) => {
     owner_img = $46,
     story = $47,
     give_back = $48,
-    anything_else = $49
-    WHERE profile_id = $50;`;
-    pool.query(queryText, makerInfo)
+    anything_else = $49,
+    maker_type_tokens = to_tsvector('${req.body.business_type.toString()}'),
+    location_tokens = to_tsvector('${req.body.product_distribution.toString()}'),
+    prod_cat_tokens = to_tsvector('${req.body.product_category.toString()}')
+    WHERE profile_id = $50;`
+    
+    pool.query(makerQueryText, makerInfo)
         .then(() => {
             res.sendStatus(200);
         }).catch(error => {
