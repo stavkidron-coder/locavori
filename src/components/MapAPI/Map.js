@@ -5,7 +5,6 @@ import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption 
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-// import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import {Button, Col, Container, Row} from 'reactstrap';
 import {useSelector} from 'react-redux';
 
@@ -13,7 +12,10 @@ import {useSelector} from 'react-redux';
 import './Map.css';
 import mapStyles from "./mapStyles";
 import "@reach/combobox/styles.css";
+import packagedPin from '../../TestImages/packaged-prepared.png';
+import freshPin from '../../TestImages/fresh.png';
 import drinkPin from '../../TestImages/drink.png';
+
 
 const libraries = ["places"];
 
@@ -56,18 +58,30 @@ function LocalMap(props) {
 
 
 
-// EMMMA HERE
-// Add check for each pin on if they have anything populated in DB or not
 
-  function iconSelect (arrayCheck, arrayCheck2, arrayCheck3) {
-    if (arrayCheck.length) {
-      return drinkPin
-    } else {
-      return 
-    }
+  //Checks DB for different product types to display specific pins on map
+ function iconSelect (marker) {
+  if (marker.product_type_food !== '{}') {
+    console.log('packaged pin')
+    return packagedPin
   }
+  else if (marker.product_type_fresh !== '{}') {
+    console.log('fresh pin')
+    return freshPin
+  }
+  else if (marker.product_type_bev !== '{}'){
+    console.log('drink pin')
+    return drinkPin
+  }
+  else
+    return 'no category to display';
+}
 
 
+
+ 
+
+  
 
 
 
@@ -124,12 +138,9 @@ function LocalMap(props) {
 
 
 
-           // Add the three main type arrays, fresh, Beverage, Packaged
-           icon={{
-             url: iconSelect(marker.product_type_one),
-             fillColor: '#0000ff',
-             strokeColor: '#0000ff',
-             fillOpacity: 1,
+           // icon for map
+           icon={{ 
+             url: iconSelect(marker),
              origin: new window.google.maps.Point(0, 0),
              anchor: new window.google.maps.Point(15, 15),
              scaledSize: new window.google.maps.Size(30, 30),

@@ -12,6 +12,7 @@ class UserProfilePage extends React.Component {
 
   componentDidMount = () => {
     this.props.dispatch({type: 'GET_FAVORITES'});
+    this.props.dispatch({ type: 'GET_SPECIFIC_FAVORITES' }); 
   }
   render() {
     return (

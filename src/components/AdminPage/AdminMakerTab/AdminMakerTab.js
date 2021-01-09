@@ -65,7 +65,7 @@ class Maker extends Component {
                   </Card>
 
                   :
-                  <h1>No Makers In the System</h1>
+                  <p/>
                 }
               </>
             )

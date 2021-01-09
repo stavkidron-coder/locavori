@@ -69,7 +69,11 @@ const HomeNav = (props) => {
             </NavItem>
 
             <NavItem>
+              {props.store.user.id ?
                 <Link className="nav-link navContents" to='/maker-registration' onClick={toggle}>{burger} BECOME A MAKER</Link>
+                :
+                <Link className="nav-link navContents" to='/maker-registration1' onClick={toggle}>{burger} BECOME A MAKER</Link>
+              }
             </NavItem>
           </Nav>
             

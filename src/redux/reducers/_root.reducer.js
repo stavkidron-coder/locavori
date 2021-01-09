@@ -5,6 +5,7 @@ import maker from './maker.reducer'
 import makerCard from './makerCard.reducer';
 import maker_registration from './maker_registration.reducer';
 import favorites from './favorites.reducer';
+import SF from './specific.favorite.reducer';
 import testFavorites from './testFavorites.reducer';
 import filters from './filter.reducer';
 
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   makerCard,
   maker_registration,
   favorites,
+  SF,
   testFavorites,
   filters
 });

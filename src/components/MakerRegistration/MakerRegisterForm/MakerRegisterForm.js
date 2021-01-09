@@ -35,6 +35,12 @@ componentDidMount = () => {
 
   save = () => {
     this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
+    alert("Your application has been successfully saved");
+  }
+
+  submitBtn = () => {
+    alert("Your application has been submitted and is pending approval.");
+    this.props.history.push('/home');
   }
 
 

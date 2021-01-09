@@ -3,13 +3,6 @@
   /* max-height: 720px; */
 }
 
-.filter {
-  padding: 10px;
-  position: relative;
-  z-index: 1;
-  /* border: 1px solid black; */
-}
-
 .listContainer {
   text-align: center;
   /* border: 1px solid black; */
@@ -24,22 +17,4 @@
 
 .filterMapBody {
   padding: 40px;
-}
-
-.filterBtn {
-  color: black;
-  background-color: rgb(245, 245, 245);
-  border: 1px solid rgb(198, 198, 198);
-  text-align: left;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.dots {
-  float: right;
-}
-
-.collapseContainer {
-  margin-bottom: 1rem;
-  padding-left: 10px;
 }
