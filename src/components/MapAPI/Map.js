@@ -144,22 +144,28 @@ function LocalMap(props) {
           />
 
         {markers.map((marker) => (
+        <>
+          {marker.approved_maker ? 
           <Marker
-           key={`${marker.latitude}-${marker.longitude}`}
-           position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-           onClick={() => {
-             setSelected(marker);
-             console.log('ITS A SECERT TO EVERYONE',store.maker);
-           }}
-
-           // icon for map
-           icon={{
-             url: iconSelect(marker),
-             origin: new window.google.maps.Point(0, 0),
-             anchor: new window.google.maps.Point(15, 15),
-             scaledSize: new window.google.maps.Size(30, 30),
-           }}
-         />
+          key={`${marker.latitude}-${marker.longitude}`}
+          position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+          onClick={() => {
+            setSelected(marker);
+            console.log('ITS A SECERT TO EVERYONE',store.maker);
+          }}
+          // icon for map
+          icon={{
+            url: iconSelect(marker),
+            origin: new window.google.maps.Point(0, 0),
+            anchor: new window.google.maps.Point(15, 15),
+            scaledSize: new window.google.maps.Size(30, 30),
+          }}
+        />
+          :
+          null
+        }
+          
+        </>
        ))}
 
         {/* INFO WINDOW */}
