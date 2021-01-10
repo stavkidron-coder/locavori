@@ -20,7 +20,6 @@ class AdminPARTab extends Component {
   }
   ViewProfile = (makerId) => {
     this.props.history.push(`/makerCard/${makerId}`);
-    // console.log("11111111111111111111", makerId);
   }
   approveMaker = (makerId) => {
     this.props.dispatch({ type: "APPROVE_MAKER", payload: makerId })
@@ -35,7 +34,7 @@ class AdminPARTab extends Component {
 
       <h1>Pending Requests</h1>
 
-     
+     {/* {JSON.stringify(this.props.store.maker[4])} */}
 
           <div className="PendingRequestsBody">
              <Container>
@@ -44,6 +43,7 @@ class AdminPARTab extends Component {
               return (
                 <>
                   {maker.pending_maker ?
+
                     <Col xs="12" md="6" xl="4">
                       <Card key={maker.id} className="PARCard">
 
@@ -64,7 +64,7 @@ class AdminPARTab extends Component {
                           <br/>
                           <Row>
                             <Col xs="3">
-                                  <AcceptBtn className="acceptDeclineBtns" makerId= {maker.profile_id} />
+                                  <AcceptBtn className="acceptDeclineBtns" makerId={maker.profile_id} />
                             </Col>
 
                             <Col xs="3">
