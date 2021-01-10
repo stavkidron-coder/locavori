@@ -1,5 +1,6 @@
 
 
+
 .makerAppInput {
     width: 400px;
     margin-left: 0;
@@ -22,13 +23,16 @@ h4{
     margin-left: 40px;
 }
 
-.productType{
-    margin-left: 85px;
+
+.buttonRow {
+    padding: 10px;
+    margin: auto;
+    position: relative;
 }
 
-.featuredProducts{
-    width: 100%;
-    margin-left: 0;
+.registerHeader {
+    padding: 50px;
+
 }
 
 /* MODALS */
@@ -50,6 +54,7 @@ h4{
     .modalBtns {
         background-color: rgb(122,172,85);
         border-color: rgb(122,172,85);
+        margin-right: 10px;
     }
 
     .modalBtns:hover {
@@ -59,4 +64,34 @@ h4{
 
     .modalFooter {
         border-top: none;
+    }
+
+    .registrationTabs ul > li > a {
+        background-color: gray;
+        color: white;
+    }
+    
+    .nav-link-tabs {
+        color: rgb(0, 0, 0) !important;
+        text-decoration: none;
+        transition: 0.3s;
+        margin-right: 20px;
+    }
+
+    /* STORY TAB */
+
+    .storyBody {
+        padding: 20px;
+    }
+
+    #storyInput {
+        height: 300px;
+    }
+
+    #giveBackInput {
+        height: 300px;
+    }
+
+    #anythingElseInput {
+        height: 300px;
     }
