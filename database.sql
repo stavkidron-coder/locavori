@@ -20,11 +20,7 @@ CREATE TABLE "tbl_artisans" (
 	"public_city" varchar(150),
 	"public_state" varchar(150),
 	"public_zip" varchar(150),
-<<<<<<< HEAD
-	"public_country" varchar(150),
-=======
 	"public_country" varchar(150) DEFAULT 'USA', 
->>>>>>> master
 	"latitude" numeric,
 	"longitude" numeric,
 	"website" varchar(150),
@@ -78,6 +74,9 @@ CREATE TABLE "tbl_artisans" (
 	"approved_maker" boolean default FALSE,
 	"dateStampUTC" timestamp default current_timestamp,
 	"modifiedUTC" time default current_timestamp,
+	"business_type_tokens" TSVECTOR,
+	"where_sold_tokens" TSVECTOR,
+	"prod_cat_tokens" TSVECTOR
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
