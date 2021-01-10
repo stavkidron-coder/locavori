@@ -330,12 +330,14 @@ VALUES
 (34,4,93),
 (35,4,111);
 
+-- Oak Valley Creations
+
 INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
 VALUES
 (E'Debbie',E'Fairbanks',E'',E'oakvalleycreations@gmail.com',E'',E'2021-01-09 18:38:28.710877');
 INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
 VALUES
-(5,E'Debbie',E'Oak Valley Creations',E'Debbie',E'Fairbanks',E'oakvalleycreations@gmail.com',E'',E'',E'','',E'Savage',E'MN',E'55378',E'USA',E'','',E'',E'',E'',E'USA',44.7647,-93.3591,E'http://www.oakvalleycreations.com/',E'','',E'','','','','',E'Maker','','farmers market, gift box company','','YES',E'YES',E'YES','',E'Before organic was a buzzword, it was a part of Debbie Fairbanks’ life. She has brought her passion and knowledge of organics to her products at Oak Valley Creations, establishing the company in 2012. Debbie offers a wide variety of products made in small batches using locally sources ingredients when ever possible. Her jellies, spices, and teas marry spice with fresh flavor. You''ll often find Debbie at local farmers markets and pop-up sales. Make sure to stop by her table and try out her full product line!',E'YES',E'YES','',E'{}','',E'{}','','','','','',E'Jellies, Jams, and Spreadables',E'http://www.oakvalleycreations.com/IMAG4928.jpg',E'',E'Seasonings, Spice blends',E'http://www.oakvalleycreations.com/flat_out_garlic.JPG',E'',E'Tea',E'http://www.oakvalleycreations.com/coffeesachetbox.JPG',E'',E'',E'','',E'',E'',E'',E'',E'YES',E'',E'',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+(5,E'Debbie',E'Oak Valley Creations',E'Debbie',E'Fairbanks',E'oakvalleycreations@gmail.com',E'',E'',E'','',E'Savage',E'MN',E'55378',E'USA',E'','',E'',E'',E'',E'USA',44.7647,-93.3591,E'http://www.oakvalleycreations.com/',E'','',E'','','','','',E'Maker','','farmers market, gift box company','','YES',E'YES',E'YES','',E'Before organic was a buzzword, it was a part of Debbie Fairbanks’ life. She has brought her passion and knowledge of organics to her products at Oak Valley Creations, establishing the company in 2012. Debbie offers a wide variety of products made in small batches using locally sources ingredients when ever possible. Her jellies, spices, and teas marry spice with fresh flavor. You''ll often find Debbie at local farmers markets and pop-up sales. Make sure to stop by her table and try out her full product line!',E'YES',E'YES','',E'{}','',E'{}','','','','','',E'Jellies, Jams, and Spreadables',E'http://www.oakvalleycreations.com/IMAG4928.jpg',E'',E'Seasonings, Spice blends',E'http://www.oakvalleycreations.com/flat_out_garlic.JPG',E'',E'Tea',E'http://www.oakvalleycreations.com/coffeesachetbox.JPG',E'',E'',E'http://www.oakvalleycreations.com/IMAG4928.jpg','',E'',E'',E'',E'',E'YES',E'',E'http://www.oakvalleycreations.com/White_Zinfandel.JPG',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
 (36,5,92),
@@ -353,6 +355,50 @@ VALUES
 (48,5,107),
 (49,5,108),
 (50,5,110);
+
+--Kuzala Macaroons
+
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Christopher',E'Dark',E'',E'info@kuzalaorganics.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(6,E'Christopher',E'Kazala Macaroons',E'Christopher',E'Dark',E'info@kuzalaorganics.com',E'612-723-7960',E'',E'305 S Washington Ave',E'',E'Minneapolis',E'MN',E'55415',E'USA',E'',E'',E'',E'',E'',E'USA',44.979880,-93.264090,E'https://www.kuzalaorganics.com/',E'https://www.facebook.com/kuzalaorganics/',E'https://www.instagram.com/kuzalaorganics/?hl=en',E'info@kuzalaorganics.com',E'',E'',E'',E'',E'Organic Food',E'',E'Grocery Store''s, Coop''s, Amazon',E'',E'NO',E'NO',E'YES',E'',E'Organic, nourishing and delicious, Kuzala Macaroons come in 9 flavors. Developed by Christopher Dark to address his family''s dietary needs, every ingredient has been carefully selected for its nourishing, nutrient-dense qualities. Kuzala Macaroons not only taste great, they are loaded with fabulous fats and fiber from coconuts and nutrient and mineral rich maple syrup and pink Himalayan Salt. Kuzala Macaroons are gluten-free, vegan, raw and paleo friendly with sustainably sourced ingredients.',E'YES',E'YES',E'',E'{}',E'',E'{}',E'',E'',E'',E'Cookies',E'',E'Coolies',E'https://static.wixstatic.com/media/1a045a_e11358d1cbf04151889c78f8d45592a3.jpg/v1/fill/w_519,h_340,al_c,q_80,usm_0.66_1.00_0.01/1a045a_e11358d1cbf04151889c78f8d45592a3.webp',E'',E'',E'',E'',E'',E'',E'',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'YES',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(51,6,93),
+(52,6,43),
+(53,6,94),
+(54,6,29),
+(55,6,41),
+(56,6,21),
+(57,6,13),
+(58,6,10),
+(59,6,11),
+(60,6,104),
+(61,6,105),
+(62,6,106),
+(63,6,107),
+(64,6,108),
+(65,6,110);
+
+--Kuzala Macaroons
+
+-- INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+-- VALUES
+-- (E'Christopher',E'Dark',E'',E'info@kuzalaorganics.com',E'',E'2021-01-09 18:38:28.710877');
+-- INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+-- VALUES
+-- (5,E'Christopher',E'Kazala Macaroons',E'Christopher',E'Dark',E'info@kuzalaorganics.com',E'612-723-7960',E'',E'305 S Washington Ave','',E'Minneapolis',E'MN',E'55415',E'USA',E'','',E'',E'',E'',E'USA',44.979880,-93.264090,E'https://www.kuzalaorganics.com/',E'https://www.facebook.com/kuzalaorganics/','https://www.instagram.com/kuzalaorganics/?hl=en',E'info@kuzalaorganics.com','','','','',E'Organic Food','','Grocery Store''s, Coop''s, Amazon','','NO',E'NO',E'YES','',E'Organic, nourishing and delicious, Kuzala Macaroons come in 9 flavors. Developed by Christopher Dark to address his family''s dietary needs, every ingredient has been carefully selected for its nourishing, nutrient-dense qualities. Kuzala Macaroons not only taste great, they are loaded with fabulous fats and fiber from coconuts and nutrient and mineral rich maple syrup and pink Himalayan Salt. Kuzala Macaroons are gluten-free, vegan, raw and paleo friendly with sustainably sourced ingredients.',E'YES',E'YES','',E'{}','',E'{}','','','',E'Cookies','',E'Cookies',E'https://static.wixstatic.com/media/1a045a_e11358d1cbf04151889c78f8d45592a3.jpg/v1/fill/w_519,h_340,al_c,q_80,usm_0.66_1.00_0.01/1a045a_e11358d1cbf04151889c78f8d45592a3.webp',E'',E'',E'',E'',E'http://www.oakvalleycreations.com/coffeesachetbox.JPG',E'',E'',E'','',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'',E'',E'YES',E'',E'https://i.pinimg.com/280x280_RS/97/ff/a6/97ffa6dc39223da201c507e4269894ff.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+-- INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+-- VALUES
+
+-- (60,7,104),
+-- (61,7,105),
+-- (62,7,106),
+-- (63,7,107),
+-- (64,7,108),
+-- (65,7,110);
 
 -- GET QUERIES
 
