@@ -84,7 +84,7 @@ class Maker extends Component {
                   </Card>
                 </Col>
                   :
-                  <p/>
+                  null
                   
                 }
                 
