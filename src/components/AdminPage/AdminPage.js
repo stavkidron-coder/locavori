@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import AdminTabs from './AdminTabs/AdminTabs';
+import DesktopNav from '../Navbars/DesktopNav';
+import './AdminPage.css';
+import { Container } from 'reactstrap';
 
 class AdminPage extends Component {
 
@@ -9,18 +12,26 @@ class AdminPage extends Component {
 
   render() {
     return (
-      <div>
-          
+      <div className="adminBody">
+          <DesktopNav/>
+
           {this.props.store.user.admin ?
-         <>
-         <h1>View All Makers</h1>
-          <AdminTabs/>
-          </>
+            <>
+            <div className="adminPageTitle">
+              <Container>
+                <h1>Manage Makers</h1>
+              </Container>
+              
+            </div>
+            <Container>
+              <AdminTabs/>
+            </Container>
+            </>
           :
-          <h1>Sorry you are not admin you need access to view this page.</h1>
-        
-        }
-          
+          <Container>
+            <h1>Sorry, you do not have access to this page</h1>
+          </Container>
+          }    
       </div>
     );
   }
