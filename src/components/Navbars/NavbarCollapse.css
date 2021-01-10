@@ -1,6 +1,6 @@
 
 .navBar {
-    background-color: #f6f9f5 !important;
+    background-color: #f2f7f0 !important;
     padding-left: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -10,27 +10,34 @@
     width: 200px;
 }
 
+.loginOut {
+      color: #faf5e8 !important;
+      transition: 0.3s;
+}
+
+.loginOut:hover {
+      color: #000000 !important;
+}
+
 .topNav {
     background-color: rgb(5,103,54);
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-.nav-link {
+.nav-link2 {
     color: rgb(235, 235, 235) !important;
     text-decoration: none;
     transition: 0.3s;
-    margin-right: 20px;
+    margin-left: 20px;
+    /* padding: 10px; */
+    /* width: 200px; */
   }
 
-.nav-link:hover {
+.nav-link2:hover {
     color: #000000 !important;
     text-decoration: none;
-  }
-
-  .loginOut {
-      color: #faf5e8 !important;
-  }
+}
 
   .navContents {
     color: white !important;
@@ -78,3 +85,7 @@
     background-position: center;
     padding: 100px;
   }
+
+.navbar-hamburger {
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgb(5,103,54)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
