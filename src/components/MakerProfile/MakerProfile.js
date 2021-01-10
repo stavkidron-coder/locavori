@@ -103,35 +103,43 @@ class MakerProfilePage extends React.Component {
 
               <h2>Featured Products</h2>
               <Row className="FeaturedProducts">
-                <Col xs="4">
-                  <a className="ProductTitle" href={maker.product_url_one}>
-                    <h4>{maker.product_type_one}</h4>
-                  </a> 
 
-                  <a href={maker.product_url_one}>
-                    <img className="FeaturedProductImg" src={maker.product_img_one} alt="product 1"/>
-                  </a>
-                </Col>
+                {maker.product_img_one && (
+                  <Col>
+                    <a className="ProductTitle" href={maker.product_url_one}>
+                      <h4>{maker.product_type_one}</h4>
+                    </a> 
 
-                <Col xs="4">
-                  <a className="ProductTitle" href={maker.product_url_two}>
-                    <h4>{maker.product_type_two}</h4>
-                  </a>
+                    <a href={maker.product_url_one}>
+                      <img className="FeaturedProductImg" src={maker.product_img_one} alt="product 1"/>
+                    </a>
+                  </Col>
+                )}
 
-                  <a href={maker.product_url_two}>
-                    <img  className="FeaturedProductImg" src={maker.product_img_two} width='250' alt="" align="center"/>
-                  </a>
-                </Col>
+                {maker.product_img_two && (
+                  <Col>
+                    <a className="ProductTitle" href={maker.product_url_two}>
+                      <h4>{maker.product_type_two}</h4>
+                    </a>
 
-                <Col xs="4">
-                  <a className="ProductTitle" href={maker.product_url_three}>
-                    <h4>{maker.product_type_three}</h4>
-                  </a>
+                    <a href={maker.product_url_two}>
+                      <img  className="FeaturedProductImg" src={maker.product_img_two} width='250' alt="" align="center"/>
+                    </a>
+                  </Col>
+                )}
+                
+                {maker.product_img_three && (
+                  <Col>
+                    <a className="ProductTitle" href={maker.product_url_three}>
+                      <h4>{maker.product_type_three}</h4>
+                    </a>
 
-                  <a href={maker.product_url_three}>
-                    <img  className="FeaturedProductImg" src={maker.product_img_three} width='250' alt="" align="center"/>
-                  </a>
-                </Col>
+                    <a href={maker.product_url_three}>
+                      <img  className="FeaturedProductImg" src={maker.product_img_three} width='250' alt="" align="center"/>
+                    </a>
+                  </Col>
+                )}
+                
               </Row>
             </CardBody>
           </Card>
