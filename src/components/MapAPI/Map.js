@@ -123,43 +123,31 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
-          <DistanceMatrixService
-            options={{
-            destinations: store.maker.map((destinations) => {
-              const lat = Number(destinations.latitude);
-              const lng = Number(destinations.longitude);
-              return {lat , lng};
-            }),
-            origins: [{lng:-93.29471079999999, lat:44.9508563}],
-            travelMode: "DRIVING",
-            // unitSystem: "IMPERIAL",
-            }}
-            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
-              console.log(store.maker);
-                store.maker[index].distanceText = element.distance.text;
-                store.maker[index].distanceValue = element.distance.value;
-              });
-              setRenderCount(1);
-            }}
-          />
+
 
         {markers.map((marker) => (
+        <>
+          {marker.approved_maker ? 
           <Marker
-           key={`${marker.latitude}-${marker.longitude}`}
-           position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-           onClick={() => {
-             setSelected(marker);
-             console.log('ITS A SECERT TO EVERYONE',store.maker);
-           }}
-
-           // icon for map
-           icon={{
-             url: iconSelect(marker),
-             origin: new window.google.maps.Point(0, 0),
-             anchor: new window.google.maps.Point(15, 15),
-             scaledSize: new window.google.maps.Size(30, 30),
-           }}
-         />
+          key={`${marker.latitude}-${marker.longitude}`}
+          position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+          onClick={() => {
+            setSelected(marker);
+            console.log('ITS A SECERT TO EVERYONE',store.maker);
+          }}
+          // icon for map
+          icon={{
+            url: iconSelect(marker),
+            origin: new window.google.maps.Point(0, 0),
+            anchor: new window.google.maps.Point(15, 15),
+            scaledSize: new window.google.maps.Size(30, 30),
+          }}
+        />
+          :
+          null
+        }
+          
+        </>
        ))}
 
         {/* INFO WINDOW */}
@@ -186,6 +174,25 @@ function LocalMap(props) {
              </div>
          </InfoWindow>) : null}
          </GoogleMap>
+         <DistanceMatrixService
+            options={{
+            destinations: store.maker.map((destinations) => {
+              const lat = Number(destinations.latitude);
+              const lng = Number(destinations.longitude);
+              return {lat , lng};
+            }),
+            origins: [{lng:-93.29471079999999, lat:44.9508563}],
+            travelMode: "DRIVING",
+            // unitSystem: "IMPERIAL",
+            }}
+            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
+              console.log(store.maker);
+                store.maker[index].distanceText = element.distance.text;
+                store.maker[index].distanceValue = element.distance.value;
+              });
+              setRenderCount(1);
+            }}
+          />
          <div className='distanceMatrixSlides list-body'>
           <br/>
          <h2>Local Makers Near You</h2>
