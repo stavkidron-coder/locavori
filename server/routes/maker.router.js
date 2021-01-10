@@ -45,22 +45,103 @@ router.get('/', async (req, res) => {
   let beveragesArray = req.query.beverages.split(',');
   let dietArray = req.query.diet.split(',');
   let resultArray = [];
-    // const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
-    // for (let i = 0; i < availabilityArray.length; i++){
-    //   try {
-    //      var result = await pool.query(queryAvail, [availabilityArray[i]])
-    //      resultArray.push(result.rows)
-    //   } catch (error) {
-    //     res.sendStatus(500);
-    //     return
-    //   }
-    // }
+  if (freshArray && freshArray !== []) {
+    const queryText = `SELECT * FROM tbl_artisans WHERE product_type_fresh != '{}' ;`;
+    try {
+      var result = await pool.query(queryText)
+      resultArray.push(result.rows)
+   } catch (error) {
+     res.sendStatus(500);
+     return
+   }
+  };
+  
+  if (perparedArray && preparedArray !== []) {
+    const queryText = `SELECT * FROM tbl_artisans WHERE product_type_food != '{}' ;`;
+    try {
+      var result = await pool.query(queryText)
+      resultArray.push(result.rows)
+   } catch (error) {
+     res.sendStatus(500);
+     return
+   }
+  }
+  
+  if (beverageArray && beveragesArray !== []) {
+    const queryText = `SELECT * FROM tbl_artisans WHERE product_type_bev != '{}' ;`;
+    try {
+      var result = await pool.query(queryText)
+      resultArray.push(result.rows)
+   } catch (error) {
+     res.sendStatus(500);
+     return
+   }
+  }
+
+    for (let i = 0; i < deliveryArray.length; i++) {
+      if (deliveryArray[i] === 'pick_up') {
+        const queryText = `SELECT * FROM tbl_artisans WHERE pickup = 'yes';`;
+        try {
+          var result = await pool.query(queryText)
+          resultArray.push(result.rows)
+       } catch (error) {
+         res.sendStatus(500);
+         return
+       }
+      } else if (deliveryArray[i] === 'delivery') {
+        const queryText = `SELECT * FROM tbl_artisans WHERE delivery = 'yes';`;
+        try {
+          var result = await pool.query(queryText)
+          resultArray.push(result.rows)
+       } catch (error) {
+         res.sendStatus(500);
+         return
+       }
+      } else if (deliveryArray[i] === 'shipping') {
+        const queryText = `SELECT * FROM tbl_artisans WHERE shipping = 'yes';`;
+        try {
+          var result = await pool.query(queryText)
+          resultArray.push(result.rows)
+       } catch (error) {
+         res.sendStatus(500);
+         return
+       }
+      }
+    }
+    const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
+    for (let i = 0; i < availabilityArray.length; i++){
+      try {
+         var result = await pool.query(queryAvail, [availabilityArray[i]])
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
     const queryMaker = `SELECT * FROM tbl_artisans WHERE maker_type_tokens @@ to_tsquery($1);`
     for (let i = 0; i < makerArray.length; i++){
       try {
-         console.log(makerArray[i]);
          var result = await pool.query(queryMaker, [makerArray[i]])
-         console.log(result.rows);
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    const queryLocation = `SELECT * FROM tbl_artisans WHERE location_tokens @@ to_tsquery($1);`
+    for (let i = 0; i < locationArray.length; i++){
+      try {
+         var result = await pool.query(queryLocation, [locationArray[i]])
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    const queryDiet = `SELECT * FROM tbl_artisans WHERE prod_cat_tokens @@ to_tsquery($1);`
+    for (let i = 0; i < dietArray.length; i++){
+      try {
+         var result = await pool.query(queryDiet, [dietArray[i]])
          resultArray.push(result.rows)
       } catch (error) {
         res.sendStatus(500);
