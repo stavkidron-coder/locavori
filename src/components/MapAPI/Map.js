@@ -123,25 +123,7 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
-          <DistanceMatrixService
-            options={{
-            destinations: store.maker.map((destinations) => {
-              const lat = Number(destinations.latitude);
-              const lng = Number(destinations.longitude);
-              return {lat , lng};
-            }),
-            origins: [{lng:-93.29471079999999, lat:44.9508563}],
-            travelMode: "DRIVING",
-            // unitSystem: "IMPERIAL",
-            }}
-            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
-              console.log(store.maker);
-                store.maker[index].distanceText = element.distance.text;
-                store.maker[index].distanceValue = element.distance.value;
-              });
-              setRenderCount(1);
-            }}
-          />
+
 
         {markers.map((marker) => (
         <>
@@ -192,6 +174,25 @@ function LocalMap(props) {
              </div>
          </InfoWindow>) : null}
          </GoogleMap>
+         <DistanceMatrixService
+            options={{
+            destinations: store.maker.map((destinations) => {
+              const lat = Number(destinations.latitude);
+              const lng = Number(destinations.longitude);
+              return {lat , lng};
+            }),
+            origins: [{lng:-93.29471079999999, lat:44.9508563}],
+            travelMode: "DRIVING",
+            // unitSystem: "IMPERIAL",
+            }}
+            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
+              console.log(store.maker);
+                store.maker[index].distanceText = element.distance.text;
+                store.maker[index].distanceValue = element.distance.value;
+              });
+              setRenderCount(1);
+            }}
+          />
          <div className='distanceMatrixSlides'>
             {renderCount === 0 ?
               null
