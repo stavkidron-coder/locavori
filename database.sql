@@ -330,6 +330,29 @@ VALUES
 (34,4,93),
 (35,4,111);
 
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Debbie',E'Fairbanks',E'',E'oakvalleycreations@gmail.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(5,E'Debbie',E'Oak Valley Creations',E'Debbie',E'Fairbanks',E'oakvalleycreations@gmail.com',E'',E'',E'','',E'Savage',E'MN',E'55378',E'USA',E'','',E'',E'',E'',E'USA',44.7647,-93.3591,E'http://www.oakvalleycreations.com/',E'','',E'','','','','',E'Maker','','farmers market, gift box company','','YES',E'YES',E'YES','',E'Before organic was a buzzword, it was a part of Debbie Fairbanks’ life. She has brought her passion and knowledge of organics to her products at Oak Valley Creations, establishing the company in 2012. Debbie offers a wide variety of products made in small batches using locally sources ingredients when ever possible. Her jellies, spices, and teas marry spice with fresh flavor. You''ll often find Debbie at local farmers markets and pop-up sales. Make sure to stop by her table and try out her full product line!',E'YES',E'YES','',E'{}','',E'{}','','','','','',E'Jellies, Jams, and Spreadables',E'http://www.oakvalleycreations.com/IMAG4928.jpg',E'',E'Seasonings, Spice blends',E'http://www.oakvalleycreations.com/flat_out_garlic.JPG',E'',E'Tea',E'http://www.oakvalleycreations.com/coffeesachetbox.JPG',E'',E'',E'','',E'',E'',E'',E'',E'YES',E'',E'',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(36,5,92),
+(37,5,93),
+(38,5,94),
+(39,5,95),
+(40,5,96),
+(41,5,98),
+(42,5,100),
+(43,5,102),
+(44,5,103),
+(45,5,104),
+(46,5,105),
+(47,5,106),
+(48,5,107),
+(49,5,108),
+(50,5,110);
 
 -- GET QUERIES
 
