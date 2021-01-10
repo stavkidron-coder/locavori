@@ -1,15 +1,34 @@
+
+
 .makerAppInput {
-    width: 300px;
+    width: 400px;
     margin-left: 0;
 }
 
 .dropdown-menu {
     height: 300px;
     overflow-y: scroll;
-  }
+}
+
+h4{
+    padding-top: 20px;
+}
+
+.makerAppGroup{
+    padding: 20px;
+}
 
 .tab-content {
     margin-left: 40px;
+}
+
+.productType{
+    margin-left: 85px;
+}
+
+.featuredProducts{
+    width: 100%;
+    margin-left: 0;
 }
 
 /* MODALS */
