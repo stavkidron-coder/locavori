@@ -133,14 +133,14 @@ function LocalMap(props) {
           position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
           onClick={() => {
             setSelected(marker);
-            console.log('ITS A SECERT TO EVERYONE',store.maker);
+            console.log('ITS A SECRET TO EVERYONE', store.maker);
           }}
           // icon for map
           icon={{
             url: iconSelect(marker),
             origin: new window.google.maps.Point(0, 0),
             anchor: new window.google.maps.Point(15, 15),
-            scaledSize: new window.google.maps.Size(30, 30),
+            scaledSize: new window.google.maps.Size(35, 35),
           }}
         />
           :
@@ -168,7 +168,7 @@ function LocalMap(props) {
                    <p>{selected.story}</p>
                    {/* {JSON.stringify(selected)} */}
                    {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
-                   <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
+                   <Button size="sm" color="link" className="infoWindowSeeMoreBtn" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)}>See More...</Button>
                  </Col>
                </Row> 
              </div>
