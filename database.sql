@@ -76,6 +76,9 @@ CREATE TABLE "tbl_artisans" (
 	"modifiedUTC" time default current_timestamp,
 	"distanceText" varchar(150),
 	"distanceValue" varchar(150),
+	"business_type_tokens" TSVECTOR,
+	"where_sold_tokens" TSVECTOR,
+	"prod_cat_tokens" TSVECTOR
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
