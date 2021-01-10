@@ -439,6 +439,107 @@ VALUES
 (95,8,15);
 
 
+--Emmas Chip Co
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Emma',E'Fisher',E'',E'emmaschipco@gmail.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(12,E'Emma Fisher',E'Emmas Chip Co',E'Emma',E'Fisher',E'emmaschipco@gmail.com',E'541-297-5643',E'',E'601 Ridgewood ave','',E'Minneapolis',E'MN',E'55403',E'USA',E'','',E'',E'',E'',E'USA',44.9632,-93.2867,E'https://emmasong34.github.io/emma-song-fisher/',E'https://www.facebook.com/songfisher','https://www.instagram.com/emsongfish/?hl=en',E'emmaschipco@gmail.com','','','','We donate 500 cases of chips to local schools each month',E'Maker','','farmers market','','',E'',E'YES','',E'Founded in the heart of Alaska, Emmas Chip Co brings the tastes of the last frontier to the lower 48.  We still make our chips the pioneer way: fried in a gold pan or baked in the midnight sun! Our chips are small batch and made with local ingredients. You can enjoy classic rustic Alaskan flavors such as Sourdough & Onion, Wild Blueberry, Balto BBQ, and Bering Sea Salt & Vinegar. Pair them with our King Salmon Dip or our Grizzly Bear Beans for a hearty snack!',E'YES',E'Yes','',E'{}','',E'{}','','','','','',E'Chips',E'https://cdn.pixabay.com/photo/2017/02/01/10/29/bag-2029481_960_720.png',
+E'',E'Cooking Sauce',E'https://cdn.pixabay.com/photo/2020/03/06/14/33/can-4907201_960_720.jpg',
+E'',E'Other Snacks ',E'https://cdn.pixabay.com/photo/2018/07/03/10/47/berries-3513547_960_720.jpg',
+E'',E'Organic and locally sourced ingredients ',E'https://cdn.pixabay.com/photo/2016/05/26/19/37/chips-potatoes-1418192_1280.jpg',
+'',E'',E'',E'',E'We offer a 10% student and teacher discount with the code PRIME',E'most unique chips north of the 49th parallel 5 years running',E'',E'https://cdn.pixabay.com/photo/2012/02/29/11/57/french-18726_960_720.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(1000,12,3),
+(1001,12,12),
+(1002,12,21),
+(1003,12,25),
+(1004,12,31),
+(1005,12,36),
+(1006,12,44),
+(1007,12,89),
+(1008,12,91),
+(1009,12,94),
+(1010,12,96),
+(1011,12,97),
+(1012,12,100),
+(1013,12,106);
+
+--Red Lake Nation Foods
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Red Lake',E'Nation',E'',E'customer.service@redlakenationfoods.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(13,E'Red Lake Nation',E'Red Lake Nation Foods',E'Red Lake',E'Nation',E'customer.service@redlakenationfoods.com',E'888-225-2108',E'',E'15550 Chippewa Ave','',E'Redby',E'MN',E'56670',E'USA',E'','',E'',E'',E'',E'USA',47.8788,-94.9084,E'https://redlakenationfoods.com/',
+E'https://www.facebook.com/Red-Lake-Nation-Foods-102707789810531/',
+'',E'customer.service@redlakenationfoods.com','','','','sales support members of the Chippewa Red Lake Nation Band',E'Farmer-grower, Maker, Forager','','grocery stores, co-ops, other company website','','no',E'no',E'YES','',E'The Red Lake Band of Chippewa, located in northern Minnesota, is the only Native American tribe in the US that grows and sells their own cultivated wild rice. Our mission is to offer unique, speciality natural foods and gift products which represent our cultural heritage, such as hand harvested wild rice, hand harvested wild fruit jellies, jam, and syrups. Sales benefit the 9600+ members of the Red Lake Nation',E'',E'syrups, grains, jams/jellies, baking mix','',E'{}','',E'coffee, tea','','','','','',E'Grains',E'https://redlakenationfoods.com/wp-lib/wp-content/uploads/2019/11/BrownWild_5lb-500x333.jpg',
+E'https://redlakenationfoods.com/product/brown-and-wild-blend75-white-25-wild/',E'Syrup',E'https://redlakenationfoods.com/wp-lib/wp-content/uploads/2019/11/Maple_Syrup-500x750.jpg',
+E'https://redlakenationfoods.com/product/maple-syrup/',E'Tea ',E'https://redlakenationfoods.com/wp-lib/wp-content/uploads/2019/11/00000IMG_00000_BURST20191127120801068_COVER-e1574885386717-500x500.jpg',
+E'https://redlakenationfoods.com/product/green-tea/',E' ',E'https://redlakenationfoods.com/wp-lib/wp-content/uploads/2019/11/who-we-are.jpg',
+'',E'',E'',E'',E'',E'',E'',E'https://redlakenationfoods.com/wp-lib/wp-content/uploads/2019/11/who-we-are.jpg',True,True,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(1014,13,1),
+(1015,13,2),
+(1016,13,3),
+(1017,13,10),
+(1018,13,11),
+(1019,13,14),
+(1020,13,15),
+(1021,13,21),
+(1023,13,26),
+(1024,13,32),
+(1025,13,35),
+(1026,13,76),
+(1027,13,78),
+(1028,13,97);
+
+--Wild Country Maple Syrup
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Greg',E'Nichols',E'',E'info@wildcountrymaple.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(14,E'Wild Country Maple Products',E'Wild Country Maple Products',E'Greg',E'Nichols',E'info@wildcountrymaple.com',E'218-663-8010',E'',E'191 Barker Lake rd','',E'Lusten',E'MN',E'55612',E'USA',E'','',E'',E'',E'',E'USA',47.7035,-90.7166,E'https://www.wildcountrymaple.com/',
+E'https://www.facebook.com/wildcountrymaple/',
+'https://www.instagram.com/wildcountrymapleproducts/',
+E'info@wildcountrymaple.com','','','','',E'Farmer-grower, Forager','','grocery stores, co-ops, other company website','','yes',E'no',E'YES','',E'Founders Michael and Carrie Baker fell in love with the North Shore and decided to buy a little maple farm in Lutsen, Minnesota called Wild Country. Tasting Wild Countrys 100% organic maple products will make you feel like youre standing over Lake Superior in the middle of Fall! Their syrups and caramels give a true taste of Minnesota found in nature and loved by all.',E'',E'syrups, soft candy, pancake mix','',E'{}','',E'{}','','','','','',E'Syrups',E'https://static.wixstatic.com/media/d6921d_26a7f140dad14b72bce2c16057041536~mv2.png/v1/fill/w_520,h_420,al_c,q_90,usm_0.66_1.00_0.01/d6921d_26a7f140dad14b72bce2c16057041536~mv2.webp',
+E'https://www.wildcountrymaple.com/product-page/maple-syrup-in-traditional-glass',
+E'Soft Candy',E'https://static.wixstatic.com/media/d6921d_6f60641c81f441f4b860638f513fbe13~mv2.jpg/v1/fill/w_520,h_420,al_c,q_85,usm_0.66_1.00_0.01/d6921d_6f60641c81f441f4b860638f513fbe13~mv2.webp',
+E'https://www.wildcountrymaple.com/product-page/maple-candy-1lb',
+E'Pancake Mix ',E'https://static.wixstatic.com/media/d6921d_89f229c2d98f48719efa2103d83767e3~mv2.jpg/v1/fill/w_520,h_420,al_c,q_85,usm_0.66_1.00_0.01/d6921d_89f229c2d98f48719efa2103d83767e3~mv2.webp',
+ 
+E'https://www.wildcountrymaple.com/product-page/pancake-mix',E' ',E'https://static.wixstatic.com/media/866962_7a12a49fe93d4f3b88143789ef2e03c8~mv2_d_4500_3000_s_4_2.jpg/v1/crop/x_1168,y_237,w_3332,h_2616/fill/w_816,h_643,al_c,q_85,usm_0.66_1.00_0.01/866962_7a12a49fe93d4f3b88143789ef2e03c8~mv2_d_4500_3000_s_4_2.webp',
+ 
+'',E'',E'',E'https://static.wixstatic.com/media/d6921d_368212e72c6c4d29b8b6256d944baa9f~mv2.jpg/v1/fill/w_577,h_433,al_c,q_80,usm_0.66_1.00_0.01/WildCountrySign.webp',
+ 
+E'',E'',E'',E'https://static.wixstatic.com/media/d6921d_368212e72c6c4d29b8b6256d944baa9f~mv2.jpg/v1/fill/w_577,h_433,al_c,q_80,usm_0.66_1.00_0.01/WildCountrySign.webp',True,True,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(1029,14,1),
+(1030,14,2),
+(1031,14,3),
+(1032,14,10),
+(1033,14,11),
+(1034,14,14),
+(1035,14,17),
+(1036,14,20),
+(1037,14,21),
+(1038,14,22),
+(1039,14,32),
+(1040,14,34),
+(1041,14,42),
+(1042,14,97),
+(1043,14,99);
+
+
+
+
+
+
 -- GET QUERIES
 
 -- GETS ALL ARTISANS AND ALL OF THEIR CATEGORIES
