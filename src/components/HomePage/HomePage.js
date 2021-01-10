@@ -54,7 +54,7 @@ class HomePage extends Component {
 
 
         <div className="filterMapBody">
-
+        
           <Row>
             <Col xs="12" lg="4" xl="3" className="filterContainer">
               <h2>Filters</h2>

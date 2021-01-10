@@ -33,6 +33,12 @@ const DesktopNav = (props) => {
     <div>
         <Navbar className="topNav" light expand="md">
             <Nav className="ml-auto" navbar>
+              
+              {props.store.user.admin && (
+                <NavItem className="nav-item">
+                  <Link className="nav-link loginOut" to={loginLinkData.path} onClick={toggle}>Admin</Link>
+                </NavItem>
+              )}
                 <NavItem className="nav-item">
                     <Link className="nav-link loginOut" to={loginLinkData.path} onClick={toggle}>{loginLinkData.text}</Link>
                 </NavItem>
