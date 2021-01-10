@@ -22,7 +22,7 @@ const AcceptToolTip = (props) => {
       <div>
         <Button
           id="acceptBtn"
-          color="outline-success"
+          className="acceptBtn"
           onClick={()=> approveMaker(props.makerId)}
         >
            {thumbsUp}

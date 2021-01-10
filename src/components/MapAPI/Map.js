@@ -1,12 +1,16 @@
 import React from 'react';
-import {GoogleMap, useLoadScript, Marker, InfoWindow} from "@react-google-maps/api";
+import {GoogleMap, useLoadScript, Marker, InfoWindow, DistanceMatrixService} from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {Button, Col, Container, Row} from 'reactstrap';
+
+// import FilterDropdown from '../FilterDropdown/FilterDropdown';
+import {Button, Col, Container, Row, Spinner} from 'reactstrap';
+
 import {useSelector} from 'react-redux';
+import MakerCard from '../HomePage/MakerCard/MakerCard'
 
 // Styles Imports
 import './Map.css';
@@ -55,44 +59,33 @@ function LocalMap(props) {
   const store = useSelector(store => store);
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
-
-
-
+  const [origin, setOrigin] = React.useState([]);
+  // const [distanceSlides, setDistanceSlides] = React.useState([]);
+  const [renderCount, setRenderCount] = React.useState(0)
 
   //Checks DB for different product types to display specific pins on map
- function iconSelect (marker) {
-  if (marker.product_type_food !== '{}') {
-    console.log('packaged pin')
-    return packagedPin
+  function iconSelect (marker) {
+    if (marker.product_type_food !== '{}') {
+      console.log('packaged pin')
+      return packagedPin
+    }
+    else if (marker.product_type_fresh !== '{}') {
+      console.log('fresh pin')
+      return freshPin
+    }
+    else if (marker.product_type_bev !== '{}'){
+      console.log('drink pin')
+      return drinkPin
+    }
+    else
+      return 'no category to display';
   }
-  else if (marker.product_type_fresh !== '{}') {
-    console.log('fresh pin')
-    return freshPin
-  }
-  else if (marker.product_type_bev !== '{}'){
-    console.log('drink pin')
-    return drinkPin
-  }
-  else
-    return 'no category to display';
-}
-
-
-
- 
-
-  
-
-
-
-
-
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position)
+        console.log(position);
         panToLocate({
           lat: position.coords.latitude,
           lng: position.coords.longitude,
@@ -104,6 +97,7 @@ function LocalMap(props) {
   }, []);
   
   const panToLocate = React.useCallback(({ lat, lng }) => {
+    console.log("coords",lat, lng)
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(14);
   }, []);
@@ -114,12 +108,13 @@ function LocalMap(props) {
   }, []);
 
   if (loadError) return "Error loading maps";
-  if (!isLoaded) return "Loading Maps...";
+  if (!isLoaded) return <Spinner color="primary"/>;
 
   return (
     <div className="mapAPI">
       <Locate panToLocate={panToLocate} />
       <Search panToSearch={panToSearch} />
+      
       <div className="map">
         <GoogleMap 
           mapContainerStyle={mapContainerStyle} 
@@ -128,59 +123,101 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
+
+
         {markers.map((marker) => (
+        <>
+          {marker.approved_maker ? 
           <Marker
-           key={`${marker.latitude}-${marker.longitude}`}
-           position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-           onClick={() => {
-             setSelected(marker);
-           }}
-
-
-
-           // icon for map
-           icon={{ 
-             url: iconSelect(marker),
-             origin: new window.google.maps.Point(0, 0),
-             anchor: new window.google.maps.Point(15, 15),
-             scaledSize: new window.google.maps.Size(30, 30),
-           }}
-         />
-
-
-         
+          key={`${marker.latitude}-${marker.longitude}`}
+          position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+          onClick={() => {
+            setSelected(marker);
+            console.log('ITS A SECERT TO EVERYONE',store.maker);
+          }}
+          // icon for map
+          icon={{
+            url: iconSelect(marker),
+            origin: new window.google.maps.Point(0, 0),
+            anchor: new window.google.maps.Point(15, 15),
+            scaledSize: new window.google.maps.Size(30, 30),
+          }}
+        />
+          :
+          null
+        }
+          
+        </>
        ))}
 
-{/* INFO WINDOW */}
-       {selected ? (
-         
-        <InfoWindow
-           position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
-           onCloseClick={() => {
-             setSelected(null);
-           }}>
-            <div className='infoWindow'>
-              <Row>
-                <Col xs="3">
-                  <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
-                </Col>
+        {/* INFO WINDOW */}
+        {selected ? (
+         <InfoWindow
+            position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}>
+             <div className='infoWindow'>
+               <Row>
+                 <Col xs="3">
+                   <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
+                 </Col>
+ 
+                 <Col xs="9">
+                   <h2>{selected.business_name}</h2>
+                   <p>{selected.story}</p>
+                   {/* {JSON.stringify(selected)} */}
+                   {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
+                   <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
+                 </Col>
+               </Row> 
+             </div>
+         </InfoWindow>) : null}
+         </GoogleMap>
+         <DistanceMatrixService
+            options={{
+            destinations: store.maker.map((destinations) => {
+              const lat = Number(destinations.latitude);
+              const lng = Number(destinations.longitude);
+              return {lat , lng};
+            }),
+            origins: [{lng:-93.29471079999999, lat:44.9508563}],
+            travelMode: "DRIVING",
+            // unitSystem: "IMPERIAL",
+            }}
+            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
+              console.log(store.maker);
+                store.maker[index].distanceText = element.distance.text;
+                store.maker[index].distanceValue = element.distance.value;
+              });
+              setRenderCount(1);
+            }}
+          />
+         <div className='distanceMatrixSlides list-body'>
+          <br/>
+         <h2>Local Makers Near You</h2>
+         <hr/>
+            {renderCount === 0 ?
+              null
+              :
+              store.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
+                return  (
+                  <>
+                <div className='matrixSlide'>
 
-                <Col xs="9">
-                  <h2>{selected.business_name}</h2>
-                  <p>{selected.story}</p>
-                  {/* {JSON.stringify(selected)} */}
-                  {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
-                  <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
-                </Col>
-              </Row> 
-            </div>
-        </InfoWindow>
-
-          ) : null}
-        </GoogleMap>
-      </div>
-    </div>
-  );
+                {maker.approved_maker ?
+                    <MakerCard maker={maker} key={maker.id} fav={props.store.SF}/>
+                :
+                null
+                }
+                </div>
+                </>
+              )})
+            }
+         </div>
+       </div>
+     </div>
+   );
 }
 
 // Button on DOM, upon click will take the user to their current location based on their GeoLocation
@@ -229,6 +266,7 @@ function Search({panToSearch}) {
         const results = await getGeocode({address});
         const {lat, lng} = await getLatLng(results[0]);
         console.log(lat, lng);
+        // setOrigin(lat, lng);
         panToSearch ({lat, lng});
       }catch(error) {
         console.log("ERROR!!!");

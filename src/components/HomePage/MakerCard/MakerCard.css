@@ -3,6 +3,10 @@
     border-color: rgb(5,103,54);
 }
 
+.distance {
+    margin-left: 19px;
+}
+
 .ListViewHeader{
     background-color: rgb(5,103,54);
     color: white;
@@ -68,7 +72,7 @@
 
 /* FAVORITE BUTTON MODAL */
 
-.favModalHeader {
+.modalHeader {
     /* background-color: rgb(122,172,85) !important; */
     background-color: rgb(5,103,54) !important;
     color: white;
@@ -92,6 +96,6 @@
     border-color: rgb(5,103,54);
 }
 
-.favModalFooter {
+.modalFooter {
     border-top: none;
 }

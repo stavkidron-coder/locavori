@@ -22,7 +22,7 @@ const DeclineToolTip = (props) => {
     <div>
       <Button
         id="declineBtn"
-        color="outline-danger"
+        className="declineBtn"
         onClick={() => denyMaker(props.makerId)}
       >
         {thumbsDown}

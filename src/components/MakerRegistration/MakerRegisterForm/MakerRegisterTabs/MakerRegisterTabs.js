@@ -24,6 +24,7 @@ const MakerRegisterTabs = (props) => {
             Business
           </NavLink>
         </NavItem>
+
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '2' })}
@@ -32,6 +33,7 @@ const MakerRegisterTabs = (props) => {
             Products
           </NavLink>
         </NavItem>
+
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '3' })}
@@ -41,6 +43,7 @@ const MakerRegisterTabs = (props) => {
           </NavLink>
         </NavItem>
       </Nav>
+
         <TabContent activeTab={activeTab}>
             <TabPane tabId="1">
                 <MakerRegisterBusinessTab/>
