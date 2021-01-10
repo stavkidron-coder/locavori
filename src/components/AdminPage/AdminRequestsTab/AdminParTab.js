@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import './AdminParTab.css';
 import AcceptBtn from './AdminPARToolTips/ApproveToolTip';
 import DeclineBtn from './AdminPARToolTips/DeclineToolTip';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Container, Button, Row, Col } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardHeader, CardText, Container, Button, Row, Col, CardFooter } from 'reactstrap';
 
 
 
@@ -45,42 +45,46 @@ class AdminPARTab extends Component {
                   {maker.pending_maker ?
 
                     <Col xs="12" md="6" xl="4">
-                      <Card key={maker.id} className="PARCard">
+                      <Card key={maker.id} className="adminCards">
 
-                        <CardBody>
+                        <CardHeader className="cardHeader">
                           <CardTitle tag="h5">{maker.business_name}</CardTitle>
-                          <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
-                        </CardBody>
+                          <CardSubtitle tag="h6" className="mb-2">{maker.product_type_one}</CardSubtitle>
+                        </CardHeader>
 
-                        <img className="PendingMakerImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
+                        <img className="pendingMakerImg" src={maker.owner_img} alt={maker.business_name}/>
 
                         <CardBody>
                           <Row>
                             <Col xs="12">
-                              <CardText>Products:</CardText>
-                              <CardText>{maker.product_type_one} <br/> {maker.product_type_two}<br/>{maker.product_type_three}</CardText>
+                              <CardText>
+                                <h5>Products:</h5>
+                                <hr/>
+                                {maker.product_type_one}
+                                <br/>
+                                {maker.product_type_two}
+                                <br/>
+                                {maker.product_type_three}
+                              </CardText>
                             </Col>
-                          </Row>
-                          <br/>
-                          <Row>
-                            <Col xs="3">
-                                  <AcceptBtn className="acceptDeclineBtns" makerId={maker.profile_id} />
-                            </Col>
-
-                            <Col xs="3">
-                                <DeclineBtn className="acceptDeclineBtns" makerId= {maker.profile_id}/>
-                            </Col>
-
-                            <Col xs="6">
-                                <Button className="viewProfileBtn" onClick={() => this.ViewProfile(maker.profile_id)}> 
-                                View Page
-                                </Button>
-                            </Col>
-                            
-                            
                           </Row>
                         </CardBody>
+                          <CardFooter className="cardFooter">
+                          <Row>
+                            <Col xs="6">
+                              <Button className="viewProfileBtn" onClick={() => this.ViewProfile(maker.profile_id)}> 
+                                View Page
+                              </Button>
+                            </Col>
 
+                            <Col xs="3">
+                            <AcceptBtn className="acceptBtn" makerId={maker.profile_id} />
+                            </Col>
+                            <Col xs="3">
+                            <DeclineBtn className="declineBtn" makerId= {maker.profile_id}/>
+                            </Col>
+                          </Row>
+                          </CardFooter>
                       </Card>
                     </Col>
                     :

@@ -1,8 +1,6 @@
-.MakerCard {
+/* .MakerCard {
     width: 300px;
     margin: 20px;
-    /* height: 700px; */
-    /* justify-content: space-evenly; */
 }
 
 .MakerTabBody {
@@ -11,5 +9,24 @@
 }
 .MakerCardImg{
     width: 100%;
-} 
+}
 
+.makerViewProfileBtn {
+    background-color: rgb(122,172,85);
+    border: none;
+    transition: 0.3s;
+}
+    
+.makerViewProfileBtn:hover {
+    background-color: rgb(5,103,54);
+    border: none;
+    }
+
+.cardHeader {
+    background-color: rgb(122,172,85);
+    color: white;
+}
+
+.cardFooter {
+    border-color: rgb(197, 208, 190);
+} */
