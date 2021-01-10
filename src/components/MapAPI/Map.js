@@ -193,7 +193,10 @@ function LocalMap(props) {
               setRenderCount(1);
             }}
           />
-         <div className='distanceMatrixSlides'>
+         <div className='distanceMatrixSlides list-body'>
+          <br/>
+         <h2>Local Makers Near You</h2>
+         <hr/>
             {renderCount === 0 ?
               null
               :
@@ -201,8 +204,9 @@ function LocalMap(props) {
                 return  (
                   <>
                 <div className='matrixSlide'>
+
                 {maker.approved_maker ?
-                    <MakerCard maker={maker} key={maker.id} />
+                    <MakerCard maker={maker} key={maker.id} fav={props.store.SF}/>
                 :
                 null
                 }

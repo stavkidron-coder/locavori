@@ -18,65 +18,81 @@ class ProductFeatured extends Component{
                 <h4>Featured Products</h4>
                 <hr/>
 
-                <FormGroup>
+                <FormGroup className="makerAppGroup">
 
                     <Row>
                         <Col>
-                            <Label>Product 1 (link to an image of your product)
-                                <Input type="text" placeholder="Product Image URL" onChange={(event) => this.handleChange(event, 'product_one_image')}></Input>
-                            </Label>
-                        </Col>
-
-                        <Col>
-                            <Label>Product Type (from Product Type list above)
-                                <Input type="text" placeholder="Product Type " onChange={(event) => this.handleChange(event, 'product_one_type')}></Input>
-                            </Label>
-                        </Col>
-
-                        <Col>
-                            <Label>Product URL (link to your product on your website)
-                                <Input type="text" placeholder="Product URL" onChange={(event) => this.handleChange(event, 'product_one_url')}></Input>
-                            </Label>
+                            <h5>Product 1</h5> 
+                            <p>(link to an image of your product)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product Image URL" onChange={(event) => this.handleChange(event, 'product_one_image')}></Input>
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Label>Product 2 (link to an image of your product)
-                                <Input type="text" placeholder="Product Image URL" onChange={(event) => this.handleChange(event, 'product_two_image')}></Input>
-                            </Label>
-                        </Col>
-
-                        <Col>
-                            <Label>Product Type (from Product Type list above)
-                                <Input type="text" placeholder="Product Type " onChange={(event) => this.handleChange(event, 'product_two_type')}></Input>
-                            </Label>
-                        </Col>
-
-                        <Col>
-                            <Label>Product URL (link to your product on your website)
-                                <Input type="text" placeholder="Product URL" onChange={(event) => this.handleChange(event, 'product_two_url')}></Input>
-                            </Label>
+                            <h5>Product Type</h5> 
+                            <p>(from Product Type list above)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product Type " onChange={(event) => this.handleChange(event, 'product_one_type')}></Input>
                         </Col>
                     </Row>
 
                     <Row>
                         <Col>
-                            <Label>Product 3 (link to an image of your product)
-                                <Input type="text" placeholder="Product Image URL" onChange={(event) => this.handleChange(event, 'product_three_image')}></Input>
-                            </Label>
+                            <h5>Product URL</h5> 
+                            <p>(link to your product on your website)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product URL" onChange={(event) => this.handleChange(event, 'product_one_url')}></Input>
                         </Col>
+                    </Row>
+                
+                <hr/>
 
+                    <Row>
                         <Col>
-                            <Label>Product Type (from Product Type list above)
-                                <Input type="text" placeholder="Product Type " onChange={(event) => this.handleChange(event, 'product_three_type')}></Input>
-                            </Label>
+                            <h5>Product 2 </h5>
+                            <p>(link to an image of your product)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product Image URL" onChange={(event) => this.handleChange(event, 'product_two_image')}></Input>
                         </Col>
+                    </Row>
 
+                    <Row>
                         <Col>
-                            <Label>Product URL (link to your product on your website)
-                                <Input type="text" placeholder="Product URL" onChange={(event) => this.handleChange(event, 'product_three_url')}></Input>
-                            </Label>
+                            <h5>Product Type</h5> 
+                            <p>(from Product Type list above)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product Type " onChange={(event) => this.handleChange(event, 'product_two_type')}></Input>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <h5>Product URL</h5> 
+                            <p>(link to your product on your website)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product URL" onChange={(event) => this.handleChange(event, 'product_two_url')}></Input>
+                        </Col>
+                    </Row>
+
+                    <hr/>
+
+                    <Row>
+                        <Col>
+                            <h5>Product 3 </h5>
+                            <p>(link to an image of your product)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product Image URL" onChange={(event) => this.handleChange(event, 'product_three_image')}></Input>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <h5>Product Type </h5>
+                            <p>(from Product Type list above)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product Type " onChange={(event) => this.handleChange(event, 'product_three_type')}></Input>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <h5>Product URL</h5>
+                            <p> (link to your product on your website)</p>
+                                <Input className="featuredProducts" type="text" placeholder="Product URL" onChange={(event) => this.handleChange(event, 'product_three_url')}></Input>
                         </Col>
                     </Row>
 

@@ -26,7 +26,7 @@ const ProductTypeFresh = (props) => {
       }
 
   return (
-    <div>
+    <div className="productType">
       <Input type="radio" name="fresh" id="yes" onChange={(event) => toggle(event)} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>

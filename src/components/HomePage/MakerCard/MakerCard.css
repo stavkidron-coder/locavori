@@ -3,6 +3,10 @@
     border-color: rgb(5,103,54);
 }
 
+.distance {
+    margin-left: 19px;
+}
+
 .ListViewHeader{
     background-color: rgb(5,103,54);
     color: white;

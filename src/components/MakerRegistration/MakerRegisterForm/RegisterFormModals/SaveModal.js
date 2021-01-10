@@ -12,7 +12,7 @@ const SaveModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>Save Progress</Button>
+      <Button onClick={toggle} className="modalBtns">Save Progress</Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle} className="modalHeader">Application Saved</ModalHeader>
         <ModalBody>

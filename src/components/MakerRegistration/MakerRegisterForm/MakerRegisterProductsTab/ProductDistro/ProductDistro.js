@@ -25,13 +25,13 @@ class ProductDistro extends Component {
             <hr/>
             <h4>Product Distribution</h4>
             <hr/>
-            <FormGroup>
+            <FormGroup className="makerAppGroup">
 
-                <p>Where are your products sold now?*</p>
+                <h5>Where are your products sold now? *</h5>
                 <p>select all that apply</p>
 
                     <Row>
-                        <Col>
+                        <Col sm={{ size: 5, offset: 1 }}>
                             <Label check>
                                 <Input type="checkbox" id="grocery" onClick={(event) => this.handleChange(event)}/>
                                 Local Grocery Stores
@@ -63,7 +63,7 @@ class ProductDistro extends Component {
                             </Label>
                         </Col>
                    
-                        <Col>
+                        <Col sm={{ size: 5, offset: 1 }}>
                             <Label check>
                                 <Input type="checkbox" id="retail" onClick={(event) => this.handleChange(event)}/>
                                 Retail Store, non-grocery
@@ -103,41 +103,45 @@ class ProductDistro extends Component {
 
                     <Row>
                         <Col>
-                            <p>May customers pick up products?*</p>
-                            <Label check>
+                            <h5>May customers pick up products? *</h5>
+                            <Label check sm={{ size: 1, offset: 1 }}>
                                 <Input type="radio" name="pick_up" id="yes" onChange={(event) => this.handleRadio(event)}/>
                                 Yes
                             </Label>
-                            <br/>
-                            <Label check>
+                            
+                            <Label check sm="1">
                                 <Input type="radio" name="pick_up" id="no" onChange={(event) => this.handleRadio(event)}/>
                                 No
                             </Label>
                             <br/>
                         </Col>
+                    </Row>
 
+                    <Row>
                         <Col>
-                            <p>Do you deliver?*</p>
-                            <Label check>
+                            <h5>Do you deliver? *</h5>
+                            <Label check sm={{ size: 1, offset: 1 }}>
                                 <Input type="radio" name="delivery" id="yes" onChange={(event) => this.handleRadio(event)}/>
                                 Yes
                             </Label>
-                            <br/>
-                            <Label check>
+                            
+                            <Label check sm="1">
                                 <Input type="radio" name="delivery" id="no" onChange={(event) => this.handleRadio(event)}/>
                                 No
                             </Label>
                             <br/>
                         </Col>
+                    </Row>
 
+                    <Row>
                         <Col>
-                            <p>Do you ship your products?*</p>
-                            <Label check>
+                            <h5>Do you ship your products? *</h5>
+                            <Label check sm={{ size: 1, offset: 1 }}>
                                 <Input type="radio" name="shipping" id="yes" onChange={(event) => this.handleRadio(event)}/>
                                 Yes
                             </Label>
-                            <br/>
-                            <Label check>
+                           
+                            <Label check sm="1">
                                 <Input type="radio" name="shipping" id="no" onChange={(event) => this.handleRadio(event)}/>
                                 No
                             </Label>

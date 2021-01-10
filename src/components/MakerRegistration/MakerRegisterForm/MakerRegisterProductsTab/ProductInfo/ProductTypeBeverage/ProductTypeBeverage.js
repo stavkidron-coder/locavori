@@ -26,7 +26,7 @@ const ProductTypeBeverage = (props) => {
   }
 
   return (
-    <div>
+    <div className="productType">
       <Input type="radio" name="beverage" id="yes" onChange={(event) => toggle(event)} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
@@ -34,7 +34,7 @@ const ProductTypeBeverage = (props) => {
 
                     <CardBody>
                         <p>select all that apply</p>
-                        <Label check>
+                        <Label check >
                             <Input type="checkbox" id="schrubs_switchel" onClick={(event) => handleChange(event)}/>
                             Schrubs or Switchel
                         </Label>

@@ -37,30 +37,32 @@ class BusinessSpecs extends Component {
             <h4>Web Presence</h4>
             <hr/>
             
-              <FormGroup>
+              <FormGroup className="makerAppGroup">
 
                 <Row>
                   <Col>
                     <Label>Website
-                    <Input type="text" placeholder="URl" onChange={(event) => this.handleChange(event, 'website')}></Input>
+                    <Input className="makerAppInput" type="text" placeholder="URL" onChange={(event) => this.handleChange(event, 'website')}></Input>
                     </Label>
                   </Col>
 
                   <Col>
                     <Label>Facebook
-                    <Input type="text" placeholder="URL" onChange={(event) => this.handleChange(event, 'facebook')}></Input>
+                    <Input className="makerAppInput" type="text" placeholder="URL" onChange={(event) => this.handleChange(event, 'facebook')}></Input>
                     </Label>
                   </Col>
+                  </Row>
 
+                  <Row>
                   <Col>
                     <Label>Instagram
-                    <Input type="text" placeholder="URL" onChange={(event) => this.handleChange(event, 'instagram')}></Input>
+                    <Input className="makerAppInput" type="text" placeholder="URL" onChange={(event) => this.handleChange(event, 'instagram')}></Input>
                     </Label>
                   </Col>
 
                   <Col>
                     <Label>Public Email Address
-                    <Input type="text" placeholder="" onChange={(event) => this.handleChange(event, 'public_email')}></Input>
+                    <Input className="makerAppInput" type="text" placeholder="" onChange={(event) => this.handleChange(event, 'public_email')}></Input>
                     </Label>
                   </Col>
                 </Row>
@@ -72,18 +74,18 @@ class BusinessSpecs extends Component {
             <h4>Business License</h4>
             <hr/>
 
-              <FormGroup>
+              <FormGroup className="makerAppGroup">
                 
-                <Label>Do you have a business food/liquor license that allows you to sell to the public?*</Label>
+                <Label className="h5">Do you have a business food/liquor license that allows you to sell to the public? *</Label>
                   <Row>
-                    <Col>
+                    <Col sm={{ size: 5, offset: 1 }}>
                       <Label check>
                         <Input type="checkbox" id="commercial" onChange={(event) => this.handleChangeLicense(event)}/>
                           Commercial Food License (I can sell through resellers)
                       </Label>
                     </Col>
 
-                    <Col>
+                    <Col sm={{ size: 5, offset: 1 }}>
                       <Label check>
                         <Input type="checkbox" id="alcohol" onChange={(event) => this.handleChangeLicense(event)}/>
                           Commercial Alcohol License
@@ -92,14 +94,14 @@ class BusinessSpecs extends Component {
                   </Row>
 
                   <Row>
-                    <Col>
+                    <Col sm={{ size: 5, offset: 1 }}>
                       <Label check>
                         <Input type="checkbox" id="cottage" onChange={(event) => this.handleChangeLicense(event)}/>
                         Cottage/Pickle Law License (I have a limited license)
                       </Label>
                     </Col>
 
-                    <Col>
+                    <Col sm={{ size: 5, offset: 1 }}>
                       <Label check>
                         <Input type="checkbox" id="other" onChange={(event) => this.handleChangeLicense(event)}/>
                         Other Type of License 
@@ -111,7 +113,7 @@ class BusinessSpecs extends Component {
 
                   <Row>
                     <Col>
-                      <Label>What State/Province is your license issued from and what is your license # and type of license?</Label>
+                      <Label className="h5">What State/Province is your license issued from and what is your license # and type of license?</Label>
                         <Input type="text" placeholder="" onChange={(event) => this.handleChange(event, 'license_id_state')}></Input>
                     </Col>
                   </Row>
@@ -122,12 +124,12 @@ class BusinessSpecs extends Component {
             <h4>Type of Business</h4>
             <hr/>
 
-              <FormGroup>
-                <Label>What type of business describes yours?*</Label>
+              <FormGroup className="makerAppGroup">
+                <Label className="h5">What type of business describes yours? *</Label>
                 <p>select all that apply</p>
-                  <Row>
 
-                    <Col>
+                  <Row>
+                    <Col sm={{ size: 5, offset: 1 }}>
                       <Label check>
                         <Input type="checkbox" id="farmer" onChange={(event) => this.handleChangeType(event)}/>
                         Farmer-Grower
@@ -159,7 +161,7 @@ class BusinessSpecs extends Component {
                       </Label>
                     </Col>
 
-                    <Col>
+                    <Col sm={{ size: 5, offset: 1 }}>
                         <br/>
                       <Label check>
                         <Input type="checkbox" id="cidery" onChange={(event) => this.handleChangeType(event)}/>

@@ -11,7 +11,7 @@ import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
 import DietaryRestrictions from '../FilterOptions/DietaryRestrictions';
 // MAP & LIST
 import Map from './MapView/MapView';
-import List from './ListView/ListView';
+// import List from './ListView/ListView';
 // NAVBAR
 import HomeNav from '../Navbars/HomeNav';
 // CSS
@@ -73,10 +73,7 @@ class HomePage extends Component {
               <h2>Find Local Makers</h2>
               <hr/>
               <Map/>
-              <br/>
-              <h2>Local Makers Near You</h2>
-              <hr/>
-              <List/>
+              {/* <List/> */}
             </Col>
           </Row>
         </div>

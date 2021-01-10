@@ -18,12 +18,12 @@ class ProductCategories extends Component {
     render(){
         return(
             <>
-            <FormGroup>
-                    <h6>Which categories do your products fit into?</h6>
+            <FormGroup className="makerAppGroup">
+                    <h5>Which categories do your products fit into?</h5>
                     <p>Select all that apply</p>
 
                     <Row>
-                        <Col>
+                        <Col sm={{ size: 5, offset: 1 }}>
                             
                             <Label>
                                 <Input onClick={(event) => this.handleChange(event)} id="snack" type="checkbox"/>
@@ -86,7 +86,7 @@ class ProductCategories extends Component {
                             </Label>
                         </Col>
 
-                        <Col>
+                        <Col sm={{ size: 5, offset: 1 }}>
                             <Label>
                                 <Input onClick={(event) => this.handleChange(event)} id="handmade" type="checkbox"/>
                                 Handmade

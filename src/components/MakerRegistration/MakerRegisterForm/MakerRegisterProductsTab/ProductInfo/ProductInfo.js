@@ -23,15 +23,15 @@ class ProductInfo extends Component {
             <>
             <h4>Availability</h4>
             <hr/>
-                <FormGroup>
+                <FormGroup className="makerAppGroup">
                     <Col>
-                        <p>Is your product available year round or limited availability?*</p>
-                        <Label check>
+                        <h5>Is your product available year round or limited availability?*</h5>
+                        <Label check sm={{ size: 2, offset: 1 }}>
                             <Input type="radio" name="availability" id="always" onChange={(event) => this.handleRadio(event)}/>
                             Available All Year
                         </Label>
-                        <br></br>
-                        <Label check>
+                        
+                        <Label check sm="2">
                             <Input type="radio" name="availability" id="limited" onChange={(event) => this.handleRadio(event)}/>
                             Limited Availability
                         </Label>
@@ -42,47 +42,51 @@ class ProductInfo extends Component {
             
             <h4>Product Types</h4>
             <hr/>
-                <FormGroup>
+                <FormGroup className="makerAppGroup">
                     <Col>
-                        <p>Do you have any prepared/packaged, shelf-stable, or refrigerated food product types that apply to your offerings?*</p>
+                        <h5>Do you have any prepared/packaged, shelf-stable, or refrigerated food product types that apply to your offerings? *</h5>
                         {/* selecting yes opens dropdown card */}
                         <ProductTypePrepared/>
-                        <br></br>
+                        <br/>
                     </Col>
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup className="makerAppGroup">
                     <Col>
-                        <p>Do you have any fresh food product types that you grow/raise?*</p>
+                        <h5>Do you have any fresh food product types that you grow/raise? *</h5>
                         {/* selecting yes opens dropdown card */}
                         <ProductTypeFresh/>
-                        <br></br>
+                        <br/>
                     </Col>
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup className="makerAppGroup">
                     <Col>
-                        <p>Do you have any beverage product types that apply to your offerings?*</p>
+                        <h5>Do you have any beverage product types that apply to your offerings? *</h5>
                         {/* selecting yes opens dropdown card */}
                        <ProductTypeBeverage/>
-                        <br></br>
+                        <br/>
                     </Col>
                 </FormGroup>
 
                 <br></br>
                 {/* checklist in ProductCategories.js */}
                 <ProductCategories/>
-                <br></br>
-                <FormGroup>
-                    <h6>What are a few of your specialties?</h6>
+                <br/>
+                <FormGroup className="makerAppGroup">
+                    <h5>What are a few of your specialties?</h5>
                         <p>Flavors, best-sellers, etc.</p>
                             <Input type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'specialties')}></Input>
 
-                    <h6>List any related awards you have won or been a finalist for:</h6>
+                    <br/>
+
+                    <h5>List any related awards you have won or been a finalist for:</h5>
                         <p>Separate each item with a comma</p>
                             <Input type="text" placeholder="For example: MN State Fair grand champion" onChange={(event) => this.handleChange(event, 'awards')}></Input>
 
-                    <h6>What makes your products unique?</h6>
+                    <br/>
+
+                    <h5>What makes your products unique?</h5>
                         <p>We love to hear this!</p>
                             <Input type="text" placeholder="This will be displayed" onChange={(event) => this.handleChange(event, 'unique')}></Input>
                 </FormGroup>
