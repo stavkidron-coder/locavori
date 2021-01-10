@@ -280,7 +280,7 @@ VALUES
 (E'Grandmama',E'Gran',E'2020-12-16',E'grandmasDeal@thatthing.com',E'$2a$10$8BathSJ7mViwtBS3/xLqI.0xGfQokO9DV7yhbl.4my/UGF/pRyRc6',E'2020-12-17 18:38:28.710877');
 INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
 VALUES
-(2,E'Kimberly',E'Grandma\'s Gourmets',E'Kimberly',E'Olson',E'grandmasss@gmail.com',E'324-203-1234',E'423-234-2049',E'2610 YH Hanson Ave.','',E'Albert Lea',E'MN',E'56007',E'USA',E'2610 YH Hanson Ave.','',E'Albert Lee',E'MN',E'56007',E'USA',43.68273,-93.34812,E'https://www.grandmasgourmets.com/',E'https://www.facebook.com/grandmaskim','',E'grandmas.gourmets@gmail.com','','','','',E'Baked Good','','','','','','','',E'Nothing beats Grans cookies, and bars',E'YES',E'{}','',E'YES','',E'{}','','','','','',E'Cookie',E'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg',E'https://www.grandmasgourmets.com/',E'Bars',E'https://chocolatecoveredkatie.com/wp-content/uploads/2018/06/Easy-Chocolate-Fudge-Recipe-2-Ingredients-500x375.jpg',E'https://www.grandmasgourmets.com/',E'Cake',E'https://www.pamperedchef.com/iceberg/com/recipe/1125065-lg.jpg',E'https://www.grandmasgourmets.com/',E'Yeah',E'https://frontiersinblog.files.wordpress.com/2020/04/frontiers-psychology-free-from-dance-alternative-interaction-grandchildren-grandparents.jpg?w=1024','',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'https://frontiersinblog.files.wordpress.com/2020/04/frontiers-psychology-free-from-dance-alternative-interaction-grandchildren-grandparents.jpg?w=1024',E'https://media.urbanistnetwork.com/saigoneer/article-images/2018/08/Aug13/GrandmasRecipe_SGRb.jpg',E'Pretty Cool Yeah',E'Ive got like so many awards homes',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',TRUE,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+(2,E'Kimberly',E'Grandma''s Gourmets',E'Kimberly',E'Olson',E'grandmasss@gmail.com',E'324-203-1234',E'423-234-2049',E'2610 YH Hanson Ave.','',E'Albert Lea',E'MN',E'56007',E'USA',E'2610 YH Hanson Ave.','',E'Albert Lee',E'MN',E'56007',E'USA',43.68273,-93.34812,E'https://www.grandmasgourmets.com/',E'https://www.facebook.com/grandmaskim','',E'grandmas.gourmets@gmail.com','','','','',E'Baked Good','','','','','','','',E'Nothing beats Grans cookies, and bars',E'YES',E'{}','',E'YES','',E'{}','','','','','',E'Cookie',E'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg',E'https://www.grandmasgourmets.com/',E'Bars',E'https://chocolatecoveredkatie.com/wp-content/uploads/2018/06/Easy-Chocolate-Fudge-Recipe-2-Ingredients-500x375.jpg',E'https://www.grandmasgourmets.com/',E'Cake',E'https://www.pamperedchef.com/iceberg/com/recipe/1125065-lg.jpg',E'https://www.grandmasgourmets.com/',E'Yeah',E'https://frontiersinblog.files.wordpress.com/2020/04/frontiers-psychology-free-from-dance-alternative-interaction-grandchildren-grandparents.jpg?w=1024','',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'https://frontiersinblog.files.wordpress.com/2020/04/frontiers-psychology-free-from-dance-alternative-interaction-grandchildren-grandparents.jpg?w=1024',E'https://media.urbanistnetwork.com/saigoneer/article-images/2018/08/Aug13/GrandmasRecipe_SGRb.jpg',E'Pretty Cool Yeah',E'Ive got like so many awards homes',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg',TRUE,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
 (9,2,17),
@@ -299,7 +299,7 @@ VALUES
 (E'Katie',E'Sterns',E'2020-10-17',E'katie.sterns@gmail.com',E'locavore',E'2020-12-18 07:39:45.721249');
 INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
 VALUES
-(3,E'Katie',E'Share Local Love LCC',E'Katie',E'Sterns',E'katie.sterns@gmail.com',E'651-295-1777',E'651-295-1777',E'1493 Scheffer Ave','',E'St. Paul',E'MN',E'55116',E'USA','','',E'Saint Paul',E'MN',E'55116',E'USA',44.92189,-93.16356,E'https://youbetchabox.com/',E'https://www.facebook.com/GourmetGiftBoxes',E'https://www.facebook.com/GourmetGiftBoxes',E'info@sharelocallove.com','','','','',E'GIFT','',E'ST. PAUL',E'Mid-West Wide','',E'Yes',E'Yes','',E'Creatively curated Minnesota Artisan Food Gift Boxes and Bags. Customization available to meet all needs and budgets. Select from over 200 small batch, high quality foods and related. We also partner with local breweries and distilleries too. Capture MN Spirit in a gift all will love! You Betcha!',E'YES',E'{}','',E'YES','',E'{}','','','',E'Gift','',E'Gift Deal!',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsfiilvkNeHKxZ9HqxP8ZaVN02NYgJd6_Iw&usqp=CAU',E'https://youbetchabox.com/',E'HOT SAUCES',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjqqWjsIqRoOPl5yhnHx9HHGKFRfmvclScA&usqp=CAU',E'https://youbetchabox.com/',E'THE BOX',E'https://cdn.minnesotamonthly.com/wp-content/uploads/sites/85/2019/08/DSC5365-e1566313049493.jpg',E'https://youbetchabox.com/',E'You Know it Bud',E'https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/131405386_1552908348226584_5131309671268186515_o.jpg?_nc_cat=100&ccb=2&_nc_sid=2c4854&_nc_ohc=T0MNG5Mg8hQAX83CGs6&_nc_ht=scontent.ffcm1-1.fna&oh=e0aee95b7f8f6080c058572bfdd6778c&oe=6001F258','',E'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/130715891_1549009791949773_862914931259104278_o.jpg?_nc_cat=102&ccb=2&_nc_sid=2c4854&_nc_ohc=uo3MEBaZUNYAX8FPu2d&_nc_ht=scontent.ffcm1-2.fna&oh=52912b95ddc0e9a99255a0277478a969&oe=60030677',E'https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/130045156_1546785478838871_4517929316616469920_o.jpg?_nc_cat=105&ccb=2&_nc_sid=2c4854&_nc_ohc=Yfok-79Sg2sAX9WuqON&_nc_ht=scontent.ffcm1-1.fna&oh=6828a4c5bbfe1ae23cbb3409ff7ad59e&oe=6000F81B',E'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/129721374_1545118509005568_8552604803700404172_o.jpg?_nc_cat=104&ccb=2&_nc_sid=2c4854&_nc_ohc=Px29hfJSx00AX8dGDaY&_nc_ht=scontent.ffcm1-2.fna&oh=fdd659ab265fdd8d6d5ac44b6ea74925&oe=6000923A',E'YOU BETCHA!',E'The Locavore\'s Choice Award 32 Years Running',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg6',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIZ88WPzYBUqBsr7Si5jYuWU8kyQL5UO-P_w&usqp=CAU',TRUE,FALSE,E'2020-12-18 08:20:45.650381',E'08:20:45.650381');
+(3,E'Katie',E'Share Local Love LCC',E'Katie',E'Sterns',E'katie.sterns@gmail.com',E'651-295-1777',E'651-295-1777',E'1493 Scheffer Ave','',E'St. Paul',E'MN',E'55116',E'USA','','',E'Saint Paul',E'MN',E'55116',E'USA',44.92189,-93.16356,E'https://youbetchabox.com/',E'https://www.facebook.com/GourmetGiftBoxes',E'https://www.facebook.com/GourmetGiftBoxes',E'info@sharelocallove.com','','','','',E'GIFT','',E'ST. PAUL',E'Mid-West Wide','',E'Yes',E'Yes','',E'Creatively curated Minnesota Artisan Food Gift Boxes and Bags. Customization available to meet all needs and budgets. Select from over 200 small batch, high quality foods and related. We also partner with local breweries and distilleries too. Capture MN Spirit in a gift all will love! You Betcha!',E'YES',E'{}','',E'YES','',E'{}','','','',E'Gift','',E'Gift Deal!',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsfiilvkNeHKxZ9HqxP8ZaVN02NYgJd6_Iw&usqp=CAU',E'https://youbetchabox.com/',E'HOT SAUCES',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjqqWjsIqRoOPl5yhnHx9HHGKFRfmvclScA&usqp=CAU',E'https://youbetchabox.com/',E'THE BOX',E'https://cdn.minnesotamonthly.com/wp-content/uploads/sites/85/2019/08/DSC5365-e1566313049493.jpg',E'https://youbetchabox.com/',E'You Know it Bud',E'https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/131405386_1552908348226584_5131309671268186515_o.jpg?_nc_cat=100&ccb=2&_nc_sid=2c4854&_nc_ohc=T0MNG5Mg8hQAX83CGs6&_nc_ht=scontent.ffcm1-1.fna&oh=e0aee95b7f8f6080c058572bfdd6778c&oe=6001F258','',E'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/130715891_1549009791949773_862914931259104278_o.jpg?_nc_cat=102&ccb=2&_nc_sid=2c4854&_nc_ohc=uo3MEBaZUNYAX8FPu2d&_nc_ht=scontent.ffcm1-2.fna&oh=52912b95ddc0e9a99255a0277478a969&oe=60030677',E'https://scontent.ffcm1-1.fna.fbcdn.net/v/t1.0-9/130045156_1546785478838871_4517929316616469920_o.jpg?_nc_cat=105&ccb=2&_nc_sid=2c4854&_nc_ohc=Yfok-79Sg2sAX9WuqON&_nc_ht=scontent.ffcm1-1.fna&oh=6828a4c5bbfe1ae23cbb3409ff7ad59e&oe=6000F81B',E'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/129721374_1545118509005568_8552604803700404172_o.jpg?_nc_cat=104&ccb=2&_nc_sid=2c4854&_nc_ohc=Px29hfJSx00AX8dGDaY&_nc_ht=scontent.ffcm1-2.fna&oh=fdd659ab265fdd8d6d5ac44b6ea74925&oe=6000923A',E'YOU BETCHA!',E'The Locavore''s Choice Award 32 Years Running',E'https://pbs.twimg.com/profile_images/713209322403016704/ijcXWNkq.jpg6',E'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIZ88WPzYBUqBsr7Si5jYuWU8kyQL5UO-P_w&usqp=CAU',TRUE,FALSE,E'2020-12-18 08:20:45.650381',E'08:20:45.650381');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
 (17,3,10),
@@ -412,6 +412,7 @@ VALUES
 (80,7,15);
 
 
+
 --K MAMA
 
 INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
@@ -438,6 +439,71 @@ VALUES
 (94,8,111),
 (95,8,15);
 
+--Bull Brook Keep
+
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Sylvia',E'Toftness',E'',E'Sylvia@bullbrookkeep.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(9,E'Sylvia',E'Bull Brook Keep',E'Sylvia',E'Toftness',E'Sylvia@bullbrookkeep.com',E'(651) 238-8525',E'',E'765 50th Ave',E'',E'Clear Lake',E'WI',E'54005',E'USA',E'765 50th Ave',E'',E'Clear Lake',E'WI',E'54005',E'USA',45.283970,-92.319390,E'https://www.bullbrookkeep.com/',E'https://www.facebook.com/BullBrookKeep/',E'',E'Sylvia@bullbrookkeep.com',E'',E'',E'',E'Non-Profit Farm Education',E'Farmer-Grower',E'',E'Retail Store, Coops, Famer''s Market',E'',E'YES',E'YES',E'YES',E'',E'Our farm is about great taste, high nutrition and regenerating our soil.  We raise BueLingo cattle on grass - and only grass - year round on 72 hilly Wisconsin acres near Minneapolis/St. Paul metro. Why? Because our goals are contented cows that can deliver beef thats high Omega 3''s and CLA''s (healthful fatty acid that exists only in 100% grass-fed animals). We never feed grain, growth hormones, or sub-therapeutic antibiotics. Our beef is processed at nearby family-owned USDA-licensed facility. Purchase our beef and eat with a tiny carbon hoofprint (R). Our variety packages start at  just 30 lb. all the way up to a full cow. Each order contains roasts, steaks and ground beef. You can also order ground beef in quantity, and our nitrate- and nitrite-free summer sausage. That’s guilt-free eating.',E'YES',E'YES',E'',E'{}',E'',E'{}',E'',E'',E'',E'BEEF',E'',E'BEEF',E'http://www.bronxtobarn.com/wp-content/uploads/cropped-part-of-herd-and-treeV-1.jpg',E'https://www.bronxtobarn.com/',E'',E'',E'',E'',E'',E'',E'YES',E'https://i1.wp.com/www.bronxtobarn.com/wp-content/uploads/2014/04/20140329_145134_resized.jpg?resize=125%2C155&ssl=1',E'',E'',E'',E'',E'',E'',E'',E'',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(96,9,1),
+(97,9,12),
+(98,9,17),
+(99,9,19),
+(100,9,20),
+(101,9,22),
+(102,9,24),
+(103,9,58),
+(104,9,99);
+
+--Ames Farm Honey
+
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Brian',E'Fredericksen',E'',E'webstore@amesfarm.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(10,E'Brian',E'Ames Farm Honey',E'Brian',E'Fredericksen',E'webstore@amesfarm.com',E'(952) 955-3348',E'',E'2425 County Road 127 ',E'',E'Delano',E'MN',E'55328',E'USA',E'2425 County Road 127',E'',E'Delano',E'MN',E'55328',E'USA',44.957900,-93.775170,E'https://www.amesfarm.com/',E'',E'https://www.instagram.com/amesfarm/?hl=en',E'webstore@amesfarm.com',E'',E'',E'',E'Pollenator Health',E'Apiary',E'',E'Grocery Store, CO-OP, Amazon',E'Online',E'NO',E'NO',E'YES',E'',E'Ames Farm is nationally recognized for producing single source, high-quality honey in Delano, Minnesota. Each jar of their honey has the location, hive number, and floral source printed on the label, making it unique and specific to a time and place in Minnesota- how can you get more local than that?! In addition to their amazing array of honeys, Ames Farm produces various balms, pollens and beeswax all while respecting the life cycle of the bees in their ethical beekeeping strategy.',E'YES',E'YES',E'',E'{}',E'',E'{}',E'',E'',E'',E'Honey',E'',E'Honey',E'https://cdn.shopify.com/s/files/1/0257/6071/products/3x3packs_600x.jpg?v=1543295193',E'https://www.amesfarm.com/collections/single-source-raw-honey/products/honey-variety-3-pack',E'Honey',E'https://cdn.shopify.com/s/files/1/0257/6071/products/alfalfa2oz_600x.jpg?v=1507240335',E'https://www.amesfarm.com/collections/single-source-raw-honey/products/alfalfa-honey?variant=31625958752317',E'Honey Comb',E'https://cdn.shopify.com/s/files/1/0257/6071/files/IMG_5450_RE_small.jpg?3194913002236121738',E'https://www.amesfarm.com/collections/fresh-honey-comb',E'YES',E'https://cdn.shopify.com/s/files/1/0257/6071/files/AmesFarm-logo-arc-WEB_280x@2x.png?v=1552591994',E'',E'',E'',E'',E'',E'',E'',E'https://cdn.shopify.com/s/files/1/0257/6071/files/AmesFarm-logo-arc-WEB_280x@2x.png?v=1552591994',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(105,10,9),
+(106,10,10),
+(107,10,11),
+(108,10,13),
+(109,10,14),
+(110,10,21),
+(111,10,25),
+(112,10,33),
+(113,10,89),
+(114,10,96),
+(115,10,102),
+(116,10,104);
+
+--J Carver Distillery
+
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Bill',E'Miller',E'',E'INFO@JCARVERDISTILLERY.COM',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(11,E'Bill',E'J Carver Distillery',E'Bill',E'Miller',E'INFO@JCARVERDISTILLERY.COM',E'(952) 442-2433',E'',E'1320 Mill Ln ',E'',E'Waconia',E'MN',E'55387',E'USA',E'1320 Mill Ln',E'',E'Waconia',E'MN',E'55387',E'USA',44.836260,-93.804670,E'https://www.jcarverdistillery.com/',E'https://www.facebook.com/jcarverdistillery',E'https://www.instagram.com/jcarverdistillery/',E'INFO@JCARVERDISTILLERY.COM',E'',E'',E'',E'',E'Distillery',E'',E'Grocery Store, Retail Store',E'',E'NO',E'NO',E'NO',E'',E'Waconia''s J. Carver Distillery is a true Minnesota gem. Inspired by local spirit-producing cold climate fruits and grains of the Minnesota River Valley, they produce unique spirits including vodka, gin, whiskey, bourbon and brandy. A grain to glass distillery, they pride themselves in their collaboration with local farmers and barrel coopers in the development of their superior products.',E'YES',E'{}',E'',E'{}',E'',E'YES',E'',E'',E'',E'Spirits',E'',E'Bourbon',E'https://images.squarespace-cdn.com/content/v1/5251d48ae4b060bcf00af67c/1589745812744-H0I510T02R9Z3VIAJ8A2/ke17ZwdGBToddI8pDm48kBWjUE0aJvXiN-GDIB2nnId7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1URBOa1D7IMug3o3UbotWgmrlIupJq-FGrmxem1YLi4KI3WUfc_ZsVm9Mi1E6FasEnQ/Brickyard+Straight+Bourbon+Whiskey.png?format=500w',E'https://www.jcarverdistillery.com/bourbons',E'Gin',E'https://images.squarespace-cdn.com/content/v1/5251d48ae4b060bcf00af67c/1490459302018-ZV1CS2GE3J1MVE2ZIGQ7/ke17ZwdGBToddI8pDm48kO0ce8mCRz6IYlJHRGrhVr8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8GRo6ASst2s6pLvNAu_PZdIMcfQzbemt9dmJGUavLvRjQv6LcaBGWceSn7mbagosO0zmYdGzpwT9zkV667Y-bOo/Premium+Gin+Borderless.png?format=500w',E'https://www.jcarverdistillery.com/gins',E'Vodka',E'https://images.squarespace-cdn.com/content/v1/5251d48ae4b060bcf00af67c/1490459481624-K9W1UGONGENEY3PVAPQO/ke17ZwdGBToddI8pDm48kO0ce8mCRz6IYlJHRGrhVr8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8GRo6ASst2s6pLvNAu_PZdIMcfQzbemt9dmJGUavLvRjQv6LcaBGWceSn7mbagosO0zmYdGzpwT9zkV667Y-bOo/J+Carver+Premium+Vodka.jpeg?format=500w',E'https://www.jcarverdistillery.com/vodkas',E'YES',E'https://images.squarespace-cdn.com/content/v1/5251d48ae4b060bcf00af67c/1519920641930-N5HXXTMY3GY3K5ZELUVM/ke17ZwdGBToddI8pDm48kCHChmuivJZ1Va5ov3ZJeg17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ouw-8l5B_J38LMU7OZFvYcSGirBhY_3j1yQtntvGS73bypqQ-qjSV5umPUlGbQFAw/DSC_6221.JPG?format=1500w',E'',E'',E'',E'',E'',E'',E'',E'https://static1.squarespace.com/static/5251d48ae4b060bcf00af67c/t/5745a902f8baf3eb1ec2dca5/1608665145526/?format=1500w',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(117,11,9),
+(118,11,10),
+(119,11,11),
+(120,11,13),
+(121,11,14),
+(122,11,21),
+(123,11,25),
+(124,11,33),
+(125,11,89),
+(126,11,96),
+(127,11,102),
+(128,11,104);
 
 --Emmas Chip Co
 INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
@@ -452,20 +518,20 @@ E'',E'Organic and locally sourced ingredients ',E'https://cdn.pixabay.com/photo/
 '',E'',E'',E'',E'We offer a 10% student and teacher discount with the code PRIME',E'most unique chips north of the 49th parallel 5 years running',E'',E'https://cdn.pixabay.com/photo/2012/02/29/11/57/french-18726_960_720.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
-(1000,12,3),
-(1001,12,12),
-(1002,12,21),
-(1003,12,25),
-(1004,12,31),
-(1005,12,36),
-(1006,12,44),
-(1007,12,89),
-(1008,12,91),
-(1009,12,94),
-(1010,12,96),
-(1011,12,97),
-(1012,12,100),
-(1013,12,106);
+(129,12,3),
+(130,12,12),
+(131,12,21),
+(132,12,25),
+(133,12,31),
+(134,12,36),
+(135,12,44),
+(136,12,89),
+(137,12,91),
+(138,12,94),
+(139,12,96),
+(140,12,97),
+(141,12,100),
+(142,12,106);
 
 --Red Lake Nation Foods
 INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
@@ -482,20 +548,20 @@ E'https://redlakenationfoods.com/product/green-tea/',E' ',E'https://redlakenatio
 '',E'',E'',E'',E'',E'',E'',E'https://redlakenationfoods.com/wp-lib/wp-content/uploads/2019/11/who-we-are.jpg',True,True,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
-(1014,13,1),
-(1015,13,2),
-(1016,13,3),
-(1017,13,10),
-(1018,13,11),
-(1019,13,14),
-(1020,13,15),
-(1021,13,21),
-(1023,13,26),
-(1024,13,32),
-(1025,13,35),
-(1026,13,76),
-(1027,13,78),
-(1028,13,97);
+(143,13,1),
+(144,13,2),
+(145,13,3),
+(146,13,10),
+(147,13,11),
+(148,13,14),
+(149,13,15),
+(150,13,21),
+(151,13,26),
+(152,13,32),
+(153,13,35),
+(154,13,76),
+(155,13,78),
+(156,13,97);
 
 --Wild Country Maple Syrup
 INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
@@ -519,21 +585,24 @@ E'https://www.wildcountrymaple.com/product-page/pancake-mix',E' ',E'https://stat
 E'',E'',E'',E'https://static.wixstatic.com/media/d6921d_368212e72c6c4d29b8b6256d944baa9f~mv2.jpg/v1/fill/w_577,h_433,al_c,q_80,usm_0.66_1.00_0.01/WildCountrySign.webp',True,True,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
-(1029,14,1),
-(1030,14,2),
-(1031,14,3),
-(1032,14,10),
-(1033,14,11),
-(1034,14,14),
-(1035,14,17),
-(1036,14,20),
-(1037,14,21),
-(1038,14,22),
-(1039,14,32),
-(1040,14,34),
-(1041,14,42),
-(1042,14,97),
-(1043,14,99);
+(157,14,1),
+(158,14,2),
+(159,14,3),
+(160,14,10),
+(161,14,11),
+(162,14,14),
+(163,14,17),
+(164,14,20),
+(165,14,21),
+(166,14,22),
+(167,14,32),
+(168,14,34),
+(169,14,42),
+(170,14,97),
+(171,14,99);
+
+
+
 
 
 
