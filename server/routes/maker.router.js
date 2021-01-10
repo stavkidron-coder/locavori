@@ -45,7 +45,8 @@ router.get('/', async (req, res) => {
   let beveragesArray = req.query.beverages.split(',');
   let dietArray = req.query.diet.split(',');
   let resultArray = [];
-  if (freshArray && freshArray !== []) {
+
+  if (req.query.fresh !== 'undefined' && req.query.fresh !== '') {
     const queryText = `SELECT * FROM tbl_artisans WHERE product_type_fresh != '{}' ;`;
     try {
       var result = await pool.query(queryText)
@@ -54,9 +55,9 @@ router.get('/', async (req, res) => {
      res.sendStatus(500);
      return
    }
-  };
+  } else {console.log('No fresh option selected')};
   
-  if (perparedArray && preparedArray !== []) {
+  if (req.query.prepared !== 'undefined' && req.query.prepared !== '') {
     const queryText = `SELECT * FROM tbl_artisans WHERE product_type_food != '{}' ;`;
     try {
       var result = await pool.query(queryText)
@@ -65,9 +66,9 @@ router.get('/', async (req, res) => {
      res.sendStatus(500);
      return
    }
-  }
+  } else {console.log('No prepared option selected')};
   
-  if (beverageArray && beveragesArray !== []) {
+  if (req.query.beverages !== 'undefined' && req.query.beverages !== '') {
     const queryText = `SELECT * FROM tbl_artisans WHERE product_type_bev != '{}' ;`;
     try {
       var result = await pool.query(queryText)
@@ -76,7 +77,7 @@ router.get('/', async (req, res) => {
      res.sendStatus(500);
      return
    }
-  }
+  } else {console.log('No beverage option selected')};
 
     for (let i = 0; i < deliveryArray.length; i++) {
       if (deliveryArray[i] === 'pick_up') {
