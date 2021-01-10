@@ -35,44 +35,128 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.get('/', (req, res) => {
-  console.log(req.query);
-  // let availabilityArray = req.query.availability.split(',');
-  // let deliveryArray = req.query.delivery.split(','); // NEEDS TO BE BROKEN UP *****
-  // let makerArray = req.query.makers.split(',');
-  // let locationArray = req.query.location.split(',');
+router.get('/', async (req, res) => {
+  let availabilityArray = req.query.availability.split(',');
+  let deliveryArray = req.query.delivery.split(','); 
+  let makerArray = req.query.makers.split(',');
+  let locationArray = req.query.location.split(',');
   // let freshArray = req.query.fresh.split(',');
   // let preparedArray = req.query.prepared.split(',');
   // let beveragesArray = req.query.beverages.split(',');
-  // let dietArray = req.query.diet.split(',');
-  // let resultArray = [];
-  //   const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
-  //   for (let i = 0; i < availabilityArray.length; i++){
-  //     try {
-  //        var result = await pool.query(queryAvail, [availabilityArray[i]])
-  //        resultArray.push(result.rows)
-  //     } catch (error) {
-  //       res.sendStatus(500);
-  //       return
-  //     }
-  //   }
-  //   const queryMaker = 'SELECT * FROM tbl_artisans WHERE business_type = $1'
-  //   for (let i = 0; i < makerArray.length; i++){
-  //     try {
-  //        var result = await pool.query(queryMaker, [makerArray[i]])
-  //        resultArray.push(result.rows)
-  //     } catch (error) {
-  //       res.sendStatus(500);
-  //       return
-  //     }
-  //   }
-  //   return res.send(resultArray);
+  let dietArray = req.query.diet.split(',');
+  let resultArray = [];
+
+  if (req.query.fresh !== 'undefined' && req.query.fresh !== '') {
+    const queryText = `SELECT * FROM tbl_artisans WHERE product_type_fresh != '{}' ;`;
+    try {
+      var result = await pool.query(queryText)
+      resultArray.push(result.rows)
+   } catch (error) {
+     res.sendStatus(500);
+     return
+   }
+  } else {console.log('No fresh option selected')};
+  
+  if (req.query.prepared !== 'undefined' && req.query.prepared !== '') {
+    const queryText = `SELECT * FROM tbl_artisans WHERE product_type_food != '{}' ;`;
+    try {
+      var result = await pool.query(queryText)
+      resultArray.push(result.rows)
+   } catch (error) {
+     res.sendStatus(500);
+     return
+   }
+  } else {console.log('No prepared option selected')};
+  
+  if (req.query.beverages !== 'undefined' && req.query.beverages !== '') {
+    const queryText = `SELECT * FROM tbl_artisans WHERE product_type_bev != '{}' ;`;
+    try {
+      var result = await pool.query(queryText)
+      resultArray.push(result.rows)
+   } catch (error) {
+     res.sendStatus(500);
+     return
+   }
+  } else {console.log('No beverage option selected')};
+
+    for (let i = 0; i < deliveryArray.length; i++) {
+      if (deliveryArray[i] === 'pick_up') {
+        const queryText = `SELECT * FROM tbl_artisans WHERE pickup = 'yes';`;
+        try {
+          var result = await pool.query(queryText)
+          resultArray.push(result.rows)
+       } catch (error) {
+         res.sendStatus(500);
+         return
+       }
+      } else if (deliveryArray[i] === 'delivery') {
+        const queryText = `SELECT * FROM tbl_artisans WHERE delivery = 'yes';`;
+        try {
+          var result = await pool.query(queryText)
+          resultArray.push(result.rows)
+       } catch (error) {
+         res.sendStatus(500);
+         return
+       }
+      } else if (deliveryArray[i] === 'shipping') {
+        const queryText = `SELECT * FROM tbl_artisans WHERE shipping = 'yes';`;
+        try {
+          var result = await pool.query(queryText)
+          resultArray.push(result.rows)
+       } catch (error) {
+         res.sendStatus(500);
+         return
+       }
+      }
+    }
+    const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
+    for (let i = 0; i < availabilityArray.length; i++){
+      try {
+         var result = await pool.query(queryAvail, [availabilityArray[i]])
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    const queryMaker = `SELECT * FROM tbl_artisans WHERE maker_type_tokens @@ to_tsquery($1);`
+    for (let i = 0; i < makerArray.length; i++){
+      try {
+         var result = await pool.query(queryMaker, [makerArray[i]])
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    const queryLocation = `SELECT * FROM tbl_artisans WHERE location_tokens @@ to_tsquery($1);`
+    for (let i = 0; i < locationArray.length; i++){
+      try {
+         var result = await pool.query(queryLocation, [locationArray[i]])
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    const queryDiet = `SELECT * FROM tbl_artisans WHERE prod_cat_tokens @@ to_tsquery($1);`
+    for (let i = 0; i < dietArray.length; i++){
+      try {
+         var result = await pool.query(queryDiet, [dietArray[i]])
+         resultArray.push(result.rows)
+      } catch (error) {
+        res.sendStatus(500);
+        return
+      }
+    }
+    return res.send(resultArray);
   });
 
 /**
  * PUT route template
  */
-router.put('/', (req, res) => {
+router.put('/', async (req, res) => {
+  console.log(req.body.business_type.toString());
 
   const makerInfo =[
 
@@ -141,7 +225,7 @@ router.put('/', (req, res) => {
     req.user.id
    ]
   // *** SALES SHEET IS SPECIALTIES IN THE MEAN TIME ***
-  const queryText = `UPDATE tbl_artisans SET 
+  const makerQueryText = `UPDATE tbl_artisans SET 
     legal_name = $1, 
     business_name = $2, 
     first_name = $3, 
@@ -190,9 +274,13 @@ router.put('/', (req, res) => {
     owner_img = $46,
     story = $47,
     give_back = $48,
-    anything_else = $49
-    WHERE profile_id = $50;`;
-    pool.query(queryText, makerInfo)
+    anything_else = $49,
+    maker_type_tokens = to_tsvector('${req.body.business_type.toString()}'),
+    location_tokens = to_tsvector('${req.body.product_distribution.toString()}'),
+    prod_cat_tokens = to_tsvector('${req.body.product_category.toString()}')
+    WHERE profile_id = $50;`
+    
+    pool.query(makerQueryText, makerInfo)
         .then(() => {
             res.sendStatus(200);
         }).catch(error => {

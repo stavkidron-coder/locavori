@@ -3,7 +3,8 @@ const makerReducer = (state=[], action) => {
         case 'SET_MAKER':
             return action.payload;
         case 'SET_FILTERED_MAKER':
-            return action.payload.flat();
+            console.log(action.payload)
+            return action.payload;
         default:
             return state;
     }
