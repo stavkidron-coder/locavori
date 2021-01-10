@@ -1,0 +1,11 @@
+.adminBody {
+    min-height: 93.5vh;
+}
+
+.adminPageTitle {
+    background-color: rgb(5,103,54);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    margin-bottom: 10px;
+}
