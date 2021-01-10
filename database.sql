@@ -366,7 +366,7 @@ VALUES
 (E'Christopher',E'Dark',E'',E'info@kuzalaorganics.com',E'',E'2021-01-09 18:38:28.710877');
 INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
 VALUES
-(6,E'Christopher',E'Kazala Macaroons',E'Christopher',E'Dark',E'info@kuzalaorganics.com',E'612-723-7960',E'',E'305 S Washington Ave',E'',E'Minneapolis',E'MN',E'55415',E'USA',E'',E'',E'',E'',E'',E'USA',44.979880,-93.264090,E'https://www.kuzalaorganics.com/',E'https://www.facebook.com/kuzalaorganics/',E'https://www.instagram.com/kuzalaorganics/?hl=en',E'info@kuzalaorganics.com',E'',E'',E'',E'',E'Organic Food',E'',E'Grocery Store''s, Coop''s, Amazon',E'',E'NO',E'NO',E'YES',E'',E'Organic, nourishing and delicious, Kuzala Macaroons come in 9 flavors. Developed by Christopher Dark to address his family''s dietary needs, every ingredient has been carefully selected for its nourishing, nutrient-dense qualities. Kuzala Macaroons not only taste great, they are loaded with fabulous fats and fiber from coconuts and nutrient and mineral rich maple syrup and pink Himalayan Salt. Kuzala Macaroons are gluten-free, vegan, raw and paleo friendly with sustainably sourced ingredients.',E'YES',E'YES',E'',E'{}',E'',E'{}',E'',E'',E'',E'Cookies',E'',E'Coolies',E'https://static.wixstatic.com/media/1a045a_e11358d1cbf04151889c78f8d45592a3.jpg/v1/fill/w_519,h_340,al_c,q_80,usm_0.66_1.00_0.01/1a045a_e11358d1cbf04151889c78f8d45592a3.webp',E'',E'',E'',E'',E'',E'',E'',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'YES',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+(6,E'Christopher',E'Kazala Macaroons',E'Christopher',E'Dark',E'info@kuzalaorganics.com',E'612-723-7960',E'',E'305 S Washington Ave',E'',E'Minneapolis',E'MN',E'55415',E'USA',E'',E'',E'',E'',E'',E'USA',44.979880,-93.264090,E'https://www.kuzalaorganics.com/',E'https://www.facebook.com/kuzalaorganics/',E'https://www.instagram.com/kuzalaorganics/?hl=en',E'info@kuzalaorganics.com',E'',E'',E'',E'',E'Organic Food',E'',E'Grocery Store''s, Coop''s, Amazon',E'',E'NO',E'NO',E'YES',E'',E'Organic, nourishing and delicious, Kuzala Macaroons come in 9 flavors. Developed by Christopher Dark to address his family''s dietary needs, every ingredient has been carefully selected for its nourishing, nutrient-dense qualities. Kuzala Macaroons not only taste great, they are loaded with fabulous fats and fiber from coconuts and nutrient and mineral rich maple syrup and pink Himalayan Salt. Kuzala Macaroons are gluten-free, vegan, raw and paleo friendly with sustainably sourced ingredients.',E'YES',E'YES',E'',E'{}',E'',E'{}',E'',E'',E'',E'Cookies',E'',E'Cookies',E'https://static.wixstatic.com/media/1a045a_e11358d1cbf04151889c78f8d45592a3.jpg/v1/fill/w_519,h_340,al_c,q_80,usm_0.66_1.00_0.01/1a045a_e11358d1cbf04151889c78f8d45592a3.webp',E'',E'',E'',E'',E'',E'',E'',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'YES',E'',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
 (51,6,93),
@@ -385,24 +385,82 @@ VALUES
 (64,6,108),
 (65,6,110);
 
---Kuzala Macaroons
+--Ancient Indian Spices
 
--- INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
--- VALUES
--- (E'Christopher',E'Dark',E'',E'info@kuzalaorganics.com',E'',E'2021-01-09 18:38:28.710877');
--- INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
--- VALUES
--- (5,E'Christopher',E'Kazala Macaroons',E'Christopher',E'Dark',E'info@kuzalaorganics.com',E'612-723-7960',E'',E'305 S Washington Ave','',E'Minneapolis',E'MN',E'55415',E'USA',E'','',E'',E'',E'',E'USA',44.979880,-93.264090,E'https://www.kuzalaorganics.com/',E'https://www.facebook.com/kuzalaorganics/','https://www.instagram.com/kuzalaorganics/?hl=en',E'info@kuzalaorganics.com','','','','',E'Organic Food','','Grocery Store''s, Coop''s, Amazon','','NO',E'NO',E'YES','',E'Organic, nourishing and delicious, Kuzala Macaroons come in 9 flavors. Developed by Christopher Dark to address his family''s dietary needs, every ingredient has been carefully selected for its nourishing, nutrient-dense qualities. Kuzala Macaroons not only taste great, they are loaded with fabulous fats and fiber from coconuts and nutrient and mineral rich maple syrup and pink Himalayan Salt. Kuzala Macaroons are gluten-free, vegan, raw and paleo friendly with sustainably sourced ingredients.',E'YES',E'YES','',E'{}','',E'{}','','','',E'Cookies','',E'Cookies',E'https://static.wixstatic.com/media/1a045a_e11358d1cbf04151889c78f8d45592a3.jpg/v1/fill/w_519,h_340,al_c,q_80,usm_0.66_1.00_0.01/1a045a_e11358d1cbf04151889c78f8d45592a3.webp',E'',E'',E'',E'',E'http://www.oakvalleycreations.com/coffeesachetbox.JPG',E'',E'',E'','',E'https://static.wixstatic.com/media/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.jpg/v1/fill/w_210,h_215,al_c,q_80,usm_0.66_1.00_0.01/1a045a_06ae82aa92bd4e1a8ca3bc475b4ac64d.webp',E'',E'',E'',E'YES',E'',E'https://i.pinimg.com/280x280_RS/97/ff/a6/97ffa6dc39223da201c507e4269894ff.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
--- INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
--- VALUES
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Deborah',E'McClaren',E'',E'www.ancientindianspices.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(7,E'Deborah',E'Ancient Indian Spices',E'Deborah',E'McClaren',E'Deborah@AncientIndianSpices.com',E'651-983-9880',E'',E'',E'',E'Minneapolis',E'MN',E'55415',E'USA',E'',E'',E'',E'',E'',E'USA',44.961227,-93.266560,E'www.ancientindianspices.com',E'https://www.facebook.com/AncientIndianSpices/',E'',E'Deborah@AncientIndianSpices.com',E'',E'',E'',E'',E'Maker',E'',E'Farmer''s Market, Gift Box, Local Grocery Stores',E'Online',E'YES',E'YES',E'YES',E'',E'Founder Deborah''s husband Rob, and their son Anil, were born in India. They have a passion to help Midwesterners discover Indian cuisine and the fine art of Indian cooking. Their incredible, organic spice mixes are handcrafted in small batches in St. Paul. Each spice is individually selected, pan roasted by hand to allow the natural fragrance and flavor to emerge, and finally ground and blended according to traditional recipes from India. In addition to making authentic Indian cooking accessible, Ancient Indian Spices gives back through their work to support small farmers and a sustainable food ecosystem.',E'YES',E'{}',E'',E'YES',E'',E'{}',E'',E'',E'',E'Spices',E'',E'Spices',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1343757362.jpg',E'https://ancientindianspices.com/CHAAT-MASALA-1-OZ-p180561011',E'Tea',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1362010885.jpg',E'https://ancientindianspices.com/White-Kumaon-tea-organic-1-oz-p122522437',E'Snacks',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1410859668.jpg',E'https://ancientindianspices.com/CHAI-COOOKIES-Comforting-and-Tasty-p195846731',E'YES',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',E'',E'',E'',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',E'',E'',E'',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(66,7,8),
+(67,7,10),
+(68,7,11),
+(69,7,12),
+(70,7,15),
+(71,7,19),
+(72,7,20),
+(73,7,21),
+(74,7,22),
+(75,7,23),
+(76,7,78),
+(77,7,89),
+(78,7,100),
+(79,7,111),
+(80,7,15);
 
--- (60,7,104),
--- (61,7,105),
--- (62,7,106),
--- (63,7,107),
--- (64,7,108),
--- (65,7,110);
+--Ancient Indian Spices
 
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Deborah',E'McClaren',E'',E'www.ancientindianspices.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(7,E'Deborah',E'Ancient Indian Spices',E'Deborah',E'McClaren',E'Deborah@AncientIndianSpices.com',E'651-983-9880',E'',E'',E'',E'Minneapolis',E'MN',E'55415',E'USA',E'',E'',E'',E'',E'',E'USA',44.961227,-93.266560,E'www.ancientindianspices.com',E'https://www.facebook.com/AncientIndianSpices/',E'',E'Deborah@AncientIndianSpices.com',E'',E'',E'',E'',E'Maker',E'',E'Farmer''s Market, Gift Box, Local Grocery Stores',E'Online',E'YES',E'YES',E'YES',E'',E'Founder Deborah''s husband Rob, and their son Anil, were born in India. They have a passion to help Midwesterners discover Indian cuisine and the fine art of Indian cooking. Their incredible, organic spice mixes are handcrafted in small batches in St. Paul. Each spice is individually selected, pan roasted by hand to allow the natural fragrance and flavor to emerge, and finally ground and blended according to traditional recipes from India. In addition to making authentic Indian cooking accessible, Ancient Indian Spices gives back through their work to support small farmers and a sustainable food ecosystem.',E'YES',E'{}',E'',E'YES',E'',E'{}',E'',E'',E'',E'Spices',E'',E'Spices',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1343757362.jpg',E'https://ancientindianspices.com/CHAAT-MASALA-1-OZ-p180561011',E'Tea',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1362010885.jpg',E'https://ancientindianspices.com/White-Kumaon-tea-organic-1-oz-p122522437',E'Snacks',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1410859668.jpg',E'https://ancientindianspices.com/CHAI-COOOKIES-Comforting-and-Tasty-p195846731',E'YES',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',E'',E'',E'',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',E'',E'',E'',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(66,7,8),
+(67,7,10),
+(68,7,11),
+(69,7,12),
+(70,7,15),
+(71,7,19),
+(72,7,20),
+(73,7,21),
+(74,7,22),
+(75,7,23),
+(76,7,78),
+(77,7,89),
+(78,7,100),
+(79,7,111),
+(80,7,15);
+--Ancient Indian Spices
+
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'KC',E'Kye',E'',E'office@kmamasauce.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(8,E'KC',E'K-Mama Korean Sauce',E'KC',E'Kye',E'office@kmamasauce.com',E'(612) 460-5156',E'',E'4301 Benjamin St NE',E'',E'Columbia Heights',E'MN',E'55421',E'USA',E'4301 Benjamin St NE',E'',E'Columbia Heights',E'MN',E'55421',E'USA',45.046960,-93.229150,E'https://kmamasauce.com/',E'https://www.facebook.com/KMamaSauce/',E'https://www.instagram.com/kmamasauce/?hl=en',E'office@kmamasauce.com',E'',E'',E'',E'Donates 30% of proceeds to charity',E'Sauce Maker',E'',E'Grocery Stores, Coops, Famer''s Market, Amazon',E'Online',E'NO',E'NO',E'YES',E'',E'Initially sweet with a rich and buttery middle and a spicy tang at the end, K-Mama Korean Hot Sauce adds an authentic, delicious kick to appetizers, salads, soups, and entrees of any style. "My mother made sauce that was a bit sweet, complex, spicy, and went on a variety of Korean dishes. Once I moved to Minnesota I felt a bit empty. I soon realized it was because I missed my mom''s home-cooked meals. That is how I came up with K-Mama Sauce." says Founder, K.C. Kye. After you try the delicious flavor K-Mama imparts, you will never want to go without a bottle in the fridge.',E'YES',E'YES',E'',E'{}',E'',E'{}',E'',E'',E'',E'Sauce',E'',E'Sauce',E'https://cdn.shopify.com/s/files/1/0224/2527/2400/products/20201209_135823_1024x1024@2x.jpg?v=1607545919',E'https://kmamasauce.com/collections/frontpage/products/ultimate-4-pack-6oz-gift-box',E'',E'',E'',E'',E'',E'',E'YES',E'https://cdn.shopify.com/s/files/1/0224/2527/2400/files/kmama-web-rez-16-of-23_720x.jpg?v=1557362564',E'',E'',E'',E'https://cdn.shopify.com/s/files/1/0224/2527/2400/files/kmama_logo_transparent_1000px_180x.png?v=1557441119',E'',E'',E'',E'https://cdn.shopify.com/s/files/1/0224/2527/2400/files/kmama_logo_transparent_1000px_180x.png?v=1557441119',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(81,8,8),
+(82,8,10),
+(83,8,11),
+(84,8,12),
+(85,8,15),
+(86,8,19),
+(87,8,20),
+(88,8,21),
+(89,8,22),
+(90,8,23),
+(91,8,78),
+(92,8,89),
+(93,8,100),
+(94,8,111),
+(95,8,15);
 -- GET QUERIES
 
 -- GETS ALL ARTISANS AND ALL OF THEIR CATEGORIES
