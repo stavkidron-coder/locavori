@@ -37,12 +37,12 @@ router.get('/:id', (req, res) => {
 
 router.get('/', async (req, res) => {
   let availabilityArray = req.query.availability.split(',');
-  let deliveryArray = req.query.delivery.split(','); // NEEDS TO BE BROKEN UP *****
+  let deliveryArray = req.query.delivery.split(','); 
   let makerArray = req.query.makers.split(',');
   let locationArray = req.query.location.split(',');
-  let freshArray = req.query.fresh.split(',');
-  let preparedArray = req.query.prepared.split(',');
-  let beveragesArray = req.query.beverages.split(',');
+  // let freshArray = req.query.fresh.split(',');
+  // let preparedArray = req.query.prepared.split(',');
+  // let beveragesArray = req.query.beverages.split(',');
   let dietArray = req.query.diet.split(',');
   let resultArray = [];
 
