@@ -20,11 +20,7 @@ CREATE TABLE "tbl_artisans" (
 	"public_city" varchar(150),
 	"public_state" varchar(150),
 	"public_zip" varchar(150),
-<<<<<<< HEAD
-	"public_country" varchar(150),
-=======
 	"public_country" varchar(150) DEFAULT 'USA', 
->>>>>>> master
 	"latitude" numeric,
 	"longitude" numeric,
 	"website" varchar(150),
@@ -84,7 +80,7 @@ CREATE TABLE "tbl_artisans" (
 );
 
 
---Localvore table
+--Locavore table
 CREATE TABLE "tbl_profile" (
 	"id" serial NOT NULL,
 	"first_name" varchar(50),

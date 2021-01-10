@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
-import { Button, Form } from 'reactstrap';
+import { Form, Row } from 'reactstrap';
 import './MakerRegisterForm.css' 
 import MakerRegisterTabs from './MakerRegisterTabs/MakerRegisterTabs';
 import SubmitModal from './RegisterFormModals/SubmitModal';
@@ -49,8 +49,12 @@ componentDidMount = () => {
       <div>
         <Form>
           <MakerRegisterTabs/>
-          <SubmitModal onClick={this.submitBtn}/>
-          <SaveModal onClick={this.save}/>
+          <div>
+            <Row className="buttonRow">
+              <SaveModal onClick={this.save} className="modalBtns"/>
+              <SubmitModal onClick={this.submitBtn} className="registerFormBtns"/>
+            </Row>
+          </div>
         </Form>
       </div>
     );

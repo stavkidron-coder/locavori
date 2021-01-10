@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import MakerRegisterForm from '../MakerRegisterForm/MakerRegisterForm';
 import DesktopNav from '../../Navbars/DesktopNav';
+import { Col, Row } from 'reactstrap';
 
 class MakerRegisterPage extends Component {
 
@@ -10,8 +11,16 @@ class MakerRegisterPage extends Component {
     return (
       <div>
         <DesktopNav/>
-          <h1>Register as Maker</h1>
-          <MakerRegisterForm/>
+        <div className="registrationBody">
+        <Row>
+          <Col className="registerHeader">
+            <h1>Register as a Maker</h1>
+          </Col>
+          
+        </Row>
+
+        <MakerRegisterForm/>
+        </div>
       </div>
     );
   }

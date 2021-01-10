@@ -18,7 +18,7 @@ const SubmitModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>Submit Application</Button>
+      <Button onClick={toggle} className="modalBtns">Submit Application</Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle} className="modalHeader">Application submitted for review</ModalHeader>
         <ModalBody>
