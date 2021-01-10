@@ -13,6 +13,7 @@
 .adminCards {
     margin: 15px;
     border-color: rgb(171, 216, 136);
+    width: 100%;
 }
 
 .PendingRequestsBody {

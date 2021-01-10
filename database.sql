@@ -78,7 +78,7 @@ CREATE TABLE "tbl_artisans" (
 	"distanceValue" varchar(150),
 	"business_type_tokens" TSVECTOR,
 	"where_sold_tokens" TSVECTOR,
-	"prod_cat_tokens" TSVECTOR
+	"prod_cat_tokens" TSVECTOR,
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -261,7 +261,7 @@ VALUES
 (E'Craig',E'CryBaby',E'1994-09-12',E'CrybabyCraigs@gmail.com',E'ship',E'2020-12-17 10:49:42.28384');
 INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
 VALUES
-(1,E'Craig',E'Crybaby Craigs',E'Craig',E'Kaiser',E'craig@crybabycraigs.gmail',E'502-202-2342',E'542-243-2938',E'1222 2nd Street Northeast','',E'Mineeapolis',E'MN',E'55413',E'USA',E'1222 2nd Street NorthEast','',E'Minneapolis',E'MN',E'55413',E'USA',45.00075,-93.26635,E'http://www.crybabycraigs.com/',E'https://www.facebook.com/CryBabyCraigs',E'''',E'craig@crybabycraigs.com',E'''',E'''',E'''',E'''',E'Condoments',E'''',E'''',E'''',E'''','','','',E'HOT SAUCE FOR DAYS HOMES',E'YES',E'HOT SAUCE',E'''',E'{}',E'''',E'{}',E'''',E'''',E'''',E'''',E'''',E'HOT SAUCE',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461266074787-IL30S1SS6F3NWHZDUN1R/ke17ZwdGBToddI8pDm48kHDdJ77rKG8qIHjY7NDr201Zw-zPPgdn4jUwVcJE1ZvWgCjmTad1QpYCGph9EV4QZUJFbgE-7XRK3dMEBRBhUpw3WfV_5oenwKY2Z8m_4RdXj7gVi-UEKdRXfIwKAK-hxDObU5caQUqF4ocJnIKDCFg/cbc1.jpg?format=1000w',E'http://www.crybabycraigs.com/',E'HOT SAUCE',E'https://static1.squarespace.com/static/57110bf1b6aa608f4e1ed91c/5711349940261d0c19d2fa45/5dbc9a2c4c3d7f546463c763/1582148038370/?format=1500w',E'http://www.crybabycraigs.com/',E'HOT SAUCE',E'http://www.crybabycraigs.com/',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'Sure',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'''',E'https://i.ytimg.com/vi/HlE5BlUjgNQ/mqdefault.jpg',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'https://pbs.twimg.com/profile_images/496697943261331456/czKhsTPX_400x400.png',E'Nothanks!',E'Tons',E'https://stmedia.stimg.co/ctyp-022520-MN-Spice-Cry-Baby-Craigs-hotsauce.jpg?w=700',E'https://pbs.twimg.com/profile_images/496697943261331456/czKhsTPX_400x400.png',TRUE,FALSE,E'2020-12-17 11:02:35.6665',E'11:02:35.6665');
+(1,E'Craig',E'Crybaby Craigs',E'Craig',E'Kaiser',E'craig@crybabycraigs.gmail',E'502-202-2342',E'542-243-2938',E'1222 2nd Street Northeast','',E'Mineeapolis',E'MN',E'55413',E'USA',E'1222 2nd Street NorthEast','',E'Minneapolis',E'MN',E'55413',E'USA',45.00075,-93.26635,E'http://www.crybabycraigs.com/',E'https://www.facebook.com/CryBabyCraigs',E'''',E'craig@crybabycraigs.com',E'''',E'''',E'''',E'''',E'Condoments',E'''',E'''',E'''',E'''','','','',E'Cry Baby Craig''s Pickled Habanero and Garlic Hot Sauce has a loyal fan base that is spreading nationwide! It''s flavor is unique and features habanero peppers which are not cooked—they''re pickled so they retain their more delicate and fruity notes from the peppers. This creates a unique, bright and refreshing flavor that pairs with just about anything. Local Chef, Craig Kaiser, invented the recipe by accident when he was delivered too many peppers and pickled them to preserve them. He decided to make a hot sauce with them and culinary history was made! Craig recently moved his kitchen to Faribault so he could expand to meet the growing demand for his fantastic product. When he''s not in the kitchen, you''ll often find Craig helping out on charity causes with other local chefs.',E'YES',E'HOT SAUCE',E'''',E'{}',E'''',E'{}',E'''',E'''',E'''',E'''',E'''',E'Hot Sauce',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461266074787-IL30S1SS6F3NWHZDUN1R/ke17ZwdGBToddI8pDm48kHDdJ77rKG8qIHjY7NDr201Zw-zPPgdn4jUwVcJE1ZvWgCjmTad1QpYCGph9EV4QZUJFbgE-7XRK3dMEBRBhUpw3WfV_5oenwKY2Z8m_4RdXj7gVi-UEKdRXfIwKAK-hxDObU5caQUqF4ocJnIKDCFg/cbc1.jpg?format=1000w',E'http://www.crybabycraigs.com/',E'Hot Sauce (Gallon Jugs)',E'https://static1.squarespace.com/static/57110bf1b6aa608f4e1ed91c/5711349940261d0c19d2fa45/5dbc9a2c4c3d7f546463c763/1582148038370/?format=1500w',E'http://www.crybabycraigs.com/',E'Merchandise',E'http://www.crybabycraigs.com/',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1573242275849-AZ51899PDRLFDMDO3I5Q/ke17ZwdGBToddI8pDm48kMnzKw3j9nOOu7Rl-aUrxGNZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxoqRKxRu1qPObmPqm6s-KGPc_ZtE_KPeF0BHqS59q14BRdZprvOxFdmhflMebD0FQ/cbc_starshirt1.jpg?format=750w',E'Sure',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'''',E'https://i.ytimg.com/vi/HlE5BlUjgNQ/mqdefault.jpg',E'https://images.squarespace-cdn.com/content/v1/57110bf1b6aa608f4e1ed91c/1461019795117-GFZQY2VTUJK321FWQ3RU/ke17ZwdGBToddI8pDm48kLuv8xSh8SgRgitmpnSOFPZZw-zPPgdn4jUwVcJE1ZvW56LRaUT1pClzWs44DErAMUJFbgE-7XRK3dMEBRBhUpz10js8IJ_mUMazbLsxxKMMzTTiChn4dZ14nYmZlUnpuREYFnapNv7TZRMEpgw8ZiY/crybaby_citypages.jpg',E'https://pbs.twimg.com/profile_images/496697943261331456/czKhsTPX_400x400.png',E'Nothanks!',E'Tons',E'https://stmedia.stimg.co/ctyp-022520-MN-Spice-Cry-Baby-Craigs-hotsauce.jpg?w=700',E'https://pbs.twimg.com/profile_images/496697943261331456/czKhsTPX_400x400.png',TRUE,FALSE,E'2020-12-17 11:02:35.6665',E'11:02:35.6665');
 INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
 VALUES
 (1,1,14),
@@ -411,32 +411,8 @@ VALUES
 (79,7,111),
 (80,7,15);
 
---Ancient Indian Spices
 
-INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
-VALUES
-(E'Deborah',E'McClaren',E'',E'www.ancientindianspices.com',E'',E'2021-01-09 18:38:28.710877');
-INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
-VALUES
-(7,E'Deborah',E'Ancient Indian Spices',E'Deborah',E'McClaren',E'Deborah@AncientIndianSpices.com',E'651-983-9880',E'',E'',E'',E'Minneapolis',E'MN',E'55415',E'USA',E'',E'',E'',E'',E'',E'USA',44.961227,-93.266560,E'www.ancientindianspices.com',E'https://www.facebook.com/AncientIndianSpices/',E'',E'Deborah@AncientIndianSpices.com',E'',E'',E'',E'',E'Maker',E'',E'Farmer''s Market, Gift Box, Local Grocery Stores',E'Online',E'YES',E'YES',E'YES',E'',E'Founder Deborah''s husband Rob, and their son Anil, were born in India. They have a passion to help Midwesterners discover Indian cuisine and the fine art of Indian cooking. Their incredible, organic spice mixes are handcrafted in small batches in St. Paul. Each spice is individually selected, pan roasted by hand to allow the natural fragrance and flavor to emerge, and finally ground and blended according to traditional recipes from India. In addition to making authentic Indian cooking accessible, Ancient Indian Spices gives back through their work to support small farmers and a sustainable food ecosystem.',E'YES',E'{}',E'',E'YES',E'',E'{}',E'',E'',E'',E'Spices',E'',E'Spices',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1343757362.jpg',E'https://ancientindianspices.com/CHAAT-MASALA-1-OZ-p180561011',E'Tea',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1362010885.jpg',E'https://ancientindianspices.com/White-Kumaon-tea-organic-1-oz-p122522437',E'Snacks',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1410859668.jpg',E'https://ancientindianspices.com/CHAI-COOOKIES-Comforting-and-Tasty-p195846731',E'YES',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',E'',E'',E'',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',E'',E'',E'',E'https://d2j6dbq0eux0bg.cloudfront.net/images/10519339/1347066952.jpg',True,FALSE,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
-INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
-VALUES
-(66,7,8),
-(67,7,10),
-(68,7,11),
-(69,7,12),
-(70,7,15),
-(71,7,19),
-(72,7,20),
-(73,7,21),
-(74,7,22),
-(75,7,23),
-(76,7,78),
-(77,7,89),
-(78,7,100),
-(79,7,111),
-(80,7,15);
---Ancient Indian Spices
+--K MAMA
 
 INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
 VALUES
@@ -461,6 +437,8 @@ VALUES
 (93,8,100),
 (94,8,111),
 (95,8,15);
+
+
 -- GET QUERIES
 
 -- GETS ALL ARTISANS AND ALL OF THEIR CATEGORIES
