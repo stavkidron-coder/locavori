@@ -73,10 +73,7 @@ CREATE TABLE "tbl_artisans" (
 	"pending_maker" boolean default TRUE,
 	"approved_maker" boolean default FALSE,
 	"dateStampUTC" timestamp default current_timestamp,
-	"modifiedUTC" time default current_timestamp,
-	"business_type_tokens" TSVECTOR,
-	"where_sold_tokens" TSVECTOR,
-	"prod_cat_tokens" TSVECTOR
+	"modifiedUTC" time default current_timestamp
 	CONSTRAINT "tbl_artisans_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
