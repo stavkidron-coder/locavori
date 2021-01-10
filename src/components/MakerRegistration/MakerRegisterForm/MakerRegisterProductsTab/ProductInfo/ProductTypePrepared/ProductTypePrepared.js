@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, CardBody, Card, Input, Label } from 'reactstrap';
+import { Collapse, CardBody, Card, Input, Label, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../../../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
@@ -26,13 +26,14 @@ const ProductTypePrepared = (props) => {
       }
 
   return (
-    <div>
+    <div className="productType">
       <Input type="radio" name="prepared" id="yes" onChange={(event) => toggle(event)} >Toggle</Input>
         <Label>Yes</Label>
             <Collapse isOpen={isOpen}>
                 <Card>
 
                     <CardBody>
+                        <Col >
                         <p>select all that apply</p>
                         <Label check>
                             <Input type="checkbox" id="jams" onClick={(event) => handleChange(event)}/>
@@ -199,13 +200,15 @@ const ProductTypePrepared = (props) => {
                             Other
                         </Label>
                         <br/>
+                        </Col> 
                     </CardBody>
                     
                 </Card>
             </Collapse>
             <br/>
-        <Input type="radio" name="prepared" id="no" onChange={(event) => toggle(event)} >Toggle</Input>
-            <Label>No</Label>    
+        <Input  type="radio" name="prepared" id="no" onChange={(event) => toggle(event)} >Toggle</Input>
+            <Label >No</Label>   
+            
     </div>
   );
 }
