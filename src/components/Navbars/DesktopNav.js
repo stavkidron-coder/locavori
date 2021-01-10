@@ -36,7 +36,7 @@ const DesktopNav = (props) => {
               
               {props.store.user.admin && (
                 <NavItem className="nav-item">
-                  <Link className="nav-link loginOut" to={loginLinkData.path} onClick={toggle}>Admin</Link>
+                  <Link className="nav-link loginOut" to={loginLinkData.path} onClick={toggle}>ADMIN</Link>
                 </NavItem>
               )}
                 <NavItem className="nav-item">
@@ -45,7 +45,7 @@ const DesktopNav = (props) => {
             </Nav>
         </Navbar>
 
-      <Navbar className="navBar" dark expand="md">
+      <Navbar className="navBar" light expand="md">
       <NavbarBrand
             className="brand"
             href="/">
@@ -61,18 +61,18 @@ const DesktopNav = (props) => {
           <Nav className="ml-auto" navbar>
 
             <NavItem>
-                <Link className="nav-link navContents" to='/home' onClick={toggle}>{home} HOME</Link>
+                <Link className="nav-link nav-link2 navContents" to='/home' onClick={toggle}>{home} HOME</Link>
             </NavItem>
               
             <NavItem>
                 {/* Will need to send over user ID to the profile page link which will determine whether or not they are a maker */}
                 {props.store.user.id && (
-                    <Link className="nav-link navContents" to='/profile' onClick={toggle}>{account} ACCOUNT</Link>
+                    <Link className="nav-link nav-link2 navContents" to='/profile' onClick={toggle}>{account} ACCOUNT</Link>
                 )} 
             </NavItem>
 
             <NavItem>
-                <Link className="nav-link navContents" to='/maker-registration' onClick={toggle}>{burger} BECOME A MAKER</Link>
+                <Link className="nav-link nav-link2 navContents" to='/maker-registration' onClick={toggle}>{burger} BECOME A MAKER</Link>
             </NavItem>
 
           </Nav>
