@@ -21,10 +21,10 @@ class MakerRegisterStoryTab extends Component {
 
   secretBtn = () => {
     this.setState({
-      profile_pic: "Profile pic test",
-      story: "Story test",
-      give_back: "Give-back test",
-      anything_else: "Anything else test"
+      profile_pic: "https://cdn.pixabay.com/photo/2016/05/26/19/37/chips-potatoes-1418192_1280.jpg",
+      story: "Founded in the heart of Alaska, Emma's Chip Co brings the tastes of the last frontier to the lower 48.  We still make our chips the pioneer way: fried in a gold pan or baked in the midnight sun! Our chips are small batch and made with local ingredients. You can enjoy classic rustic Alaskan flavors such as Sourdough & Onion, Wild Blueberry, Balto BBQ, and Bering Sea Salt & Vinegar. Pair them with our King Salmon Dip or our Grizzly Bear Beans for a hearty snack!",
+      give_back: "We donate 500 cases of chips to local schools each month",
+      anything_else: "We offer a 10% student and teacher discount with the code PRIME"
     });
   }
 
