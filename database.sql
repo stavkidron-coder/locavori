@@ -601,13 +601,27 @@ VALUES
 (170,14,97),
 (171,14,99);
 
-
-
-
-
-
-
-
+--Venn Brewing
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Venn',E'Brewing',E'',E'vennbrewing@vennbrewing.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans" 
+	("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","business_address","business_city","business_state","business_postalcode","business_country",
+	"public_address_one",'"public_city"',"public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email",
+	"business_type","where_sold","pickup","delivery","shipping","story","product_type_bev",
+	"product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","owner_img","logo","pending_maker","approved_maker")
+VALUES
+	(15, E'Venn Brewing',E'Venn Brewing',E'Venn',E'Brewing',E'info@vennbrewing.com',E'123-456-7890',E'3550 E 46th St',E'Minneapolis',E'MN',E'55406',E'USA',
+	E'3550 E 46th St',E'Minneapolis',E'MN',E'55406',E'USA',44.91995,-93.22058,'http://www.vennbrewing.com/','http://www.facebook.com/','http://www.instagram.com/','info@vennbrewing.com',
+	'beverages','retail store','YES','NO','NO','Venn is Norwegian for Friend. That’s why we’ve designed our brewery as a place for casual hangouts. A place to unplug from the worries of work. A place where you can enjoy the company of friends and family while sharing stories and a couple cold ones.','YES',
+	'Beer (Five Alive)','https://beerdabbler.com/wp-content/uploads/2020/12/Venn-Cosmic-5-Tile-scaled.jpg','http://www.vennbrewing.com/',
+	'Beer (Cosmosis)','https://www.themplsegotist.com/wp-content/uploads/sites/4/2019/09/image.png','http://www.vennbrewing.com/',
+	'Beer (Northodox)','https://www.themplsegotist.com/wp-content/uploads/sites/4/2019/09/13713-can.jpg','http://www.vennbrewing.com/',
+	'https://i1.wp.com/www.chasingtaps.com/wp-content/uploads/2018/01/VENN-BREWING-LOGO-1.png?resize=256%2C197','https://pbs.twimg.com/profile_images/1161662295656796161/eyPtjSQK_400x400.jpg','false','true');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(172,15,4),
+(173,15,5);
 
 -- GET QUERIES
 
