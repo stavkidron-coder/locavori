@@ -42,6 +42,7 @@ const options = {
   disableDefaultUI: true,
 }
 
+
 function LocalMap(props) {
 
   // Uses store to set markers which are in turn rendered to the map
@@ -172,50 +173,62 @@ function LocalMap(props) {
              </div>
          </InfoWindow>) : null}
          </GoogleMap>
-         <DistanceMatrixService
-            options={{
-            destinations: props.store.maker.map((destinations) => {
-              const lat = Number(destinations.latitude);
-              const lng = Number(destinations.longitude);
-              return {lat , lng};
-            }),
-            origins: [{lng:-93.29471079999999, lat:44.9508563}],
-            travelMode: "DRIVING",
-            unitSystem: window.google.maps.UnitSystem.IMPERIAL,
-            }}
-            callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
-              console.log(props.store.maker);
-                props.store.maker[index].distanceText = element.distance.text;
-                props.store.maker[index].distanceValue = element.distance.value;
-              });
-              setRenderCount(1);
-            }}
-          />
-         <div className='distanceMatrixSlides list-body'>
-         <br/>
-         <h2>Local Makers Near You</h2>
-         <hr/>
-            {renderCount === 0 ?
-              null
-              :
-              props.store.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
-                return  (
-                  <>
-                <div className='matrixSlide'>
-
-                {maker.approved_maker ?
-                    <MakerCard maker={maker} key={maker.id} fav={props.store.SF}/>
-                :
-                null
-                }
-                </div>
-                </>
-              )})
-            }
+         <DistanceMatrix />
          </div>
        </div>
-     </div>
    );
+}
+
+function DistanceMatrix(){
+
+  const props = useSelector(props => props);
+  // const [distanceSlides, setDistanceSlides] = React.useState([]);
+  const [renderCount, setRenderCount] = React.useState(0);
+return(
+  <div>
+    <DistanceMatrixService
+      options={{
+      destinations: props.maker.map((destinations) => {
+        const lat = Number(destinations.latitude);
+        const lng = Number(destinations.longitude);
+        return {lat , lng};
+      }),
+      origins: [{lng:-93.29471079999999, lat:44.9508563}],
+      travelMode: "DRIVING",
+      unitSystem: window.google.maps.UnitSystem.IMPERIAL,
+      }}
+      callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
+        console.log(props.maker);
+          props.maker[index].distanceText = element.distance.text;
+          props.maker[index].distanceValue = element.distance.value;
+        });
+        setRenderCount(1);
+      }}
+    />
+    <div className='distanceMatrixSlides list-body'>
+    <br/>
+    <h2>Local Makers Near You</h2>
+    <hr/>
+      {renderCount === 0 ?
+        null
+        :
+        props.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
+          return  (
+            <>
+          <div className='matrixSlide'>
+
+          {maker.approved_maker ?
+              <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
+          :
+          null
+          }
+          </div>
+          </>
+        )})
+      }
+      </div>
+  </div>
+  )
 }
 
 // Button on DOM, upon click will take the user to their current location based on their GeoLocation
