@@ -194,10 +194,12 @@ return(
       unitSystem: window.google.maps.UnitSystem.IMPERIAL,
       }}
       callback = {(response, status) => {
-        if(response === null) {
+        console.log('Status Returned from the Distance API',status);
+        if(response === null || status != 'OK') {
           setRenderCount(0);
           return
         } else {
+        console.log('Is the Error Here????????', response.rows[0]);
         response.rows[0].elements.forEach((element, index) => {
         console.log(props.maker[index]);
           props.maker[index].distanceText = element.distance.text;
