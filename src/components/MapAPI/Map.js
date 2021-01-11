@@ -205,9 +205,14 @@ return(
             } else {
             response.rows[0].elements.forEach((element, index) => {
             console.log(props.maker[index]);
+            if(element.distance.text === null || element.distance.value ===null){
+              console.log('Error in Element', element);
+              setRenderCount(0);
+              return
+            }else{
               props.maker[index].distanceText = element.distance.text;
               props.maker[index].distanceValue = element.distance.value;
-            });
+            }});
             setRenderCount(1);
           }}}
         />
