@@ -206,7 +206,7 @@ return(
             } else {
             response.rows[0].elements.forEach((element, index) => {
             console.log(props.maker[index]);
-            if(element.distance.text === null || element.distance.value ===null){
+            if(element.status != "OK" ){
               console.log('Error in Element', element);
               setRenderCount(0);
               return
