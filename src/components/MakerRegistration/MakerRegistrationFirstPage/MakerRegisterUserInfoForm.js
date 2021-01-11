@@ -40,10 +40,20 @@ class MakerRegisterUserForm extends Component {
     });
   };
 
+  secretBtn = () => {
+    this.setState({
+      firstName: 'Emma',
+      lastName: 'Fisher',
+      birthDate: '1990-04-14',
+      username: 'emma@emmaschipco.com',
+      password: 'asdf1234',
+    })
+  }
+
   render() {
     return (
       <Form className="formPanel userRegisterForm">
-        <h2>CREATE A MAKER ACCOUNT</h2>
+        <h2 onClick={this.secretBtn}>CREATE A MAKER ACCOUNT</h2>
         <hr className="registerOptionsHr"/>
         <h4>Let's get some basic info first</h4>
         <br/>
