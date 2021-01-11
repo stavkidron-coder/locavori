@@ -37,7 +37,7 @@ class MakerProfilePage extends React.Component {
         {this.props.store.makerCard.map((maker) => {
            return (
         <>
-        {maker.approved_maker ?
+        {maker.approved_maker || this.props.store.user.admin ?
 
           <Card  key={maker.id}>
             <CardBody className="MakerProfileCard">
