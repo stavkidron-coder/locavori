@@ -198,12 +198,16 @@ return(
           }}
           callback = {(response, status) => {
             console.log('Status Returned from the Distance API',status);
-            console.log('Data from API', response.rows[0]);
-            if(response.rows[0] === null || status != 'OK' || response === null) {
+            console.log('Data from API', response);
+            if(status != 'OK' || response === null) {
               console.log('Error Hit Reattempting Render:', response);
               setRenderCount(0);
               return
-            } else {
+            } else if (response.rows.length > props.maker.length){
+              console.log('Length of rows and rows data', response.rows.length, response.rows);
+              setRenderCount(0);
+              return
+            }else{
             response.rows[0].elements.forEach((element, index) => {
             console.log(props.maker[index]);
             if(element.status != "OK" ){
