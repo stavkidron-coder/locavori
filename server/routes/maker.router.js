@@ -295,7 +295,7 @@ router.put('/', async (req, res) => {
     const queryText = `
     UPDATE "tbl_artisans"
     SET "approved_maker" = false
-    where "id" = $1;`;
+    where "profile_id" = $1;`;
     pool.query(queryText, [ req.params.id])
       .then((result) => {
         res.sendStatus(200)

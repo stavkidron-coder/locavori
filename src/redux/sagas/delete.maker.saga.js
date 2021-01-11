@@ -28,7 +28,6 @@ function* approveMaker(action) {
      try {
          let response = yield axios.put(`/api/adminDeny/${action.payload}`);
          console.log('in denyMaker looking for ID :',action.payload);
-         
          yield put({ type: 'GET_MAKERS', payload: response.data })
      } catch (error) {
          console.log('error in delete catch', error);
