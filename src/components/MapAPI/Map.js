@@ -61,6 +61,7 @@ function LocalMap(props) {
 
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
+  const [origin, setOrigin] = React.useState()
 
   //Checks DB for different product types to display specific pins on map
   function iconSelect (marker) {
@@ -95,7 +96,7 @@ function LocalMap(props) {
   const panToLocate = React.useCallback(({ lat, lng }) => {
     console.log("coords",lat, lng)
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(14);
+    mapRef.current.setZoom(13.5);
   }, []);
 
   const panToSearch = React.useCallback(({ lat, lng }) => {
@@ -122,24 +123,23 @@ function LocalMap(props) {
         {markers.map((marker) => (
         <>
           {marker.approved_maker ? 
-          <Marker
-          key={`${marker.latitude}-${marker.longitude}`}
-          position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-          onClick={() => {
-            setSelected(marker);
-          }}
-          // icon for map
-          icon={{
-            url: iconSelect(marker),
-            origin: new window.google.maps.Point(0, 0),
-            anchor: new window.google.maps.Point(15, 15),
-            scaledSize: new window.google.maps.Size(35, 35),
-          }}
-        />
-          :
-          null
-        }
-          
+            <Marker
+              key={`${marker.latitude}-${marker.longitude}`}
+              position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+              onClick={() => {
+                setSelected(marker);
+              }}
+              // icon for map
+              icon={{
+                url: iconSelect(marker),
+                origin: new window.google.maps.Point(0, 0),
+                anchor: new window.google.maps.Point(15, 15),
+                scaledSize: new window.google.maps.Size(35, 35),
+              }}
+            />
+            :
+            null
+          }
         </>
        ))}
 
@@ -193,13 +193,18 @@ return(
       travelMode: "DRIVING",
       unitSystem: window.google.maps.UnitSystem.IMPERIAL,
       }}
-      callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
+      callback = {(response, status) => {
+        if(response === null) {
+          setRenderCount(0);
+          return
+        } else {
+        response.rows[0].elements.forEach((element, index) => {
         console.log(props.maker[index]);
           props.maker[index].distanceText = element.distance.text;
           props.maker[index].distanceValue = element.distance.value;
         });
         setRenderCount(1);
-      }}
+      }}}
     />
       </>)
       :
