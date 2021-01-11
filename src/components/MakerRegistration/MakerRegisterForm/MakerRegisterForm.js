@@ -32,10 +32,11 @@ state = {
 }
 
 componentDidMount = () => {
-  this.props.dispatch({type: 'INITIALIAZE_MAKER_STORE', payload: this.state.initial_maker});
+  this.props.dispatch({type: 'INITIALIZE_MAKER_STORE', payload: this.state.initial_maker});
 }
 
   save = () => {
+    console.log('maker_registration:', this.props.store.maker_registration);
     this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
   }
 

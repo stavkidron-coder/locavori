@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import './AdminMakerTab.css';
-import { Card, CardBody, CardTitle, Button, CardSubtitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardBody, CardTitle, Button, CardSubtitle, CardText, Row, Col, Container, CardFooter, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom'
 
 
@@ -28,49 +28,73 @@ class Maker extends Component {
   }
   render() {
     return (
-      <div>
+      <>
+
+        <h1>Approved Makers</h1>
+
         <div className="MakerTabBody">
+          <Container>
+            <Row>
           {this.props.store.maker.map((maker) => {
             return (
               <>
                 {maker.approved_maker ?
 
-                  <Card key={maker.id} className="MakerCard">
-                    <CardBody>
+                <Col xs="12" md="6" xl="4">
+                  <Card key={maker.id} className="adminCards">
+
+                    <CardHeader className="cardHeader">
                       <CardTitle tag="h5">{maker.business_name}</CardTitle>
-                      <CardSubtitle tag="h6" className="mb-2 text-muted">{maker.product_type_one}</CardSubtitle>
-                    </CardBody>
+                      <CardSubtitle tag="h6" className="mb-2">{maker.product_type_one}</CardSubtitle>
+                    </CardHeader>
 
-                    <img className="MakerCardImg" width="100%" src={maker.owner_img} alt={maker.business_name} />
+                    <img className="adminMakerImg" src={maker.owner_img} alt={maker.business_name} />
+                    
 
                     <CardBody>
-                      <CardText>Products:</CardText>
-                      <CardText>{maker.product_type_one}, {maker.product_type_two}, {maker.product_type_three}</CardText>
-                      <Row>
-
+                      <Col xs="12">
+                        <CardText>
+                          <h5>Products:</h5>
+                          <hr/>
+                          {maker.product_type_one}
+                          <br/>
+                          {maker.product_type_two}
+                          <br/>
+                          {maker.product_type_three}
+                        </CardText>
+                      </Col>
+                      </CardBody>
+                      
+                      <CardFooter className="cardFooter">
+                        <Row>
                         <Col xs="8">
-                          <Button color="primary" onClick={() => this.ViewProfile(maker.profile_id)}>
-                            <Link to="#" className="viewProfileLink">View Profile</Link>
+                          <Button className="viewProfileBtn" onClick={() => this.ViewProfile(maker.profile_id)}>
+                              View Profile
                           </Button>
                         </Col>
 
                         <Col xs="4">
-                          <Button color="danger" onClick={() => this.deleteMaker(maker.profile_id)}>
+                          <Button className="declineBtn" onClick={() => this.deleteMaker(maker.profile_id)}>
                             Delete
                         </Button>
                         </Col>
-
-                      </Row>
-                    </CardBody>
+                        </Row>
+                      </CardFooter>
+                    
                   </Card>
-
+                </Col>
                   :
-                  <p/>
+                  null
+                  
                 }
+                
               </>
             )
-          })}</div>
-      </div>
+          })}
+            </Row>
+          </Container>
+        </div>
+      </>
     );
   }
 }

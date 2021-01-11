@@ -123,55 +123,55 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
+        {markers.map((marker) => (
+        <>
+          {marker.approved_maker ? 
+          <Marker
+          key={`${marker.latitude}-${marker.longitude}`}
+          position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+          onClick={() => {
+            setSelected(marker);
+            console.log('ITS A SECRET TO EVERYONE', store.maker);
+          }}
+          // icon for map
+          icon={{
+            url: iconSelect(marker),
+            origin: new window.google.maps.Point(0, 0),
+            anchor: new window.google.maps.Point(15, 15),
+            scaledSize: new window.google.maps.Size(35, 35),
+          }}
+        />
+          :
+          null
+        }
+          
+        </>
+       ))}
 
-          {markers.map((marker) => (
-            <>
-              {marker.approved_maker ? 
-              <Marker
-              key={`${marker.latitude}-${marker.longitude}`}
-              position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-              onClick={() => {
-                setSelected(marker);
-                console.log('ITS A SECERT TO EVERYONE',props.store.maker);
-              }}
-              // icon for map
-              icon={{
-                url: iconSelect(marker),
-                origin: new window.google.maps.Point(0, 0),
-                anchor: new window.google.maps.Point(15, 15),
-                scaledSize: new window.google.maps.Size(30, 30),
-              }}
-            />
-              :
-              null
-            }
-            </>
-          ))}
-
-          {/* INFO WINDOW */}
-          {selected ? (
-          <InfoWindow
-              position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
-              onCloseClick={() => {
-                setSelected(null);
-              }}>
-              <div className='infoWindow'>
-                <Row>
-                  <Col xs="3">
-                    <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
-                  </Col>
-  
-                  <Col xs="9">
-                    <h2>{selected.business_name}</h2>
-                    <p>{selected.story}</p>
-                    {/* {JSON.stringify(selected)} */}
-                    {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
-                    <Button size="sm" color="link" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)} >See More...</Button>
-                  </Col>
-                </Row> 
-              </div>
-          </InfoWindow>) : null}
-        </GoogleMap>
+        {/* INFO WINDOW */}
+        {selected ? (
+         <InfoWindow
+            position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}>
+             <div className='infoWindow'>
+               <Row>
+                 <Col xs="3">
+                   <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
+                 </Col>
+ 
+                 <Col xs="9">
+                   <h2>{selected.business_name}</h2>
+                   <p>{selected.story}</p>
+                   {/* {JSON.stringify(selected)} */}
+                   {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
+                   <Button size="sm" color="link" className="infoWindowSeeMoreBtn" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)}>See More...</Button>
+                 </Col>
+               </Row> 
+             </div>
+         </InfoWindow>) : null}
+         </GoogleMap>
          <DistanceMatrixService
             options={{
             destinations: props.store.maker.map((destinations) => {
