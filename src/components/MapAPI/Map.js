@@ -58,24 +58,19 @@ function LocalMap(props) {
   
   // Connects Entire store to Hook Component
   const store = useSelector(store => store);
+
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
-  const [origin, setOrigin] = React.useState([]);
-  // const [distanceSlides, setDistanceSlides] = React.useState([]);
-  const [renderCount, setRenderCount] = React.useState(0);
 
   //Checks DB for different product types to display specific pins on map
   function iconSelect (marker) {
     if (marker.product_type_food !== '{}') {
-      console.log('packaged pin')
       return packagedPin
     }
     else if (marker.product_type_fresh !== '{}') {
-      console.log('fresh pin')
       return freshPin
     }
     else if (marker.product_type_bev !== '{}'){
-      console.log('drink pin')
       return drinkPin
     }
     else
@@ -132,7 +127,6 @@ function LocalMap(props) {
           position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
           onClick={() => {
             setSelected(marker);
-            console.log('ITS A SECRET TO EVERYONE', store.maker);
           }}
           // icon for map
           icon={{
@@ -186,6 +180,8 @@ function DistanceMatrix(){
   const [renderCount, setRenderCount] = React.useState(0);
 return(
   <div>
+    {renderCount === 0 ?(
+      <>
     <DistanceMatrixService
       options={{
       destinations: props.maker.map((destinations) => {
@@ -198,35 +194,38 @@ return(
       unitSystem: window.google.maps.UnitSystem.IMPERIAL,
       }}
       callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
-        console.log(props.maker);
+        console.log(props.maker[index]);
           props.maker[index].distanceText = element.distance.text;
           props.maker[index].distanceValue = element.distance.value;
         });
         setRenderCount(1);
       }}
     />
-    <div className='distanceMatrixSlides list-body'>
-    <br/>
-    <h2>Local Makers Near You</h2>
-    <hr/>
-      {renderCount === 0 ?
-        null
-        :
-        props.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
-          return  (
-            <>
-          <div className='matrixSlide'>
-
-          {maker.approved_maker ?
-              <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
-          :
+      </>)
+      :
+      <div className='distanceMatrixSlides list-body'>
+      <br/>
+      <h2>Local Makers Near You</h2>
+      <hr/>
+        {renderCount === 0 ?
           null
-          }
-          </div>
-          </>
-        )})
-      }
-      </div>
+          :
+          props.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
+            return  (
+              <>
+            <div className='matrixSlide'>
+  
+            {maker.approved_maker ?
+                <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
+            :
+            null
+            }
+            </div>
+            </>
+          )})
+        }
+        </div>
+    }
   </div>
   )
 }
