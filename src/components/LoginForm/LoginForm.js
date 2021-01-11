@@ -32,10 +32,24 @@ class LoginForm extends Component {
     });
   };
 
+  beauSecretBtn = () => {
+    this.setState({
+      username: 'beau@gmail.com',
+      password: 'asdf1234',
+    })
+  }
+  
+  stavSecretBtn = () => {
+    this.setState({
+      username: 'kidronstav@gmail.com',
+      password: 'asdf1234',
+    })
+  }
+
   render() {
     return (
       <Form className="formPanel loginForm" onSubmit={this.login}>
-        <h2>Login</h2>
+        <h2 onClick={this.beauSecretBtn}>Login</h2>
         {this.props.store.errors.loginMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.loginMessage}
@@ -43,7 +57,7 @@ class LoginForm extends Component {
         )}
         
         <FormGroup>
-          <Label htmlFor="email">
+          <Label htmlFor="email" onClick={this.stavSecretBtn}>
             Email:
             <Input
               type="text"
