@@ -26,7 +26,7 @@ function* approveMaker(action) {
  function* denyMaker(action) {
     //recieves info of which item to "delete" from db and updates
      try {
-         let response = yield axios.put(`/api/adminDeny/${action.payload}`);
+         let response = yield axios.delete(`/api/adminDeny/${action.payload}`);
          console.log('in denyMaker looking for ID :',action.payload);
          yield put({ type: 'GET_MAKERS', payload: response.data })
      } catch (error) {

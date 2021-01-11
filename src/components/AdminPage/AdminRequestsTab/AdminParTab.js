@@ -81,7 +81,7 @@ class AdminPARTab extends Component {
                             <AcceptBtn className="acceptBtn" makerId={maker.profile_id} />
                             </Col>
                             <Col xs="3">
-                            <DeclineBtn className="declineBtn" makerId= {maker.profile_id}/>
+                            <DeclineBtn className="declineBtn" makerId={maker.profile_id}/>
                             </Col>
                           </Row>
                           </CardFooter>
