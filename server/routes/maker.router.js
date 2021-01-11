@@ -40,9 +40,6 @@ router.get('/', async (req, res) => {
   let deliveryArray = req.query.delivery.split(','); 
   let makerArray = req.query.makers.split(',');
   let locationArray = req.query.location.split(',');
-  // let freshArray = req.query.fresh.split(',');
-  // let preparedArray = req.query.prepared.split(',');
-  // let beveragesArray = req.query.beverages.split(',');
   let dietArray = req.query.diet.split(',');
   let resultArray = [];
 
@@ -52,6 +49,7 @@ router.get('/', async (req, res) => {
       var result = await pool.query(queryText)
       resultArray.push(result.rows)
    } catch (error) {
+     console.log('error in fresh filter', error)
      res.sendStatus(500);
      return
    }
@@ -63,6 +61,7 @@ router.get('/', async (req, res) => {
       var result = await pool.query(queryText)
       resultArray.push(result.rows)
    } catch (error) {
+     console.log('error in prepared filter', error)
      res.sendStatus(500);
      return
    }
@@ -74,6 +73,7 @@ router.get('/', async (req, res) => {
       var result = await pool.query(queryText)
       resultArray.push(result.rows)
    } catch (error) {
+     console.log('error in beverages filter', error)
      res.sendStatus(500);
      return
    }
@@ -86,6 +86,7 @@ router.get('/', async (req, res) => {
           var result = await pool.query(queryText)
           resultArray.push(result.rows)
        } catch (error) {
+         console.log('error in pickup filter', error)
          res.sendStatus(500);
          return
        }
@@ -95,6 +96,7 @@ router.get('/', async (req, res) => {
           var result = await pool.query(queryText)
           resultArray.push(result.rows)
        } catch (error) {
+         console.log('error in delivery filter', error)
          res.sendStatus(500);
          return
        }
@@ -104,6 +106,7 @@ router.get('/', async (req, res) => {
           var result = await pool.query(queryText)
           resultArray.push(result.rows)
        } catch (error) {
+         console.log('error in shipping filter', error)
          res.sendStatus(500);
          return
        }
@@ -115,26 +118,29 @@ router.get('/', async (req, res) => {
          var result = await pool.query(queryAvail, [availabilityArray[i]])
          resultArray.push(result.rows)
       } catch (error) {
+        console.log('error in availability filter', error)
         res.sendStatus(500);
         return
       }
     }
-    const queryMaker = `SELECT * FROM tbl_artisans WHERE maker_type_tokens @@ to_tsquery($1);`
+    const queryMaker = `SELECT * FROM tbl_artisans WHERE business_type_tokens @@ to_tsquery($1);`
     for (let i = 0; i < makerArray.length; i++){
       try {
          var result = await pool.query(queryMaker, [makerArray[i]])
          resultArray.push(result.rows)
       } catch (error) {
+        console.log('error in maker type filter', error)
         res.sendStatus(500);
         return
       }
     }
-    const queryLocation = `SELECT * FROM tbl_artisans WHERE location_tokens @@ to_tsquery($1);`
+    const queryLocation = `SELECT * FROM tbl_artisans WHERE where_sold_tokens @@ to_tsquery($1);`
     for (let i = 0; i < locationArray.length; i++){
       try {
          var result = await pool.query(queryLocation, [locationArray[i]])
          resultArray.push(result.rows)
       } catch (error) {
+        console.log('error in location filter', error)
         res.sendStatus(500);
         return
       }
@@ -145,6 +151,7 @@ router.get('/', async (req, res) => {
          var result = await pool.query(queryDiet, [dietArray[i]])
          resultArray.push(result.rows)
       } catch (error) {
+        console.log('error in product category filter', error)
         res.sendStatus(500);
         return
       }
@@ -156,7 +163,6 @@ router.get('/', async (req, res) => {
  * PUT route template
  */
 router.put('/', async (req, res) => {
-  console.log(req.body.business_type.toString());
 
   const makerInfo =[
 
