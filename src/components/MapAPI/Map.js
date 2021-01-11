@@ -175,6 +175,7 @@ function LocalMap(props) {
 //Runs Google Distance Matrix API, returns the response and on good data return renders that to the dom
 //Set against a conditional render to prevent multiple calls to the API which results in errors
 //Checks if the data returned is good, if not will reset the conditional render and try again
+//Double Checks Element
 function DistanceMatrix(){
 
   const props = useSelector(props => props);
@@ -205,9 +206,14 @@ return(
             } else {
             response.rows[0].elements.forEach((element, index) => {
             console.log(props.maker[index]);
+            if(element.distance.text === null || element.distance.value ===null){
+              console.log('Error in Element', element);
+              setRenderCount(0);
+              return
+            }else{
               props.maker[index].distanceText = element.distance.text;
               props.maker[index].distanceValue = element.distance.value;
-            });
+            }});
             setRenderCount(1);
           }}}
         />
