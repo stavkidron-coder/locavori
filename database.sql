@@ -602,6 +602,35 @@ VALUES
 (171,14,99);
 
 
+-- Arbeiter Brewing Co
+INSERT INTO "public"."tbl_profile"("first_name","last_name","birth_date","email","password","date_stamp")
+VALUES
+(E'Arbeiter',E'Brewing',E'',E'info@arbeiterbrewing.com',E'',E'2021-01-09 18:38:28.710877');
+INSERT INTO "public"."tbl_artisans"("profile_id","legal_name","business_name","first_name","last_name","email_contact","phone_one","phone_two","business_address","business_address_two","business_city","business_state","business_postalcode","business_country","public_address_one","public_address_two","public_city","public_state","public_zip","public_country","latitude","longitude","website","facebook","instagram","public_email","other_contacts","license","st_license","give_back","business_type","business_type_other","where_sold","where_sold_other","pickup","delivery","shipping","product_dist","story","product_avail","product_type_food","product_type_food_other","product_type_fresh","product_type_fresh_other","product_type_bev","product_type_bev_other","product_type_exp","product_type_exp_other","product_type_cat","product_type_cat_other","product_type_one","product_img_one","product_url_one","product_type_two","product_img_two","product_url_two","product_type_three","product_img_three","product_url_three","product_unique","owner_img","video","product_img","lifestyle_img","business_img","anything_else","awards","sales_sheet","logo","pending_maker","approved_maker","dateStampUTC","modifiedUTC")
+VALUES
+(15,E'Arbeiter',E'Arbeiter Brewing Co',E'Arbeiter',E'Brewing',E'info@arbeiterbrewing.com',E'612-438-2437',E'',E'3038 Minnehaha ave','',E'Minneapolis',E'MN',E'55406',E'USA',E'','',E'',E'',E'',E'USA',44.9470,-93.2338,E'https://arbeiterbrewing.com/',
+E'https://www.facebook.com/arbeiterbrewing',
+'https://www.instagram.com/arbeiterbrewing/',
+E'info@arbeiterbrewing.com','','','','',E'Brewer','','retail store non grocery, business, curbside pickup','','YES',E'no',E'no','',E'Brewing American ales & lagers with a dose of German influence as an homage to The North and beyond.',E'',E'{}','',E'{}','',E'beer','','','','','',E'beer',E'https://arbeiterbrewing.com/wp-content/uploads/2020/12/Arbeiter_Can_Yellow-1024x1024.png',
+E'https://arbeiterbrewing.com/beer/',
+E'Growlers',E'https://arbeiterbrewing.com/wp-content/uploads/2020/06/badWeatherCollab-1.jpg',
+E'https://arbeiterbrewing.com/beer/',
+E'Collaboration Brews ',E'https://arbeiterbrewing.com/wp-content/uploads/2020/06/blackStack.jpg',
+ 
+E'https://arbeiterbrewing.com/beer/',E' ',E'https://arbeiterbrewing.com/wp-content/uploads/2020/06/juno.jpg',
+ 
+'',E'',E'',E'https://arbeiterbrewing.com/wp-content/uploads/2020/12/front-door-1024x1024.jpg',
+ 
+E'',E'',E'',E'https://arbeiterbrewing.com/wp-content/themes/arbeiter-theme/assets/vectors/wide-logo.svg',True,True,E'2020-12-17 18:54:12.860655',E'18:54:12.860655');
+INSERT INTO "public"."artisans_type"("id","artisans_id","type_id")
+VALUES
+(172,15,5),
+(173,15,16),
+(174,15,17),
+(175,15,20),
+(176,15,22),
+(177,15,25),
+(178,15,83);
 
 
 
