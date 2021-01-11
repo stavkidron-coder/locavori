@@ -189,7 +189,7 @@ return(
         const lng = Number(destinations.longitude);
         return {lat , lng};
       }),
-      origins: [{lng:-93.29471079999999, lat:44.9508563}],
+      origins: [{lng:-93.2249776, lat:44.9297999}],
       travelMode: "DRIVING",
       unitSystem: window.google.maps.UnitSystem.IMPERIAL,
       }}
