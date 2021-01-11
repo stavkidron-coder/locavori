@@ -46,7 +46,7 @@ function LocalMap(props) {
 
   // Uses store to set markers which are in turn rendered to the map
   React.useEffect (() => {
-    setMarkers(store.maker);
+    setMarkers(props.store.maker);
   });
 
   // Upon DOM load will query below
@@ -61,7 +61,7 @@ function LocalMap(props) {
   const [selected, setSelected] = React.useState(null);
   const [origin, setOrigin] = React.useState([]);
   // const [distanceSlides, setDistanceSlides] = React.useState([]);
-  const [renderCount, setRenderCount] = React.useState(0)
+  const [renderCount, setRenderCount] = React.useState(0);
 
   //Checks DB for different product types to display specific pins on map
   function iconSelect (marker) {
@@ -123,8 +123,6 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
-
-
         {markers.map((marker) => (
         <>
           {marker.approved_maker ? 
@@ -176,31 +174,31 @@ function LocalMap(props) {
          </GoogleMap>
          <DistanceMatrixService
             options={{
-            destinations: store.maker.map((destinations) => {
+            destinations: props.store.maker.map((destinations) => {
               const lat = Number(destinations.latitude);
               const lng = Number(destinations.longitude);
               return {lat , lng};
             }),
             origins: [{lng:-93.29471079999999, lat:44.9508563}],
             travelMode: "DRIVING",
-            // unitSystem: "IMPERIAL",
+            unitSystem: window.google.maps.UnitSystem.IMPERIAL,
             }}
             callback = {(response, status) => {response.rows[0].elements.forEach((element, index) => {
-              console.log(store.maker);
-                store.maker[index].distanceText = element.distance.text;
-                store.maker[index].distanceValue = element.distance.value;
+              console.log(props.store.maker);
+                props.store.maker[index].distanceText = element.distance.text;
+                props.store.maker[index].distanceValue = element.distance.value;
               });
               setRenderCount(1);
             }}
           />
          <div className='distanceMatrixSlides list-body'>
-          <br/>
+         <br/>
          <h2>Local Makers Near You</h2>
          <hr/>
             {renderCount === 0 ?
               null
               :
-              store.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
+              props.store.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
                 return  (
                   <>
                 <div className='matrixSlide'>
@@ -229,7 +227,7 @@ function Locate({ panToLocate }) {
       onClick={() => {
         navigator.geolocation.getCurrentPosition(
           (position) => {
-            console.log(position)
+            console.log(position);
             panToLocate({
               lat: position.coords.latitude,
               lng: position.coords.longitude,
