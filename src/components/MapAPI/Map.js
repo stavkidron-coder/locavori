@@ -55,13 +55,9 @@ function LocalMap(props) {
     googleMapsApiKey: "AIzaSyDOqfm-oP_UKSq5ayaR72V_R-p8W1JJvrY", 
     libraries,
   });
-  
-  // Connects Entire store to Hook Component
-  const store = useSelector(store => store);
 
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
-  const [origin, setOrigin] = React.useState()
 
   //Checks DB for different product types to display specific pins on map
   function iconSelect (marker) {
@@ -104,7 +100,9 @@ function LocalMap(props) {
     mapRef.current.setZoom(12);
   }, []);
 
+  //On Error with Map API return below text
   if (loadError) return "Error loading maps";
+  // While Map Loads Render Spinner to DOM
   if (!isLoaded) return <Spinner color="primary"/>;
 
   return (
@@ -120,92 +118,99 @@ function LocalMap(props) {
           options={options}
           onLoad={onMapLoad}
         >
-        {markers.map((marker) => (
-        <>
-          {marker.approved_maker ? 
-            <Marker
-              key={`${marker.latitude}-${marker.longitude}`}
-              position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
-              onClick={() => {
-                setSelected(marker);
-              }}
-              // icon for map
-              icon={{
-                url: iconSelect(marker),
-                origin: new window.google.maps.Point(0, 0),
-                anchor: new window.google.maps.Point(15, 15),
-                scaledSize: new window.google.maps.Size(35, 35),
-              }}
-            />
-            :
-            null
+          {markers.map((marker) => (
+            <>
+              {marker.approved_maker ? 
+                <Marker
+                  key={`${marker.latitude}-${marker.longitude}`}
+                  position={{ lat: Number(marker.latitude), lng: Number(marker.longitude) }}
+                  onClick={() => {
+                    setSelected(marker);
+                  }}
+                  // icon for map
+                  icon={{
+                    url: iconSelect(marker),
+                    origin: new window.google.maps.Point(0, 0),
+                    anchor: new window.google.maps.Point(15, 15),
+                    scaledSize: new window.google.maps.Size(35, 35),
+                  }}
+                />
+                :
+                null
+              }
+            </>
+            ))
           }
-        </>
-       ))}
 
-        {/* INFO WINDOW */}
-        {selected ? (
-         <InfoWindow
-            position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
-            onCloseClick={() => {
-              setSelected(null);
-            }}>
-             <div className='infoWindow'>
-               <Row>
-                 <Col xs="3">
-                   <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
-                 </Col>
- 
-                 <Col xs="9">
-                   <h2>{selected.business_name}</h2>
-                   <p>{selected.story}</p>
-                   {/* {JSON.stringify(selected)} */}
-                   {/* NEEDS TO BE LOOKED AT // NOT GETTING MAKER ID */}
-                   <Button size="sm" color="link" className="infoWindowSeeMoreBtn" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)}>See More...</Button>
-                 </Col>
-               </Row> 
-             </div>
-         </InfoWindow>) : null}
-         </GoogleMap>
-         <DistanceMatrix />
-         </div>
-       </div>
+          {/* INFO WINDOW */}
+          {selected ? (
+          <InfoWindow
+              position={{ lat: Number(selected.latitude), lng: Number(selected.longitude) }}
+              onCloseClick={() => {
+                setSelected(null);
+              }}>
+              <div className='infoWindow'>
+                <Row>
+                  <Col xs="3">
+                    <img class='infoWindowImg' src={selected.product_img_one} alt={selected.product_type_one} />
+                  </Col>
+  
+                  <Col xs="9">
+                    <h2>{selected.business_name}</h2>
+                    <p>{selected.story}</p>
+                    <Button size="sm" color="link" className="infoWindowSeeMoreBtn" onClick={() => props.history.push(`/makerCard/${selected.profile_id}`)}>See More...</Button>
+                  </Col>
+                </Row> 
+              </div>
+          </InfoWindow>) : null}
+        </GoogleMap>
+
+        <DistanceMatrix />
+
+      </div>
+    </div>
    );
 }
 
+//Runs Google Distance Matrix API, returns the response and on good data return renders that to the dom
+//Set against a conditional render to prevent multiple calls to the API which results in errors
+//Checks if the data returned is good, if not will reset the conditional render and try again
 function DistanceMatrix(){
 
   const props = useSelector(props => props);
-  // const [distanceSlides, setDistanceSlides] = React.useState([]);
   const [renderCount, setRenderCount] = React.useState(0);
+
 return(
   <div>
     {renderCount === 0 ?(
       <>
-    <DistanceMatrixService
-      options={{
-      destinations: props.maker.map((destinations) => {
-        const lat = Number(destinations.latitude);
-        const lng = Number(destinations.longitude);
-        return {lat , lng};
-      }),
-      origins: [{lng:-93.29471079999999, lat:44.9508563}],
-      travelMode: "DRIVING",
-      unitSystem: window.google.maps.UnitSystem.IMPERIAL,
-      }}
-      callback = {(response, status) => {
-        if(response === null) {
-          setRenderCount(0);
-          return
-        } else {
-        response.rows[0].elements.forEach((element, index) => {
-        console.log(props.maker[index]);
-          props.maker[index].distanceText = element.distance.text;
-          props.maker[index].distanceValue = element.distance.value;
-        });
-        setRenderCount(1);
-      }}}
-    />
+        <DistanceMatrixService
+          options={{
+          destinations: props.maker.map((destinations) => {
+            const lat = Number(destinations.latitude);
+            const lng = Number(destinations.longitude);
+            return {lat , lng};
+          }),
+          origins: [{lng:-93.2249776, lat:44.9297999}],
+          travelMode: "DRIVING",
+          unitSystem: window.google.maps.UnitSystem.IMPERIAL,
+          }}
+          callback = {(response, status) => {
+            console.log('Status Returned from the Distance API',status);
+            console.log('Data from API', response.rows[0]);
+            if(response.rows[0] === null || status != 'OK' || response === null) {
+              console.log('Error Hit Reattempting Render:', response);
+              setRenderCount(0);
+              return
+            } else {
+            response.rows[0].elements.forEach((element, index) => {
+            console.log(props.maker[index]);
+              props.maker[index].distanceText = element.distance.text;
+              props.maker[index].distanceValue = element.distance.value;
+            });
+            setRenderCount(1);
+          }}}
+        />
       </>)
       :
       <div className='distanceMatrixSlides list-body'>
@@ -219,13 +224,12 @@ return(
             return  (
               <>
             <div className='matrixSlide'>
-  
-            {maker.approved_maker ?
-                <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
-            :
-            null
-            }
-            </div>
+              {maker.approved_maker ?
+                  <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
+              :
+              null
+              }
+              </div>
             </>
           )})
         }
