@@ -47,18 +47,18 @@ class MakerRegisterStoryTab extends Component {
 
               <Row>
                 <Col xs="4">
-                  <Label htmlFor="storyInput">Story/Bio for your Maker Profile</Label>
+                  <Label htmlFor="storyInput">Story/Bio For Your Maker Profile</Label>
                   <Input type="textarea" placeholder="Tell us your story..." id="storyInput" defaultValue={this.state.story} onChange={(event) => this.handleChange(event, 'story')}></Input>
                     
                 </Col>
 
                 <Col xs="4">
-                  <Label htmlFor="giveBackInput">give-back components</Label>
+                  <Label htmlFor="giveBackInput">Give-Back Components</Label>
                   <Input type="textarea" id="giveBackInput" defaultValue={this.state.give_back} placeholder="Do you have a give-back component to your business? (i.e. support a cause or nonprofit, etc)" onChange={(event) => this.handleChange(event, 'give_back')}></Input>              
                 </Col>
 
                 <Col xs="4">
-                  <Label htmlFor="anythingElseInput">Anything else?</Label>
+                  <Label htmlFor="anythingElseInput">Anything Else?</Label>
                     <Input type="textarea" defaultValue={this.state.anything_else} placeholder="Is there anything else you would like us to know?" id="anythingElseInput" onChange={(event) => this.handleChange(event, 'anything_else')}></Input>
                 </Col>
               </Row>       
