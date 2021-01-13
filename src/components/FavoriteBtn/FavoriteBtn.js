@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import '../HomePage/MakerCard/MakerCard.css';
+import '../MakerCard/MakerCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';

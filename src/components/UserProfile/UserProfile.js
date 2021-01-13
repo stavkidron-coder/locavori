@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DesktopNav from '../Navbars/DesktopNav';
 import './UserProfile.css';
-import MakerCard from '../HomePage/MakerCard/MakerCard';
+import MakerCard from '../MakerCard/MakerCard';
 import { Container, Jumbotron } from 'reactstrap';
 
 
