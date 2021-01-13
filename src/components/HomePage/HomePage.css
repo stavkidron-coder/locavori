@@ -1,20 +1,23 @@
 .homePageBody {
   min-height: 779px;
-  /* max-height: 720px; */
-}
-
-.listContainer {
-  text-align: center;
-  /* border: 1px solid black; */
-}
-
-.mapContainer {
-  text-align: center;
-  /* border: 1px solid black; */
-  height: 52px;
-  /* padding: 100px; */
 }
 
 .filterMapBody {
   padding: 40px;
+}
+
+.listContainer {
+  text-align: center;
+}
+
+.mapContainer {
+  text-align: center;
+  height: 52px;
+}
+
+.list-body {
+  min-height: 620px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 100%;
 }
