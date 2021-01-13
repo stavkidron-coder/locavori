@@ -1,3 +1,4 @@
+// Json Data from https://snazzymaps.com/
 export default [
     {
         "featureType": "landscape.man_made",

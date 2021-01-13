@@ -2,6 +2,10 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+
+//this allows admin to approve individual maker and removes them 
+//from pending to approved via boolean value changes
+
 router.put('/:id', (req, res) => {
     const queryText = `
     UPDATE "tbl_artisans"

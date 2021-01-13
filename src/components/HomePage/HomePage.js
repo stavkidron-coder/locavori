@@ -9,14 +9,17 @@ import LocationOptions from '../FilterOptions/LocationOptions';
 import ProductOptions from '../FilterOptions/ProductOptions';
 import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
 import DietaryRestrictions from '../FilterOptions/DietaryRestrictions';
+
 // MAP & LIST
 import Map from './MapView/MapView';
-// import List from './ListView/ListView';
+
 // NAVBAR
 import HomeNav from '../Navbars/HomeNav';
+
 // CSS
 import './HomePage.css';
 import '../FilterOptions/Filters.css';
+
 // BOOTSTRAP
 import { Col, Row, Button } from 'reactstrap';
 

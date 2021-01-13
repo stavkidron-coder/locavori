@@ -45,9 +45,6 @@ class MakerCard extends Component {
                             </Col>
                         </Row>
                     </CardHeader>
-
-{/* Image, story, see more link */}
-
                         <CardBody>
                             <Row>
                             <Col xs="6" md="4" xl="2">

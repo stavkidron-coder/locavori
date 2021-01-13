@@ -71,6 +71,9 @@ If you would like to name your database something else, you will need to change 
 - Google Distance Matrix API
 - Google Geocoding API
 - Google Places API
+- [@react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
+- [use-places-autocomplete](https://www.npmjs.com/package/use-places-autocomplete)
+- [@reach/combobox](https://www.npmjs.com/package/@reach/combobox)
 - Bootstrap (React)
 - Font Awesome
 

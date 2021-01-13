@@ -2,6 +2,10 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+
+//this allows admin to deny individual maker and deletes them 
+//from pending requets
+
 router.delete('/:id', (req, res) => {
     const queryText = `
     DELETE FROM "tbl_artisans"
