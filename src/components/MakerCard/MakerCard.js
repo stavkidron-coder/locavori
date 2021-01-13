@@ -5,7 +5,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import './MakerCard.css';
 import FavoriteBtn from '../FavoriteBtn/FavoriteBtn';
 import { withRouter } from "react-router";
-// import FavoriteBtnRemoval from '../../FavoriteBtn/FavoriteBtnRemoval';
+// import FavoriteBtnRemoval from '../../FavoriteBtn/FavoriteBtnRemoval'; SUCCESSFULLY REMOVES FROM FAVORITES BUT IS HAVING TROUBLE CONDITIONAL RENDERING BUTTON
 
 class MakerCard extends Component {
 
@@ -19,11 +19,12 @@ class MakerCard extends Component {
 
     
     render() {
-    console.log('in MakerCard VIEW',this.props.fav);
 
         return (
                 <Card className="makerCard">
-                    {/* Title, product types, favorite Btn */}
+
+{/* Title, product types, favorite Btn */}
+
                     <CardHeader className="ListViewHeader">
                         <Row>
                             <Col xs="10">
@@ -45,11 +46,11 @@ class MakerCard extends Component {
                         </Row>
                     </CardHeader>
 
-                    {/* Image, story, see more link */}
+{/* Image, story, see more link */}
 
                         <CardBody>
                             <Row>
-                            <Col xs="6" sm="6" md="4" xl="2">
+                            <Col xs="6" md="4" xl="2">
                                 <img
                                     src={this.props.maker.product_img_one}
                                     alt={this.props.maker.story}
@@ -57,7 +58,7 @@ class MakerCard extends Component {
                                 />
                             </Col>
                                 
-                            <Col xs="6" sm="6" md="8" xl="2">
+                            <Col xs="6" md="8" xl="2">
                                 <CardText tag="h6" className="ListViewSubtitle">
                                     <h4>Products</h4>
                                     <hr className="lightGreenHr"/>
