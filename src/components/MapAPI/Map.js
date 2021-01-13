@@ -10,7 +10,7 @@ import {withRouter} from 'react-router-dom';
 import {Button, Col, Container, Row, Spinner} from 'reactstrap';
 
 import {useSelector} from 'react-redux';
-import MakerCard from '../HomePage/MakerCard/MakerCard'
+import MakerCard from '../MakerCard/MakerCard'
 
 // Styles Imports
 import './Map.css';

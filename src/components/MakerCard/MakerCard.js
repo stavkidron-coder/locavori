@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, CardBody, CardTitle, CardText, CardHeader, Row, Col, Button } from 'reactstrap';
-import mapStoreToProps from '../../../redux/mapStoreToProps';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 import './MakerCard.css';
-import FavoriteBtn from '../../FavoriteBtn/FavoriteBtn';
+import FavoriteBtn from '../FavoriteBtn/FavoriteBtn';
 import { withRouter } from "react-router";
 // import FavoriteBtnRemoval from '../../FavoriteBtn/FavoriteBtnRemoval';
 
