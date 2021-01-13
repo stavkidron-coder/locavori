@@ -4,9 +4,6 @@ import mapStoreToProps from '../../../redux/mapStoreToProps';
 import { withRouter } from "react-router";
 import './AdminMakerTab.css';
 import { Card, CardBody, CardTitle, Button, CardSubtitle, CardText, Row, Col, Container, CardFooter, CardHeader } from 'reactstrap';
-import { Link } from 'react-router-dom'
-
-
 
 
 class Maker extends Component {

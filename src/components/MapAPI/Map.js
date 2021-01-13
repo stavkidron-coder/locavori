@@ -199,7 +199,7 @@ return(
           callback = {(response, status) => {
             console.log('Status Returned from the Distance API',status);
             console.log('Data from API', response);
-            if(status != 'OK' || response === null) {
+            if(status !== 'OK' || response === null) {
               console.log('Error Hit Reattempting Render:', response);
               setRenderCount(0);
               return
@@ -210,7 +210,7 @@ return(
             }else{
             response.rows[0].elements.forEach((element, index) => {
             console.log(props.maker[index]);
-            if(element.status != "OK" ){
+            if(element.status !== "OK" ){
               console.log('Error in Element', element);
               setRenderCount(0);
               return
