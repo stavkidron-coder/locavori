@@ -35,13 +35,15 @@ componentDidMount = () => {
   this.props.dispatch({type: 'INITIALIZE_MAKER_STORE', payload: this.state.initial_maker});
 }
 
+  //Functionality for SAVE and SUBMIT in modals
   save = () => {
     console.log('maker_registration:', this.props.store.maker_registration);
-    this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
+    // this.props.dispatch({type: 'PUT_MAKER_INFO', payload: this.props.store.maker_registration});
   }
 
   submitBtn = () => {
     console.log('SubmitBtn Clicked');
+    // this.props.dispatch({type: 'PUT_SUBMIT', payload: this.props.store.maker_registration});
   }
 
 

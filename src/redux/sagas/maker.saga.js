@@ -39,11 +39,21 @@ function* putMakerRegistration(action) {
     }
 }
 
+// On click of "submit" in form, update tbl_artisans with form data
+function* submitMaker(action) {
+    try {
+        yield axios.put(`/api/maker/submit`, action.payload);
+    } catch (error) {
+        console.log('error in maker registration PUT', error);
+    }
+}
+
 function* makerSaga() {
     yield takeEvery('GET_MAKERS', getMakers);
     yield takeEvery('FILTER_MAKERS', filterMakers);
     yield takeEvery('GET_MAKER_CARD', getMakerCard);
     yield takeEvery('PUT_MAKER_INFO', putMakerRegistration);
+    yield takeEvery('PUT_SUBMIT', submitMaker);
 }
 
 export default makerSaga;

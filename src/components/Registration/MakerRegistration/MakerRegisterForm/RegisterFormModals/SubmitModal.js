@@ -12,6 +12,7 @@ const SubmitModal = (props) => {
   const toggle = () => setModal(!modal);
 
   const submit = () => {
+    props.dispatch({type: 'PUT_SUBMIT', payload: props.store.maker_registration});
     toggle();
     props.history.push('/home');
   }

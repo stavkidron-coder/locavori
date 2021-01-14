@@ -70,7 +70,7 @@ CREATE TABLE "tbl_artisans" (
 	"awards" varchar(200),
 	"sales_sheet" varchar(200),
 	"logo" varchar(1200),
-	"pending_maker" boolean default TRUE,
+	"pending_maker" boolean default FALSE,
 	"approved_maker" boolean default FALSE,
 	"dateStampUTC" timestamp default current_timestamp,
 	"modifiedUTC" time default current_timestamp,
