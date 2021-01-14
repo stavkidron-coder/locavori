@@ -302,8 +302,8 @@ router.put('/', async (req, res) => {
     story = $47,
     give_back = $48,
     anything_else = $49,
-    maker_type_tokens = to_tsvector('${req.body.business_type.toString()}'),
-    location_tokens = to_tsvector('${req.body.product_distribution.toString()}'),
+    business_type_tokens = to_tsvector('${req.body.business_type.toString()}'),
+    where_sold_tokens = to_tsvector('${req.body.product_distribution.toString()}'),
     prod_cat_tokens = to_tsvector('${req.body.product_category.toString()}')
     WHERE profile_id = $50;`
     

@@ -8,7 +8,10 @@ const SaveModal = (props) => {
 
   const [modal, setModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => {
+    setModal(!modal);
+    props.dispatch({type: 'PUT_MAKER_INFO', payload: props.store.maker_registration});
+  }
 
   return (
     <div>

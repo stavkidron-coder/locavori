@@ -52,7 +52,7 @@ componentDidMount = () => {
           <MakerRegisterTabs/>
           <div>
             <Row className="buttonRow">
-              <SaveModal onClick={this.save} className="modalBtns"/>
+              <SaveModal saveBtn={this.save} className="modalBtns"/>
               <SubmitModal onClick={this.submitBtn} className="registerFormBtns"/>
             </Row>
           </div>
