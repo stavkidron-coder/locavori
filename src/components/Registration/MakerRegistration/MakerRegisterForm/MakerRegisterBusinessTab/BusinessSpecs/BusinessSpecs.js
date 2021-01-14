@@ -28,7 +28,7 @@ class BusinessSpecs extends Component {
   }
 
   // On changed of text inputs, the new value is sent to the redux store with a unique key/, value pair
-  handlChange = (event, eventType) => {
+  handleChange = (event, eventType) => {
     this.props.dispatch({type: 'ADD_BUSINESS_SPECS', payload: {key: eventType, value: event.target.value}});
   } 
 
