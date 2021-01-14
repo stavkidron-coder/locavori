@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 
-// import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import ProfilePage from '../UserProfile/UserProfile';
+import ProfilePage from '../ProfilePages/UserProfile/UserProfile';
 import HomePage from '../HomePage/HomePage';
-import LoginPage from '../LoginPage/LoginPage';
-import UserRegisterPage from '../UserRegistration/UserRegisterPage/UserRegisterPage';
-import RegisterOptions from '../RegisterOptions/RegisterOptions';
-import MakerRegisterPage from '../MakerRegistration/MakerRegisterPage/MakerRegisterPage';
-// import NavbarCollapse from '../NavbarCollapse/NavbarCollapse';
-// import NavbarCollapse2 from '../NavbarCollapse/NavbarCollapse2';
-import MakerPage from '../MakerProfile/MakerProfile';
-import MakerRegistrationPgOne from '../MakerRegistration/MakerRegistrationFirstPage/MakerRegistrationUserInfoPage';
+import LoginPage from '../Login-Logout/LoginPage/LoginPage';
+import UserRegisterPage from '../Registration/UserRegistration/UserRegisterPage/UserRegisterPage';
+import RegisterOptions from '../Registration/RegisterOptions/RegisterOptions';
+import MakerRegisterPage from '../Registration/MakerRegistration/MakerRegisterPage/MakerRegisterPage';
+import MakerPage from '../ProfilePages/MakerProfile/MakerProfile';
+import MakerRegistrationPgOne from '../Registration/MakerRegistration/MakerRegistrationFirstPage/MakerRegistrationUserInfoPage';
 
 import './App.css';
 import AdminPage from '../AdminPage/AdminPage';
@@ -33,73 +27,49 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {/* <Nav /> */}
-          {/* <NavbarCollapse/> */}
-          {/* <NavbarCollapse2/> */}
 
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
 
-            {/* Visiting localhost:3000/about will show the about page. */}
+           
             <Route
               // shows HomePage at all times (logged in or not)
               exact
               path="/home"
               component={HomePage}
             />
-
-            <Route
-              // shows HomePage at all times (logged in or not)
-              exact
-              path="/about"
-              component={AboutPage}
-            />
             
             <Route
-              // shows HomePage at all times (logged in or not)
               exact
               path="/register-options"
               component={RegisterOptions}
             />
             
             <Route
-              // shows HomePage at all times (logged in or not)
               exact
               path="/maker-registration"
               component={MakerRegisterPage}
             />
             
             <Route
-              // shows HomePage at all times (logged in or not)
               exact
               path="/maker-registration1"
               component={MakerRegistrationPgOne}
             />
             
-            {/* NEEDS TO BE SECURED */}
             <Route
-              // shows HomePage at all times (logged in or not)
-              exact
-
-              path="/adminPage"
+              exact path="/adminPage"
               component={AdminPage}
             />
 
 
             {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:3000/user will show the UserPage if the user is logged in.
+            Visiting localhost:3000/user will show the ProfilePage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
-            Even though it seems like they are different pages, the user is always on localhost:3000/user*/}
-            <ProtectedRoute
-              // logged in shows UserPage else shows LoginPage
-              exact
-              path="/user"
-              component={UserPage}
-            />
+            Even though it seems like they are different pages, the user is always on localhost:3000/profile*/}
 
             <ProtectedRoute
-              // logged in shows InfoPage else shows LoginPage
               exact
               path="/profile"
               component={ProfilePage}
@@ -110,26 +80,20 @@ class App extends Component {
             be taken to the component and path supplied. */}
             <ProtectedRoute
               // with authRedirect:
-              // - if logged in, redirects to "/user"
+              // - if logged in, redirects to "/home"
               // - else shows LoginPage at /login
               exact
               path="/login"
               component={LoginPage}
               authRedirect="/home"
             />
-            <ProtectedRoute
-              // with authRedirect:
-              // - if logged in, redirects to "/user"
-              // - else shows RegisterPage at "/registration"
+            <Route
               exact
               path="/user-registration"
               component={UserRegisterPage}
-              authRedirect="/home"
             />
+
             <Route
-              // with authRedirect:
-              // - if logged in, redirects to "/user"
-              // - else shows LandingPage at "/home"
               exact
               path="/makerCard/:id"
               component={MakerPage}

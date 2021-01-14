@@ -2,6 +2,9 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+
+//gets a specific favorite and compares based on which 
+// one was clicked
 router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "tbl_favorites"
     WHERE "tbl_favorites"."profile_id" = $1;`;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
-import AdminMakerTab from '../AdminMakerTab/AdminMakerTab';
-import AdminPARTab from '../AdminRequestsTab/AdminParTab';
+import AdminMakerTab from '../AdminTabs/AdminMakerTab/AdminMakerTab';
+import AdminPARTab from '../AdminTabs/AdminRequestsTab/AdminParTab';
 
 
 
@@ -33,11 +33,13 @@ const AdminTabs = (props) => {
           </NavLink>
         </NavItem>        
       </Nav>
+      {/* pulling in adminPARTab on tab #1 */}
         <TabContent activeTab={activeTab}>
             <TabPane tabId="1">
                 
                 <AdminPARTab/>
             </TabPane>
+      {/* pulling in adminMakerTab on tab #2 */}
             <TabPane tabId="2">
                 <AdminMakerTab/>
             </TabPane>

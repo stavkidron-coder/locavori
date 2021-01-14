@@ -13,6 +13,8 @@ const DietaryRestrictions = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+    // If checkbox is checked after click, id is sent to the redux store
+    // The id is removed from the redux store if the checkbox is unchecked after click
   const handleChange = (event) => {
     if (document.getElementById(event.target.id).checked) {
         props.dispatch({type: 'ADD_DIET', payload: event.target.id});

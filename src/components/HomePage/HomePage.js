@@ -2,47 +2,41 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-// FILTERS
+// FILTER OPTIONS
 import MakerOptions from '../FilterOptions/MakerOptions';
 import DeliveryOptions from '../FilterOptions/DeliveryOptions';
 import LocationOptions from '../FilterOptions/LocationOptions';
 import ProductOptions from '../FilterOptions/ProductOptions';
 import AvailabilityOptions from '../FilterOptions/AvailabilityOptions';
 import DietaryRestrictions from '../FilterOptions/DietaryRestrictions';
+
 // MAP & LIST
 import Map from './MapView/MapView';
-// import List from './ListView/ListView';
+
 // NAVBAR
 import HomeNav from '../Navbars/HomeNav';
+
 // CSS
 import './HomePage.css';
 import '../FilterOptions/Filters.css';
+
 // BOOTSTRAP
 import { Col, Row, Button } from 'reactstrap';
 
 
 class HomePage extends Component {
 
-  state = {
-    filters: {
-      business_type: ['Cosmetics', 'Baked Good'],
-      delivery: [],
-      product_type: [],
-    }
-  }
-
-  // onLogin = (event) => {
-  //   this.props.history.push('/login');
-  // };
-
   componentDidMount = () => {
-    this.props.dispatch({type: 'GET_MAKERS'}); 
+    // Get all makers from DB
+    this.props.dispatch({type: 'GET_MAKERS'});
+    // Gets an array of favorites for each user and is used to restrict a maker getting added multiple times to the favorites list.
     this.props.dispatch({ type: 'GET_SPECIFIC_FAVORITES' }); 
-    console.log(this.props.store.SF);
+    // console.log("SPECIFIC FAVS", this.props.store.SF);
          
   };
 
   filterGet = () => {
+    // Gets the response for the desired filters
     this.props.dispatch({type: 'FILTER_MAKERS', payload: this.props.store.filters});
   };
 
@@ -52,14 +46,12 @@ class HomePage extends Component {
 
         <HomeNav/>
 
-
         <div className="filterMapBody">
         
           <Row>
             <Col xs="12" lg="4" xl="3" className="filterContainer">
               <h2>Filters</h2>
               <hr/>
-              {/* <Filters/> */}
               <AvailabilityOptions/>
               <DeliveryOptions/>
               <MakerOptions/>
@@ -73,7 +65,6 @@ class HomePage extends Component {
               <h2>Find Local Makers</h2>
               <hr/>
               <Map/>
-              {/* <List/> */}
             </Col>
           </Row>
         </div>

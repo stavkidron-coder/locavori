@@ -14,7 +14,8 @@ class AdminPage extends Component {
     return (
       <div className="adminBody">
           <DesktopNav/>
-
+          {/* conditional that checks if you have admin
+          access or not via tbl_profile boolean value */}
           {this.props.store.user.admin ?
             <>
             <div className="adminPageTitle">

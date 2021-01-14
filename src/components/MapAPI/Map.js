@@ -10,7 +10,7 @@ import {withRouter} from 'react-router-dom';
 import {Button, Col, Container, Row, Spinner} from 'reactstrap';
 
 import {useSelector} from 'react-redux';
-import MakerCard from '../HomePage/MakerCard/MakerCard'
+import MakerCard from '../MakerCard/MakerCard'
 
 // Styles Imports
 import './Map.css';
@@ -19,7 +19,6 @@ import "@reach/combobox/styles.css";
 import packagedPin from '../../TestImages/packaged-prepared.png';
 import freshPin from '../../TestImages/fresh.png';
 import drinkPin from '../../TestImages/drink.png';
-
 
 const libraries = ["places"];
 
@@ -42,7 +41,8 @@ const options = {
   disableDefaultUI: true,
 }
 
-
+// The exported map that displays on the home page
+// Uses the @react-google-maps/api npm
 function LocalMap(props) {
 
   // Uses store to set markers which are in turn rendered to the map
@@ -51,6 +51,8 @@ function LocalMap(props) {
   });
 
   // Upon DOM load will query below
+  // PLUG IN YOUR API KEY HERE, THIS WILL BE DISABLED UPON HAND
+  // YOU WILL WANT TO HIDE YOUR KEY IN A .env
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: "AIzaSyDOqfm-oP_UKSq5ayaR72V_R-p8W1JJvrY", 
     libraries,
@@ -75,6 +77,8 @@ function LocalMap(props) {
   }
 
   const mapRef = React.useRef();
+
+  // On Map load sets up a reference of map, also runs the geolocater to zoom in the map on the users current browser geolocation
   const onMapLoad = React.useCallback((map) => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -176,6 +180,8 @@ function LocalMap(props) {
 //Set against a conditional render to prevent multiple calls to the API which results in errors
 //Checks if the data returned is good, if not will reset the conditional render and try again
 //Double Checks Element
+//
+//Current Bugs: If the page is not reloaded it is possible to for page to error out on too many requests to google Distance Matrix API, if the MakerReducer is already populated with data up being sent back to home will render the list with improper distance from origin
 function DistanceMatrix(){
 
   const props = useSelector(props => props);
@@ -199,7 +205,7 @@ return(
           callback = {(response, status) => {
             console.log('Status Returned from the Distance API',status);
             console.log('Data from API', response);
-            if(status != 'OK' || response === null) {
+            if(status !== 'OK' || response === null) {
               console.log('Error Hit Reattempting Render:', response);
               setRenderCount(0);
               return
@@ -208,42 +214,44 @@ return(
               setRenderCount(0);
               return
             }else{
-            response.rows[0].elements.forEach((element, index) => {
-            console.log(props.maker[index]);
-            if(element.status != "OK" ){
-              console.log('Error in Element', element);
-              setRenderCount(0);
-              return
-            }else{
-              props.maker[index].distanceText = element.distance.text;
-              props.maker[index].distanceValue = element.distance.value;
-            }});
-            setRenderCount(1);
+              response.rows[0].elements.forEach((element, index) => {
+              console.log(props.maker[index]);
+              if(element.status !== "OK" ){
+                console.log('Error in Element', element);
+                setRenderCount(0);
+                return
+              }else{
+                props.maker[index].distanceText = element.distance.text;
+                props.maker[index].distanceValue = element.distance.value;
+              }});
+              setRenderCount(1);
           }}}
         />
-      </>)
-      :
-      <div className='distanceMatrixSlides list-body'>
-      <br/>
-      <h2>Local Makers Near You</h2>
-      <hr/>
-        {renderCount === 0 ?
-          null
-          :
-          props.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
-            return  (
-              <>
+      </>
+    )
+    :
+    <div className='distanceMatrixSlides list-body'>
+    <br/>
+    <h2>Local Makers Near You</h2>
+    <hr/>
+      {renderCount === 0 ?
+        null
+        :
+        props.maker.sort((a,b) => a.distanceValue - b.distanceValue).map((maker) => {
+          return  (
+          <>
             <div className='matrixSlide'>
-              {maker.approved_maker ?
-                  <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
-              :
-              null
-              }
-              </div>
-            </>
-          )})
-        }
-        </div>
+            {/* Checks if maker is approved if so renders their Makercard to the DOM with in order or distance from origin */}
+            {maker.approved_maker ?
+                <MakerCard maker={maker} key={maker.id} fav={props.SF}/>
+            :
+            null
+            }
+            </div>
+          </>
+        )})
+      }
+      </div>
     }
   </div>
   )
@@ -273,10 +281,15 @@ function Locate({ panToLocate }) {
   );
 }
 
+
+// Displayed as a search bar in the top right of the map
+// Suggests towns that are near Minneapolis currently
+// Upon selection with zoom to that town lng, lat.  Using PanToSearch function in LocalMap
+//Uses both @reach/combobox and use-places-autocomplete npm's to run
 function Search({panToSearch}) {
   const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} =usePlacesAutocomplete({
     requestOptions: {
-      // Suggest locations near this Lat and Lng point (Minneapolis MN)
+      // Suggest locations near this Lat and Lng point (Minneapolis MN Currently)
       location: {lat: () => 44.977753, lng: () => -93.265015 },
       // Suggests locations with defined radius below off of the defined point above
       radius: 100 * 1000,
@@ -295,7 +308,6 @@ function Search({panToSearch}) {
         const results = await getGeocode({address});
         const {lat, lng} = await getLatLng(results[0]);
         console.log(lat, lng);
-        // setOrigin(lat, lng);
         panToSearch ({lat, lng});
       }catch(error) {
         console.log("ERROR!!!");

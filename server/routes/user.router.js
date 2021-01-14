@@ -16,6 +16,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
+// Registration as a locavore
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
@@ -39,6 +40,9 @@ router.post('/register', (req, res, next) => {
     });
 });
 
+// Registration as a maker
+// Similar post to the one above, but a transaction that returns a user id
+// and creates a new maker referencing that id
 router.post('/registerMaker', async (req, res, next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;

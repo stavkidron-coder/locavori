@@ -5,6 +5,8 @@ const router = express.Router();
 /**
  * GET route template
  */
+
+//  Gets all makers on initial page load
 router.get('/getall', (req, res) => {
   const queryText = 'SELECT * FROM "tbl_artisans";';
   pool.query(queryText)
@@ -16,7 +18,8 @@ router.get('/getall', (req, res) => {
         console.log('error in GET makers', error);
     });
 });
-
+//get request that gets all from tbl_artisans on 
+//a specific profile_id
 router.get('/:id', (req, res) => {
   const queryText = `
   SELECT * FROM "tbl_artisans"
@@ -35,14 +38,21 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// Gets makers based on parameters get in the client side filter
 router.get('/', async (req, res) => {
+  // Data from arrays get converted into strings, so split returns them to arrays
   let availabilityArray = req.query.availability.split(',');
   let deliveryArray = req.query.delivery.split(','); 
   let makerArray = req.query.makers.split(',');
   let locationArray = req.query.location.split(',');
   let dietArray = req.query.diet.split(',');
+  // result array houses all returned makers from the database until the function is complete
   let resultArray = [];
 
+// Handles filter for product types
+// If no product types are selected, 'undefined' is send. If the product type checkbox is toggled an empty string is sent
+// This function checks against that, then returns all from the database that are not an empty object.
+  // An empty object is generated when users fill out the maker registration for and do not select anything for their product types
   if (req.query.fresh !== 'undefined' && req.query.fresh !== '') {
     const queryText = `SELECT * FROM tbl_artisans WHERE product_type_fresh != '{}' ;`;
     try {
@@ -79,6 +89,8 @@ router.get('/', async (req, res) => {
    }
   } else {console.log('No beverage option selected')};
 
+  // Delivery options are passed in as an array, and each index is checked based on what type of delivery is provided
+    // Maker registration form sends over all lowercase 'yes' and 'no', which this function checks against
     for (let i = 0; i < deliveryArray.length; i++) {
       if (deliveryArray[i] === 'pick_up') {
         const queryText = `SELECT * FROM tbl_artisans WHERE pickup = 'yes';`;
@@ -112,6 +124,8 @@ router.get('/', async (req, res) => {
        }
       }
     }
+
+    // Availability is sent as an array, that this function loops through to check for limited or year round
     const queryAvail = 'SELECT * FROM tbl_artisans WHERE product_avail = $1';
     for (let i = 0; i < availabilityArray.length; i++){
       try {
@@ -123,6 +137,9 @@ router.get('/', async (req, res) => {
         return
       }
     }
+
+    // Queries uses PostgreSQL's full text search, checking the queries against a series of vectors created during maker registration
+    // Data is sent as an array that is looped through to get each ts_query
     const queryMaker = `SELECT * FROM tbl_artisans WHERE business_type_tokens @@ to_tsquery($1);`
     for (let i = 0; i < makerArray.length; i++){
       try {
@@ -162,6 +179,9 @@ router.get('/', async (req, res) => {
 /**
  * PUT route template
  */
+
+//  Makers are initialized in the user router, but their information is updated on click of "save application"
+//  in the maker registration form through this PUT route
 router.put('/', async (req, res) => {
 
   const makerInfo =[
@@ -201,7 +221,7 @@ router.put('/', async (req, res) => {
     req.body.delivery_type.shipping,
     req.body.availability,
   
-    // PRODUCT TYPES **DIFFERS FROM DB**
+    // PRODUCT TYPES
     req.body.prepared_type,
     req.body.fresh_type,
     req.body.beverage_type,
@@ -231,6 +251,7 @@ router.put('/', async (req, res) => {
     req.user.id
    ]
   // *** SALES SHEET IS SPECIALTIES IN THE MEAN TIME ***
+  // Creating vectors out of data sent over is not sanitized. It was not recognizing it as a string when sanitized.
   const makerQueryText = `UPDATE tbl_artisans SET 
     legal_name = $1, 
     business_name = $2, 
@@ -281,8 +302,8 @@ router.put('/', async (req, res) => {
     story = $47,
     give_back = $48,
     anything_else = $49,
-    maker_type_tokens = to_tsvector('${req.body.business_type.toString()}'),
-    location_tokens = to_tsvector('${req.body.product_distribution.toString()}'),
+    business_type_tokens = to_tsvector('${req.body.business_type.toString()}'),
+    where_sold_tokens = to_tsvector('${req.body.product_distribution.toString()}'),
     prod_cat_tokens = to_tsvector('${req.body.product_category.toString()}')
     WHERE profile_id = $50;`
     

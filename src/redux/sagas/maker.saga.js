@@ -1,6 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
+// Gets all makers on component mounting
 function* getMakers() {
     try {
         const makers = yield axios.get('/api/maker/getall');
@@ -18,6 +19,8 @@ function* getMakerCard(action) {
     }
 }
 
+// Gets makers based on filter parameters
+// Parameters are sent using req.query and assigning names to the different filters
 function* filterMakers(action) {
     try {
         const makers = yield axios.get(`/api/maker/?availability=${action.payload.availability}&delivery=${action.payload.delivery}&makers=${action.payload.maker_options}&location=${action.payload.location}&fresh=${action.payload.fresh}&prepared=${action.payload.prepared}&beverages=${action.payload.beverage}&diet=${action.payload.diet}`);
@@ -27,6 +30,7 @@ function* filterMakers(action) {
     }
 }
 
+// On click of "save" in form, update tbl_artisans with form data
 function* putMakerRegistration(action) {
     try {
         yield axios.put(`/api/maker`, action.payload);
